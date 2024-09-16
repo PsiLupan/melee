@@ -902,7 +902,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/src/dolphin/os/init/__ppc_eabi_init.c.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/pad/PadClamp.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/pad/Padclamp.c.o\
     $(BUILD_DIR)/asm/dolphin/pad/pad.s.o\
 
 TEXT_O_FILES +=\

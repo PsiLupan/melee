@@ -18,6 +18,7 @@ endif
 TARGET := ssbm.us.1.2
 
 BUILD_DIR := build/$(TARGET)
+EXTERN_DOL_DIR := build/$(TARGET)/extern/dolphin
 
 # Inputs
 LDSCRIPT := ldscript.lcf
