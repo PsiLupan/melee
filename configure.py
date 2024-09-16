@@ -321,7 +321,7 @@ def DolphinLib(
             "-enum int",
             "-warn pragmas",
             "-requireprotos",
-            "-pragma 'cats off'",
+            '-pragma "cats off"',
             "-I-",
             "-Iextern/dolphin/include",
             "-Iextern/dolphin/include/libc",
@@ -1232,6 +1232,7 @@ config.libs = [
         [
             Object(Matching, "dolphin/amcstubs/AmcExi2Stubs.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "OdemuExi2",
