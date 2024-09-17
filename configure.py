@@ -1435,6 +1435,7 @@ config.libs = [
             Object(NonMatching, "dolphin/axfx/delay.c"),
             Object(Matching, "dolphin/axfx/axfx.c"),
         ],
+        extern=True,
     ),
     SysdolphinLib(
         "sysdolphin (HAL base library)",
