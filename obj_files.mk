@@ -934,7 +934,7 @@ TEXT_O_FILES +=\
 TEXT_O_FILES +=\
     $(EXTERN_DOL_DIR)/src/dolphin/ax/AX.c.o\
     $(BUILD_DIR)/src/dolphin/ax/AXAlloc.c.o\
-    $(BUILD_DIR)/src/dolphin/ax/AXAux.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ax/AXAux.c.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXCL.s.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXOut.s.o\
     $(EXTERN_DOL_DIR)/src/dolphin/ax/AXSPB..o\
