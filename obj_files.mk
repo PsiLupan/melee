@@ -845,11 +845,11 @@ TEXT_O_FILES +=\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/dvd/dvdlow.s.o\
-    $(BUILD_DIR)/src/dolphin/dvd/dvdfs.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dvd/dvdfs.c.o\
     $(BUILD_DIR)/src/dolphin/dvd/dvd.c.o\
     $(EXTERN_DOL_DIR)/src/dolphin/dvd/dvdqueue.c.o\
     $(BUILD_DIR)/asm/dolphin/dvd/dvderror.s.o\
-    $(BUILD_DIR)/src/dolphin/dvd/fstload.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dvd/fstload.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/gx/GXInit.s.o\
