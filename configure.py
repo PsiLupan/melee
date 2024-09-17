@@ -1263,6 +1263,7 @@ config.libs = [
         [
             Object(NonMatching, "dolphin/thp/THPDec.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "base",
@@ -1297,6 +1298,7 @@ config.libs = [
             Object(NonMatching, "dolphin/dvd/dvderror.c"),
             Object(Matching, "dolphin/dvd/fstload.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "gx",
@@ -1317,6 +1319,7 @@ config.libs = [
             Object(NonMatching, "dolphin/gx/GXTransform.c"),
             Object(NonMatching, "dolphin/gx/GXPerf.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "mtx",
