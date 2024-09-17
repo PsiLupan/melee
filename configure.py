@@ -1245,7 +1245,7 @@ config.libs = [
     DolphinLib(
         "hio",
         [
-            Object(NonMatching, "dolphin/hio/hio.c"),
+            Object(Matching, "dolphin/hio/hio.c"),
         ],
         fix_epilogue=True,
         extern=True,
