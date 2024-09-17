@@ -1276,6 +1276,7 @@ config.libs = [
         [
             Object(Matching, "dolphin/db/db.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "dsp",

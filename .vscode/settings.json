@@ -61,7 +61,10 @@
         "xmemory": "c",
         "xutility": "c",
         "exception": "c",
-        "xstring": "c"
+        "xstring": "c",
+        "algorithm": "c",
+        "optional": "c",
+        "xtr1common": "c"
     },
     "[gas]": {
         "editor.insertSpaces": true,
