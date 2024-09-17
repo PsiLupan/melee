@@ -817,7 +817,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/MetroTRK/targcont.s.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/amcstubs/AmcExi2Stubs.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/amcstubs/AmcExi2Stubs.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/OdemuExi2/DebuggerDriver.s.o\
@@ -833,15 +833,15 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/thp/THPDec.s.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/base/PPCArch.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/base/PPCArch.c.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/db/db.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/db/db.c.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/dsp/dsp.c.o\
-    $(BUILD_DIR)/src/dolphin/dsp/dsp_debug.c.o\
-    $(BUILD_DIR)/src/dolphin/dsp/dsp_task.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dsp/dsp.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dsp/dsp_debug.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dsp/dsp_task.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/dvd/dvdlow.s.o\
@@ -853,7 +853,7 @@ TEXT_O_FILES +=\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/gx/GXInit.s.o\
-    $(BUILD_DIR)/src/dolphin/gx/GXFifo.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXFifo.c.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXAttr.s.o\
     $(BUILD_DIR)/src/dolphin/gx/GXMisc.c.o\
     $(BUILD_DIR)/src/dolphin/gx/GXGeometry.c.o\
@@ -863,7 +863,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/gx/GXBump.s.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXTev.s.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXPixel.s.o\
-    $(BUILD_DIR)/src/dolphin/gx/GXStubs.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXStubs.c.o\
     $(BUILD_DIR)/src/dolphin/gx/GXDisplayList.c.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXTransform.s.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXPerf.s.o\
@@ -871,7 +871,7 @@ TEXT_O_FILES +=\
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/mtx/mtx.s.o\
     $(BUILD_DIR)/asm/dolphin/mtx/mtxvec.s.o\
-    $(BUILD_DIR)/src/dolphin/mtx/mtx44.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/mtx/mtx44.c.o\
     $(BUILD_DIR)/asm/dolphin/mtx/vec.s.o\
 
 TEXT_O_FILES +=\
@@ -908,11 +908,11 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/vi/vi.s.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/ai/ai.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ai/ai.c.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/ar/ar.c.o\
-    $(BUILD_DIR)/src/dolphin/ar/arq.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ar/ar.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ar/arq.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/src/dolphin/card/CARDBios.c.o\
@@ -932,14 +932,14 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/src/dolphin/card/CARDRename.c.o\
 
 TEXT_O_FILES +=\
-    $(BUILD_DIR)/src/dolphin/ax/AX.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ax/AX.c.o\
     $(BUILD_DIR)/src/dolphin/ax/AXAlloc.c.o\
     $(BUILD_DIR)/src/dolphin/ax/AXAux.c.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXCL.s.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXOut.s.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXSPB.s.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXVPB.s.o\
-    $(BUILD_DIR)/src/dolphin/ax/AXProf.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ax/AXProf.c.o\
     $(BUILD_DIR)/asm/dolphin/ax/DSPCode.s.o\
 
 TEXT_O_FILES +=\
@@ -947,7 +947,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/axfx/reverb_std.s.o\
     $(BUILD_DIR)/asm/dolphin/axfx/chorus.s.o\
     $(BUILD_DIR)/asm/dolphin/axfx/delay.s.o\
-    $(BUILD_DIR)/src/dolphin/axfx/axfx.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/axfx/axfx.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/src/sysdolphin/baselib/dobj.c.o\
