@@ -38,6 +38,8 @@ typedef int BOOL;
 #define NULL ((void*) 0)
 #endif
 
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+
 #include "cmath.h"
 
 #include "libc/ctype.h"
