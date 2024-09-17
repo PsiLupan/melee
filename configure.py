@@ -1269,6 +1269,7 @@ config.libs = [
         [
             Object(Matching, "dolphin/base/PPCArch.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "db",
