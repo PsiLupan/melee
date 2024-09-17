@@ -847,7 +847,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/dvd/dvdlow.s.o\
     $(BUILD_DIR)/src/dolphin/dvd/dvdfs.c.o\
     $(BUILD_DIR)/src/dolphin/dvd/dvd.c.o\
-    $(BUILD_DIR)/src/dolphin/dvd/dvdqueue.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/dvd/dvdqueue.c.o\
     $(BUILD_DIR)/asm/dolphin/dvd/dvderror.s.o\
     $(BUILD_DIR)/src/dolphin/dvd/fstload.c.o\
 
@@ -857,14 +857,14 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/gx/GXAttr.s.o\
     $(BUILD_DIR)/src/dolphin/gx/GXMisc.c.o\
     $(BUILD_DIR)/src/dolphin/gx/GXGeometry.c.o\
-    $(BUILD_DIR)/asm/dolphin/gx/GXFrameBuf.s.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXFrameBuf.c.o\
     $(BUILD_DIR)/src/dolphin/gx/GXLight.c.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXTexture.s.o\
-    $(BUILD_DIR)/asm/dolphin/gx/GXBump.s.o\
-    $(BUILD_DIR)/asm/dolphin/gx/GXTev.s.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXBump.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXTev.c.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXPixel.s.o\
     $(EXTERN_DOL_DIR)/src/dolphin/gx/GXStubs.c.o\
-    $(BUILD_DIR)/src/dolphin/gx/GXDisplayList.c.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/gx/GXDisplayList.c.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXTransform.s.o\
     $(BUILD_DIR)/asm/dolphin/gx/GXPerf.s.o\
 
