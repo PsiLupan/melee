@@ -22,8 +22,6 @@ typedef int BOOL;
 #define FALSE 0
 #define TRUE 1
 
-#endif
-
 #ifdef PERMUTER
 #define AT_ADDRESS(x) = FIXEDADDR(x)
 #elif defined(__MWERKS__) && !defined(M2CTX)
