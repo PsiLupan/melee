@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCa_SpecialHi.h"
 
@@ -19,6 +18,7 @@
 #include "ftCommon/ftCo_FallSpecial.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 void ftCa_SpecialHiThrow1_Coll(HSD_GObj* gobj)
 {

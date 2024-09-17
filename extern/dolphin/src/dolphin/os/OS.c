@@ -1,8 +1,8 @@
 #include <dolphin.h>
+#include <macros.h>
+#include <dolphin/db.h>
 #include <dolphin/exi.h>
 #include <dolphin/os.h>
-#include <dolphin/db.h>
-#include <macros.h>
 
 void EnableMetroTRKInterrupts(void);
 
@@ -47,19 +47,21 @@ void __OSDBJUMPEND(void);
 
 #define NOP 0x60000000
 
-static struct OSBootInfo_s * BootInfo;
-static unsigned long * BI2DebugFlag;
+static struct OSBootInfo_s* BootInfo;
+static unsigned long* BI2DebugFlag;
 static double ZeroF;
 static int AreWeInitialized;
-static void (* * OSExceptionTable)(unsigned char, struct OSContext *);
+static void (**OSExceptionTable)(unsigned char, struct OSContext*);
 
 // functions
 static asm void __OSInitFPRs(void);
 static void OSExceptionInit(void);
-static void OSDefaultExceptionHandler(unsigned char exception /* r3 */, struct OSContext * context /* r4 */);
+static void OSDefaultExceptionHandler(unsigned char exception /* r3 */,
+                                      struct OSContext* context /* r4 */);
 
-unsigned long __OSIsDebuggerPresent() {
-    return *(u32*)OSPhysicalToCached(0x40);
+unsigned long __OSIsDebuggerPresent()
+{
+    return *(u32*) OSPhysicalToCached(0x40);
 }
 
 /* clang-format off */
@@ -312,7 +314,7 @@ entry __OSDBINTSTART
     mtmsr   r3
     blr
 entry __OSDBINTEND
-  /* clang-format on */
+    /* clang-format on */
 }
 
 static asm void __OSDBJump(void){
@@ -324,25 +326,31 @@ entry __OSDBJUMPSTART
 entry __OSDBJUMPEND
     /* clang-format on */
 
-} 
+}
 
-__OSExceptionHandler __OSSetExceptionHandler(__OSException exception, __OSExceptionHandler handler) {
+__OSExceptionHandler __OSSetExceptionHandler(__OSException exception,
+                                             __OSExceptionHandler handler)
+{
     __OSExceptionHandler oldHandler;
-    
-    ASSERTMSGLINE(0x37F, exception < __OS_EXCEPTION_MAX, "__OSSetExceptionHandler(): unknown exception."); 
-    
+
+    ASSERTMSGLINE(0x37F, exception < __OS_EXCEPTION_MAX,
+                  "__OSSetExceptionHandler(): unknown exception.");
+
     oldHandler = OSExceptionTable[exception];
     OSExceptionTable[exception] = handler;
     return oldHandler;
 }
 
-__OSExceptionHandler __OSGetExceptionHandler(__OSException exception) {
-    ASSERTMSGLINE(0x396, exception < __OS_EXCEPTION_MAX, "__OSGetExceptionHandler(): unknown exception.");
+__OSExceptionHandler __OSGetExceptionHandler(__OSException exception)
+{
+    ASSERTMSGLINE(0x396, exception < __OS_EXCEPTION_MAX,
+                  "__OSGetExceptionHandler(): unknown exception.");
     return OSExceptionTable[exception];
 }
 
-static asm void OSExceptionVector(void) {
-  /* clang-format off */
+static asm void OSExceptionVector(void)
+{
+    /* clang-format off */
     nofralloc
 
 entry __OSEVStart
@@ -422,12 +430,15 @@ recoverable:
 
 entry __OSEVEnd
     nop
-  /* clang-format on */
+    /* clang-format on */
 }
 
-void __OSUnhandledException(__OSException exception, OSContext* context, u32 dsisr, u32 dar);
-asm void OSDefaultExceptionHandler(register __OSException exception, register OSContext* context) {
-  /* clang-format off */
+void __OSUnhandledException(__OSException exception, OSContext* context,
+                            u32 dsisr, u32 dar);
+asm void OSDefaultExceptionHandler(register __OSException exception,
+                                   register OSContext* context)
+{
+    /* clang-format off */
     nofralloc
     OS_EXCEPTION_SAVE_GPRS(context)
     mfdsisr r5
@@ -448,5 +459,5 @@ void __OSPSInit(void)
         li      r3, 0
         mtspr   GQR0, r3
     }
-  // clang-format on
+    // clang-format on
 }

@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_DownBound.h"
 
@@ -29,6 +28,7 @@
 #include <math.h>
 #include <math_ppc.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 
 /* 097040 */ static void ftCo_800976A4(ftCo_GObj* gobj);

@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftPe_SpecialLw.h"
@@ -23,6 +22,7 @@
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
 
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 
 /* 11CE48 */ static ItemKind pickVeg(HSD_GObj* gobj);

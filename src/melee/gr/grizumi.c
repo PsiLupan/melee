@@ -812,9 +812,9 @@ void grIzumi_801CCEA0(HSD_GObj* gobj, int renderpass)
             HSD_CObjEndCurrent();
         }
         lb_800122C8(refl->image, 0, 0, 1);
-        C_MTXLightPerspective(mtx, cobj->projection_param.perspective.fov,
-                              cobj->projection_param.perspective.aspect, 0.49f,
-                              -0.49f, 0.5f, 0.5f);
+        MTXLightPerspective(mtx, cobj->projection_param.perspective.fov,
+                            cobj->projection_param.perspective.aspect, 0.49f,
+                            -0.49f, 0.5f, 0.5f);
         PSMTXConcat(mtx, HSD_CObjGetViewingMtxPtr(cobj), refl->texture_matrix);
         ftDrawCommon_80081118();
     }

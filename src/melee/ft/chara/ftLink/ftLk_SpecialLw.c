@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ftLink/forward.h"
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftLk_SpecialLw.h"
@@ -19,6 +18,8 @@
 #include "it/it_26B1.h"
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
+
+#include <dolphin/mtx.h>
 
 /* 0EB75C */ static bool updateBomb(HSD_GObj* gobj, FtMotionId msid);
 /* 0EB7C8 */ static void spawnBomb(HSD_GObj* gobj);

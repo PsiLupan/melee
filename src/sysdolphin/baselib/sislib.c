@@ -1542,7 +1542,7 @@ void HSD_SisLib_803A84BC(HSD_GObj* gobj, HSD_Text* arg1)
             GXSetZMode(0U, 0U, 0U);
             GXSetViewport(0.0f, 0.0f, 640.0f, 480.0f, 0.0f, 1.0f);
             GXSetScissor(0, 0, 0x280, 0x1E0);
-            C_MTXOrtho((MtxPtr)&m, 0.0f, -480.0f, 0.0f, 640.0f, 0.0f, 2.0f);
+            MTXOrtho((MtxPtr)&m, 0.0f, -480.0f, 0.0f, 640.0f, 0.0f, 2.0f);
             GXSetProjection((MtxPtr)&m, 0);
             m[0][0] = 1.0f;
             m[0][1] = 0.0f;

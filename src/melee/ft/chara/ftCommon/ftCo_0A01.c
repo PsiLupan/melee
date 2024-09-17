@@ -5,7 +5,6 @@
 #include "ftKoopa/forward.h"
 #include "ftPopo/forward.h"
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_0A01.h"
 
@@ -38,6 +37,7 @@
 #include <math.h>
 #include <math_ppc.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <MetroTRK/intrinsics.h>
 
 int ftCo_803C5A68[] = {

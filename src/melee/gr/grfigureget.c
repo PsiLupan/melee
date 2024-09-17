@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "gr/granime.h"
 #include "gr/grdisplay.h"
@@ -8,6 +7,7 @@
 #include "gr/grzakogenerator.h"
 #include "gr/types.h"
 
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobj.h>
 #include <baselib/gobjgxlink.h>

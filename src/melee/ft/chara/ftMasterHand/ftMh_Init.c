@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftMh_Init.h"
 
@@ -41,6 +40,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 MotionState ftMh_Init_MotionStateTable[ftMh_MS_SelfCount] = {
     {

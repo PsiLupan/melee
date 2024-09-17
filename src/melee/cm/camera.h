@@ -3,10 +3,10 @@
 
 #include <platform.h>
 #include "cm/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 /* 028B9C */ void Camera_80028B9C(int);
 /* 029020 */ CameraBox* Camera_80029020(void);

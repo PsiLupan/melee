@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftDk_SpecialHi.h"
 
@@ -18,6 +17,8 @@
 #include "ft/types.h"
 #include "ftCommon/ftCo_FallSpecial.h"
 #include "ftDonkey/types.h"
+
+#include <dolphin/mtx.h>
 
 static void setCallbacks(HSD_GObj* gobj)
 {

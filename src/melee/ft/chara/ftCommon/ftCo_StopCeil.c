@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_StopCeil.h"
 
@@ -13,6 +12,7 @@
 #include "ftKirby/ftKb_Init.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 09CAD4 */ static void ftCo_8009EFA4(ftCo_GObj* gobj);
 

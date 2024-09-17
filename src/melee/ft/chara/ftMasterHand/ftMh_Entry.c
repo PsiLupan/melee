@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftMh_Entry.h"
 
@@ -17,6 +16,7 @@
 #include "ft/types.h"
 #include "pl/player.h"
 
+#include <dolphin/mtx.h>
 #include <baselib/debug.h>
 
 static void ftMh_MS_343_801511FC(HSD_GObj* gobj);

@@ -5,15 +5,15 @@
 
 #include <dolphin/mtx/types.h>
 
-void C_MTXOrtho(Mtx44 m, f32 t, f32 b, f32 l, f32 r, f32 n, f32 f);
-void C_MTXPerspective(Mtx44 m, f32 fovY, f32 aspect, f32 n, f32 f);
+void MTXOrtho(Mtx44 m, f32 t, f32 b, f32 l, f32 r, f32 n, f32 f);
+void MTXPerspective(Mtx44 m, f32 fovY, f32 aspect, f32 n, f32 f);
 void C_MTXIdentity(Mtx m);
 void C_MTXCopy(const Mtx src, Mtx dst);
 void C_MTXConcat(const Mtx a, const Mtx b, Mtx ab);
 void C_MTXConcatArray(const Mtx a, const Mtx* srcBase, Mtx* dstBase,
                       u32 count);
 void C_MTXTranspose(const Mtx src, Mtx xPose);
-void C_MTXFrustum(Mtx44 m, f32 t, f32 b, f32 l, f32 r, f32 n, f32 f);
+void MTXFrustum(Mtx44 m, f32 t, f32 b, f32 l, f32 r, f32 n, f32 f);
 u32 C_MTXInverse(const Mtx src, Mtx inv);
 u32 C_MTXInvXpose(const Mtx src, Mtx invX);
 
@@ -43,7 +43,7 @@ void C_MTXScaleApply(const Mtx src, Mtx dst, f32 xS, f32 yS, f32 zS);
 void C_MTXRotRad(Mtx m, char axis, f32 rad);
 void C_MTXRotTrig(Mtx m, char axis, f32 sinA, f32 cosA);
 void C_MTXRotAxisRad(Mtx m, const Vec3* axis, f32 rad);
-void C_MTXLookAt(Mtx m, Vec3* cam_pos, Vec3* up, Vec3* target);
+void MTXLookAt(Mtx m, Vec3* cam_pos, Vec3* up, Vec3* target);
 
 void PSMTXQuat(Mtx m, const Quaternion* q);
 void PSMTXReflect(Mtx m, const Vec3* p, const Vec3* n);
@@ -67,16 +67,15 @@ void PSMTXIdentity(Mtx m);
 void PSMTXTrans(Mtx m, f32 x_trans, f32 y_trans, f32 z_trans);
 void PSMTXScale(Mtx m, f32 x_scale, f32 y_scale, f32 z_scale);
 
-#define MTXLightPerspective C_MTXLightPerspective
-#define MTXLightFrustum C_MTXLightFrustum
-#define MTXLightOrtho C_MTXLightOrtho
+#define MTXLightPerspective MTXLightPerspective
+#define MTXLightFrustum MTXLightFrustum
+#define MTXLightOrtho MTXLightOrtho
 
-void C_MTXLightPerspective(Mtx m, f32 fov, f32 aspect, f32 x_scale,
-                           f32 y_scale, f32 z_x_mult, f32 z_y_mult);
-void C_MTXLightFrustum(Mtx m, f32 top, f32 bottom, f32 left, f32 right,
-                       f32 near, f32 x_scale, f32 y_scale, f32 z_x_mult,
-                       f32 z_y_mult);
-void C_MTXLightOrtho(Mtx m, f32 top, f32 bottom, f32 left, f32 right,
+void MTXLightPerspective(Mtx m, f32 fov, f32 aspect, f32 x_scale, f32 y_scale,
+                         f32 z_x_mult, f32 z_y_mult);
+void MTXLightFrustum(Mtx m, f32 top, f32 bottom, f32 left, f32 right, f32 near,
                      f32 x_scale, f32 y_scale, f32 z_x_mult, f32 z_y_mult);
+void MTXLightOrtho(Mtx m, f32 top, f32 bottom, f32 left, f32 right,
+                   f32 x_scale, f32 y_scale, f32 z_x_mult, f32 z_y_mult);
 
 #endif

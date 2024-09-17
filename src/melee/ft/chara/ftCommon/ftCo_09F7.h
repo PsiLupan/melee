@@ -3,9 +3,9 @@
 
 #include "ft/forward.h"
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 /* 09F834 */ void ftCo_8009F834(ftCo_GObj*, int, Fighter_Part, int, int, Vec3*,
                                 Vec3*, float);

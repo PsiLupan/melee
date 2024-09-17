@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftaction.h"
 
@@ -23,6 +22,7 @@
 #include "lb/types.h"
 
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 #include <baselib/gobjproc.h>
 #include <baselib/random.h>

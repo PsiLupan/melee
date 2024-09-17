@@ -5,7 +5,6 @@
 #include "ft/forward.h" // IWYU pragma: export
 #include "it/forward.h"
 #include <dolphin/gx/forward.h>
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "cm/types.h"
@@ -39,6 +38,7 @@
 #include <common_structs.h>
 #include <placeholder.h>
 #include <dolphin/gx/types.h>
+#include <dolphin/mtx.h>
 
 #define FTPART_INVALID 0xFF
 

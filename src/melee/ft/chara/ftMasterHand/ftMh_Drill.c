@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftMh_Drill.h"
 
@@ -12,6 +11,8 @@
 #include "ft/types.h"
 #include "ftMasterHand/types.h"
 #include "pl/player.h"
+
+#include <dolphin/mtx.h>
 
 void ftMh_WalkWait_Anim(HSD_GObj* gobj)
 {

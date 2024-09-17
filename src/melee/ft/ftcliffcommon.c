@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ft/ftcliffcommon.h"
 
@@ -20,6 +19,7 @@
 #include "pl/pl_0371.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 bool ftCliffCommon_80081298(ftCo_GObj* gobj)
 {

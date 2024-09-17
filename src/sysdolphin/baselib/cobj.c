@@ -208,25 +208,24 @@ GXProjectionType makeProjectionMtx(HSD_CObj* cobj, Mtx mtx)
     switch (cobj->projection_type) {
     case PROJ_PERSPECTIVE:
         projection_type = GX_PERSPECTIVE;
-        C_MTXPerspective(mtx, cobj->projection_param.perspective.fov,
-                         cobj->projection_param.perspective.aspect, cobj->near,
-                         cobj->far);
+        MTXPerspective(mtx, cobj->projection_param.perspective.fov,
+                       cobj->projection_param.perspective.aspect, cobj->near,
+                       cobj->far);
         break;
     case PROJ_FRUSTUM:
         projection_type = GX_PERSPECTIVE;
-        C_MTXFrustum(mtx, cobj->projection_param.perspective.fov,
-                     cobj->projection_param.perspective.aspect,
-                     cobj->projection_param.frustum.left,
-                     cobj->projection_param.frustum.right, cobj->near,
-                     cobj->far);
-        break;
-    case PROJ_ORTHO:
-        projection_type = GX_ORTHOGRAPHIC;
-        C_MTXOrtho(mtx, cobj->projection_param.perspective.fov,
+        MTXFrustum(mtx, cobj->projection_param.perspective.fov,
                    cobj->projection_param.perspective.aspect,
                    cobj->projection_param.frustum.left,
                    cobj->projection_param.frustum.right, cobj->near,
                    cobj->far);
+        break;
+    case PROJ_ORTHO:
+        projection_type = GX_ORTHOGRAPHIC;
+        MTXOrtho(mtx, cobj->projection_param.perspective.fov,
+                 cobj->projection_param.perspective.aspect,
+                 cobj->projection_param.frustum.left,
+                 cobj->projection_param.frustum.right, cobj->near, cobj->far);
         break;
     }
     return projection_type;
@@ -350,11 +349,11 @@ static bool setupTopHalfCamera(HSD_CObj* cobj)
                 tanf(DegToRad(0.5 * cobj->projection_param.perspective.fov));
             w = t * cobj->projection_param.perspective.aspect;
             b = t * -(2.0f * h_scale - 1.0f);
-            C_MTXFrustum(p, t, b, -w, w, cobj->near, cobj->far);
+            MTXFrustum(p, t, b, -w, w, cobj->near, cobj->far);
             break;
         case PROJ_FRUSTUM:
             projection_type = GX_PERSPECTIVE;
-            C_MTXFrustum(
+            MTXFrustum(
                 p, cobj->projection_param.perspective.fov,
                 -(h_scale * (cobj->projection_param.perspective.fov -
                              cobj->projection_param.perspective.aspect) -
@@ -364,13 +363,13 @@ static bool setupTopHalfCamera(HSD_CObj* cobj)
             break;
         case PROJ_ORTHO:
             projection_type = GX_ORTHOGRAPHIC;
-            C_MTXOrtho(
-                p, cobj->projection_param.perspective.fov,
-                -(h_scale * (cobj->projection_param.perspective.fov -
-                             cobj->projection_param.perspective.aspect) -
-                  cobj->projection_param.perspective.fov),
-                cobj->projection_param.frustum.left,
-                cobj->projection_param.frustum.right, cobj->near, cobj->far);
+            MTXOrtho(p, cobj->projection_param.perspective.fov,
+                     -(h_scale * (cobj->projection_param.perspective.fov -
+                                  cobj->projection_param.perspective.aspect) -
+                       cobj->projection_param.perspective.fov),
+                     cobj->projection_param.frustum.left,
+                     cobj->projection_param.frustum.right, cobj->near,
+                     cobj->far);
             break;
         }
     }
@@ -436,28 +435,28 @@ static bool setupBottomHalfCamera(HSD_CObj* cobj)
                 tanf(DegToRad(0.5 * cobj->projection_param.perspective.fov));
             w = b * cobj->projection_param.perspective.aspect;
             t = b * (2.0f * hscale + -1.0f);
-            C_MTXFrustum(p, t, -b, -w, w, cobj->near, cobj->far);
+            MTXFrustum(p, t, -b, -w, w, cobj->near, cobj->far);
             break;
         case PROJ_FRUSTUM:
             projection_type = GX_PERSPECTIVE;
             h = (hscale * (cobj->projection_param.perspective.fov -
                            cobj->projection_param.perspective.aspect) +
                  cobj->projection_param.perspective.aspect);
-            C_MTXFrustum(p, h, cobj->projection_param.perspective.aspect,
-                         cobj->projection_param.frustum.left,
-                         cobj->projection_param.frustum.right, cobj->near,
-                         cobj->far);
-            break;
-        case PROJ_ORTHO:
-            projection_type = GX_ORTHOGRAPHIC;
-            C_MTXOrtho(p,
-                       (hscale * (cobj->projection_param.perspective.fov -
-                                  cobj->projection_param.perspective.aspect) +
-                        cobj->projection_param.perspective.aspect),
-                       cobj->projection_param.perspective.aspect,
+            MTXFrustum(p, h, cobj->projection_param.perspective.aspect,
                        cobj->projection_param.frustum.left,
                        cobj->projection_param.frustum.right, cobj->near,
                        cobj->far);
+            break;
+        case PROJ_ORTHO:
+            projection_type = GX_ORTHOGRAPHIC;
+            MTXOrtho(p,
+                     (hscale * (cobj->projection_param.perspective.fov -
+                                cobj->projection_param.perspective.aspect) +
+                      cobj->projection_param.perspective.aspect),
+                     cobj->projection_param.perspective.aspect,
+                     cobj->projection_param.frustum.left,
+                     cobj->projection_param.frustum.right, cobj->near,
+                     cobj->far);
             break;
         }
     }
@@ -477,7 +476,7 @@ void HSD_CObjSetupViewingMtx(HSD_CObj* cobj)
         HSD_CObjGetEyePosition(cobj, &eyepos);
         HSD_CObjGetUpVector(cobj, &up_vec);
         HSD_CObjGetInterest(cobj, &interest);
-        C_MTXLookAt(cobj->view_mtx, &eyepos, &up_vec, &interest);
+        MTXLookAt(cobj->view_mtx, &eyepos, &up_vec, &interest);
         HSD_WObjClearFlags(cobj->eyepos, 2);
         HSD_WObjClearFlags(cobj->interest, 2);
         HSD_CObjClearFlags(cobj, 0x40000000);
@@ -637,7 +636,7 @@ static float upvec2roll(HSD_CObj* cobj, Vec3* up)
         if (dot < FLT_MIN) {
             dot = 0.0f;
         } else {
-            C_MTXLookAt(vmtx, &orig, &uy, &eye);
+            MTXLookAt(vmtx, &orig, &uy, &eye);
             PSMTXMultVecSR(vmtx, up, &v);
             if (fabsf_bitwise(v.y) == 0.0f) {
                 dot = -v.x >= 0.0f ? 1.5707963267948966 : -1.5707963267948966;

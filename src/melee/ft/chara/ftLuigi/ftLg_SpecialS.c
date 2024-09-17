@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "forward.h"
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftLg_SpecialS.h"
 
@@ -19,6 +18,7 @@
 #include "ft/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 
 /// Luigi's Green Missile GFX callback

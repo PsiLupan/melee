@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftLg_SpecialHi.h"
 
@@ -17,6 +16,7 @@
 #include "ftCommon/ftCo_FallSpecial.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 // 0x80143FC8
 // https://decomp.me/scratch/MAoxx // Luigi's grounded Super Jump Punch Action

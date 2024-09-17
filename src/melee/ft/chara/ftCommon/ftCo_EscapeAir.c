@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_EscapeAir.h"
 
@@ -17,6 +16,7 @@
 #include "ftCommon/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 099D70 */ static void ftCo_80099D70(ftCo_GObj* gobj);
 

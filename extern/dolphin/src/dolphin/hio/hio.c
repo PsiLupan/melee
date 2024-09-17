@@ -1,35 +1,47 @@
+#include <macros.h>
 #include <dolphin/exi.h>
 #include <dolphin/hio.h>
-#include <dolphin/os.h>
 #include <dolphin/hw_regs.h>
-#include <macros.h>
+#include <dolphin/os.h>
 
 static s32 Chan = -1;
+static unsigned long Dev;
 static HIOCallback ExiCallback;
 static HIOCallback TxCallback;
 static HIOCallback RxCallback;
 
-static void ExtHandler(s32 chan, OSContext *context)
+static void ExtHandler(s32 chan, OSContext* context)
 {
     Chan = -1;
+    Dev = 0;
+    if ((chan < 2)) {
+        EXISetExiCallback(chan, NULL);
+        return;
+    }
 }
 
-static void ExiHandler(s32 chan, OSContext *context)
+static void ExiHandler(s32 chan, OSContext* context)
 {
     if (ExiCallback) {
         ExiCallback();
     }
 }
 
-static void DbgHandler(__OSInterrupt interrupt, OSContext *context)
+static void DbgHandler(__OSInterrupt interrupt, OSContext* context)
 {
+    OSContext exceptionContext;
+
     __PIRegs[0] = 0x1000;
     if (ExiCallback) {
+        OSClearContext(&exceptionContext);
+        OSSetCurrentContext(&exceptionContext);
         ExiCallback();
+        OSClearContext(&exceptionContext);
+        OSSetCurrentContext(context);
     }
 }
 
-static void TxHandler(s32 chan, OSContext *context)
+static void TxHandler(s32 chan, OSContext* context)
 {
     EXIDeselect(Chan);
     EXIUnlock(Chan);
@@ -38,7 +50,7 @@ static void TxHandler(s32 chan, OSContext *context)
     }
 }
 
-static void RxHandler(s32 chan, OSContext *context)
+static void RxHandler(s32 chan, OSContext* context)
 {
     EXIDeselect(Chan);
     EXIUnlock(Chan);
@@ -49,53 +61,25 @@ static void RxHandler(s32 chan, OSContext *context)
 
 BOOL HIOEnumDevices(HIOEnumCallback callback)
 {
-    int result;
     s32 chan;
-    int err;
-    u32 cmd;
     u32 id;
 
-    if (Chan == -1 && callback) {
-        result = 1;
-        for (chan = 0; chan <= 2; chan++) {
-            if (chan < 2) {
-                while (EXIProbeEx(chan) == 0) {
-                }
-                if (EXIAttach(chan, ExtHandler) == 0) {
-                    continue;
-                }
-            }
-            if (EXILock(chan, 0, 0) == 0) {
-                EXIDetach(chan);
-                continue;
-            }
-            if (EXISelect(chan, 0, 0) == 0) {
-                EXIUnlock(chan);
-                EXIDetach(chan);
-                continue;
-            }
-            cmd = 0;
-            err = 0;
-            err |= !EXIImm(chan, &cmd, 2, 1, 0);
-            err |= !EXISync(chan);
-            err |= !EXIImm(chan, &id, 4, 0, 0);
-            err |= !EXISync(chan);
-            err |= !EXIDeselect(chan);
-            EXIUnlock(chan);
-            if (err == 0 && id == 0x1010000) {
-                result = callback(chan);
-            }
-            if (chan < 2) {
-                EXIDetach(chan);
-            }
-            EXIUnlock(chan);
-            if (result == 0) {
-                return 1;
-            }
-        }
-        return 1;
+    if (Chan != -1 || callback == NULL) {
+        return 0;
     }
-    return 0;
+    Dev = 0;
+    for (chan = 0; chan <= 2; chan++) {
+        if (chan < 2) {
+            do {
+            } while (EXIProbeEx(chan) == 0);
+        }
+        if ((EXIGetID(chan, Dev, &id) != 0) &&
+            ((u32) (id + 0xFEFF0000) == 0U) && (callback(chan) == 0))
+        {
+            return 1;
+        }
+    }
+    return 1;
 }
 
 BOOL HIOInit(s32 chan, HIOCallback callback)
@@ -156,7 +140,7 @@ BOOL HIOInit(s32 chan, HIOCallback callback)
     return 1;
 }
 
-BOOL HIOReadMailbox(u32 *word)
+BOOL HIOReadMailbox(u32* word)
 {
     int err;
     u32 cmd;
@@ -206,7 +190,7 @@ BOOL HIOWriteMailbox(u32 word)
     return !err;
 }
 
-BOOL HIORead(u32 addr, void *buffer, s32 size)
+BOOL HIORead(u32 addr, void* buffer, s32 size)
 {
     int err;
     u32 cmd;
@@ -233,7 +217,7 @@ BOOL HIORead(u32 addr, void *buffer, s32 size)
     return !err;
 }
 
-BOOL HIOWrite(u32 addr, void *buffer, s32 size)
+BOOL HIOWrite(u32 addr, void* buffer, s32 size)
 {
     int err;
     u32 cmd;
@@ -260,7 +244,7 @@ BOOL HIOWrite(u32 addr, void *buffer, s32 size)
     return !err;
 }
 
-BOOL HIOReadAsync(u32 addr, void *buffer, s32 size, HIOCallback callback)
+BOOL HIOReadAsync(u32 addr, void* buffer, s32 size, HIOCallback callback)
 {
     int err;
     u32 cmd;
@@ -285,7 +269,7 @@ BOOL HIOReadAsync(u32 addr, void *buffer, s32 size, HIOCallback callback)
     return !err;
 }
 
-BOOL HIOWriteAsync(u32 addr, void *buffer, s32 size, HIOCallback callback)
+BOOL HIOWriteAsync(u32 addr, void* buffer, s32 size, HIOCallback callback)
 {
     int err;
     u32 cmd;
@@ -310,7 +294,7 @@ BOOL HIOWriteAsync(u32 addr, void *buffer, s32 size, HIOCallback callback)
     return !err;
 }
 
-BOOL HIOReadStatus(u32 *status)
+BOOL HIOReadStatus(u32* status)
 {
     int err;
     u32 cmd;

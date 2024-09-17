@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftNs_SpecialHi.h"
 
@@ -26,6 +25,7 @@
 
 #include <math.h>
 #include <math_ppc.h>
+#include <dolphin/mtx.h>
 #include <MetroTRK/intrinsics.h>
 
 // SpecialHi/SpecialAirHi (PK Thunder)

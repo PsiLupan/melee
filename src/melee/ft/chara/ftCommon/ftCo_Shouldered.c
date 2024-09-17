@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_Shouldered.h"
 
@@ -19,6 +18,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 #pragma force_active on
 

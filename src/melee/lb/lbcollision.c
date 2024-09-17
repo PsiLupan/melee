@@ -1332,8 +1332,8 @@ block_39:
         return 1;
     }
     // HSD_MtxInverse(arg6, (float(*)[4]) & sp9C[0]);
-    // PSMTXMUltiVec((float(*)[4]) & sp9C[0], arg4, (Vec3*) &sp11C);
-    // PSMTXMUltiVec((float(*)[4]) & sp9C[0], arg5, (Vec3*) &sp104);
+    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg4, (Vec3*) &sp11C);
+    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg5, (Vec3*) &sp104);
     temp_f1_9 = sp120 - sp108;
     temp_f4_10 = sp11C - sp104;
     temp_f2_7 = sp124 - sp10C;
@@ -1397,12 +1397,12 @@ void lbColl_800077A0(Vec3* a, MtxPtr arg1, Vec3* b, Vec3* c, Vec3* d, Vec3* e,
         normal_x.x = x;
         normal_x.y = 0.0f;
         normal_x.z = 0.0f;
-        PSMTXMUltiVec(arg1, &normal_x, &normal_x);
+        PSMTXMultVec(arg1, &normal_x, &normal_x);
 
         multi_mtx.x = 0.0f;
         multi_mtx.y = 0.0f;
         multi_mtx.z = 0.0f;
-        PSMTXMUltiVec(arg1, &multi_mtx, &multi_mtx);
+        PSMTXMultVec(arg1, &multi_mtx, &multi_mtx);
 
         {
             float dist = sqrDistance(&normal_x, &multi_mtx);
@@ -2084,8 +2084,8 @@ bool lbColl_8000A584(HurtCapsule* hurt, u32 arg1, u32 arg2, Mtx arg3, f32 arg8)
                 var_r28 = HSD_JObjGetMtxPtr(hurt->bone);
             }
             HSD_MtxInverse(var_r28, sp40);
-            PSMTXMUltiVec(sp40, &sp94, &sp28);
-            PSMTXMUltiVec(sp40, &sp88, &sp34);
+            PSMTXMultVec(sp40, &sp94, &sp28);
+            PSMTXMultVec(sp40, &sp88, &sp34);
             lbColl_800096B4(var_r28, sp28, sp34, temp_r3, temp_r31_2,
                             temp_f31);
             return 1;
@@ -2163,8 +2163,8 @@ bool lbColl_8000A244(HurtCapsule* hurt, u32 arg1, Mtx arg2, float arg3)
             var_r28 = HSD_JObjGetMtxPtr(hurt->bone);
         }
         HSD_MtxInverse(var_r28, sp3C);
-        PSMTXMUltiVec(sp3C, &sp90, &sp6C);
-        PSMTXMUltiVec(sp3C, &sp84, &sp78);
+        PSMTXMultVec(sp3C, &sp90, &sp6C);
+        PSMTXMultVec(sp3C, &sp84, &sp78);
         lbColl_800096B4(var_r28, sp6C, sp78, temp_r3, (u8*) temp_r31_2,
                         temp_f31);
         return 1;
@@ -2209,8 +2209,8 @@ bool lbColl_8000A95C(HitResult* hit, u32 arg1, Mtx arg2, f32 pos_z)
             var_r31 = HSD_JObjGetMtxPtr(hit->bone);
         }
         HSD_MtxInverse(var_r31, sp3C);
-        PSMTXMUltiVec(sp3C, &sp90, &sp24);
-        PSMTXMUltiVec(sp3C, &sp84, &sp30);
+        PSMTXMultVec(sp3C, &sp90, &sp24);
+        PSMTXMultVec(sp3C, &sp84, &sp30);
         lbColl_800096B4(var_r31, sp24, sp30, lbColl_804D36CC, lbColl_804D36D0,
                         temp_f31);
         return 1;

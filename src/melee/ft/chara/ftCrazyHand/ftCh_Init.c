@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCrazyHand/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCh_Init.h"
 
@@ -15,6 +14,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 MotionState ftCh_Init_MotionStateTable[ftCh_MS_SelfCount] = {
     {

@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftNess/ftNs_SpecialN.h"
 
@@ -19,6 +18,7 @@
 #include "lb/lb_00B0.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 // SpecialN/SpecialAirN (PK Flash)
 #define FTNESS_SPECIALN_COLL_FLAG                                             \

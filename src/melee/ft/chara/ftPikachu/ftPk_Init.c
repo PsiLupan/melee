@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftPk_Init.h"
 
@@ -15,6 +14,8 @@
 #include "ft/inlines.h"
 #include "ft/types.h"
 #include "it/it_26B1.h"
+
+#include <dolphin/mtx.h>
 
 MotionState ftPk_Init_MotionStateTable[ftPk_MS_SelfCount] = {
     {

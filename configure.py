@@ -255,10 +255,16 @@ cflags_runtime = [
 
 includes_base = ["src"]
 
+dolphin_includes = [
+    "extern/dolphin/include",
+    "extern/dolphin/include/libc",
+]
+
 system_includes_base = [
     "src",
     "src/MSL",
     "src/Runtime",
+    *dolphin_includes,
     f"build/{config.version}/include",
 ]
 
@@ -322,15 +328,12 @@ def DolphinLib(
             "-warn pragmas",
             "-requireprotos",
             '-pragma "cats off"',
-            "-I-",
-            "-Iextern/dolphin/include",
-            "-Iextern/dolphin/include/libc",
-            "-ir extern/dolphin/src",
+            '-ir extern/dolphin/src',
             "-DRELEASE",
         ]
         src_dir = "extern/dolphin/src"
         includes = []
-        system_includes = []
+        system_includes = [*dolphin_includes]
     else:
         cflags = cflags_base
         src_dir = None
@@ -359,7 +362,6 @@ def SysdolphinLib(lib_name: str, objects: Objects) -> Library:
         ],
         system_includes=[
             *system_includes_base,
-            "src/dolphin",
         ],
         category="hsd",
     )
@@ -376,7 +378,6 @@ def MeleeLib(lib_name: str, objects: Objects) -> Library:
         ],
         system_includes=[
             *system_includes_base,
-            "src/dolphin",
             "src/sysdolphin",
         ],
         category="game",
@@ -1239,19 +1240,23 @@ config.libs = [
         [
             Object(NonMatching, "dolphin/OdemuExi2/DebuggerDriver.c"),
         ],
+        extern=True,
     ),
-    Lib(
+    DolphinLib(
         "hio",
         [
-            Object(Matching, "dolphin/hio/hio.c"),
+            Object(NonMatching, "dolphin/hio/hio.c"),
         ],
+        fix_epilogue=True,
+        extern=True,
     ),
     DolphinLib(
         "mcc",
         [
             Object(NonMatching, "dolphin/mcc/mcc.c"),
-            Object(NonMatching, "dolphin/mcc/fio.c"),
+            Object(Matching, "dolphin/mcc/fio.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "thp",
@@ -1318,11 +1323,13 @@ config.libs = [
             Object(Matching, "dolphin/mtx/mtx44.c"),
             Object(NonMatching, "dolphin/mtx/vec.c"),
         ],
+        fix_epilogue=True,
+        extern=True,
     ),
     DolphinLib(
         "os",
         [
-            Object(Matching, "dolphin/os/OSInit.c"),
+            Object(NonMatching, "dolphin/os/OS.c"),
             Object(Matching, "dolphin/os/OSAlarm.c"),
             Object(Matching, "dolphin/os/OSAlloc.c"),
             Object(Matching, "dolphin/os/OSArena.c"),
@@ -1330,23 +1337,24 @@ config.libs = [
             Object(Matching, "dolphin/os/OSCache.c"),
             Object(Matching, "dolphin/os/OSContext.c"),
             Object(Matching, "dolphin/os/OSError.c"),
-            Object(Matching, "dolphin/os/OSExi.c"),
+            Object(NonMatching, "dolphin/os/OSExi.c"),
             Object(Matching, "dolphin/os/OSFont.c"),
             Object(Matching, "dolphin/os/OSInterrupt.c"),
             Object(Matching, "dolphin/os/OSLink.c"),
-            Object(Matching, "dolphin/os/OSMemory.c"),
+            Object(NonMatching, "dolphin/os/OSMemory.c"),
             Object(Matching, "dolphin/os/OSMutex.c"),
             Object(NonMatching, "dolphin/os/OSReboot.c"),
             Object(NonMatching, "dolphin/os/OSReset.c"),
-            Object(Matching, "dolphin/os/OSResetSW.c"),
-            Object(Matching, "dolphin/os/OSRtc.c"),
+            Object(NonMatching, "dolphin/os/OSResetSW.c"),
+            Object(NonMatching, "dolphin/os/OSRtc.c"),
             Object(NonMatching, "dolphin/os/OSSerial.c"),
             Object(Matching, "dolphin/os/OSSync.c"),
-            Object(NonMatching, "dolphin/os/OSThread.c"),
+            Object(Matching, "dolphin/os/OSThread.c"),
             Object(Matching, "dolphin/os/OSTime.c"),
-            Object(NonMatching, "dolphin/os/OSUartExi.c"),
-            Object(NonMatching, "dolphin/os/init/__ppc_eabi_init.c"),
+            Object(Matching, "dolphin/os/OSUartExi.c"),
+            Object(Matching, "dolphin/os/__ppc_eabi_init.c"),
         ],
+        extern=True,
     ),
     DolphinLib(
         "pad",

@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ft/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_MissFoot.h"
 
@@ -12,6 +11,7 @@
 #include "ft/ftcommon.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 void ftCo_8009F39C(ftCo_GObj* gobj)
 {

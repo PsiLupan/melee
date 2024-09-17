@@ -2,7 +2,6 @@
 #define INCLUDE_SYSDOLPHIN_BASELIB_QUATLIB_H
 
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include <dolphin/mtx.h>
 

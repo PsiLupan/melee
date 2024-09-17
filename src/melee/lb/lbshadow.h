@@ -2,8 +2,9 @@
 #define GALE01_00E9F0
 
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
+
+#include <dolphin/mtx.h>
 
 /* 00E9F0 */ void lbShadow_8000E9F0(Vec3*, s32, f32);
 /* 00ED54 */ void lbShadow_8000ED54(s32*, HSD_JObj*);

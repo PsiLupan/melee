@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftMs_SpecialHi.h"
 
@@ -14,6 +13,7 @@
 #include "ftMars/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 // 80138208 00134DE8
 // https://decomp.me/scratch/lrV6F

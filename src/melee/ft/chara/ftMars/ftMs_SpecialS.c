@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftMs_SpecialS.h"
 
@@ -14,6 +13,7 @@
 #include "ftMars/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 #include <baselib/debug.h>
 
 void ftMs_SpecialS_Enter(HSD_GObj* gobj)

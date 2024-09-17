@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ft/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftCo_Guard.h"
@@ -45,6 +44,7 @@
 #include <math.h>
 #include <math_ppc.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 #include <baselib/jobj.h>
 

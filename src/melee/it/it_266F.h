@@ -4,12 +4,12 @@
 #include <platform.h>
 #include "ft/forward.h"
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "it/types.h"
 
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 typedef void (*ItCallback)(HSD_GObj*);
 

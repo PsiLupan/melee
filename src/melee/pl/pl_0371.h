@@ -3,10 +3,10 @@
 
 #include <platform.h>
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 /* 037C60 */ void pl_80037C60(HSD_GObj*, s32);
 /* 037ECC */ void pl_80037ECC(void);

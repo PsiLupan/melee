@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ft/forward.h"
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_AttackAir.h"
 
@@ -23,6 +22,7 @@
 #include "it/it_26B1.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 08CE0C */ static void decideFighter(ftCo_GObj* gobj);
 

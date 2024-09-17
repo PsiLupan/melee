@@ -1,8 +1,9 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "objalloc.h"
+
+#include <dolphin/mtx.h>
 
 /* 004DB670 */ extern const s32 HSD_SObjLib_804DEA90;
 /* 004DB66C */ extern const s32 HSD_SObjLib_804DEA8C;

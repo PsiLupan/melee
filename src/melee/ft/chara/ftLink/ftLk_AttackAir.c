@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
 #include "lb/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftLk_AttackAir.h"
@@ -16,6 +15,7 @@
 #include "ftLink/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 0EB484 */ static void lwOnHit(HSD_GObj* gobj);
 /* 0EB528 */ static void lwOnAnim(HSD_GObj* gobj);

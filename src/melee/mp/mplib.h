@@ -3,13 +3,13 @@
 
 #include <platform.h>
 #include "mp/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ft/types.h"
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 
 /* 04D17C */ int mpLib_8004D17C(void);
 /* 04D288 */ void mpLib_8004D288(UNK_T);

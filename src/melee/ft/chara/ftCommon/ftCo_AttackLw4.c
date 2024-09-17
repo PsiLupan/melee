@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_AttackLw4.h"
 
@@ -16,6 +15,7 @@
 #include "ftNess/ftNs_AttackLw4.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 08CC5C */ static void doEnter(ftCo_GObj* gobj);
 

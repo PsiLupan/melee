@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_0C35.h"
 
@@ -13,6 +12,7 @@
 #include <common_structs.h>
 #include <math.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 #include <MSL/trigf.h>
 

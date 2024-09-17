@@ -122,7 +122,7 @@ void lb_8000B1CC(HSD_JObj* arg0, Vec3* arg1, Vec3* arg2)
             arg2->y = arg0->mtx[1][3];
             arg2->z = arg0->mtx[2][3];
         } else {
-            PSMTXMUltiVec(arg0->mtx, arg1, arg2);
+            PSMTXMultVec(arg0->mtx, arg1, arg2);
         }
         return;
     }
@@ -140,7 +140,7 @@ void lb_8000B1CC(HSD_JObj* arg0, Vec3* arg1, Vec3* arg2)
         return;
     }
     HSD_JObjSetupMatrix(arg0);
-    PSMTXMUltiVec(arg0->mtx, arg1, arg2);
+    PSMTXMultVec(arg0->mtx, arg1, arg2);
 }
 
 void lb_8000B4FC(HSD_JObj* jobj, HSD_Joint* joint)

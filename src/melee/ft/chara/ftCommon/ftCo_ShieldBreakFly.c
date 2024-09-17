@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftCo_ShieldBreakFly.h"
@@ -15,6 +14,8 @@
 #include "ft/ftcommon.h"
 #include "ft/types.h"
 #include "ftCommon/inlines.h"
+
+#include <dolphin/mtx.h>
 
 void ftCo_80098B20(Fighter_GObj* gobj)
 {

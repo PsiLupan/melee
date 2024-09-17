@@ -1,11 +1,10 @@
-#include <dolphin/mtx/forward.h>
-
 #include "itstar.h"
 
 #include "it/inlines.h"
 #include "it/itCommonItems.h"
 #include "it/types.h"
 
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 #include <melee/it/it_266F.h>
 #include <melee/it/it_26B1.h>

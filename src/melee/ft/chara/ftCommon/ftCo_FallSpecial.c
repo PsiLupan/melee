@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_FallSpecial.h"
 
@@ -20,6 +19,7 @@
 
 #include <common_structs.h>
 #include <math.h>
+#include <dolphin/mtx.h>
 
 void ftCo_800968C8(ftCo_GObj* gobj)
 {

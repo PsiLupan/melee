@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftMt_SpecialS.h"
 
@@ -16,6 +15,8 @@
 #include "ftCommon/ftCo_CaptureMewtwo.h"
 #include "ftCommon/ftCo_DamageFall.h"
 #include "ftMewtwo/types.h"
+
+#include <dolphin/mtx.h>
 
 // Flag values read during Confusion's reflect think function
 

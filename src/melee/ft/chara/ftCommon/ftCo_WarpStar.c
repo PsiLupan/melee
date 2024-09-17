@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_WarpStar.h"
 
@@ -21,6 +20,7 @@
 #include "mp/mpcoll.h"
 
 #include <math.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 #include <baselib/jobj.h>
 

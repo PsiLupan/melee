@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_HammerWalk.h"
 
@@ -13,6 +12,8 @@
 #include "ft/ftwalkcommon.h"
 #include "ft/types.h"
 #include "ftCommon/types.h"
+
+#include <dolphin/mtx.h>
 
 /* 0C5614 */ static void ftCo_800C5614(ftCo_GObj* gobj);
 

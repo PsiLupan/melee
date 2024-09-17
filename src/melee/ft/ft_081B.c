@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ft/ft_081B.h"
 
@@ -11,6 +10,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 
 void ft_80081B38(HSD_GObj* arg0)

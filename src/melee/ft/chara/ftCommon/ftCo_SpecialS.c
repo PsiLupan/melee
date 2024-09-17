@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftCo_SpecialS.h"
@@ -13,6 +12,7 @@
 #include "ft/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 0960CC */ static void doEnter(ftCo_GObj* gobj);
 

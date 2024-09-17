@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ft/forward.h"
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ft_0BEC.h"
 
@@ -14,6 +13,8 @@
 #include "it/items/itdrmariopill.h"
 #include "it/items/itfoxblaster.h"
 #include "it/items/itnessbat.h"
+
+#include <dolphin/mtx.h>
 
 static inline void setupInitialState(Fighter* fp)
 {

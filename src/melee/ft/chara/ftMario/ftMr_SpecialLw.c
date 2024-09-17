@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftMr_SpecialLw.h"
 
@@ -21,6 +20,7 @@
 #include "lb/lbrefract.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 static void updateRot(HSD_GObj* gobj)
 {

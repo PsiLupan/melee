@@ -3,11 +3,11 @@
 
 #include <platform.h>
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ft/types.h"
 
+#include <dolphin/mtx.h>
 #include <baselib/objalloc.h>
 
 struct ItemStateDesc;

@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ft/forward.h"
 #include "it/forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftpickupitem.h"
 
@@ -29,6 +28,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/debug.h>
 #include <baselib/gobj.h>

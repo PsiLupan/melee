@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "forward.h"
-#include <dolphin/mtx/forward.h>
 
 #include "ftMt_SpecialLw.h"
 
@@ -16,6 +15,8 @@
 #include "ftMewtwo/types.h"
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
+
+#include <dolphin/mtx.h>
 
 // SpecialLw/SpecialAirLw
 

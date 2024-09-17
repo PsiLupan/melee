@@ -1,5 +1,3 @@
-#include <dolphin/mtx/forward.h>
-
 #include "itparasol.h"
 
 #include "it/inlines.h"
@@ -8,6 +6,7 @@
 #include "it/item.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 #include <baselib/jobj.h>
 

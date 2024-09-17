@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/mtx/forward.h>
 
 #include "ftCo_CliffClimb.h"
 
@@ -19,6 +18,7 @@
 #include "mp/mplib.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 /* 09AAFC */ static bool ftCo_8009AAFC(ftCo_GObj* gobj, bool arg1,
                                        float stick_x, float stick_angle);

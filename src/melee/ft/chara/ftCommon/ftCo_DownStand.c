@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ft/forward.h"
-#include <dolphin/mtx/forward.h>
 #include <baselib/forward.h>
 
 #include "ftCo_DownStand.h"
@@ -13,6 +12,7 @@
 #include "ft/types.h"
 
 #include <common_structs.h>
+#include <dolphin/mtx.h>
 
 bool ftCo_800980BC(Fighter_GObj* gobj)
 {

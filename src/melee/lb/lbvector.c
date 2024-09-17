@@ -391,9 +391,9 @@ Vec3* lbVector_WorldToScreen(HSD_CObj* cobj, const Vec3* pos3d,
     point = *pos3d;
     switch (HSD_CObjGetProjectionType(cobj)) {
     case PROJ_PERSPECTIVE:
-        C_MTXPerspective(projMtx, cobj->projection_param.perspective.fov,
-                         cobj->projection_param.perspective.aspect, cobj->near,
-                         cobj->far);
+        MTXPerspective(projMtx, cobj->projection_param.perspective.fov,
+                       cobj->projection_param.perspective.aspect, cobj->near,
+                       cobj->far);
         projection[0] = 0.0f;
         projection[1] = projMtx[0][0];
         projection[2] = projMtx[0][2];
@@ -403,10 +403,10 @@ Vec3* lbVector_WorldToScreen(HSD_CObj* cobj, const Vec3* pos3d,
         projection[6] = projMtx[2][3];
         break;
     case PROJ_ORTHO:
-        C_MTXOrtho(projMtx, cobj->projection_param.ortho.top,
-                   cobj->projection_param.ortho.bottom,
-                   cobj->projection_param.ortho.left,
-                   cobj->projection_param.ortho.right, cobj->near, cobj->far);
+        MTXOrtho(projMtx, cobj->projection_param.ortho.top,
+                 cobj->projection_param.ortho.bottom,
+                 cobj->projection_param.ortho.left,
+                 cobj->projection_param.ortho.right, cobj->near, cobj->far);
         projection[0] = 1.0f;
         projection[1] = projMtx[0][0];
         projection[2] = projMtx[0][3];
@@ -430,7 +430,7 @@ Vec3* lbVector_WorldToScreen(HSD_CObj* cobj, const Vec3* pos3d,
         HSD_CObjGetEyePosition(cobj, &camPos);
         HSD_CObjGetUpVector(cobj, &upVec);
         HSD_CObjGetInterest(cobj, &target);
-        C_MTXLookAt(m, &camPos, &upVec, &target);
+        MTXLookAt(m, &camPos, &upVec, &target);
         mvMtx = m;
     } else {
         mvMtx = HSD_CObjGetViewingMtxPtr(cobj);
