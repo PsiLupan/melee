@@ -40,7 +40,7 @@
 /* 095530 */ static UNK_RET ftCo_80095990(UNK_PARAMS);
 /* 095540 */ static UNK_RET ftCo_800959A0(UNK_PARAMS);
 /* 0955D0 */ static void ftCo_80095A30(ftCo_GObj* gobj);
-/* 0958FC */ static void ftCo_80095D5C(ftCo_Fighter* fp, Vec3* arg1);
+/* 0958FC */ static void ftCo_80095D5C(ftCo_Fighter* fp, Vec* arg1);
 /* 095A9C */ static void ftCo_80095EFC(ftCo_GObj* gobj);
 
 /* static */ float const ftCo_804D8590 = 0;
@@ -367,7 +367,7 @@ void ftCo_80095700(ftCo_GObj* gobj, enum_t arg1)
 
 void ftCo_80095744(ftCo_GObj* gobj, int* arg1)
 {
-    Vec3 vec;
+    Vec vec;
     u8 _[4] = { 0 };
     ftCo_Fighter* fp = gobj->user_data;
     vec.x = vec.y = vec.z = 0;
@@ -568,7 +568,7 @@ void ftCo_80095A30(HSD_GObj* gobj)
     ftCo_800957F4(gobj, var_r29);
 }
 
-void ftCo_80095D5C(Fighter* fp, Vec3* arg1)
+void ftCo_80095D5C(Fighter* fp, Vec* arg1)
 {
     float vel;
     float angle;
@@ -615,10 +615,10 @@ void ftCo_80095EFC(ftCo_GObj* gobj)
     ftCo_Fighter* fp = gobj->user_data;
     Item_GObj* item_gobj = fp->item_gobj;
     if (item_gobj != NULL) {
-        Vec3 vec0;
+        Vec vec0;
         lb_8000B1CC(it_80272C90(item_gobj), NULL, &vec0);
         if (ftCheckThrowB3(fp)) {
-            Vec3 vec1;
+            Vec vec1;
             ftCo_80095D5C(fp, &vec1);
             {
                 u32 cmd_var1 = fp->cmd_vars[1];
@@ -637,7 +637,7 @@ void ftCo_80095EFC(ftCo_GObj* gobj)
                                   float*, -0x460);
                     float temp_f4 = var_f4 * temp_f2;
                     {
-                        Vec3 vec2;
+                        Vec vec2;
                         vec2.x = fsm * (fp->mv.co.itemthrow4.x8.x - vec0_x) +
                                  vec0_x;
                         {

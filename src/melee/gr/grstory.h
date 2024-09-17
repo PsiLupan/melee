@@ -25,6 +25,6 @@
 /* 1E3414 */ void grStory_801E3414(HSD_GObj*);
 /* 1E3418 */ void grStory_801E3418(HSD_GObj*);
 /* 1E366C */ void grStory_801E366C(HSD_GObj*);
-/* 1E36D8 */ bool grStory_801E36D8(Vec3*, int, HSD_JObj*);
+/* 1E36D8 */ bool grStory_801E36D8(Vec*, int, HSD_JObj*);
 
 #endif

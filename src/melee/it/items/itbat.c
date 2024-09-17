@@ -17,7 +17,7 @@ ItemStateTable it_803F57B0[] = {
     { -1, it_80284C38, it_80284C40, it_80284C44 },
 };
 
-Item_GObj* it_80284854(Vec3* pos)
+Item_GObj* it_80284854(Vec* pos)
 {
     SpawnItem spawn;
     Item_GObj* item_gobj = NULL;

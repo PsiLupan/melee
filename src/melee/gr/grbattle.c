@@ -14,7 +14,7 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/debug.h>
 #include <baselib/gobjgxlink.h>
@@ -56,7 +56,7 @@ static bool grBattle_8021A3B4(HSD_GObj*);
 static void grBattle_8021A3BC(HSD_GObj*);
 static void grBattle_8021A60C(HSD_GObj*);
 static DynamicsDesc* grBattle_8021A610(enum_t);
-static bool grBattle_8021A618(Vec3*, int, HSD_JObj*);
+static bool grBattle_8021A618(Vec*, int, HSD_JObj*);
 
 extern StageInfo stage_info;
 
@@ -211,7 +211,7 @@ static HSD_GObj* grBattle_80219D84(int gobj_id)
 
 static void grBattle_80219E6C(HSD_GObj* gobj)
 {
-    Vec3 v;
+    Vec v;
     Ground* gp = gobj->user_data;
     enum_t id = gp->map_id;
 
@@ -435,7 +435,7 @@ static DynamicsDesc* grBattle_8021A610(enum_t arg0)
     return NULL;
 }
 
-static bool grBattle_8021A618(Vec3* arg0, int arg1, HSD_JObj* arg2)
+static bool grBattle_8021A618(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

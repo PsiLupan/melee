@@ -206,7 +206,7 @@ void ftMt_SpecialAirLw_Coll(HSD_GObj* gobj)
 // https://decomp.me/scratch/rAoIe // Create Disable projectile
 void ftMt_SpecialLw_CreateDisable(HSD_GObj* gobj)
 {
-    Vec3 sp18;
+    Vec sp18;
     Fighter* fp = getFighter(gobj);
     ftMewtwoAttributes* mewtwoAttrs;
 

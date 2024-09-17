@@ -9,8 +9,7 @@
 #include "robj.h"
 #include "spline.h"
 
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void WObjInfoInit(void);
 
@@ -49,7 +48,7 @@ void HSD_WObjAddAnim(HSD_WObj* wobj, HSD_WObjAnim* anim)
 static void WObjUpdateFunc(void* obj, enum_t type, HSD_ObjData* val)
 {
     HSD_WObj* wobj;
-    Vec3 p;
+    Vec p;
     HSD_JObj* jp;
 
     wobj = obj;
@@ -150,7 +149,7 @@ HSD_WObj* HSD_WObjLoadDesc(HSD_WObjDesc* desc)
     return NULL;
 }
 
-void HSD_WObjSetPosition(HSD_WObj* wobj, Vec3* pos)
+void HSD_WObjSetPosition(HSD_WObj* wobj, Vec* pos)
 {
     if (wobj == NULL || pos == NULL) {
         return;
@@ -215,7 +214,7 @@ void HSD_WObjSetPositionZ(HSD_WObj* wobj, f32 val)
     }
 }
 
-void HSD_WObjGetPosition(HSD_WObj* wobj, Vec3* vec)
+void HSD_WObjGetPosition(HSD_WObj* wobj, Vec* vec)
 {
     HSD_JObj* jp;
 

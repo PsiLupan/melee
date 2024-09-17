@@ -25,8 +25,8 @@ void ftNs_SpecialS_ItemPKFireSpawn(
     Fighter* fp = GET_FIGHTER(gobj);
     ftNessAttributes* ness_attr = fp->dat_attrs;
     bool FlagResult;
-    Vec3 ItemBonePos;
-    Vec3 PKFireVelStruct;
+    Vec ItemBonePos;
+    Vec PKFireVelStruct;
     float PKFireLaunchNew;
 
     u8 _[4];

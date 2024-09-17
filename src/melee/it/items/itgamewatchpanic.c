@@ -13,7 +13,7 @@
 ItemStateTable it_803F79A0[] = { { 0, it_802C7FAC, NULL, NULL },
                                  { 1, it_802C7FAC, NULL, NULL } };
 
-HSD_GObj* it_802C7D60(Item_GObj* parent, Vec3* pos, Fighter_Part arg2, f32 dir)
+HSD_GObj* it_802C7D60(Item_GObj* parent, Vec* pos, Fighter_Part arg2, f32 dir)
 {
     SpawnItem spawn_item;
     HSD_GObj* gobj;

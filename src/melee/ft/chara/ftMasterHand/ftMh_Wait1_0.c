@@ -33,7 +33,7 @@
 #include "pl/player.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/controller.h>
 #include <baselib/random.h>
 
@@ -216,7 +216,7 @@ void ftMh_Wait1_0_Anim(HSD_GObj* gobj)
     } else {
         if (--fp->fv.mh.x223C < 0) {
             ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
-            Vec3 vec;
+            Vec vec;
 
             u8 _[20];
 
@@ -376,7 +376,7 @@ void ftMh_MS_341_80150894(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
-    Vec3 pos;
+    Vec pos;
     u32 l_pressed = buttons & HSD_PAD_L;
     // why just l_pressed and not temps for the others?
 

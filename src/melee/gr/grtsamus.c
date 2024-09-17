@@ -10,7 +10,7 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
@@ -34,7 +34,7 @@
 /* 223830 */ static void grTSamus_80223830(HSD_GObj*);
 /* 223850 */ static void grTSamus_80223850(HSD_GObj*);
 /* 223854 */ static DynamicsDesc* grTSamus_80223854(enum_t);
-/* 22385C */ static bool grTSamus_8022385C(Vec3*, int, HSD_JObj*);
+/* 22385C */ static bool grTSamus_8022385C(Vec*, int, HSD_JObj*);
 
 static StageCallbacks grTSs_803E93F8[] = {
     {
@@ -187,7 +187,7 @@ DynamicsDesc* grTSamus_80223854(enum_t arg0)
     return NULL;
 }
 
-bool grTSamus_8022385C(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTSamus_8022385C(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

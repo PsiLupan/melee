@@ -29,10 +29,10 @@
 #include <baselib/debug.h>
 #include <melee/it/items/itfoxlaser.h>
 
-void ftFx_SpecialN_FtGetHoldJoint(HSD_GObj* gobj, Vec3* pos)
+void ftFx_SpecialN_FtGetHoldJoint(HSD_GObj* gobj, Vec* pos)
 {
     /// @todo Shared @c inline with #ftFx_SpecialN_ItGetHoldJoint.
-    Vec3 sp14;
+    Vec sp14;
 
     // Double fp init otherwise this will not match when inlined
     Fighter* fp = fp = GET_FIGHTER(gobj);
@@ -45,9 +45,9 @@ void ftFx_SpecialN_FtGetHoldJoint(HSD_GObj* gobj, Vec3* pos)
                 pos);
 }
 
-void ftFx_SpecialN_ItGetHoldJoint(HSD_GObj* gobj, Vec3* pos)
+void ftFx_SpecialN_ItGetHoldJoint(HSD_GObj* gobj, Vec* pos)
 {
-    Vec3 sp14;
+    Vec sp14;
     Fighter* fp = fp = GET_FIGHTER(gobj);
 
     sp14.x = 0;
@@ -185,7 +185,7 @@ void ftFx_SpecialN_CreateBlasterShot(HSD_GObj* gobj)
     /** @todo Shared @c inline with #ftFx_SpecialNLoop_Anim and
      * #ftFx_SpecialAirNLoop_Anim.
      */
-    Vec3 sp2C;
+    Vec sp2C;
 
     u8 _[4];
 
@@ -374,7 +374,7 @@ void ftFx_SpecialNLoop_Anim(HSD_GObj* gobj)
         ftFox_SpecialN_SetCall(gobj);
     }
     {
-        Vec3 sp2C;
+        Vec sp2C;
         ftFox_DatAttrs* da;
         Fighter* fp;
         f64 launchAngle;
@@ -518,7 +518,7 @@ void ftFx_SpecialAirNLoop_Anim(HSD_GObj* gobj)
         ftFox_SpecialN_SetCall(gobj);
     }
     {
-        Vec3 sp2C;
+        Vec sp2C;
         ftFox_DatAttrs* da;
         Fighter* fp;
 
@@ -781,8 +781,8 @@ void ftFx_Throw_Anim(HSD_GObj* gobj)
                     flag = false;
                 }
                 if (flag != false) {
-                    Vec3 sp50;
-                    Vec3 sp44;
+                    Vec sp50;
+                    Vec sp44;
 
                     ftFx_SpecialN_FtGetHoldJoint(gobj, &sp50);
                     ftFx_SpecialN_ItGetHoldJoint(gobj, &sp44);

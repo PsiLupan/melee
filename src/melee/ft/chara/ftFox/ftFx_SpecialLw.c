@@ -20,7 +20,7 @@
 #include "lb/lb_00F9.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 #define FTFOX_SPECIALLW_COLL_FLAG                                             \
     Ft_MF_KeepGfx | Ft_MF_SkipMatAnim | Ft_MF_UpdateCmd | Ft_MF_SkipColAnim | \
@@ -860,7 +860,7 @@ void ftFx_SpecialLwHit_SetCall(HSD_GObj* gobj)
 // handler
 void ftFx_SpecialLwHit_Enter(HSD_GObj* gobj)
 {
-    Vec3 sp14;
+    Vec sp14;
     Fighter* fp = fp = GET_FIGHTER(gobj);
     s32 msid;
 

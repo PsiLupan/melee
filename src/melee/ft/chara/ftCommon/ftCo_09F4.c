@@ -85,7 +85,7 @@ void ftCo_8009F5AC(Fighter* fp)
     }
     if (fp->x2221_b3) {
         {
-            Vec3 position;
+            Vec position;
             float angle_yz = data->lobj_rot_yz * deg_to_rad;
             float angle_x = data->lobj_rot_x * deg_to_rad *
                             HSD_JObjGetRotationY(GET_JOBJ(fp->gobj)) / M_PI_2;

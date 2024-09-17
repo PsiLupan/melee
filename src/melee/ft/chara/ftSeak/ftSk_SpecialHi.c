@@ -46,7 +46,7 @@ void ftSk_SpecialHi_80112F48(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
     u8 _[4];
     {
-        Vec3 pos;
+        Vec pos;
         u8 _[4];
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, 0, &pos);
         pos.z = 0;
@@ -57,7 +57,7 @@ void ftSk_SpecialHi_80112F48(HSD_GObj* gobj)
 void ftSk_SpecialHi_80112FA8(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     lb_8000B1CC(fp->parts[FtPart_HipN].joint, 0, &pos);
     if (!fp->x2219_b0) {
         efSync_Spawn(1284, gobj, &pos);
@@ -70,7 +70,7 @@ void ftSk_SpecialHi_80112FA8(HSD_GObj* gobj)
 void fn_80113038(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     if (!fp->x2219_b0) {
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, 0, &pos);
         efSync_Spawn(1285, gobj, &pos);

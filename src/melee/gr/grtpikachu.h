@@ -26,6 +26,6 @@ bool grTPikachu_80223124(HSD_GObj*);
 void grTPikachu_8022312C(HSD_GObj*);
 void grTPikachu_8022314C(HSD_GObj*);
 DynamicsDesc* grTPikachu_80223150(int);
-bool grTPikachu_80223158(Vec3*, int, HSD_JObj*);
+bool grTPikachu_80223158(Vec*, int, HSD_JObj*);
 
 #endif

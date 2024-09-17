@@ -6,8 +6,8 @@
 #include "it/inlines.h"
 #include "it/items/types.h"
 
-/* 28F9D8 */ void it_8028F9D8(Item_GObj* arg0, Vec3* arg1, f32 arg8);
-/* 28FAF4 */ HSD_GObj* it_8028FAF4(Item_GObj* arg0, Vec3* arg1);
+/* 28F9D8 */ void it_8028F9D8(Item_GObj* arg0, Vec* arg1, f32 arg8);
+/* 28FAF4 */ HSD_GObj* it_8028FAF4(Item_GObj* arg0, Vec* arg1);
 /* 28FBE4 */ void it_8028FBE4(Item_GObj* arg0);
 /* 28FC5C */ void it_8028FC5C(HSD_GObj* arg0);
 /* 28FD7C */ void it_8028FD7C(Item_GObj* arg0);

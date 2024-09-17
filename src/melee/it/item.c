@@ -174,7 +174,7 @@ static void ItUnkHoldKind(HSD_GObj* gobj)
     }
 }
 
-static void HSD_JObjSetScaleItem(Item* it, HSD_JObj* jobj, Vec3* scl)
+static void HSD_JObjSetScaleItem(Item* it, HSD_JObj* jobj, Vec* scl)
 {
     scl->x = scl->y = scl->z = it->scl;
     HSD_JObjSetScale(jobj, scl);
@@ -864,7 +864,7 @@ void Item_8026849C(HSD_GObj* gobj)
     HSD_JObj* temp_jobj = (HSD_JObj*) HSD_GObjGetHSDObj(gobj);
     Item* item_data = (Item*) HSD_GObjGetUserData(gobj);
     f32 tmp = item_data->scl;
-    Vec3 sp14;
+    Vec sp14;
     sp14.x = sp14.y = sp14.z = tmp;
     HSD_JObjSetScale(temp_jobj, &sp14);
 }
@@ -1163,8 +1163,8 @@ extern struct r13_ColAnimStruct* it_804D6D04;
 
 void Item_80268E5C(HSD_GObj* gobj, enum_t msid, Item_StateChangeFlags flags)
 {
-    Vec3 sp4C;
-    Vec3 scl;
+    Vec sp4C;
+    Vec scl;
     ItemStateTable* temp_r30;
     ItemStateDesc* temp_r29;
 
@@ -1396,7 +1396,7 @@ static bool Item_802696CC(HSD_GObj* gobj)
 
 void Item_802697D4(HSD_GObj* gobj)
 {
-    Vec3 sp1C;
+    Vec sp1C;
     u8 _[12];
 
     Item* item_data = (Item*) HSD_GObjGetUserData(gobj);
@@ -2042,7 +2042,7 @@ void Item_8026AB54(HSD_GObj* gobj, HSD_GObj* pickup_gfx,
     Item_8026B074(item_data);
 }
 
-void Item_8026ABD8(HSD_GObj* gobj, Vec3* pos, f32 arg2)
+void Item_8026ABD8(HSD_GObj* gobj, Vec* pos, f32 arg2)
 {
     u8 _[8];
     Item* item_data = (Item*) HSD_GObjGetUserData(gobj);
@@ -2059,7 +2059,7 @@ void Item_8026ABD8(HSD_GObj* gobj, Vec3* pos, f32 arg2)
     }
 }
 
-void Item_8026AC74(HSD_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3)
+void Item_8026AC74(HSD_GObj* gobj, Vec* arg1, Vec* arg2, f32 arg3)
 {
     Item* item_data = GetItemData(gobj);
     item_data->xC44 = arg3;
@@ -2074,7 +2074,7 @@ void Item_8026AC74(HSD_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3)
     }
 }
 
-void Item_8026AD20(HSD_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3)
+void Item_8026AD20(HSD_GObj* gobj, Vec* arg1, Vec* arg2, f32 arg3)
 {
     Item* item_data = GetItemData(gobj);
     it_802731E0(gobj);

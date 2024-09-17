@@ -65,7 +65,7 @@ s32 ftFx_SpecialS_GetCmdVar2(HSD_GObj* gobj)
 // 0x800E9EAC
 // https://decomp.me/scratch/IjtLj // Copy state variables into SpecialS struct
 void ftFx_SpecialS_CopyGhostPosIndexed(HSD_GObj* gobj, s32 index,
-                                       Vec3* ghostPos)
+                                       Vec* ghostPos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
 

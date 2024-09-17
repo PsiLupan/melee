@@ -289,8 +289,8 @@ void ftAction_80071028(Fighter_GObj* gobj, FtCmdState* cmd)
     int bone;
     int use_common_bone_id;
     int destroy_on_state_change;
-    Vec3 offset;
-    Vec3 range;
+    Vec offset;
+    Vec range;
     float unk;
     // permuter jank?
     FtCmdState* new_var;
@@ -1301,8 +1301,8 @@ void ftAction_80072CD8(Fighter_GObj* gobj, FtCmdState* cmd)
     int* sp40;
     M2C_UNK sp38;
     IntVec3 ivec0;
-    Vec3 vec1;
-    Vec3 vec0;
+    Vec vec1;
+    Vec vec0;
     u8 var_r5;
     ftCo_Fighter* fp = gobj->user_data;
     ivec1.y = 1;
@@ -1354,8 +1354,8 @@ void ftAction_80072E4C(Fighter_GObj* gobj, FtCmdState* cmd)
     M2C_UNK sp38;
     IntVec3 ivec0;
     ftCo_Fighter* fp = gobj->user_data;
-    Vec3 vec1;
-    Vec3 vec0;
+    Vec vec1;
+    Vec vec0;
     ivec1.y = 1;
     ivec1.x = -1;
     {

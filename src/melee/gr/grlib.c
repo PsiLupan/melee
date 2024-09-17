@@ -33,7 +33,7 @@
 extern StageInfo stage_info;
 extern struct UnkGeneratorStruct* hsd_804D78FC;
 
-static Vec3 grLib_8049EF58[6];
+static Vec grLib_8049EF58[6];
 
 bool grLib_801C96E8(HSD_GObj* arg0)
 {
@@ -168,7 +168,7 @@ void grLib_801C99C0(s32 arg0, s32 arg1, HSD_JObj* arg2, s32 arg3)
     }
 }
 
-Vec3* grLib_801C9A10(void)
+Vec* grLib_801C9A10(void)
 {
     Ground_801C2D24(0, &grLib_8049EF58[0]);
     Ground_801C2D24(1, &grLib_8049EF58[1]);
@@ -177,7 +177,7 @@ Vec3* grLib_801C9A10(void)
     return grLib_8049EF58;
 }
 
-void grLib_801C9A70(enum_t arg0, Vec3* v)
+void grLib_801C9A70(enum_t arg0, Vec* v)
 {
     int i;
     switch (arg0) {
@@ -293,7 +293,7 @@ void grLib_801C9E50(s16 val)
     stage_info.x708 = val;
 }
 
-bool grLib_801C9E60(Vec3* v)
+bool grLib_801C9E60(Vec* v)
 {
     InternalStageId id = stage_info.internal_stage_id;
 
@@ -319,7 +319,7 @@ bool grLib_801C9E60(Vec3* v)
     return false;
 }
 
-static inline bool PointInsideColl(CollData* cd, Vec3* point, float offset)
+static inline bool PointInsideColl(CollData* cd, Vec* point, float offset)
 {
     f32 top, bottom;
     f32 left, right;
@@ -351,7 +351,7 @@ static inline bool PointInsideColl(CollData* cd, Vec3* point, float offset)
     return true;
 }
 
-bool grLib_801C9EE8(Vec3* point, float offset)
+bool grLib_801C9EE8(Vec* point, float offset)
 {
     Fighter* fp;
     Item* ip;

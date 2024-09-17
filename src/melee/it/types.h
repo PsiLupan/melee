@@ -6,7 +6,6 @@
 #include "ft/forward.h"
 #include "it/forward.h" // IWYU pragma: export
 #include "it/items/forward.h"
-#include <dolphin/gx/forward.h>
 #include <baselib/forward.h>
 
 #include "it/itCharItems.h"
@@ -17,8 +16,8 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/gx.h>
+#include <dolphin/mtx.h>
 
 struct CameraBoxFlags {
     struct {
@@ -201,7 +200,7 @@ typedef struct itUnkVars {
     s32 x10;
     s32 x14;
     UnkFlagStruct x18;
-    Vec3 x1C[2];
+    Vec x1C[2];
 } itUnkVars;
 
 struct Item {
@@ -253,19 +252,19 @@ struct Item {
     f32 x3C;
 
     /// @at{40} @sz{C}
-    Vec3 x40_vel;
+    Vec x40_vel;
 
     /// @at{4C} @sz{C}
-    Vec3 pos;
+    Vec pos;
 
     /// @at{58} @sz{C}
-    Vec3 x58_vec_unk;
+    Vec x58_vec_unk;
 
     /// @at{64} @sz{C}
-    Vec3 x64_vec_unk2;
+    Vec x64_vec_unk2;
 
     /// @at{70} @sz{C}
-    Vec3 x70_nudge;
+    Vec x70_nudge;
 
     f32 x7C;
     u8 padding_x80[8];
@@ -362,11 +361,11 @@ struct Item {
     f32 xC40;             // 0xc40
     f32 xC44;             // 0xc44
     s32 xC48;             // 0xc48
-    s32 xC4C;  // Something to do with damage. 0x80077464 checks this against
-               // reflectors' maximum damage threshold
-    s32 xC50;  // 0xc50
-    f32 xC54;  // 0xc54
-    Vec3 xC58; // 0xc58
+    s32 xC4C; // Something to do with damage. 0x80077464 checks this against
+              // reflectors' maximum damage threshold
+    s32 xC50; // 0xc50
+    f32 xC54; // 0xc54
+    Vec xC58; // 0xc58
     HSD_GObj* xC64_reflectGObj; // GObj that reflected this item?
     f32 xC68;                   // 0xc68
     f32 xC6C;                   // 0xc6c
@@ -591,7 +590,7 @@ struct r13_ItemTable {
 struct BobOmbRain {
     HSD_GObj* x0;
     HSD_JObj* x4;
-    Vec3 x8_vec;
+    Vec x8_vec;
     enum_t x14;
     s32 x18;
     UnkFlagStruct x1C;
@@ -603,9 +602,9 @@ struct SpawnItem {
     /*  +8 */ ItemKind kind;
     /*  +C */ enum_t hold_kind;
     /* +10 */ s32 x10;
-    /* +14 */ Vec3 pos;
-    /* +20 */ Vec3 prev_pos;
-    /* +2C */ Vec3 vel;
+    /* +14 */ Vec pos;
+    /* +20 */ Vec prev_pos;
+    /* +2C */ Vec vel;
     /* +38 */ f32 facing_dir;
     /* +3C */ s16 x3C_damage;
     /* +3E */ s16 x3E;
@@ -700,7 +699,7 @@ struct HSD_ObjAllocUnk2 {
     int xB4;
     int xB8;
     UNK_T xBC;
-    Vec3 xC0;
+    Vec xC0;
     u8 pad_CC[0x148 - 0xCC];
     u32 x148;
     u32 x14C;

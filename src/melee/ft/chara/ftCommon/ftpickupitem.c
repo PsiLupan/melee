@@ -51,7 +51,7 @@ bool ftpickupitem_80094150(ftCo_GObj* gobj, Item_GObj* item_gobj)
         }
         {
             bool b = it_8026B2B4(item_gobj);
-            Vec3 it_pos;
+            Vec it_pos;
             it_8026B344(item_gobj, &it_pos);
             {
                 float x_range = it_8026B378(item_gobj);
@@ -97,7 +97,7 @@ HSD_GObj* ftpickupitem_800942A0(HSD_GObj* gobj, u32 flags)
                         (unk_enum == 1 && flags & (1 << 1)))
                     {
                         Vec4* vec;
-                        Vec3 it_pos;
+                        Vec it_pos;
                         it_8026B344(cur, &it_pos);
                         {
                             float x_range = it_8026B378(cur);
@@ -349,7 +349,7 @@ void ftpickupitem_Coll(HSD_GObj* gobj)
 
 void ftpickupitem_80094B6C(HSD_GObj* gobj, HSD_GObj* item_gobj)
 {
-    Vec3 vec;
+    Vec vec;
     u8 _[4] = { 0 };
     ftCo_Fighter* fp = gobj->user_data;
     if (item_gobj == NULL) {

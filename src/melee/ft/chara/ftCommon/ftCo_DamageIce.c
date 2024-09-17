@@ -42,8 +42,8 @@
 /* 091274 */ static void ftCo_80091274(ftCo_GObj* gobj);
 /* 091620 */ static UNK_RET ftCo_80091620(UNK_PARAMS);
 
-static Vec3 const ftCo_803B74B0 = { 0 };
-static Vec3 const ftCo_803B74BC = { 0 };
+static Vec const ftCo_803B74B0 = { 0 };
+static Vec const ftCo_803B74BC = { 0 };
 
 void ftCo_80090984(ftCo_GObj* gobj)
 {
@@ -55,8 +55,8 @@ void ftCo_80090984(ftCo_GObj* gobj)
 void ftCo_800909D0(Fighter* fp)
 {
     u8 _[8] = { 0 };
-    Vec3 offset;
-    Vec3 pos;
+    Vec offset;
+    Vec pos;
     {
         u8 _[4] = { 0 };
         float radius = fp->x34_scale.y * fp->co_attrs.bubble_ratio;
@@ -111,7 +111,7 @@ void ftCo_80091030(Fighter_GObj* gobj)
 {
     float param;
     struct UNK_SAMUS_S2 sp2C;
-    Vec3 sp20;
+    Vec sp20;
     HSD_JObj* temp_r7;
     float temp_f1;
     float temp_f2;
@@ -246,7 +246,7 @@ UNK_RET ftCo_80091620(UNK_PARAMS)
 
 void ftCo_80091854(HSD_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     float sp24;
     ftCo_Fighter* fp = gobj->user_data;
     if (ftCo_800C5240(gobj)) {

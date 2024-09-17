@@ -12,31 +12,31 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
 
-void grTZelda_80223E2C(int);                   /* static */
-void grTZelda_80223E30(void);                  /* static */
-void grTZelda_80223EA0(void);                  /* static */
-void grTZelda_80223EA4(void);                  /* static */
-bool grTZelda_80223EC8(void);                  /* static */
-HSD_GObj* grTZelda_80223ED0(s32);              /* static */
-void grTZelda_80223FB8(HSD_GObj*);             /* static */
-bool grTZelda_80223FE4(HSD_GObj*);             /* static */
-void grTZelda_80223FEC(HSD_GObj*);             /* static */
-void grTZelda_80223FF0(HSD_GObj*);             /* static */
-void grTZelda_80223FF4(HSD_GObj*);             /* static */
-bool grTZelda_80224044(HSD_GObj*);             /* static */
-void grTZelda_8022404C(HSD_GObj*);             /* static */
-void grTZelda_80224080(HSD_GObj*);             /* static */
-void grTZelda_80224084(HSD_GObj*);             /* static */
-bool grTZelda_802240D4(HSD_GObj*);             /* static */
-void grTZelda_802240DC(HSD_GObj*);             /* static */
-void grTZelda_802240FC(HSD_GObj*);             /* static */
-DynamicsDesc* grTZelda_80224100(enum_t);       /* static */
-bool grTZelda_80224108(Vec3*, int, HSD_JObj*); /* static */
+void grTZelda_80223E2C(int);                  /* static */
+void grTZelda_80223E30(void);                 /* static */
+void grTZelda_80223EA0(void);                 /* static */
+void grTZelda_80223EA4(void);                 /* static */
+bool grTZelda_80223EC8(void);                 /* static */
+HSD_GObj* grTZelda_80223ED0(s32);             /* static */
+void grTZelda_80223FB8(HSD_GObj*);            /* static */
+bool grTZelda_80223FE4(HSD_GObj*);            /* static */
+void grTZelda_80223FEC(HSD_GObj*);            /* static */
+void grTZelda_80223FF0(HSD_GObj*);            /* static */
+void grTZelda_80223FF4(HSD_GObj*);            /* static */
+bool grTZelda_80224044(HSD_GObj*);            /* static */
+void grTZelda_8022404C(HSD_GObj*);            /* static */
+void grTZelda_80224080(HSD_GObj*);            /* static */
+void grTZelda_80224084(HSD_GObj*);            /* static */
+bool grTZelda_802240D4(HSD_GObj*);            /* static */
+void grTZelda_802240DC(HSD_GObj*);            /* static */
+void grTZelda_802240FC(HSD_GObj*);            /* static */
+DynamicsDesc* grTZelda_80224100(enum_t);      /* static */
+bool grTZelda_80224108(Vec*, int, HSD_JObj*); /* static */
 
 static StageCallbacks grTZd_803E9638[4] = {
     { grTZelda_80223FB8, grTZelda_80223FE4, grTZelda_80223FEC,
@@ -174,7 +174,7 @@ DynamicsDesc* grTZelda_80224100(enum_t arg0)
     return NULL;
 }
 
-bool grTZelda_80224108(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTZelda_80224108(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

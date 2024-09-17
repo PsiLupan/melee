@@ -11,9 +11,8 @@
 /* 110610 */ void ftSk_SpecialS_80110610(HSD_GObj* gobj, s32 arg1, float arg8);
 /* 110788 */ void ftSk_SpecialS_80110788(HSD_GObj* gobj);
 /* 11097C */ void ftSk_SpecialS_8011097C(HSD_GObj* gobj);
-/* 110980 */ void ftSk_SpecialS_UpdateHitboxes(HSD_GObj* gobj,
-                                               Vec3* new_position,
-                                               s32 hitbox_id);
+/* 110980 */ void
+ftSk_SpecialS_UpdateHitboxes(HSD_GObj* gobj, Vec* new_position, s32 hitbox_id);
 /* 110A80 */ void ftSk_SpecialS_ZeroHitboxPositions(HSD_GObj* gobj);
 /* 110AEC */ void ftSk_SpecialS_80110AEC(HSD_GObj* gobj);
 /* 110BCC */ void ftSk_SpecialS_80110BCC(HSD_GObj* gobj);

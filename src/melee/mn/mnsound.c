@@ -21,10 +21,10 @@
 
 void mnSound_802492CC(HSD_GObj*);
 
-Vec3 mnSound_803EEED8[] = { { 0.0f, 199.0f, 0.0f },  { 0.0f, 29.0f, 0.0f },
-                            { 30.0f, 59.0f, 30.0f }, { 10.0f, 15.0f, -0.1f },
-                            { 0.0f, 5.0f, -0.1f },   { 0.0f, 3.0f, -0.1f },
-                            { 4.0f, 7.0f, -0.1f } };
+Vec mnSound_803EEED8[] = { { 0.0f, 199.0f, 0.0f },  { 0.0f, 29.0f, 0.0f },
+                           { 30.0f, 59.0f, 30.0f }, { 10.0f, 15.0f, -0.1f },
+                           { 0.0f, 5.0f, -0.1f },   { 0.0f, 3.0f, -0.1f },
+                           { 4.0f, 7.0f, -0.1f } };
 
 void gmMainLib_8015ED80(u8); /* extern */
 void gm_801602C0(u8);        /* extern */
@@ -37,8 +37,8 @@ HSD_GObj* mnSound_804D6C30;
 static void mnSound_VolumeAnim(HSD_JObj* jobj, s32 sound_music_mix,
                                s32 anim_id)
 {
-    Vec3 pos_0;
-    Vec3 pos_1;
+    Vec pos_0;
+    Vec pos_1;
     HSD_JObj* jobj_anim_2;
     HSD_JObj* jobj_anim_1;
     HSD_JObj* jobj_anim_0;
@@ -155,7 +155,7 @@ void fn_80249A1C(HSD_GObj* arg0)
     HSD_JObj* sp40;
     HSD_JObj* sp3C;
     HSD_JObj* sp34;
-    Vec3 sp28;
+    Vec sp28;
     HSD_JObj* sp20;
     HSD_JObj* temp_r3;
     f32 temp_f1;

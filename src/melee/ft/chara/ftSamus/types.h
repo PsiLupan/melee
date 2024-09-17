@@ -8,7 +8,7 @@
 #include "ftCommon/types.h"
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftSamus_FighterVars {
     /* 0x222C */ Item_GObj* x222C;
@@ -56,7 +56,7 @@ typedef struct _ftSamusAttributes {
     /* +68 */ float x68;
     /* +6C */ float x6C;
     /* +70 */ float x70;
-    /* +74 */ Vec3 x74_vec;
+    /* +74 */ Vec x74_vec;
     /* +80 */ float x80;
     /* +84 */ ftCollisionBox height_attributes;
     /* +9C */ UNK_T x9C;

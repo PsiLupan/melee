@@ -17,7 +17,7 @@
 #include "it/items/itmariofireball.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 
 static int pickMegavitamin(Fighter* fp, int* arr, int outpos)
@@ -91,7 +91,7 @@ void ftMr_SpecialN_Coll(HSD_GObj* gobj)
 
 void ftMr_SpecialN_ItemFireSpawn(HSD_GObj* gobj)
 {
-    Vec3 coords;
+    Vec coords;
     Fighter* fp;
 
     s32 flag_res;

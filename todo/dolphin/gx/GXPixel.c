@@ -1,6 +1,6 @@
 #include <placeholder.h>
+#include <dolphin/gx.h>
 #include <dolphin/gx/GXPixel.h>
-#include <dolphin/gx/types.h>
 
 s32 GXPixel_80401508[] = { 0, 1, 2, 3, 4, 4, 4, 5 };
 

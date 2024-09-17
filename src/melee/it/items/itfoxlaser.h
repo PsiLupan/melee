@@ -10,11 +10,11 @@
 #include <dolphin/mtx.h>
 
 /* 29C4D4 */ bool it_8029C4D4(Item_GObj*);
-/* 29C504 */ void it_8029C504(HSD_GObj* parent, Vec3* pos, enum_t msid,
+/* 29C504 */ void it_8029C504(HSD_GObj* parent, Vec* pos, enum_t msid,
                               int kind, f32 angle, f32 arg9);
-/* 29C6A4 */ void it_8029C6A4(f32 angle, f32 vel, HSD_GObj* parent, Vec3* vec,
+/* 29C6A4 */ void it_8029C6A4(f32 angle, f32 vel, HSD_GObj* parent, Vec* vec,
                               int kind);
-/* 29C6CC */ void it_8029C6CC(f32 angle, f32 vel, HSD_GObj* parent, Vec3* vec,
+/* 29C6CC */ void it_8029C6CC(f32 angle, f32 vel, HSD_GObj* parent, Vec* vec,
                               int kind);
 /* 29C6F4 */ bool it_8029C6F4(Item_GObj*);
 /* 29C9CC */ void it_8029C9CC(Item_GObj*);

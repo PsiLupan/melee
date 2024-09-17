@@ -38,7 +38,7 @@ void ftPe_SpecialHi_8011D424(HSD_GObj* gobj)
     if (fp->mv.pe.specialhi.kind == It_Kind_Capsule) {
         fp->mv.pe.specialhi.kind = It_Kind_Peach_Parasol;
         if (fp->fv.pe.unk_item_gobj == NULL) {
-            Vec3 pos;
+            Vec pos;
             lb_8000B1CC(fp->parts[FtPart_109].joint, NULL, &pos);
             {
                 HSD_GObj* igobj = fp->item_gobj;

@@ -227,7 +227,7 @@ static inline float inlineB0(ftCo_Fighter* fp)
 
 void ftCo_80091D58(Fighter* fp)
 {
-    Vec3 scl;
+    Vec scl;
     scl.x = scl.y = scl.z = inlineB0(fp);
     HSD_JObjSetScale(fp->parts[fp->ft_data->x8->x11].joint, &scl);
 }
@@ -310,7 +310,7 @@ void ftCo_800921DC(HSD_GObj* gobj)
     }
     fp->mv.co.guard.x20 = fp->mv.co.guard.x24 = 0;
     {
-        Vec3 trans;
+        Vec trans;
         trans.x = trans.y = trans.z = 0;
         HSD_JObjSetTranslate(fp->parts[fp->ft_data->x8->x11].joint, &trans);
     }

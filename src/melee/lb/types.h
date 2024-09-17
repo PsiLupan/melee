@@ -6,7 +6,7 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct DynamicsData {
     /* +0 */ HSD_JObj* jobj;
@@ -17,7 +17,7 @@ struct DynamicsData {
 struct DynamicsDesc {
     /* +0 */ struct DynamicsData* data;
     /* +4 */ int count;
-    /* +8 */ Vec3 pos;
+    /* +8 */ Vec pos;
 };
 
 struct BoneDynamicsDesc {
@@ -31,8 +31,8 @@ struct HitResult {
     /// Follows attach bone position if toggled OFF
     u8 skip_update_pos : 1;
 
-    Vec3 pos;
-    Vec3 offset;
+    Vec pos;
+    Vec offset;
     float size;
 };
 
@@ -46,7 +46,7 @@ struct HitCapsule {
     /*  +4 */ uint x4;
     /*  +8 */ int unk_count;
     /*  +C */ float damage;
-    /* +10 */ Vec3 b_offset;
+    /* +10 */ Vec b_offset;
     /* +1C */ float scale;
     /* +20 */ int kb_angle;
     /* +24 */ int x24;
@@ -97,9 +97,9 @@ struct HitCapsule {
     /* +45 */ u8 x45;
     /* +46 */ u8 x46[0x48 - 0x46];
     /* +48 */ HSD_JObj* jobj;
-    /* +4C */ Vec3 x4C;
-    /* +58 */ Vec3 x58;
-    /* +64 */ Vec3 hurt_coll_pos;
+    /* +4C */ Vec x4C;
+    /* +58 */ Vec x58;
+    /* +64 */ Vec hurt_coll_pos;
     /* +70 */ float coll_distance;
     /* +74 */ HitVictim victims_1[12];
     /* +D4 */ HitVictim victims_2[12];
@@ -113,8 +113,8 @@ STATIC_ASSERT(sizeof(HitCapsule) == 0x138);
 
 struct HurtCapsule {
     HurtCapsuleState state;
-    Vec3 a_offset;
-    Vec3 b_offset;
+    Vec a_offset;
+    Vec b_offset;
     float scale;
     HSD_JObj* bone; // 0x20
     u8 skip_update_pos : 1;
@@ -125,8 +125,8 @@ struct HurtCapsule {
     u8 x24_b5 : 1; // 0x24 0x04
     u8 x24_b6 : 1; // 0x24 0x02
     u8 x24_b7 : 1; // 0x24 0x01
-    Vec3 a_pos;
-    Vec3 b_pos;
+    Vec a_pos;
+    Vec b_pos;
     int bone_idx;      // 0x40
     enum_t kind;       // 0x44. 0 = low, 1 = mid, 2 = high
     bool is_grabbable; // 0x48
@@ -137,7 +137,7 @@ STATIC_ASSERT(sizeof(HurtCapsule) == 0x4C);
 struct ReflectDesc {
     u32 x0_bone_id;
     s32 x4_max_damage;
-    Vec3 x8_offset;
+    Vec x8_offset;
     float x14_size;
     float x18_damage_mul;
     float x1C_speed_mul;
@@ -149,13 +149,13 @@ struct ReflectDesc {
 
 struct AbsorbDesc {
     /*  +0 */ int x0_bone_id;
-    /*  +4 */ Vec3 x4_offset;
+    /*  +4 */ Vec x4_offset;
     /* +10 */ float x10_size;
 };
 
 struct ShieldDesc {
     int bone;
-    Vec3 pos;
+    Vec pos;
     float radius;
     float dmg_mul;
     float vel_mul;
@@ -189,7 +189,7 @@ typedef struct _ECBFlagStruct {
 typedef struct SurfaceData {
     int index;
     u32 unk;
-    Vec3 normal;
+    Vec normal;
 } SurfaceData;
 
 typedef struct _ftECB {
@@ -201,10 +201,10 @@ typedef struct _ftECB {
 
 struct CollData {
     /* fp+6F0 */ HSD_GObj* x0_gobj;
-    /* fp+6F4 */ Vec3 cur_topn;
-    /* fp+700 */ Vec3 cur_topn_correct;
-    /* fp+70C */ Vec3 prev_topn;
-    /* fp+718 */ Vec3 x28_vec;
+    /* fp+6F4 */ Vec cur_topn;
+    /* fp+700 */ Vec cur_topn_correct;
+    /* fp+70C */ Vec prev_topn;
+    /* fp+718 */ Vec x28_vec;
     /* fp+724 */ ECBFlagStruct x34_flags;
     /* fp+725 */ ECBFlagStruct x35_flags;
     /* fp+726 */ s16 x36;
@@ -248,7 +248,7 @@ struct CollData {
     /* fp+824 */ s32 env_flags;
     /* fp+828 */ s32 prev_env_flags;
     /* fp+82C */ s32 x13C;
-    /* fp+830 */ Vec3 x140;
+    /* fp+830 */ Vec x140;
     /* fp+83C */ SurfaceData floor;
     /* fp+850 */ SurfaceData right_wall;
     /* fp+864 */ SurfaceData left_wall;

@@ -5,7 +5,7 @@
 #include "ftMasterHand/forward.h" // IWYU pragma: export
 #include <baselib/forward.h>
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftMasterhand_FighterVars {
     /* 0x222C */ HSD_GObj* x222C;
@@ -13,7 +13,7 @@ struct ftMasterhand_FighterVars {
     /* 0x2234 */ u32 x2234;
     /* 0x2238 */ float x2238;
     /* 0x223C */ float x223C;
-    /* 0x2240 */ Vec3 x2240_pos;
+    /* 0x2240 */ Vec x2240_pos;
     /* 0x224C */ u32 x224C;
     /* 0x2250 */ s32 x2250;
     /* 0x2254 */ s32 x2254;
@@ -36,7 +36,7 @@ struct ftMasterHand_SpecialAttrs {
     Vec2 x30_pos2;
     float x38;
     float x3C;
-    Vec3 x40_pos;
+    Vec x40_pos;
     float x4C;
     Vec2 x50;
     float x58;
@@ -108,7 +108,7 @@ union ftMasterHand_MotionVars {
         float x0;
         HSD_GObjEvent x4;
         int x8;
-        Vec3 xC;
+        Vec xC;
         float x18;
         float x1C;
         int x20;
@@ -125,8 +125,8 @@ union ftMasterHand_MotionVars {
         int x4C;
         float x50;
         int x54;
-        Vec3 x58;
-        Vec3 x64;
+        Vec x58;
+        Vec x64;
         int x70;
         int x74;
         int x78;

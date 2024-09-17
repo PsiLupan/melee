@@ -28,9 +28,9 @@ void grCorneria_801E0C3C(HSD_GObj* gobj)
     gp->x11_flags.b012 = 2;
 }
 
-bool grCorneria_801E2EEC(Vec3* v, u32 arg1, HSD_JObj* jobj)
+bool grCorneria_801E2EEC(Vec* v, u32 arg1, HSD_JObj* jobj)
 {
-    Vec3 sp14;
+    Vec sp14;
     HSD_GObj* temp_r3;
     Ground* temp_r3_2;
     float temp_f31;

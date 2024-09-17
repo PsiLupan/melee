@@ -42,7 +42,7 @@ static inline void normalizeAngle(f32* angle)
     }
 }
 
-void it_8029C504(HSD_GObj* parent, Vec3* pos, enum_t msid, int kind, f32 angle,
+void it_8029C504(HSD_GObj* parent, Vec* pos, enum_t msid, int kind, f32 angle,
                  f32 arg9)
 {
     SpawnItem spawn;
@@ -79,12 +79,12 @@ void it_8029C504(HSD_GObj* parent, Vec3* pos, enum_t msid, int kind, f32 angle,
     }
 }
 
-void it_8029C6A4(f32 angle, f32 vel, HSD_GObj* parent, Vec3* vec, int kind)
+void it_8029C6A4(f32 angle, f32 vel, HSD_GObj* parent, Vec* vec, int kind)
 {
     it_8029C504(parent, vec, 0, kind, angle, vel);
 }
 
-void it_8029C6CC(f32 angle, f32 vel, HSD_GObj* parent, Vec3* vec, int kind)
+void it_8029C6CC(f32 angle, f32 vel, HSD_GObj* parent, Vec* vec, int kind)
 {
     it_8029C504(parent, vec, 1, kind, angle, vel);
 }
@@ -150,7 +150,7 @@ void it_8029C9CC(Item_GObj* item_gobj)
 bool it_8029C9EC(Item_GObj* item_gobj)
 {
     Item* item = GET_ITEM(item_gobj);
-    Vec3 sp18 = item->pos;
+    Vec sp18 = item->pos;
     u8 _[4] = { 0 };
     if (it_8029C4D4(item_gobj)) {
         it_80275158(item_gobj, 1.0F);

@@ -1,5 +1,4 @@
 #include <platform.h>
-#include <dolphin/gx/forward.h>
 #include <baselib/forward.h>
 
 #include "gm_1A36.h"
@@ -20,19 +19,12 @@
 
 #include <placeholder.h>
 #include <stddef.h>
-#include <dolphin/card/CARDBios.h>
-#include <dolphin/dvd/dvd.h>
-#include <dolphin/gx/GXInit.h>
-#include <dolphin/gx/GXMisc.h>
-#include <dolphin/gx/types.h>
+#include <dolphin/card.h>
+#include <dolphin/dvd.h>
+#include <dolphin/gx.h>
 #include <dolphin/os.h>
-#include <dolphin/os/OSAlarm.h>
-#include <dolphin/os/OSArena.h>
-#include <dolphin/os/OSInit.h>
-#include <dolphin/os/OSMemory.h>
-#include <dolphin/os/OSTime.h>
-#include <dolphin/pad/pad.h>
-#include <dolphin/vi/vi.h>
+#include <dolphin/pad.h>
+#include <dolphin/vi.h>
 #include <baselib/controller.h>
 #include <baselib/debug.h>
 #include <baselib/initialize.h>

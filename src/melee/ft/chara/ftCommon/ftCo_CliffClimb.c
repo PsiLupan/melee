@@ -98,7 +98,7 @@ void ftCo_CliffClimb_Phys(ftCo_GObj* gobj)
     Fighter* fp = gobj->user_data;
     if (fp->ground_or_air == GA_Air) {
         if (mpLib_80054ED8(fp->mv.co.cliff.ledge_id)) {
-            Vec3 vec;
+            Vec vec;
             u8 _[8] = { 0 };
             if (fp->facing_dir > 0) {
                 mpLib_80053ECC(fp->mv.co.cliff.ledge_id, &vec);

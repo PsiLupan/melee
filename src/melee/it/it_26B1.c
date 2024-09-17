@@ -63,7 +63,7 @@ f32 it_8026B1D4(HSD_GObj* gobj, HitCapsule* itemHitboxUnk)
 }
 
 void it_8026B294(HSD_GObj* gobj,
-                 Vec3* pos) // Copy Item position vector
+                 Vec* pos) // Copy Item position vector
 {
     Item* temp_item;
 
@@ -118,7 +118,7 @@ f32 it_8026B334(HSD_GObj* gobj) // Return item damage multiplier
 }
 
 void it_8026B344(HSD_GObj* gobj,
-                 Vec3* pos) // Unknown item position math, related to velocity?
+                 Vec* pos) // Unknown item position math, related to velocity?
 {
     Item* ip;
 
@@ -292,7 +292,7 @@ bool it_8026B594(HSD_GObj* gobj)
     }
 }
 
-HSD_GObj* it_8026B5E4(Vec3* vector, Vec3* vector2,
+HSD_GObj* it_8026B5E4(Vec* vector, Vec* vector2,
                       HSD_GObj* gobj) // Unknown item camera check?
 {
     HSD_GObj* unk_gobj;
@@ -310,7 +310,7 @@ HSD_GObj* it_8026B5E4(Vec3* vector, Vec3* vector2,
  * @todo Missing third argument passed to #ftLib_80086368.
  * @brief Unknown item camera check 2?
  */
-HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, HSD_GObj* gobj)
+HSD_GObj* it_8026B634(Vec* vector, Vec* vector2, HSD_GObj* gobj)
 {
     HSD_GObj* unk_gobj = ftLib_80086368(vector, gobj);
 
@@ -323,7 +323,7 @@ HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, HSD_GObj* gobj)
 #elif defined(MWERKS_GEKKO)
 
 #pragma push
-asm HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, HSD_GObj* gobj){
+asm HSD_GObj* it_8026B634(Vec* vector, Vec* vector2, HSD_GObj* gobj){
     // clang-format off
     nofralloc
 /* 8026B634 00000000  7C 08 02 A6 */  mflr r0
@@ -352,7 +352,7 @@ lbl_8026B668:
 
 #else
 
-HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, HSD_GObj* gobj)
+HSD_GObj* it_8026B634(Vec* vector, Vec* vector2, HSD_GObj* gobj)
 {
     NOT_IMPLEMENTED;
 }
@@ -362,7 +362,7 @@ HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, HSD_GObj* gobj)
 /**
  * @brief Get facing direction of fighter (?) with #NULL
  */
-f32 it_8026B684(Vec3* pos)
+f32 it_8026B684(Vec* pos)
 {
     return ftLib_800864A8(pos, NULL);
 }
@@ -370,7 +370,7 @@ f32 it_8026B684(Vec3* pos)
 /**
  * @brief Get facing direction of fighter (?) with variable argument
  */
-f32 it_8026B6A8(Vec3* pos, HSD_GObj* arg1)
+f32 it_8026B6A8(Vec* pos, HSD_GObj* arg1)
 {
     return ftLib_800864A8(pos, arg1);
 }
@@ -632,7 +632,7 @@ static inline void What(HSD_GObj* gobj, struct ItemStateDesc* itemStateDesc,
 /// Transfer item on character transformation (Zelda <-> Sheik)
 void it_8026B9A8(HSD_GObj* gobj, HSD_GObj* arg1, Fighter_Part arg2)
 {
-    Vec3 vec;
+    Vec vec;
     Item* ip = GET_ITEM(gobj);
     ItemStateArray* states = ip->xC4_article_data->xC_itemStates;
 
@@ -711,16 +711,16 @@ void it_8026BB44(HSD_GObj* gobj)
     it_80272A3C(gobj->hsd_obj);
 }
 
-extern void ftLib_80086990(HSD_GObj*, Vec3*);
+extern void ftLib_80086990(HSD_GObj*, Vec*);
 
 /// Adjust item's position to fp bone
-void it_8026BB68(HSD_GObj* fighter_gobj, Vec3* pos)
+void it_8026BB68(HSD_GObj* fighter_gobj, Vec* pos)
 {
     ftLib_80086990(fighter_gobj, pos);
 }
 
 /// Adjust item's position based on ECB?
-void it_8026BB88(HSD_GObj* gobj, Vec3* pos)
+void it_8026BB88(HSD_GObj* gobj, Vec* pos)
 {
     Item* ip = GET_ITEM(gobj);
     ftECB* ecb = &ip->x378_itemColl.xA4_ecbCurrCorrect;
@@ -736,7 +736,7 @@ void it_8026BB88(HSD_GObj* gobj, Vec3* pos)
 }
 
 /// Adjust item's ECB position?
-void it_8026BBCC(HSD_GObj* gobj, Vec3* pos)
+void it_8026BBCC(HSD_GObj* gobj, Vec* pos)
 {
     Item* ip = gobj->user_data;
     CollData* coll_data = &ip->x378_itemColl;
@@ -785,10 +785,10 @@ bool it_8026BC84(HSD_GObj* gobj)
     return ip->xD88_attackID;
 }
 
-extern void ftLib_80086644(HSD_GObj*, Vec3*);
+extern void ftLib_80086644(HSD_GObj*, Vec*);
 
 /// Unknown item ECB / position update
-void it_8026BC90(HSD_GObj* gobj, Vec3* pos)
+void it_8026BC90(HSD_GObj* gobj, Vec* pos)
 {
     pos->z = 0;
     pos->y = 0;
@@ -1133,7 +1133,7 @@ void it_8026C220(HSD_GObj* gobj, HSD_GObj* fighter_gobj)
 /// Find the closest item to the given position?
 /// @remarks Used by Samus's Homing Missile to lock onto certain items.
 /// @returns The nearest #HSD_GObj to @p pos that fits the criteria.
-HSD_GObj* it_8026C258(Vec3* pos, f32 facing_dir)
+HSD_GObj* it_8026C258(Vec* pos, f32 facing_dir)
 {
     f32 min_sq_dist = F32_MAX;
     HSD_GObj *cur, *result = NULL;
@@ -1168,7 +1168,7 @@ HSD_GObj* it_8026C258(Vec3* pos, f32 facing_dir)
 }
 
 /// Unknown item position / ECB update
-void it_8026C334(HSD_GObj* gobj, Vec3* pos)
+void it_8026C334(HSD_GObj* gobj, Vec* pos)
 {
     Item* ip = GET_ITEM(gobj);
     f32 offset_xz = 0.0f;

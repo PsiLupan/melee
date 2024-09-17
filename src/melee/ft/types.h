@@ -4,7 +4,6 @@
 #include <platform.h>
 #include "ft/forward.h" // IWYU pragma: export
 #include "it/forward.h"
-#include <dolphin/gx/forward.h>
 #include <baselib/forward.h>
 
 #include "cm/types.h"
@@ -37,7 +36,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
-#include <dolphin/gx/types.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
 
 #define FTPART_INVALID 0xFF
@@ -355,7 +354,7 @@ struct ftCommonData {
     /* +4D4 */ float x4D4;
     /* +4D8 */ u32 x4D8;
     /* +4DC */ Vec2 x4DC;
-    /* +4E4 */ Vec3 x4E4;
+    /* +4E4 */ Vec x4E4;
     /* +4F0 */ UNK_T x4F0;
     /* +4F4 */ UNK_T x4F4;
     /* +4F8 */ UNK_T x4F8;
@@ -639,8 +638,8 @@ typedef struct _ThrowFlags {
 
 struct ftCo_DatAttrs_xBC_t {
     float size;
-    Vec3 x4;
-    Vec3 x10;
+    Vec x4;
+    Vec x10;
     float x1C;
 };
 
@@ -707,10 +706,10 @@ typedef struct ftCo_DatAttrs {
     /* +108 fp+218 */ float wall_jump_vertical_velocity;
     /* +10C fp+21C */ float passiveceil_vel_x;
     /* +110 fp+220 */ float trophy_scale;
-    /* +114 fp+224 */ Vec3 x114;
-    /* +118 fp+230 */ Vec3 x118;
+    /* +114 fp+224 */ Vec x114;
+    /* +118 fp+230 */ Vec x118;
     /* +11C fp+23C */ float x11C;
-    /* +120 fp+240 */ Vec3 x120;
+    /* +120 fp+240 */ Vec x120;
     /* +124 fp+24C */ float x124;
     /* +128 fp+250 */ int x128;
     /* +12C fp+254 */ int x12C;
@@ -724,7 +723,7 @@ typedef struct ftCo_DatAttrs {
     /* +14C fp+274 */ float x14C;
     /* +150 fp+278 */ int x150;
     /* +154 fp+27C */ int camera_zoom_target_bone;
-    /* +158 fp+280 */ Vec3 x158;
+    /* +158 fp+280 */ Vec x158;
     /* +15C fp+28C */ float x15C;
     /* +160 fp+290 */ int weight_dependent_throw_speed_flags;
 } ftCo_DatAttrs;
@@ -955,7 +954,7 @@ struct Fighter_x1A88_xFC_t {
     /*  +9 */ u8 x9;
     /*  +A */ u8 xA;
     /*  +B */ u8 xB;
-    /*  +C */ Vec3 cur_pos;
+    /*  +C */ Vec cur_pos;
     /* +18 */ float facing_dir;
     /* +1C */ struct Fighter_x1A88_xFC_t* x1C;
     /* +20 */ u8 x20[0x348 - 0x20];
@@ -1064,18 +1063,18 @@ struct Fighter {
     /*   fp+28 */ u8* x28;
     /*   fp+2C */ float facing_dir;
     /*   fp+30 */ float facing_dir1;
-    /*   fp+34 */ Vec3 x34_scale;
+    /*   fp+34 */ Vec x34_scale;
     /*   fp+40 */ float x40;
     /*   fp+44 */ Mtx x44_mtx;
-    /*   fp+74 */ Vec3 x74_anim_vel;
-    /*   fp+80 */ Vec3 self_vel;
-    /*   fp+8C */ Vec3 x8c_kb_vel;
-    /*   fp+98 */ Vec3 x98_atk_shield_kb;
-    /*   fp+A4 */ Vec3 xA4_unk_vel;
-    /*   fp+B0 */ Vec3 cur_pos;
-    /*   fp+BC */ Vec3 prev_pos;
-    /*   fp+C8 */ Vec3 pos_delta;
-    /*   fp+D4 */ Vec3 xD4_unk_vel;
+    /*   fp+74 */ Vec x74_anim_vel;
+    /*   fp+80 */ Vec self_vel;
+    /*   fp+8C */ Vec x8c_kb_vel;
+    /*   fp+98 */ Vec x98_atk_shield_kb;
+    /*   fp+A4 */ Vec xA4_unk_vel;
+    /*   fp+B0 */ Vec cur_pos;
+    /*   fp+BC */ Vec prev_pos;
+    /*   fp+C8 */ Vec pos_delta;
+    /*   fp+D4 */ Vec xD4_unk_vel;
     /*   fp+E0 */ GroundOrAir ground_or_air;
     /*   fp+E4 */ float xE4_ground_accel_1;
     /*   fp+E8 */ float xE8_ground_accel_2;
@@ -1212,15 +1211,15 @@ struct Fighter {
     /*  fp+689 */ u8 x689;
     /*  fp+68A */ u8 x68A;
     /*  fp+68B */ u8 x68B;
-    /*  fp+68C */ Vec3 x68C_transNPos;
-    /*  fp+698 */ Vec3 x698;
-    /*  fp+6A4 */ Vec3 x6A4_transNOffset;
-    /*  fp+6B0 */ Vec3 x6B0;
+    /*  fp+68C */ Vec x68C_transNPos;
+    /*  fp+698 */ Vec x698;
+    /*  fp+6A4 */ Vec x6A4_transNOffset;
+    /*  fp+6B0 */ Vec x6B0;
     /*  fp+6BC */ float lstick_angle;
-    /*  fp+6C0 */ Vec3 x6C0;
-    /*  fp+6CC */ Vec3 x6CC;
-    /*  fp+6D8 */ Vec3 x6D8;
-    /*  fp+6E4 */ Vec3 x6E4;
+    /*  fp+6C0 */ Vec x6C0;
+    /*  fp+6CC */ Vec x6CC;
+    /*  fp+6D8 */ Vec x6D8;
+    /*  fp+6E4 */ Vec x6E4;
     /*  fp+6F0 */ CollData coll_data;
     /*  fp+88C */ s32 ecb_lock;
     /*  fp+890 */ CameraBox* x890_cameraBox;
@@ -1257,7 +1256,7 @@ struct Fighter {
         /* fp+1848 */ int x1848_kb_angle;
         /* fp+184C */ int x184c_damaged_hurtbox;
         /* fp+1850 */ float kb_applied;
-        /* fp+1854 */ Vec3 x1854_collpos;
+        /* fp+1854 */ Vec x1854_collpos;
         /* fp+1860 */ uint x1860_element;
         /* fp+1864 */ int x1864;
         /* fp+1868 */ HSD_GObj* x1868_source;
@@ -1317,8 +1316,8 @@ struct Fighter {
         /* fp+1924 */ int x1924;
         /* fp+1928 */ float x1928;
         /* fp+192C */ float x192c;
-        /* fp+1930 */ Vec3 x1930;
-        /* fp+193C */ Vec3 x193c;
+        /* fp+1930 */ Vec x1930;
+        /* fp+193C */ Vec x193c;
         /* fp+1948 */ int x1948;
         /* fp+194C */ int x194C;
         /* fp+1950 */ int x1950;
@@ -1382,8 +1381,8 @@ struct Fighter {
     /* fp+1A68 */ u16 x1A68;
     /* fp+1A6A */ u16 x1A6A;
     /* fp+1A6C */ float x1A6C;
-    /* fp+1A70 */ Vec3 x1A70;
-    /* fp+1A7C */ Vec3 x1A7C;
+    /* fp+1A70 */ Vec x1A70;
+    /* fp+1A7C */ Vec x1A7C;
     /* fp+x1A88 */ struct Fighter_x1A88_t x1A88;
     /* fp+2004 */ int x2004;
     /* fp+2008 */ s32 x2008;
@@ -1773,8 +1772,8 @@ struct ftData_UnkCountStruct {
 };
 
 struct UnkFloat6_Camera {
-    Vec3 x0;
-    Vec3 xC;
+    Vec x0;
+    Vec xC;
 };
 
 struct FtCmdState {

@@ -9,8 +9,8 @@
 
 void plBonusLib_8003D514(int arg0)
 {
-    Vec3 sp18;
-    Vec3 spC;
+    Vec sp18;
+    Vec spC;
     HSD_GObj* temp_r31;
     HSD_GObj* temp_r30;
     f32 temp_f1;

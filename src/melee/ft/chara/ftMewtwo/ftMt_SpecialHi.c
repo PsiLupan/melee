@@ -23,7 +23,7 @@
 #include "lb/lbvector.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <MSL/math.h>
 #include <MSL/math_ppc.h>
 
@@ -42,7 +42,7 @@ void ftMt_SpecialHi_SetStartGFX(HSD_GObj* gobj)
 
     {
         Fighter* fp1 = fp0;
-        Vec3 pos;
+        Vec pos;
 
         if (!fp1->x2219_b0) {
             lb_8000B1CC(fp1->parts[FtPart_WaistN].joint, NULL, &pos);
@@ -62,7 +62,7 @@ void ftMt_SpecialHi_SetEndGFX(HSD_GObj* gobj)
 
     {
         Fighter* fp1 = fp0;
-        Vec3 pos;
+        Vec pos;
 
         if (!fp1->x2219_b0) {
             lb_8000B1CC(fp1->parts[FtPart_WaistN].joint, NULL, &pos);
@@ -428,7 +428,7 @@ void ftMt_SpecialHi_Enter(HSD_GObj* gobj)
     }
 
     if (!(sqrt_stick < mewtwoAttrs->x58_MEWTWO_TELEPORT_STICK_RANGE_MIN)) {
-        Vec3 stickVec;
+        Vec stickVec;
 
         stickVec.x = fp->input.lstick.x;
         stickVec.y = fp->input.lstick.y;

@@ -7,19 +7,19 @@
 #include "baselib/class.h"
 #include "baselib/object.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct HSD_WObj {
     HSD_Obj parent;
     u32 flags;
-    Vec3 pos;
+    Vec pos;
     HSD_AObj* aobj;
     HSD_RObj* robj;
 };
 
 struct HSD_WObjDesc {
     char* class_name;
-    Vec3 pos;
+    Vec pos;
     HSD_RObjDesc* robjdesc;
 };
 
@@ -64,11 +64,11 @@ void HSD_WObjInterpretAnim(HSD_WObj* wobj);
 void HSD_WObjInit(HSD_WObj* wobj, HSD_WObjDesc* desc);
 HSD_WObj* HSD_WObjLoadDesc(HSD_WObjDesc* desc);
 void WObjSetupPosition(HSD_WObj* wobj);
-void HSD_WObjSetPosition(HSD_WObj*, Vec3*);
+void HSD_WObjSetPosition(HSD_WObj*, Vec*);
 void HSD_WObjSetPositionX(HSD_WObj*, f32);
 void HSD_WObjSetPositionY(HSD_WObj*, f32);
 void HSD_WObjSetPositionZ(HSD_WObj*, f32);
-void HSD_WObjGetPosition(HSD_WObj*, Vec3*);
+void HSD_WObjGetPosition(HSD_WObj*, Vec*);
 HSD_WObj* HSD_WObjAlloc(void);
 void HSD_WObjSetDefaultClass(HSD_ClassInfo* info);
 

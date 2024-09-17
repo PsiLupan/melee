@@ -18,15 +18,8 @@
 
 #include <__mem.h>
 #include <math.h>
-#include <dolphin/gx/GXAttr.h>
-#include <dolphin/gx/GXFrameBuf.h>
-#include <dolphin/gx/GXGeometry.h>
-#include <dolphin/gx/GXMisc.h>
-#include <dolphin/gx/GXTexture.h>
-#include <dolphin/gx/GXTransform.h>
-#include <dolphin/gx/GXVert.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/vec.h>
 #include <MSL/trigf.h>
 
 HSD_ObjAllocData shadow_alloc_data;
@@ -439,10 +432,10 @@ void HSD_ShadowSetViewingRect(HSD_Shadow* shadow, float top, float bottom,
 
 #define FLT_MAX 3.4028235E38F
 
-void HSD_ViewingRectInit(HSD_ViewingRect* rect, Vec3* position, Vec3* interest,
-                         Vec3* upvector, int perspective)
+void HSD_ViewingRectInit(HSD_ViewingRect* rect, Vec* position, Vec* interest,
+                         Vec* upvector, int perspective)
 {
-    Vec3 v;
+    Vec v;
     HSD_ASSERT(795, rect);
 
     rect->origin = *position;
@@ -464,11 +457,11 @@ int HSD_ViewingRectCheck(HSD_ViewingRect* rect)
     return rect->top > rect->bottom && rect->right > rect->left;
 }
 
-void HSD_ViewingRectAddRect(HSD_ViewingRect* rect, Vec3* position, float top,
+void HSD_ViewingRectAddRect(HSD_ViewingRect* rect, Vec* position, float top,
                             float bottom, float left, float right)
 {
     float x, y, dot, scale;
-    Vec3 o2p, e2p;
+    Vec o2p, e2p;
 
     HSD_ASSERT(855, rect);
     HSD_ASSERT(856, position);
@@ -490,7 +483,7 @@ void HSD_ViewingRectAddRect(HSD_ViewingRect* rect, Vec3* position, float top,
         left *= scale;
         right *= scale;
     } else {
-        Vec3 tmp;
+        Vec tmp;
         VECScale(&rect->eye_vn, &tmp, dot);
         VECSubtract(&o2p, &tmp, &e2p);
         x = VECDotProduct(&rect->right_v, &e2p);

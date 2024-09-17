@@ -68,7 +68,7 @@ HSD_JObj* it_8029CD78(Item_GObj* item_gobj)
     return temp_r29;
 }
 
-Item_GObj* it_8029CEB4(HSD_GObj* parent, Vec3* pos, ItemKind kind, f32 dir)
+Item_GObj* it_8029CEB4(HSD_GObj* parent, Vec* pos, ItemKind kind, f32 dir)
 {
     SpawnItem spawn;
     Item_GObj* item_gobj;
@@ -167,7 +167,7 @@ void it_8029D24C(Item_GObj* item_gobj)
         HSD_JObjSetRotationX(
             jobj, ftFx_SpecialS_ReturnFloatVarIndexed(item->owner, 1));
         if (ghost_jobj != NULL) {
-            Vec3 ghost_pos;
+            Vec ghost_pos;
             ftFx_SpecialS_CopyGhostPosIndexed(item->owner, 3, &ghost_pos);
             HSD_JObjSetTranslate(ghost_jobj, &ghost_pos);
             HSD_JObjSetRotationX(
@@ -197,7 +197,7 @@ void it_8029D554(Item_GObj* item_gobj)
         HSD_JObjSetRotationX(
             jobj, ftFx_SpecialS_ReturnFloatVarIndexed(item->owner, 1));
         if (ghost_jobj != NULL) {
-            Vec3 ghost_pos;
+            Vec ghost_pos;
             u8 _[8] = { 0 };
             ftFx_SpecialS_CopyGhostPosIndexed(item->owner, 3, &ghost_pos);
             HSD_JObjSetTranslate(ghost_jobj, &ghost_pos);
@@ -242,7 +242,7 @@ bool it_8029D7EC(Item_GObj* item_gobj)
 
 void it_8029D870(Item_GObj* item_gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Item* item = GET_ITEM(item_gobj);
     HSD_JObj* jobj = item->xDD4_itemVar.foxillusion.xDDC;
     if (item->owner != NULL && jobj != NULL) {

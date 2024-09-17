@@ -173,7 +173,7 @@ void grTIceClimber_80221204(HSD_GObj* gobj) {}
 
 void grTIceClimber_80221208(HSD_GObj* gobj)
 {
-    Vec3 pos;
+    Vec pos;
     Item* it = GET_ITEM(gobj);
     PAD_STACK(16);
 
@@ -217,7 +217,7 @@ DynamicsDesc* grTIceClimber_80221354(enum_t gobj)
     return NULL;
 }
 
-bool grTIceClimber_8022135C(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTIceClimber_8022135C(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

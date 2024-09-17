@@ -25,7 +25,7 @@
 /* 4A0F60 */ extern Article* it_804A0F60[]; // stage items
 
 /* 27B4A4 */ void it_8027B4A4(Fighter_GObj*, Item_GObj*);
-/* 27B5B0 */ Item_GObj* it_8027B5B0(s32, s32, HSD_JObj*, Vec3*, s32);
+/* 27B5B0 */ Item_GObj* it_8027B5B0(s32, s32, HSD_JObj*, Vec*, s32);
 /* 274EE8 */ void it_80274EE8(u32);
 
 /// Load ItCo.dat/usd
@@ -39,7 +39,7 @@
 /* 26F3D4 */ void it_8026F3D4(Item_GObj*, int, bool, int);
 /* 26E8C4 */ void it_8026E8C4(Item_GObj*, HSD_GObjEvent, HSD_GObjEvent);
 /* 26DF34 */ s32 it_8026DF34(void);
-/* 26F8B4 */ bool it_8026F8B4(Item_GObj*, Vec3*, Vec3*, int);
+/* 26F8B4 */ bool it_8026F8B4(Item_GObj*, Vec*, Vec*, int);
 /* 26F9A0 */ void it_8026F9A0(void);
 /* 2701BC */ void it_802701BC(HSD_GObj* gobj);
 /* 2703E8 */ void it_802703E8(HSD_GObj* gobj);
@@ -80,20 +80,20 @@
 /* 27327C */ void it_8027327C(HSD_GObj* gobj, s32 ID1, s32 ID2);
 /* 27346C */ void it_8027346C(HSD_GObj* gobj);
 /* 273484 */ void it_80273484(HSD_GObj* gobj);
-/* 273500 */ void it_80273500(HSD_GObj*, Vec3*);
-/* 273748 */ void it_80273748(HSD_GObj*, Vec3*, Vec3*);
+/* 273500 */ void it_80273500(HSD_GObj*, Vec*);
+/* 273748 */ void it_80273748(HSD_GObj*, Vec*, Vec*);
 
-/* 273B50 */ void it_80273B50(HSD_GObj*, Vec3*);
+/* 273B50 */ void it_80273B50(HSD_GObj*, Vec*);
 /* 274198 */ void it_80274198(HSD_GObj*, s32);
 /* 2741F4 */ void it_802741F4(HSD_GObj*, s32);
-/* 27429C */ void it_8027429C(HSD_GObj*, Vec3*);
+/* 27429C */ void it_8027429C(HSD_GObj*, Vec*);
 /* 2742F4 */ void it_802742F4(HSD_GObj*, HSD_GObj*, u8);
 /* 274658 */ void it_80274658(HSD_GObj*, f32);
 /* 274740 */ void it_80274740(HSD_GObj* gobj);
 /* 274A64 */ void it_80274A64(HSD_GObj* gobj);
 /* 274C78 */ bool it_80274C78(HSD_GObj* gobj);
 /* 274DAC */ void it_80274DAC(HSD_GObj*);
-/* 27737C */ void it_8027737C(HSD_GObj* gobj, Vec3* pos);
+/* 27737C */ void it_8027737C(HSD_GObj* gobj, Vec* pos);
 
 /// Toggle flag in 0xDC8 off
 /* 274EF8 */ void it_80274EF8(HSD_GObj* gobj);
@@ -138,7 +138,7 @@
 /* 272818 */ UNK_RET it_80272818(UNK_PARAMS);
 /* 272C90 */ HSD_JObj* it_80272C90(Item_GObj* gobj);
 
-/* 26E9A4 */ bool it_8026E9A4(Item_GObj*, Vec3*, Vec3*, int);
+/* 26E9A4 */ bool it_8026E9A4(Item_GObj*, Vec*, Vec*, int);
 /* 26EECC */ void it_8026EECC(HSD_GObj*, int);
 /* 273130 */ bool it_80273130(Item_GObj*);
 /* 274594 */ void it_80274594(Item_GObj*);

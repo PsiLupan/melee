@@ -36,8 +36,8 @@
 #include <math_ppc.h>
 #include <placeholder.h>
 #include <trigf.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/vec.h>
+#include <dolphin/gx.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/cobj.h>
 #include <baselib/debug.h>
@@ -116,7 +116,7 @@ typedef struct _mapData {
 
 /* 1BFFA8 */ static void Ground_801BFFA8(void);
 /* 1BFFAC */ static void Ground_801BFFAC(bool);
-/* 1C0A70 */ static bool Ground_801C0A70(Vec3* pos);
+/* 1C0A70 */ static bool Ground_801C0A70(Vec* pos);
 /* 1C0C2C */ static void Ground_801C0C2C(HSD_GObj*);
 /* 1C1CD0 */ static void Ground_801C1CD0(HSD_GObj*);
 /* 1C1D38 */ static void Ground_801C1D38(HSD_GObj*);
@@ -527,7 +527,7 @@ void Ground_801C0800(StructPairWithStageID* pair)
     stage_data->callback0();
 }
 
-static bool Ground_801C0A70(Vec3* pos)
+static bool Ground_801C0A70(Vec* pos)
 {
     if (HSD_Randi(2) != 0) {
         InternalStageId enabled_stages[] = {
@@ -669,7 +669,7 @@ void Ground_801C1158(void)
 void Ground_801C11AC(HSD_GObj* gobj)
 {
     HSD_JObj* jobj;
-    Vec3 scale;
+    Vec scale;
     f32 tmp = 1.0f;
     jobj = gobj->hsd_obj;
     scale.z = tmp;
@@ -1143,12 +1143,12 @@ char plightset[10] = "*lightset";
 
 void Ground_801C2374(HSD_LObj* lobj)
 {
-    Vec3 vec;
+    Vec vec;
     f32 vec_mul;
     HSD_LObj* cur = lobj;
     vec_mul = Ground_801C0498();
     while (cur != NULL) {
-        Vec3* vec_ptr;
+        Vec* vec_ptr;
         if (HSD_LObjGetPosition(cur, &vec)) {
             vec_ptr = &vec;
             vec.x *= vec_mul;
@@ -1409,10 +1409,10 @@ void Ground_801C2D0C(s32 i, HSD_JObj* jobj)
     stage_info.x280[i] = jobj;
 }
 
-bool Ground_801C2D24(enum_t arg0, Vec3* arg1)
+bool Ground_801C2D24(enum_t arg0, Vec* arg1)
 {
-    Vec3 sp20;
-    Vec3 sp14;
+    Vec sp20;
+    Vec sp14;
     u32 _;
     if (arg0 == 8) {
         Ground_801C2D24(4, arg1);
@@ -1809,9 +1809,9 @@ void Ground_801C39B0(f32 right)
 
 void Ground_801C39C0(void)
 {
-    Vec3 sp20;
-    Vec3 sp14;
-    Vec3 sp8;
+    Vec sp20;
+    Vec sp14;
+    Vec sp8;
     f32 phi_f3;
     f32 phi_f4;
     f32 phi_f5;
@@ -1916,8 +1916,8 @@ void Ground_801C39C0(void)
 
 void Ground_801C3BB4(void)
 {
-    Vec3 sp1C;
-    Vec3 sp10;
+    Vec sp1C;
+    Vec sp10;
     u8 _[8];
     f32 lft;
     f32 rgt;
@@ -2201,10 +2201,10 @@ bool Ground_801C43C4(void* arg0)
 
 void Ground_801C445C(HSD_LObj* lobj)
 {
-    Vec3 pos0;
-    Vec3 pos1;
-    Vec3 pos2;
-    Vec3 pos3;
+    Vec pos0;
+    Vec pos1;
+    Vec pos2;
+    Vec pos3;
     u8 _[4];
     HSD_WObj* wobj;
     HSD_LObj* cur;
@@ -2339,11 +2339,11 @@ void Ground_801C4A08(HSD_GObj* gobj)
     HSD_GObjPLink_80390228(gobj);
 }
 
-void Ground_801C4B50(s32 arg0, s32 arg1, Vec3* result, f32 arg8)
+void Ground_801C4B50(s32 arg0, s32 arg1, Vec* result, f32 arg8)
 {
-    Vec3 vec0;
-    Vec3 vec1;
-    Vec3 vec2;
+    Vec vec0;
+    Vec vec1;
+    Vec vec2;
     f32 result_x;
     f32 phi_f31;
     f32 result_y;
@@ -2393,7 +2393,7 @@ void Ground_801C4B50(s32 arg0, s32 arg1, Vec3* result, f32 arg8)
     result->z = result_z;
 }
 
-bool Ground_801C4D70(HSD_GObj* arg0, Vec3* arg1, f32 arg8)
+bool Ground_801C4D70(HSD_GObj* arg0, Vec* arg1, f32 arg8)
 {
     stage_info.x72C = arg0;
     stage_info.x730 = *arg1;
@@ -2401,7 +2401,7 @@ bool Ground_801C4D70(HSD_GObj* arg0, Vec3* arg1, f32 arg8)
     return true;
 }
 
-bool Ground_801C4DA0(Vec3* arg0, f32* arg1)
+bool Ground_801C4DA0(Vec* arg0, f32* arg1)
 {
     *arg0 = stage_info.x730;
     *arg1 = stage_info.x73C;
@@ -2433,7 +2433,7 @@ bool Ground_801C4E20(void)
 void Ground_801C4E70(HSD_JObj* arg0, HSD_JObj* arg1, HSD_JObj* arg2,
                      HSD_JObj* arg3, HSD_JObj* arg4, HSD_JObj* arg5)
 {
-    Vec3 vec;
+    Vec vec;
     stage_info.unk8C.b3 = true;
     lb_8000B1CC(arg0, NULL, &vec);
     stage_info.x130 = vec;
@@ -2487,14 +2487,14 @@ SDATA char Ground_804D452C[] = "fog";
 
 void Ground_801C4FAC(HSD_CObj* cobj)
 {
-    Vec3 sp74;
-    Vec3 sp68;
-    Vec3 sp5C;
-    Vec3 sp50;
-    Vec3 sp44;
-    Vec3 sp38;
-    Vec3 sp2C;
-    Vec3 sp20;
+    Vec sp74;
+    Vec sp68;
+    Vec sp5C;
+    Vec sp50;
+    Vec sp44;
+    Vec sp38;
+    Vec sp2C;
+    Vec sp20;
     float dx;
     float dy;
     float dz;
@@ -2759,7 +2759,7 @@ Item_GObj* Ground_801C58E0(s32 arg0, s32 arg1)
 {
     s32 tmp = arg0;
     Item_GObj* result;
-    Vec3 sp10;
+    Vec sp10;
     Ground_801C2D24(arg1, &sp10);
     result = it_802F2094(0, &sp10, tmp, 0);
     un_80304A58(tmp);
@@ -2847,7 +2847,7 @@ u32 Ground_801C5AD0(s32 i)
     return Ground_803DFEDC[i]->flags2;
 }
 
-void Ground_801C5AEC(Vec3* v, Vec3* arg1, Vec3* arg2, Vec3* arg3)
+void Ground_801C5AEC(Vec* v, Vec* arg1, Vec* arg2, Vec* arg3)
 {
     lbVector_EulerAnglesFromONB(v, arg1, arg2, arg3);
     if (!(fabsf(v->x) < 30000)) {

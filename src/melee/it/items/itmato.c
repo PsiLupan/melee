@@ -48,7 +48,7 @@ void it_802D8594(Item_GObj* item_gobj)
 {
     Item* it = GET_ITEM(item_gobj);
     if (it->xDD4_itemVar.mato.x0 != NULL) {
-        Vec3 pos;
+        Vec pos;
         lb_8000B1CC(it->xDD4_itemVar.mato.x0, NULL, &pos);
         it->pos = pos;
     }

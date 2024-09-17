@@ -39,9 +39,9 @@ struct ItemStateDesc;
 /* 26A8EC */ void Item_8026A8EC(Item_GObj* gobj);
 /* 26AB54 */ void Item_8026AB54(HSD_GObj* gobj, HSD_GObj* owner_gobj,
                                 Fighter_Part part);
-/* 26ABD8 */ void Item_8026ABD8(HSD_GObj* gobj, Vec3* pos, float);
-/* 26AC74 */ void Item_8026AC74(HSD_GObj* gobj, Vec3*, Vec3*, float);
-/* 26AD20 */ void Item_8026AD20(HSD_GObj* gobj, Vec3*, Vec3*, float);
+/* 26ABD8 */ void Item_8026ABD8(HSD_GObj* gobj, Vec* pos, float);
+/* 26AC74 */ void Item_8026AC74(HSD_GObj* gobj, Vec*, Vec*, float);
+/* 26AD20 */ void Item_8026AD20(HSD_GObj* gobj, Vec*, Vec*, float);
 /* 26ADC0 */ void Item_8026ADC0(HSD_GObj* gobj);
 /* 26AE10 */ void Item_OnUserDataRemove(void* user_data);
 /* 26AE10 */ void lbl_8026AE10(void* user_data);

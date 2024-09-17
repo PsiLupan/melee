@@ -3,12 +3,12 @@
 #include "gr/ground.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 
-bool grCastle_801D0B0C(Vec3* v, u32 arg1, HSD_JObj* jobj)
+bool grCastle_801D0B0C(Vec* v, u32 arg1, HSD_JObj* jobj)
 {
-    Vec3 pos;
+    Vec pos;
     float temp_f30;
     float temp_f31;
     float temp_f31_2;

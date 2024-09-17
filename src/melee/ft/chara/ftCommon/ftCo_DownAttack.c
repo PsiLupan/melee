@@ -68,7 +68,7 @@ void ftCo_DownAttack_Coll(ftCo_GObj* gobj)
 void ftCo_80098634(HSD_ObjAllocUnk2* arg0)
 {
     Vec4* cur_vec4 = (Vec4*) arg0;
-    Vec3* cur_pos = (Vec3*) arg0;
+    Vec* cur_pos = (Vec*) arg0;
     ftCo_GObj* cur_gobj;
     int count = 0;
     for (cur_gobj = HSD_GObj_Entities->fighters; cur_gobj != NULL;

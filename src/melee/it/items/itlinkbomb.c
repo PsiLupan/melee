@@ -13,7 +13,7 @@
 #include "mp/mpcoll.h"
 #include "MSL/math.h"
 
-static Vec3 it_803B8640;
+static Vec it_803B8640;
 
 ItemStateTable it_803F6888[] = {
     { 0, it_8029E074, it_8029E218, NULL },
@@ -198,7 +198,7 @@ static inline void it_8029DD58_inline(Item* item, itLinkBombAttributes* attr,
     Item_8026AB54(temp_r3, fighter_gobj, arg2);
 }
 
-HSD_GObj* it_8029DD58(Item_GObj* fighter_gobj, Vec3* arg1, u8 arg2, int arg3,
+HSD_GObj* it_8029DD58(Item_GObj* fighter_gobj, Vec* arg1, u8 arg2, int arg3,
                       f32 arg4)
 {
     Item_GObj* temp_r3;
@@ -365,7 +365,7 @@ void it_8029EAF0(Item_GObj* gobj)
     it_80274658(gobj, it_804D6D28->x68_float);
 }
 
-static inline int it_LinkBomb_Inline_VelocityCompare(HSD_GObj* gobj, Vec3* vel)
+static inline int it_LinkBomb_Inline_VelocityCompare(HSD_GObj* gobj, Vec* vel)
 {
     Item* item;
     itLinkBombAttributes* sa;
@@ -383,7 +383,7 @@ int it_8029EB3C(HSD_GObj* gobj)
 {
     Item* item;
     s32 temp_r3;
-    Vec3 vel;
+    Vec vel;
 
     item = GET_ITEM(gobj);
     vel = item->x40_vel;
@@ -564,8 +564,8 @@ void it_8029F69C(HSD_GObj* gobj)
     HSD_JObj* jobj;
     Item* item;
     int pad[2];
-    Vec3 item_pos;
-    Vec3 const_vec;
+    Vec item_pos;
+    Vec const_vec;
 
     item = GET_ITEM(gobj);
     jobj = HSD_GObjGetHSDObj(gobj);

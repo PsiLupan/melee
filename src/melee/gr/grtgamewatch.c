@@ -179,7 +179,7 @@ DynamicsDesc* grTGameWatch_802243E4(int unused)
     return NULL;
 }
 
-bool grTGameWatch_802243EC(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTGameWatch_802243EC(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

@@ -71,13 +71,13 @@ void Item_8026A8EC(Item_GObj* gobj);
 void Item_8026AB54(HSD_GObj* gobj, HSD_GObj* owner_gobj, u8 part);
 
 /// Drop Item
-void Item_8026ABD8(HSD_GObj* gobj, Vec3* pos, float arg2);
+void Item_8026ABD8(HSD_GObj* gobj, Vec* pos, float arg2);
 
 /// This is actually another Item Drop function
-void Item_8026AC74(HSD_GObj* gobj, Vec3* arg1, Vec3* arg2, float arg3);
+void Item_8026AC74(HSD_GObj* gobj, Vec* arg1, Vec* arg2, float arg3);
 
 /// Throw Item
-void Item_8026AD20(HSD_GObj* gobj, Vec3* arg1, Vec3* arg2, float arg3);
+void Item_8026AD20(HSD_GObj* gobj, Vec* arg1, Vec* arg2, float arg3);
 
 /// Make Item Airborne
 void Item_8026ADC0(HSD_GObj* gobj);
@@ -119,7 +119,7 @@ static bool Item_8026784C(enum_t dropItem, int _);
 void Item_80267978(HSD_GObj* gobj);
 
 static void ItUnkHoldKind(HSD_GObj* gobj);
-static void HSD_JObjSetScaleItem(Item* it, HSD_JObj* jobj, Vec3* scl);
+static void HSD_JObjSetScaleItem(Item* it, HSD_JObj* jobj, Vec* scl);
 
 /// Initialize item variables
 static void Item_80267AA8(HSD_GObj* gobj, SpawnItem* spawnItem);

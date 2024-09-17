@@ -7,7 +7,6 @@
 
 #include <placeholder.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/types.h>
 
 /* 0C0658 */ ftDeviceUnk2* ftCo_800C0658(Fighter* fp);
 /* 0C0674 */ ftDeviceUnk2* ftCo_800C0674(Fighter_GObj* gobj);

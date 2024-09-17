@@ -206,8 +206,8 @@ bool ftCo_800C0CB8(ftCo_GObj* gobj)
 void ftCo_800C0D0C(ftCo_GObj* gobj)
 {
     u8 _[8] = { 0 };
-    Vec3 joint_pos;
-    Vec3 hip_pos;
+    Vec joint_pos;
+    Vec hip_pos;
     Fighter* fp = GET_FIGHTER(gobj);
     ftCommon_8007DB58(gobj);
     ftCo_8009750C(gobj);
@@ -266,8 +266,8 @@ void ftCo_800C0FCC(HSD_GObj* arg0, ftCo_GObj* arg1)
 {
     Fighter* fp = GET_FIGHTER(arg1);
     if (mpLib_80054ED8(fp->mv.co.bury.x20)) {
-        Vec3 normal;
-        Vec3 offset;
+        Vec normal;
+        Vec offset;
         HSD_JObj* jobj = GET_JOBJ(arg0);
         mpLib_80054DFC(fp->mv.co.bury.x20, &normal);
         HSD_JObjSetRotationZ(jobj, atan2f(-normal.x, normal.y));

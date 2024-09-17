@@ -4,10 +4,10 @@
 #include <platform.h>
 #include <dolphin/gx/forward.h>
 
+#include <dolphin/gx.h>
 #include <dolphin/gx/__types.h>
 #include <dolphin/gx/GXEnum.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 typedef struct _GXLightObj {
     char x0[0xC];  // at 0x00
@@ -18,8 +18,8 @@ typedef struct _GXLightObj {
     f32 ka;        // at 0x1C
     f32 kb;        // at 0x20
     f32 kc;        // at 0x24
-    Vec3 pos;      // at 0x28
-    Vec3 dir;      // at 0x34
+    Vec pos;       // at 0x28
+    Vec dir;       // at 0x34
 } GXLightObj;
 
 void GXInitLightAttn(GXLightObj* light, f32 aa, f32 ab, f32 ac, f32 ka, f32 kb,

@@ -209,7 +209,7 @@ DynamicsDesc* grTGanon_802249B4(enum_t arg0)
     return NULL;
 }
 
-bool grTGanon_80224A4C(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTGanon_80224A4C(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

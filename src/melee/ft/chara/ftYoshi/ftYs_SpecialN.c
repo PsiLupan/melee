@@ -12,7 +12,7 @@
 #include "ftCommon/ftCo_CaptureYoshi.h"
 #include "it/items/it_2F2B.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 
 /* 12CEE0 */ static void fn_8012CEE0(HSD_GObj*);
@@ -40,12 +40,12 @@ Vec4 ftYs_Unk3_803CED94 = {
     1.2,
 };
 
-Vec3 ftYs_Unk3_803CEDA4[] = {
+Vec ftYs_Unk3_803CEDA4[] = {
     { 12, 0, -6 },
     { 6, 6, 6 },
 };
 
-Vec3 const ftYs_Unk1_803B75C0 = { 0 };
+Vec const ftYs_Unk1_803B75C0 = { 0 };
 
 void ftYs_SpecialN_Enter(HSD_GObj* gobj)
 {

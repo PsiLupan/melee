@@ -14,7 +14,7 @@
 #include "it/item.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftDk_HeavyLanding_Phys(HSD_GObj* gobj)
 {
@@ -31,7 +31,7 @@ static void doSomething(HSD_GObj* gobj);
 
 void ftDk_MS_349_800E06D8(HSD_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     Fighter* fp = GET_FIGHTER(gobj);
     if (checkSomething(gobj)) {
         doSomething(gobj);

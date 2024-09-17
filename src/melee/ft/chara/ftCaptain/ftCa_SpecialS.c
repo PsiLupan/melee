@@ -21,7 +21,7 @@
 #include "it/it_26B1.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 
 void ftCa_SpecialS_RemoveGFX(HSD_GObj* gobj)
@@ -49,7 +49,7 @@ static void resetCmdVarsGround(HSD_GObj* gobj)
 
 static inline void resetVel(Fighter* fp)
 {
-    Vec3* vel = &fp->self_vel;
+    Vec* vel = &fp->self_vel;
     vel->x = vel->y = vel->z = 0;
 }
 
@@ -110,7 +110,7 @@ static inline void setupAirStart(HSD_GObj* gobj)
     fp->x21F4 = ftCa_SpecialS_OnDetect;
     {
         /// @todo Too much stack for #resetVel.
-        Vec3* vel = &fp->self_vel;
+        Vec* vel = &fp->self_vel;
         vel->x = vel->y = vel->z = 0;
     }
 }
@@ -137,7 +137,7 @@ static void onDetectGround(HSD_GObj* gobj)
                               0, NULL);
     setCallbacks(gobj);
     {
-        Vec3* vel = &fp->self_vel;
+        Vec* vel = &fp->self_vel;
         vel->y = vel->z = 0;
     }
     fp->gr_vel *= sa->specials_gr_vel_x;

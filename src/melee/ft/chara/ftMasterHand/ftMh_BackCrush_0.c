@@ -11,7 +11,7 @@
 #include "ftMasterHand/types.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 
 void ftMh_BackPunch_Coll(HSD_GObj* gobj) {}
@@ -30,8 +30,8 @@ void ftMh_MS_370_80153D2C(HSD_GObj* gobj)
     HSD_JObj* jobj = get_jobj(gobj);
 
     ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
-    Vec3 pos;
-    Vec3 scl;
+    Vec pos;
+    Vec scl;
 
     u8 _[4];
 
@@ -74,7 +74,7 @@ void ftMh_BackCrush_Anim(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
 
     if (fp->cmd_vars[0] != 0) {
-        Vec3 scl;
+        Vec scl;
         /// @todo #GET_JOBJ
         HSD_JObj* jobj = get_jobj(gobj);
         if (--fp->mv.mh.unk0.x70 < 0) {

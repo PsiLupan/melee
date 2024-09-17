@@ -14,31 +14,31 @@
 #include "mp/mplib.h"
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
 
-void grTFox_80220B80(int);                   /* static */
-void grTFox_80220B84(void);                  /* static */
-void grTFox_80220BFC(void);                  /* static */
-void grTFox_80220C00(void);                  /* static */
-bool grTFox_80220C24(void);                  /* static */
-HSD_GObj* grTFox_80220C2C(s32);              /* static */
-void grTFox_80220D14(HSD_GObj*);             /* static */
-bool grTFox_80220D40(HSD_GObj*);             /* static */
-void grTFox_80220D48(HSD_GObj*);             /* static */
-void grTFox_80220D4C(HSD_GObj*);             /* static */
-void grTFox_80220D50(HSD_GObj*);             /* static */
-bool grTFox_80220DA0(HSD_GObj*);             /* static */
-void grTFox_80220DA8(HSD_GObj*);             /* static */
-void grTFox_80220DDC(HSD_GObj*);             /* static */
-void grTFox_80220DE0(HSD_GObj*);             /* static */
-bool grTFox_80220E30(HSD_GObj*);             /* static */
-void grTFox_80220E38(HSD_GObj*);             /* static */
-void grTFox_80220E58(HSD_GObj*);             /* static */
-DynamicsDesc* grTFox_80220E5C(enum_t);       /* static */
-bool grTFox_80220F08(Vec3*, int, HSD_JObj*); /* static */
+void grTFox_80220B80(int);                  /* static */
+void grTFox_80220B84(void);                 /* static */
+void grTFox_80220BFC(void);                 /* static */
+void grTFox_80220C00(void);                 /* static */
+bool grTFox_80220C24(void);                 /* static */
+HSD_GObj* grTFox_80220C2C(s32);             /* static */
+void grTFox_80220D14(HSD_GObj*);            /* static */
+bool grTFox_80220D40(HSD_GObj*);            /* static */
+void grTFox_80220D48(HSD_GObj*);            /* static */
+void grTFox_80220D4C(HSD_GObj*);            /* static */
+void grTFox_80220D50(HSD_GObj*);            /* static */
+bool grTFox_80220DA0(HSD_GObj*);            /* static */
+void grTFox_80220DA8(HSD_GObj*);            /* static */
+void grTFox_80220DDC(HSD_GObj*);            /* static */
+void grTFox_80220DE0(HSD_GObj*);            /* static */
+bool grTFox_80220E30(HSD_GObj*);            /* static */
+void grTFox_80220E38(HSD_GObj*);            /* static */
+void grTFox_80220E58(HSD_GObj*);            /* static */
+DynamicsDesc* grTFox_80220E5C(enum_t);      /* static */
+bool grTFox_80220F08(Vec*, int, HSD_JObj*); /* static */
 
 typedef struct grTFox_UnkStruct {
     UNK_T unk0;
@@ -202,7 +202,7 @@ DynamicsDesc* grTFox_80220E5C(enum_t arg0)
     return NULL;
 }
 
-bool grTFox_80220F08(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTFox_80220F08(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

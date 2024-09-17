@@ -34,7 +34,7 @@ void ftSk_SpecialN_80111FBC(HSD_GObj* gobj)
     if (fp->fv.sk.x4 != NULL) {
         fp->fv.sk.x4 = NULL;
         while (fp->fv.sk.x0 != 0) {
-            Vec3 pos = fp->cur_pos;
+            Vec pos = fp->cur_pos;
             PAD_STACK(4 * 1);
             {
                 float y_scale;
@@ -443,7 +443,7 @@ void shootNeedles(Fighter_GObj* gobj)
         fp->mv.sk.specialn.x4 = false;
 
         if (fp->fv.sk.x0 > 0) {
-            Vec3 pos = fp->cur_pos;
+            Vec pos = fp->cur_pos;
             float x_scale, y_scale;
             int rand;
             if (fp->ground_or_air == GA_Ground) {

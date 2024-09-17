@@ -28,7 +28,7 @@ ItemStateTable it_803F83F0[] = { { -1, it_8028FC84, it_8028FC8C, it_8028FCBC },
                                  { -1, it_8028FE0C, it_8028FE14,
                                    it_8028FE44 } };
 
-void it_8028F9D8(Item_GObj* arg0, Vec3* arg1, f32 arg8)
+void it_8028F9D8(Item_GObj* arg0, Vec* arg1, f32 arg8)
 {
     Item* temp_r30 = GET_ITEM(arg0);
     Vec4* temp_r6 = temp_r30->xC4_article_data->x4_specialAttributes;
@@ -41,7 +41,7 @@ void it_8028F9D8(Item_GObj* arg0, Vec3* arg1, f32 arg8)
     HSD_JObjSetTranslate(arg0->hsd_obj, &temp_r30->pos);
 }
 
-HSD_GObj* it_8028FAF4(Item_GObj* arg0, Vec3* arg1)
+HSD_GObj* it_8028FAF4(Item_GObj* arg0, Vec* arg1)
 {
     SpawnItem spawn;
     HSD_GObj* gobj;

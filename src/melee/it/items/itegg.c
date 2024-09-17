@@ -46,7 +46,7 @@ ItemStateTable it_803F5988[] = {
     { -1, it_802891E0, it_8028920C, it_80289210 },
 };
 
-Item_GObj* it_80288C88(Item_GObj* gobj, Vec3* pos, Vec3* vel, float dir)
+Item_GObj* it_80288C88(Item_GObj* gobj, Vec* pos, Vec* vel, float dir)
 {
     SpawnItem spawn;
     Item* ip;
@@ -102,7 +102,7 @@ bool it_80288DC4(Item_GObj* gobj)
     }
 
     {
-        Vec3 pos;
+        Vec pos;
         pos.x = pos.y = pos.z = 0.0F;
         if (it_8026F8B4(gobj, &ip->pos, &pos, 0)) {
             return false;

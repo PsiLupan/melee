@@ -66,7 +66,7 @@ void ftCo_800C1E64(ftCo_GObj* gobj, int msid, int timer, int vel_y_exponent,
                    float facing_dir)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 ef_offset;
+    Vec ef_offset;
     fp->cmd_vars[0] = true;
     {
         CollData* coll = &fp->coll_data;
@@ -92,7 +92,7 @@ void ftCo_800C1E64(ftCo_GObj* gobj, int msid, int timer, int vel_y_exponent,
     fp->mv.co.passivewall.x8 = false;
     fp->mv.co.passivewall.vel_y_exponent = vel_y_exponent;
     {
-        Vec3 ef_pos;
+        Vec ef_pos;
         float pos_x_offset = fp->cur_pos.x + ef_offset.x;
         PAD_STACK(4);
         ef_pos.x = pos_x_offset;

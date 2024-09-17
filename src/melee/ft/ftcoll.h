@@ -9,7 +9,7 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 /* 0763C0 */ void ftColl_800763C0(Fighter_GObj* attacker, Fighter_GObj* victim,
                                   enum_t attackID);
@@ -33,7 +33,7 @@
 /* 076ED8 */ bool ftColl_80076ED8(Fighter* fp0, HitCapsule* hit0, Fighter* fp1,
                                   HitCapsule* hit1);
 /* 077464 */ UNK_RET ftColl_80077464(UNK_PARAMS);
-/* 077688 */ void ftColl_80077688(Item*, HitCapsule*, Fighter*, Vec3*, f32);
+/* 077688 */ void ftColl_80077688(Item*, HitCapsule*, Fighter*, Vec*, f32);
 /* 077970 */ UNK_RET ftColl_80077970(UNK_PARAMS);
 /* 077C60 */ UNK_RET ftColl_80077C60(UNK_PARAMS);
 /* 078384 */ void ftColl_80078384(Fighter*, HurtCapsule*, HitCapsule*);
@@ -89,10 +89,10 @@
 /* 07B7A4 */ void ftColl_8007B7A4(Fighter_GObj* gobj, int);
 /* 07B7FC */ void ftColl_8007B7FC(Fighter*, int);
 /* 07B868 */ s32 ftColl_8007B868(Fighter_GObj* gobj);
-/* 07B8A8 */ void ftColl_8007B8A8(HitCapsule*, Vec3*);
+/* 07B8A8 */ void ftColl_8007B8A8(HitCapsule*, Vec*);
 /* 07B8CC */ void ftColl_8007B8CC(Fighter*, Fighter_GObj*);
 /* 07B8E8 */ void ftColl_8007B8E8(Fighter_GObj*);
-/* 07B924 */ void ftColl_GetWindOffsetVec(Fighter_GObj*, Vec3* out_wind);
+/* 07B924 */ void ftColl_GetWindOffsetVec(Fighter_GObj*, Vec* out_wind);
 /* 07BA0C */ void ftColl_8007BA0C(Fighter_GObj*);
 /* 07BAC0 */ void ftColl_8007BAC0(Fighter_GObj*);
 /* 07BBCC */ float ftColl_8007BBCC(Fighter_GObj* gobj);

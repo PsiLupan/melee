@@ -11,31 +11,31 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
 
-void grTKirby_80221364(int);                   /* static */
-void grTKirby_80221368(void);                  /* static */
-void grTKirby_802213D8(void);                  /* static */
-void grTKirby_802213DC(void);                  /* static */
-bool grTKirby_80221400(void);                  /* static */
-HSD_GObj* grTKirby_80221408(s32);              /* static */
-void grTKirby_802214F0(HSD_GObj*);             /* static */
-bool grTKirby_8022151C(HSD_GObj*);             /* static */
-void grTKirby_80221524(HSD_GObj*);             /* static */
-void grTKirby_80221528(HSD_GObj*);             /* static */
-void grTKirby_8022152C(HSD_GObj*);             /* static */
-bool grTKirby_8022157C(HSD_GObj*);             /* static */
-void grTKirby_80221584(HSD_GObj*);             /* static */
-void grTKirby_802215B8(HSD_GObj*);             /* static */
-void grTKirby_802215BC(HSD_GObj*);             /* static */
-bool grTKirby_8022160C(HSD_GObj*);             /* static */
-void grTKirby_80221614(HSD_GObj*);             /* static */
-void grTKirby_80221634(HSD_GObj*);             /* static */
-DynamicsDesc* grTKirby_80221638(enum_t);       /* static */
-bool grTKirby_80221640(Vec3*, int, HSD_JObj*); /* static */
+void grTKirby_80221364(int);                  /* static */
+void grTKirby_80221368(void);                 /* static */
+void grTKirby_802213D8(void);                 /* static */
+void grTKirby_802213DC(void);                 /* static */
+bool grTKirby_80221400(void);                 /* static */
+HSD_GObj* grTKirby_80221408(s32);             /* static */
+void grTKirby_802214F0(HSD_GObj*);            /* static */
+bool grTKirby_8022151C(HSD_GObj*);            /* static */
+void grTKirby_80221524(HSD_GObj*);            /* static */
+void grTKirby_80221528(HSD_GObj*);            /* static */
+void grTKirby_8022152C(HSD_GObj*);            /* static */
+bool grTKirby_8022157C(HSD_GObj*);            /* static */
+void grTKirby_80221584(HSD_GObj*);            /* static */
+void grTKirby_802215B8(HSD_GObj*);            /* static */
+void grTKirby_802215BC(HSD_GObj*);            /* static */
+bool grTKirby_8022160C(HSD_GObj*);            /* static */
+void grTKirby_80221614(HSD_GObj*);            /* static */
+void grTKirby_80221634(HSD_GObj*);            /* static */
+DynamicsDesc* grTKirby_80221638(enum_t);      /* static */
+bool grTKirby_80221640(Vec*, int, HSD_JObj*); /* static */
 
 static StageCallbacks grTKb_803E8BB0[4] = {
     { grTKirby_802214F0, grTKirby_8022151C, grTKirby_80221524,
@@ -173,7 +173,7 @@ DynamicsDesc* grTKirby_80221638(enum_t arg0)
     return NULL;
 }
 
-bool grTKirby_80221640(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTKirby_80221640(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

@@ -7,31 +7,31 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 
 typedef struct {
-    Vec3 v1;
+    Vec v1;
     float v2;
     HSD_JObj* jobj;
 } Foo;
 
 /* 005BB0 */ int lbColl_80005BB0(HitCapsule*, int);
-/* 005C44 */ bool lbColl_80005C44(Vec3*, Vec3*, Vec3*, Vec3*, float, float);
-/* 005EBC */ float lbColl_80005EBC(Vec3*, Vec3*, Vec3*, float*);
-/* 005FC0 */ float lbColl_80005FC0(Vec3*, Vec3*, Vec3*, float*);
-/* 006094 */ bool lbColl_80006094(Vec3*, Vec3*, Vec3*, Vec3*, Vec3*, Vec3*,
+/* 005C44 */ bool lbColl_80005C44(Vec*, Vec*, Vec*, Vec*, float, float);
+/* 005EBC */ float lbColl_80005EBC(Vec*, Vec*, Vec*, float*);
+/* 005FC0 */ float lbColl_80005FC0(Vec*, Vec*, Vec*, float*);
+/* 006094 */ bool lbColl_80006094(Vec*, Vec*, Vec*, Vec*, Vec*, Vec*, float,
+                                  float);
+/* 0067F8 */ bool lbColl_800067F8(Vec*, Vec*, Vec*, Vec*, Vec*, Vec*, float,
                                   float, float);
-/* 0067F8 */ bool lbColl_800067F8(Vec3*, Vec3*, Vec3*, Vec3*, Vec3*, Vec3*,
-                                  float, float, float);
-/* 0077A0 */ void lbColl_800077A0(Vec3*, Mtx, Vec3*, Vec3*, Vec3*, Vec3*,
+/* 0077A0 */ void lbColl_800077A0(Vec*, Mtx, Vec*, Vec*, Vec*, Vec*,
                                   float* angle, float, float);
 /* 007AFC */ bool lbColl_80007AFC(HitCapsule*, HitCapsule*, float, float);
 /* 007B78 */ UNK_RET lbColl_80007B78(Mtx, Mtx, float, float);
 /* 007BCC */ bool lbColl_80007BCC(HitCapsule*, HitResult* shield_hit, UNK_T,
                                   s32, float, float, float);
 /* 007D68 */ void lbColl_JObjSetupMatrix(HSD_JObj*);
-/* 007DD8 */ void lbColl_80007DD8(HitCapsule*, HitResult*, Mtx, Vec3*, float*,
+/* 007DD8 */ void lbColl_80007DD8(HitCapsule*, HitResult*, Mtx, Vec*, float*,
                                   float);
 /* 007ECC */ bool lbColl_80007ECC(HitCapsule*, HurtCapsule*, Mtx,
                                   float hit_scl_y, float hurt_scl_y,
@@ -52,12 +52,12 @@ typedef struct {
 /* 008A5C */ void lbColl_80008A5C(HitCapsule* hit);
 /* 008D30 */ void lbColl_80008D30(HitCapsule*, UNK_T);
 /* 008DA4 */ UNK_RET lbColl_80008DA4(UNK_PARAMS);
-/* 008FC8 */ void lbColl_80008FC8(Vec3, Vec3, u8*, u8*, float);
-/* 0096B4 */ void lbColl_800096B4(MtxPtr, Vec3, Vec3, u8*, u8*, float);
+/* 008FC8 */ void lbColl_80008FC8(Vec, Vec, u8*, u8*, float);
+/* 0096B4 */ void lbColl_800096B4(MtxPtr, Vec, Vec, u8*, u8*, float);
 /* 009DD4 */ UNK_RET lbColl_80009DD4(UNK_PARAMS);
 /* 009F54 */ bool lbColl_80009F54(HitCapsule* hit, u32 arg1, float arg8);
 /* 00A044 */ bool lbColl_8000A044(HitCapsule* hit, u32 arg1, float arg8);
-/* 00A10C */ bool lbColl_8000A10C(Vec3 (*)[2], u32, f32);
+/* 00A10C */ bool lbColl_8000A10C(Vec (*)[2], u32, f32);
 /* 00A1A8 */ bool lbColl_8000A1A8(UNK_T, int, float scale_y);
 /* 00A244 */ bool lbColl_8000A244(HurtCapsule* hurt, u32 arg1, Mtx arg2,
                                   float arg3);
@@ -85,7 +85,7 @@ static inline bool approximatelyZero(float x)
     return result;
 }
 
-static inline bool testPlusX(Vec3* a, Vec3* b, Vec3* c, float offset)
+static inline bool testPlusX(Vec* a, Vec* b, Vec* c, float offset)
 {
     float x = a->x + offset;
     if (x < b->x && x < c->x) {
@@ -105,7 +105,7 @@ static inline bool testPlus(float a, float b, float c, float offset)
     return true;
 }
 
-static inline bool testMinusX(Vec3* a, Vec3* b, Vec3* c, float offset)
+static inline bool testMinusX(Vec* a, Vec* b, Vec* c, float offset)
 {
     float x = a->x - offset;
     if (x > b->x && x > c->x) {

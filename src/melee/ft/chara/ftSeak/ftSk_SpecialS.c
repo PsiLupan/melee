@@ -215,7 +215,7 @@ void ftSk_SpecialS_8011097C(HSD_GObj* gobj)
     return;
 }
 
-void ftSk_SpecialS_UpdateHitboxes(HSD_GObj* gobj, Vec3* new_pos, s32 hitbox_id)
+void ftSk_SpecialS_UpdateHitboxes(HSD_GObj* gobj, Vec* new_pos, s32 hitbox_id)
 {
     if (gobj == NULL) {
         return;
@@ -514,11 +514,11 @@ bool ftSk_SpecialS_CheckInitChain(HSD_GObj* gobj)
 {
     u8 unused0[4];
 
-    Vec3 vec0;
+    Vec vec0;
 
     u8 unused1[4];
 
-    Vec3 vec1;
+    Vec vec1;
 
     Fighter* fp = gobj->user_data;
     ftSeakAttributes* specialAttributes = fp->dat_attrs;
@@ -554,7 +554,7 @@ bool ftSk_SpecialS_CheckInitChain(HSD_GObj* gobj)
     }
 
     if (fp->mv.sk.specials.x0 == specialAttributes->x1C + 1) {
-        static Vec3 const vec0_init = { 1.8, 0, 0 };
+        static Vec const vec0_init = { 1.8, 0, 0 };
 
         vec0 = vec0_init;
         {
@@ -799,8 +799,8 @@ void ftSk_SpecialAirS_Coll(HSD_GObj* gobj)
 void ftSk_SpecialS_80111830(HSD_GObj* gobj)
 {
     /// @todo Split into two functions, one with @var fp and one with @var fp2
-    Vec3 vec0;
-    Vec3 vec1;
+    Vec vec0;
+    Vec vec1;
     Fighter* fp2;
 
     Fighter* fp = gobj->user_data;

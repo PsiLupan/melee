@@ -41,7 +41,7 @@
 /* 21FB50 */ static int lbl_8021FB50(s32, HSD_GObj*);
 /* 21FBE8 */ static void grTMario_8021FBE8(S32Vec3*, f32);
 /* 21FC50 */ static DynamicsDesc* grTMario_8021FC50(enum_t);
-/* 21FC58 */ static bool grTMario_8021FC58(Vec3*, int, HSD_JObj*);
+/* 21FC58 */ static bool grTMario_8021FC58(Vec*, int, HSD_JObj*);
 
 StageCallbacks grTMr_803E8548[] = {
     {
@@ -201,8 +201,8 @@ int lbl_8021FB50(s32 unk, HSD_GObj* gobj)
 {
     f32 temp_f1;
     f32 temp_f31;
-    Vec3 current;
-    Vec3 previous;
+    Vec current;
+    Vec previous;
     f32 unused = -120.0f;
 
     temp_f31 = unused * Ground_801C0498();
@@ -236,7 +236,7 @@ DynamicsDesc* grTMario_8021FC50(enum_t arg0)
     return NULL;
 }
 
-bool grTMario_8021FC58(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTMario_8021FC58(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

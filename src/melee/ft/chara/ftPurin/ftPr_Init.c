@@ -430,7 +430,7 @@ Vec4 ftPr_Init_803D05D8 = { 1.1, 1.35, 1.3, 1.2 };
 
 char ftPr_Init_assert_msg_0[] = "!(jobj->flags & JOBJ_USE_QUATERNION)";
 
-Vec3 ftPr_Init_803D0610[] = {
+Vec ftPr_Init_803D0610[] = {
     { +8, +0, -4 },
     { +4, +4, +4 },
 };

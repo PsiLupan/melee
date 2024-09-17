@@ -57,8 +57,8 @@
 /* 07DB58 */ void ftCommon_8007DB58(ftCo_GObj*);
 /* 07DBCC */ void ftCommon_8007DBCC(ftCo_Fighter*, bool, float);
 /* 07DC08 */ bool ftCommon_8007DC08(ftCo_Fighter*, float);
-/* 07DD7C */ void ftCommon_8007DD7C(ftCo_GObj*, Vec3*);
-/* 07DFD0 */ void ftCommon_8007DFD0(ftCo_GObj* gobj, Vec3* arg1);
+/* 07DD7C */ void ftCommon_8007DD7C(ftCo_GObj*, Vec*);
+/* 07DFD0 */ void ftCommon_8007DFD0(ftCo_GObj* gobj, Vec* arg1);
 /* 07E0E4 */ void ftCommon_8007E0E4(ftCo_GObj*);
 /* 07E2A4 */ ftCo_GObj* ftCommon_8007E2A4(ftCo_GObj*);
 /* 07E2D0 */ void ftCommon_8007E2D0(ftCo_Fighter*, s16, HSD_GObjEvent,
@@ -97,7 +97,7 @@
 /* 07F804 */ MtxPtr ftCommon_8007F804(ftCo_Fighter*);
 /* 07F824 */ void ftCommon_8007F824(ftCo_GObj*);
 /* 07F86C */ void ftCommon_8007F86C(ftCo_GObj*);
-/* 07F8B4 */ void ftCommon_8007F8B4(ftCo_Fighter*, Vec3* v);
+/* 07F8B4 */ void ftCommon_8007F8B4(ftCo_Fighter*, Vec* v);
 /* 07F8E8 */ void ftCommon_8007F8E8(ftCo_GObj*);
 /* 07F948 */ void ftCommon_8007F948(ftCo_GObj*, ftCo_GObj*, s32);
 /* 07F9B4 */ void ftCommon_8007F9B4(ftCo_GObj*);

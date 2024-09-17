@@ -18,8 +18,8 @@
 /* 0115F4 */ void lb_800115F4(void);
 /* 011710 */ void lb_80011710(DynamicsDesc*, DynamicsDesc*);
 /* 0117F4 */ bool lb_800117F4(UNK_T, float*, float*, u32, int);
-/* 0119DC */ void lb_800119DC(Vec3*, int, float, float, float);
-/* 011A50 */ void lb_80011A50(Vec3*, int, float, float, float, float, float,
+/* 0119DC */ void lb_800119DC(Vec*, int, float, float, float);
+/* 011A50 */ void lb_80011A50(Vec*, int, float, float, float, float, float,
                               float, float);
 /* 011ABC */ enum_t lb_80011ABC(void);
 /* 011AC4 */ HSD_LObj* lb_80011AC4(UNK_T);
@@ -34,6 +34,6 @@
 /* 014574 */ void lb_80014574(u8, int, int, int);
 /* 0145C0 */ void lb_800145C0(u8);
 /* 014638 */ UNK_T lb_80014638(void);
-/* 014770 */ bool lb_80014770(Vec3*, int);
+/* 014770 */ bool lb_80014770(Vec*, int);
 
 #endif

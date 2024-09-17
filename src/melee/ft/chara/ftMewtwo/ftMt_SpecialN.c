@@ -216,9 +216,9 @@ void ftMt_SpecialN_OnDeath(HSD_GObj* gobj)
     }
 }
 
-static void ftMewtwo_SpecialN_GetPos(Fighter* fp, Vec3* sp38)
+static void ftMewtwo_SpecialN_GetPos(Fighter* fp, Vec* sp38)
 {
-    Vec3 sp2C;
+    Vec sp2C;
     sp2C.z = 2.0f;
     sp2C.y = 0.0f;
     sp2C.x = 0.0f;
@@ -266,7 +266,7 @@ void ftMt_SpecialN_ReleaseShadowBall(HSD_GObj* gobj)
     if (((u32) fp->cmd_vars[1] == 1U) &&
         (fp->fv.mt.x2230_shadowHeldGObj != NULL))
     {
-        Vec3 sp38;
+        Vec sp38;
         fp->cmd_vars[1] = 2;
         ftMewtwo_SpecialN_GetPos(fp, &sp38);
         shadowBallGObj = fp->item_gobj;
@@ -456,8 +456,8 @@ void ftMt_SpecialAirN_Enter(HSD_GObj* gobj)
 // Animation callback
 void ftMt_SpecialNStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp2C;
-    Vec3 sp20;
+    Vec sp2C;
+    Vec sp20;
     Fighter* fp = fp = getFighter(gobj);
     ftMewtwoAttributes* mewtwoAttrs = mewtwoAttrs = getFtSpecialAttrsD(fp);
     HSD_GObj* shadowHeldGObj;
@@ -498,8 +498,8 @@ void ftMt_SpecialNStart_Anim(HSD_GObj* gobj)
     }
 }
 
-inline void ftMewtwo_SpecialN_CreateHeldShadow(HSD_GObj* gobj, Vec3* pos1,
-                                               Vec3* pos2)
+inline void ftMewtwo_SpecialN_CreateHeldShadow(HSD_GObj* gobj, Vec* pos1,
+                                               Vec* pos2)
 {
     Fighter* fp = getFighter(gobj);
 
@@ -530,11 +530,11 @@ inline void ftMewtwo_SpecialN_CreateHeldShadow(HSD_GObj* gobj, Vec3* pos1,
 // Animation callback
 void ftMt_SpecialNLoop_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp40;
-    Vec3 sp34;
-    Vec3 sp28;
-    Vec3 sp1C;
-    const Vec3 shadowBallPos = { 0.0f, 7.0f, 0.0f };
+    Vec sp40;
+    Vec sp34;
+    Vec sp28;
+    Vec sp1C;
+    const Vec shadowBallPos = { 0.0f, 7.0f, 0.0f };
 
     Fighter* fp = GET_FIGHTER(gobj);
     ftMewtwoAttributes* mewtwoAttrs = fp->dat_attrs;
@@ -627,8 +627,8 @@ void ftMt_SpecialNEnd_Anim(HSD_GObj* gobj)
 // Animation callback
 void ftMt_SpecialAirNStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp2C;
-    Vec3 sp20;
+    Vec sp2C;
+    Vec sp20;
     Fighter* fp = fp = getFighter(gobj);
     ftMewtwoAttributes* mewtwoAttrs = mewtwoAttrs = getFtSpecialAttrsD(fp);
     HSD_GObj* shadowHeldGObj;
@@ -675,11 +675,11 @@ void ftMt_SpecialAirNStart_Anim(HSD_GObj* gobj)
 // Animation callback
 void ftMt_SpecialAirNLoop_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp40;
-    Vec3 sp34;
-    Vec3 sp28;
-    Vec3 sp1C;
-    const Vec3 shadowBallPos = { 0.0f, 7.0f, 0.0f };
+    Vec sp40;
+    Vec sp34;
+    Vec sp28;
+    Vec sp1C;
+    const Vec shadowBallPos = { 0.0f, 7.0f, 0.0f };
 
     Fighter* fp = GET_FIGHTER(gobj);
     ftMewtwoAttributes* mewtwoAttrs = fp->dat_attrs;
@@ -1156,8 +1156,8 @@ void ftMt_SpecialAirNEnd_Coll(HSD_GObj* gobj)
 
 static inline void ftMewtwo_SpecialN_LaunchShadowBall(HSD_GObj* gobj)
 {
-    Vec3 sp20;
-    Vec3 sp2C;
+    Vec sp20;
+    Vec sp2C;
 
     Fighter* fp = getFighter(gobj);
 

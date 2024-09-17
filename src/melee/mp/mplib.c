@@ -1,6 +1,6 @@
 #include "mplib.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static int mpLib_804D64B4;
 static IntVec2* mpLib_804D64BC;

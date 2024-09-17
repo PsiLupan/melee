@@ -8,7 +8,7 @@
 #include "it/forward.h"
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftCollisionBox {
     /*  +0 */ float top;
@@ -19,8 +19,8 @@ struct ftCollisionBox {
 
 struct UNK_SAMUS_S2 {
     Fighter_Part parts[3];
-    Vec3 vec1;
-    Vec3 vec2;
+    Vec vec1;
+    Vec vec2;
     float scale;
 };
 
@@ -99,7 +99,7 @@ union ftCommon_MotionVars {
     struct {
         /* fp+2340 */ int unk_timer;
         /* fp+2344 */ float anim_spd;
-        /* fp+2348 */ Vec3 x8;
+        /* fp+2348 */ Vec x8;
     } itemthrow4;
     struct {
         /* fp+2340 */ int x0;
@@ -124,7 +124,7 @@ union ftCommon_MotionVars {
     } escape;
     struct {
         /* fp+2340 */ int timer;
-        /* fp+2344 */ Vec3 self_vel;
+        /* fp+2344 */ Vec self_vel;
     } escapeair;
     struct {
         /* fp+2340 */ float x0;
@@ -168,8 +168,8 @@ union ftCommon_MotionVars {
         /* fp+234C */ float xC;
         /* fp+2350 */ float x10;
         /* fp+2354 */ float x14;
-        /* fp+2358 */ Vec3 x18;
-        /* fp+2364 */ Vec3 scale;
+        /* fp+2358 */ Vec x18;
+        /* fp+2364 */ Vec scale;
     } yoshiegg;
     struct {
         /* fp+2340 */ bool x0;
@@ -187,7 +187,7 @@ union ftCommon_MotionVars {
         /* fp+2360 */ UNK_T x20;
         /* fp+2364 */ UNK_T x24;
         /* fp+2368 */ UNK_T x28;
-        /* fp+236C */ Vec3 scale;
+        /* fp+236C */ Vec scale;
     } capturekirby;
     struct {
         /* fp+2340 */ ftKb_GObj* thrower_gobj;
@@ -209,7 +209,7 @@ union ftCommon_MotionVars {
                 /* fp+2358:7 */ u8 x18_b7 : 1;
             };
         };
-        /* fp+235C */ Vec3 scale;
+        /* fp+235C */ Vec scale;
         /* fp+2368 */ ftCollisionBox coll_box;
     } thrownkirby;
     struct {
@@ -217,7 +217,7 @@ union ftCommon_MotionVars {
         /* fp+2344 */ ftCollisionBox coll_box;
         /* fp+235C */ float x1C;
         /* fp+2360 */ enum_t x20;
-        /* fp+2364 */ Vec3 translate;
+        /* fp+2364 */ Vec translate;
     } bury;
     struct {
         /* fp+2340 */ float x0;
@@ -236,8 +236,8 @@ union ftCommon_MotionVars {
         /* fp+2340 */ float x0;
     } aircatch;
     struct {
-        /* fp+2340 */ Vec3 cur_pos;
-        /* fp+234C */ Vec3 self_vel;
+        /* fp+2340 */ Vec cur_pos;
+        /* fp+234C */ Vec self_vel;
         /* fp+2358 */ float facing_dir;
         /* fp+235C */ int x1C;
         /* fp+2360 */ ftCollisionBox ecb;

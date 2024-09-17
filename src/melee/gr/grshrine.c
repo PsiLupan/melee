@@ -12,7 +12,7 @@
 #include "lb/lb_00F9.h"
 
 #include <math.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobj.h>
 #include <baselib/gobjgxlink.h>
@@ -38,7 +38,7 @@ static bool grShrine_80201F14(HSD_GObj*);
 static void grShrine_80201F1C(HSD_GObj*);
 static void grShrine_80201F40(HSD_GObj*);
 static DynamicsDesc* grShrine_80201F44(enum_t);
-static bool grShrine_80201F4C(Vec3*, int, HSD_JObj*);
+static bool grShrine_80201F4C(Vec*, int, HSD_JObj*);
 
 static void* grSh_804D6A18;
 
@@ -81,7 +81,7 @@ static void grShrine_80201C64(void)
     Ground_801C3BB4();
 
     {
-        Vec3 v = { 0.5F, 0.0F, 0.0F };
+        Vec v = { 0.5F, 0.0F, 0.0F };
 
         u8 unused1[4];
 
@@ -193,9 +193,9 @@ static DynamicsDesc* grShrine_80201F44(enum_t arg0)
     return NULL;
 }
 
-static bool grShrine_80201F4C(Vec3* a, int _, HSD_JObj* joint)
+static bool grShrine_80201F4C(Vec* a, int _, HSD_JObj* joint)
 {
-    Vec3 b;
+    Vec b;
     lb_8000B1CC(joint, 0, &b);
 
     if (a->y > b.y) {

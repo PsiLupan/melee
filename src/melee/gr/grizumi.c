@@ -342,7 +342,7 @@ void grIzumi_801CBE64(HSD_GObj* gobj)
         grLib_801C96F8(0x7534, 0x1E, &x);
     }
     {
-        Vec3 y = { 0, 1, -27 };
+        Vec y = { 0, 1, -27 };
         y.x *= Ground_801C0498();
         y.y *= Ground_801C0498();
         y.z *= Ground_801C0498();
@@ -354,7 +354,7 @@ void grIzumi_801CBE64(HSD_GObj* gobj)
     jobj = Ground_801C3FA4(gobj, 4);
     { // this looks like inlines, but there's a lot of small differences
         u8 _[4] = { 0 };
-        Vec3 x38;
+        Vec x38;
         {
             u8 _[8] = { 0 };
         }
@@ -390,7 +390,7 @@ void grIzumi_801CC0D4(HSD_GObj* gobj)
     Ground* gp = GET_GROUND(gobj);
     if (gp->gv.izumi.xCC != NULL) {
         Ground* gp2 = GET_GROUND(gp->gv.izumi.xCC);
-        Vec3 vec;
+        Vec vec;
         if (gp->gv.izumi.xD0 != NULL) {
             HSD_JObjGetTranslation(gp->gv.izumi.xD0, &vec);
             HSD_JObjSetTranslate(gp2->gv.izumi2.xC4, &vec);
@@ -663,7 +663,7 @@ void grIzumi_801CCB90(HSD_GObj* gobj, int renderpass)
     grDisplay_801C5DB0(gobj, renderpass);
 }
 
-HSD_GObj* grIzumi_801CCBDC(float height, Vec3* a, int b, HSD_JObj* jobj)
+HSD_GObj* grIzumi_801CCBDC(float height, Vec* a, int b, HSD_JObj* jobj)
 {
     HSD_GObj* gobj;
     gobj = grIzumi_801CBCE8(4);
@@ -675,7 +675,7 @@ HSD_GObj* grIzumi_801CCBDC(float height, Vec3* a, int b, HSD_JObj* jobj)
             HSD_JObj* jobj2;
             jobj2 = HSD_GObjGetHSDObj(gobj);
             if (jobj2 != (0, NULL)) { // permuter
-                Vec3 aa = *a;
+                Vec aa = *a;
                 HSD_JObjSetTranslate(jobj2, &aa);
                 gp->gv.izumi3.xD4 = height;
                 gp->gv.izumi3.xD0 = height;
@@ -689,7 +689,7 @@ HSD_GObj* grIzumi_801CCBDC(float height, Vec3* a, int b, HSD_JObj* jobj)
                 }
                 jobj2 = Ground_801C3FA4(gobj, 2);
                 if (jobj2 != NULL) {
-                    Vec3 vec;
+                    Vec vec;
                     lb_8000B1CC(jobj2, NULL, &vec);
                     gp->gv.izumi3.xD8 = (vec.y - aa.y) / Ground_801C0498();
                 } else {
@@ -765,7 +765,7 @@ HSD_GObj* grIzumi_801CCD98(void)
 void grIzumi_801CCEA0(HSD_GObj* gobj, int renderpass)
 {
     Mtx mtx;
-    Vec3 vec;
+    Vec vec;
     u8 _[8] = { 0 };
     HSD_CObj* src;
     HSD_CObj* dst;
@@ -887,9 +887,9 @@ DynamicsDesc* grIzumi_801CD278(enum_t x)
     return NULL;
 }
 
-bool grIzumi_801CD280(Vec3* a, int b, HSD_JObj* jobj)
+bool grIzumi_801CD280(Vec* a, int b, HSD_JObj* jobj)
 {
-    Vec3 vec;
+    Vec vec;
     lb_8000B1CC(jobj, NULL, &vec);
     if (a->y > vec.y) {
         return true;

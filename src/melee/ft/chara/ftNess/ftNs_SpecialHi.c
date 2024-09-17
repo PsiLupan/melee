@@ -174,7 +174,7 @@ static inline float fabs_inline_ness(float x)
     }
 }
 
-inline bool check_distance(Vec3* pos, Vec2* pair)
+inline bool check_distance(Vec* pos, Vec2* pair)
 {
     if ((fabs_inline_ness(pos->x - pair->x) < 8.333333015441895f) &&
         (fabs_inline_ness(pos->y - pair->y) < 12.333333015441895f))
@@ -192,12 +192,12 @@ bool ftNs_SpecialHi_ItemPKThunder_CheckNessCollide(HSD_GObj* gobj)
     u8 unused0[8];
 
     Vec2 pair;
-    Vec3 pos;
+    Vec pos;
 
     u8 unused1[12];
 
     Vec2 pair2;
-    Vec3 pos2;
+    Vec pos2;
 
     u8 unused2[36];
 
@@ -339,7 +339,7 @@ static void ftNs_SpecialAirHi_CollisionModVel(
     CollData* coll_data) // Adjusts Ness's velocity upon interacting with
                          // collisions during SpecialAirHi
 {
-    Vec3 sp14;
+    Vec sp14;
     Fighter* fp;
     float phi_f1;
     float phi_f3;
@@ -536,7 +536,7 @@ void ftNs_SpecialHi_Enter(
     HSD_GObj* gobj) // Ness's grounded PK Thunder 2 Motion State handler
 {
     /// @todo Try to move these close to usage
-    Vec3 sp40;
+    Vec sp40;
     ftNessAttributes* ness_attr2;
     Fighter* fighter_data2;
 
@@ -710,7 +710,7 @@ void ftNs_SpecialAirHi_Enter(HSD_GObj* gobj)
 /// PK Thunder Grounded Startup Animation
 void ftNs_SpecialHiStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 pkt_pos;
+    Vec pkt_pos;
 
     u8 _[32];
 
@@ -880,7 +880,7 @@ void ftNs_SpecialHi_Anim(HSD_GObj* gobj)
 /// Ness's aerial PK Thunder Start Animation callback
 void ftNs_SpecialAirHiStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 pkt_pos;
+    Vec pkt_pos;
 
     u8 _[32];
 
@@ -1629,9 +1629,9 @@ void ftNs_SpecialAirHi_Coll(HSD_GObj* gobj)
 
     u8 unused0[4];
 
-    Vec3 spC4;
-    Vec3 spB8;
-    Vec3 spAC;
+    Vec spC4;
+    Vec spB8;
+    Vec spAC;
 
     u8 unused1[140];
 

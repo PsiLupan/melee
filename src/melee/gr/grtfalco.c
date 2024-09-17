@@ -202,7 +202,7 @@ DynamicsDesc* grTFalco_80220ACC(enum_t arg0)
     return NULL;
 }
 
-bool grTFalco_80220B78(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTFalco_80220B78(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

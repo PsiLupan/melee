@@ -115,10 +115,10 @@ struct HSD_JObj {
         HSD_Spline* spline;
     } u;
     /* +1C */ Quaternion rotate;
-    /* +2C */ Vec3 scale;
-    /* +38 */ Vec3 translate;
+    /* +2C */ Vec scale;
+    /* +38 */ Vec translate;
     /* +44 */ Mtx mtx;
-    /* +74 */ Vec3* scl;
+    /* +74 */ Vec* scl;
     /* +78 */ MtxPtr envelopemtx;
     /* +7C */ HSD_AObj* aobj;
     /* +80 */ HSD_RObj* robj;
@@ -135,9 +135,9 @@ struct HSD_Joint {
         HSD_Spline* spline;
         HSD_SList* ptcl;
     } u;
-    Vec3 rotation;
-    Vec3 scale;
-    Vec3 position;
+    Vec rotation;
+    Vec scale;
+    Vec position;
     MtxPtr mtx;
     HSD_RObjDesc* robjdesc;
 };
@@ -313,7 +313,7 @@ static inline f32 HSD_JObjGetRotationZ(HSD_JObj* jobj)
     return jobj->rotate.z;
 }
 
-static inline void HSD_JObjSetScale(HSD_JObj* jobj, Vec3* scale)
+static inline void HSD_JObjSetScale(HSD_JObj* jobj, Vec* scale)
 {
     HSD_ASSERT(760, jobj);
     HSD_ASSERT(761, scale);
@@ -350,7 +350,7 @@ static inline void HSD_JObjSetScaleZ(HSD_JObj* jobj, f32 z)
     }
 }
 
-static inline void HSD_JObjGetScale(HSD_JObj* jobj, Vec3* scale)
+static inline void HSD_JObjGetScale(HSD_JObj* jobj, Vec* scale)
 {
     HSD_ASSERT(823, jobj);
     HSD_ASSERT(824, scale);
@@ -375,7 +375,7 @@ static inline f32 HSD_JObjGetScaleZ(HSD_JObj* jobj)
     return jobj->scale.z;
 }
 
-static inline void HSD_JObjSetTranslate(HSD_JObj* jobj, Vec3* translate)
+static inline void HSD_JObjSetTranslate(HSD_JObj* jobj, Vec* translate)
 {
     HSD_ASSERT(916, jobj);
     HSD_ASSERT(917, translate);
@@ -412,7 +412,7 @@ static inline void HSD_JObjSetTranslateZ(HSD_JObj* jobj, f32 z)
     }
 }
 
-static inline void HSD_JObjGetTranslation(HSD_JObj* jobj, Vec3* translate)
+static inline void HSD_JObjGetTranslation(HSD_JObj* jobj, Vec* translate)
 {
     HSD_ASSERT(979, jobj);
     HSD_ASSERT(980, translate);

@@ -48,7 +48,7 @@ void ftCo_HammerFall_Anim(ftCo_GObj* gobj)
 static inline void inlineA0(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     pos.x = pos.y = pos.z = 0;
     Item_8026ABD8(fp->item_gobj, &pos, 1);
     ftCo_800CC730(gobj);

@@ -32,7 +32,7 @@ ItemStateTable it_803F66C8[] = {
     { 0, it_8029AF70, it_8029B070, it_8029B074 },
 };
 
-HSD_GObj* it_8029A748(Item_GObj* arg0, Vec3* arg1, Fighter_Part arg2, f32 arg3)
+HSD_GObj* it_8029A748(Item_GObj* arg0, Vec* arg1, Fighter_Part arg2, f32 arg3)
 {
     SpawnItem spawn;
 
@@ -51,7 +51,7 @@ HSD_GObj* it_8029A748(Item_GObj* arg0, Vec3* arg1, Fighter_Part arg2, f32 arg3)
     {
         Item_GObj* gobj = Item_80268B18(&spawn);
         if (gobj != NULL) {
-            Vec3 temp_pos;
+            Vec temp_pos;
             HSD_JObj* jobj;
             Item* item = GET_ITEM(gobj);
             f32 lifetime =
@@ -84,10 +84,10 @@ void it_8029A89C(Item_GObj* arg0, f32 arg1)
     }
 }
 
-void it_8029A8F4(Item_GObj* arg0, Vec3* arg1)
+void it_8029A8F4(Item_GObj* arg0, Vec* arg1)
 {
     HSD_JObj* jobj;
-    Vec3 temp_pos;
+    Vec temp_pos;
 
     if (arg0 != NULL) {
         Item* item = GET_ITEM((HSD_GObj*) arg0);

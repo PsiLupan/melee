@@ -86,16 +86,16 @@ static inline float my_sqrtf(float x)
     return x;
 }
 
-static inline float my_lbvector_Len(Vec3* vec)
+static inline float my_lbvector_Len(Vec* vec)
 {
     return my_sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
 
-void ftBossLib_8015BE40(HSD_GObj* gobj, Vec3* arg1, float* arg2, float arg3,
+void ftBossLib_8015BE40(HSD_GObj* gobj, Vec* arg1, float* arg2, float arg3,
                         float arg4)
 {
     Fighter* fp = gobj->user_data;
-    Vec3 diff;
+    Vec diff;
     lbVector_Diff(arg1, &fp->cur_pos, &diff);
 
     {
@@ -118,7 +118,7 @@ void ftBossLib_8015BE40(HSD_GObj* gobj, Vec3* arg1, float* arg2, float arg3,
 void ftBossLib_8015BF74(HSD_GObj* gobj, float x_diff_max)
 {
     Fighter* fp = gobj->user_data;
-    Vec3 vec;
+    Vec vec;
 
     ftBossLib_8015C208(gobj, &vec);
 
@@ -135,7 +135,7 @@ void ftBossLib_8015BF74(HSD_GObj* gobj, float x_diff_max)
 
 void ftBossLib_8015C010(HSD_GObj* gobj, float x_diff_max)
 {
-    Vec3 vec;
+    Vec vec;
     Fighter* fp = gobj->user_data;
     ftBossLib_8015C208(gobj, &vec);
 
@@ -164,7 +164,7 @@ void ftBossLib_8015C09C(HSD_GObj* gobj, float facing_dir)
 void ftBossLib_8015C190(HSD_GObj* arg0)
 {
     Fighter* fp = GET_FIGHTER(arg0);
-    Vec3 vec;
+    Vec vec;
 
     mpLib_80053FF4(0, &vec);
     if (fp->cur_pos.x > vec.x) {
@@ -179,14 +179,14 @@ void ftBossLib_8015C190(HSD_GObj* arg0)
     }
 }
 
-void ftBossLib_8015C208(HSD_GObj* arg0, Vec3* arg1)
+void ftBossLib_8015C208(HSD_GObj* arg0, Vec* arg1)
 {
     Fighter* fp = GET_FIGHTER(arg0);
     HSD_GObj* gobj = ftBossLib_8015C244(arg0, &fp->cur_pos);
     ftLib_80086644(gobj, arg1);
 }
 
-HSD_GObj* ftBossLib_8015C244(HSD_GObj* arg0, Vec3* arg1)
+HSD_GObj* ftBossLib_8015C244(HSD_GObj* arg0, Vec* arg1)
 {
     return ftLib_8008627C(arg1, arg0);
 }
@@ -464,7 +464,7 @@ void ftBossLib_8015CB7C(void)
     it_8026C42C();
 }
 
-static void func_8015CB9C_inline(Vec3 spC)
+static void func_8015CB9C_inline(Vec spC)
 {
     ftMasterHand_SpecialAttrs* da = ftBossLib_8015C6BC();
     spC.z += da == NULL ? -1 : da->x178;
@@ -474,7 +474,7 @@ static void func_8015CB9C_inline(Vec3 spC)
 
 void ftBossLib_8015CB9C(s32 arg0)
 {
-    Vec3 vec;
+    Vec vec;
     Player_LoadPlayerCoords(arg0, &vec);
     Camera_8002E818(&vec);
     func_8015CB9C_inline(vec);

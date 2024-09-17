@@ -13,11 +13,11 @@
 #include "ftPopo/ftPp_SpecialS.h"
 #include "ftPopo/types.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 char ftNn_Init_803CD7F8[] = "!(jobj->flags & JOBJ_USE_QUATERNION)";
 
-Vec3 ftNn_Init_803CD820[] = {
+Vec ftNn_Init_803CD820[] = {
     { 12, 0, -6 },
     { 6, 6, 6 },
 };

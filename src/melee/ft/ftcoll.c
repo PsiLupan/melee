@@ -29,7 +29,7 @@
 #include <common_structs.h>
 #include <math.h>
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/debug.h>
 #include <baselib/gobj.h>
 
@@ -54,7 +54,7 @@ typedef struct DmgLogEntry {
         HitCapsule* hit1;
         HurtCapsule* hurt1;
     };
-    /* +14 */ Vec3 pos;
+    /* +14 */ Vec pos;
     /* +20 */ int x20;
     /* +24 */ size_t size_of_xC;
 } DmgLogEntry;
@@ -171,7 +171,7 @@ void ftColl_800764DC(Fighter_GObj* gobj)
 
 inline void comboCount_Push(Fighter* fp)
 {
-    Vec3* pos = &fp->coll_data.floor.normal;
+    Vec* pos = &fp->coll_data.floor.normal;
     float temp_f2;
     float var_f2;
     if ((int) fp->x2090 < (int) p_ftCommonData->x4C8) {
@@ -316,7 +316,7 @@ void ftColl_800768A0(Fighter* fp, HitCapsule* dst)
 
 /// @todo Probably the same function as #inlineA1
 static inline void inlineA0(Fighter* fp0, Fighter* fp1, HitCapsule* hit1,
-                            Vec3* ef_pos, float dmg)
+                            Vec* ef_pos, float dmg)
 {
     int int_dmg;
 
@@ -366,7 +366,7 @@ static inline void inlineA0(Fighter* fp0, Fighter* fp1, HitCapsule* hit1,
 }
 
 static inline bool inlineA1(Fighter* fp0, HitCapsule* hit0, Fighter* fp1,
-                            HitCapsule* hit1, Vec3* ef_pos, float dmg)
+                            HitCapsule* hit1, Vec* ef_pos, float dmg)
 {
     size_t i;
     int int_dmg;
@@ -418,7 +418,7 @@ static inline bool inlineA1(Fighter* fp0, HitCapsule* hit0, Fighter* fp1,
 bool ftColl_8007699C(Fighter* fp0, HitCapsule* hit0, Fighter* fp1,
                      HitCapsule* hit1)
 {
-    Vec3 midpoint;
+    Vec midpoint;
     PAD_STACK(24);
 
     midpoint.x = 0.5f * (hit0->hurt_coll_pos.x + hit1->hurt_coll_pos.x);
@@ -725,7 +725,7 @@ void ftColl_80077464(void)
     NOT_IMPLEMENTED;
 }
 
-void ftColl_80077688(Item* item, HitCapsule* hurt, Fighter* fp, Vec3* pos,
+void ftColl_80077688(Item* item, HitCapsule* hurt, Fighter* fp, Vec* pos,
                      f32 val)
 {
     NOT_IMPLEMENTED;
@@ -1351,7 +1351,7 @@ s32 ftColl_8007B868(Fighter_GObj* gobj)
     return ret;
 }
 
-void ftColl_8007B8A8(HitCapsule* hit, Vec3* vec)
+void ftColl_8007B8A8(HitCapsule* hit, Vec* vec)
 {
     hit->jobj = NULL;
     hit->b_offset = *vec;
@@ -1380,10 +1380,10 @@ void ftColl_8007B8E8(Fighter_GObj* gobj)
 
 s32 func_800C0A28(HSD_GObj*, u32, s32); /* extern */
 
-void ftColl_GetWindOffsetVec(HSD_GObj* gobj, Vec3* out_wind)
+void ftColl_GetWindOffsetVec(HSD_GObj* gobj, Vec* out_wind)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 wind;
+    Vec wind;
     out_wind->x = out_wind->y = out_wind->z = 0;
     if (!fp->x2224_b4) {
         int i;

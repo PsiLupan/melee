@@ -24,7 +24,7 @@ typedef struct ftFoxSpecialS {
     /// 0x2340 - Number of frames to pass before gravity takes effect
     s32 gravityDelay;
     /// 0x2344 through 0x2370 - Related to Illusion/Phantasm model's position?
-    Vec3 ghostEffectPos[4];
+    Vec ghostEffectPos[4];
     /// 0x2374 through 0x2380 - ColAnim blend frames?
     float blendFrames[4];
     /// 0x2384 - Illusion/Phantasm GObj pointer

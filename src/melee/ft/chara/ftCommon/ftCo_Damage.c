@@ -251,9 +251,9 @@ void ftCo_8008DCE0(ftCo_GObj* gobj, int arg1, float facing_dir)
 {
     u8 _[0x38] = { 0 };
     float temp_f30;
-    Vec3 pos;
+    Vec pos;
     float sp40;
-    Vec3* normal;
+    Vec* normal;
     float temp_f1_2;
     float temp_f1_3;
     float temp_f2;
@@ -609,7 +609,7 @@ void ftCo_8008E5A4(Fighter* fp)
         float kb_vel_x_neg = -kb_x;
         float kb_mag = kb_vel_x_neg * kb_vel_x_neg + kb_y * kb_y;
         if (!(kb_mag < 0.00001f)) {
-            Vec3 lstick_vec3;
+            Vec lstick_vec3;
             lstick_vec3.x = lstick_x;
             {
                 float lstick_y = fp->input.lstick.y;
@@ -618,7 +618,7 @@ void ftCo_8008E5A4(Fighter* fp)
                 lstick_vec3.z = 0;
                 {
                     float f30 = f3 * f3 / kb_mag;
-                    Vec3 kb_vel_cross_lstick;
+                    Vec kb_vel_cross_lstick;
                     PSVECCrossProduct(&fp->x8c_kb_vel, &lstick_vec3,
                                       &kb_vel_cross_lstick);
                     if (kb_vel_cross_lstick.z < 0) {

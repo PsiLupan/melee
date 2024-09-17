@@ -79,7 +79,7 @@ void ftCo_EscapeAir_IASA(ftCo_GObj* gobj)
     ftCo_Fighter* fp = gobj->user_data;
     if (fp->mv.co.escapeair.timer != 0) {
         bool b;
-        Vec3 self_vel = fp->mv.co.escapeair.self_vel;
+        Vec self_vel = fp->mv.co.escapeair.self_vel;
         u8 _[4] = { 0 };
         if (ftCo_80095328(gobj, &b)) {
             if (b) {

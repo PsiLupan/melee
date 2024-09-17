@@ -1,7 +1,6 @@
 #include <platform.h>
 #include "ft/forward.h"
 #include "lb/forward.h"
-#include <dolphin/gx/forward.h>
 
 #include "lbcollision.h"
 
@@ -13,20 +12,17 @@
 
 #include <math.h>
 #include <placeholder.h>
-#include <dolphin/gx/types.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/types.h>
-#include <dolphin/mtx/vec.h>
 #include <baselib/debug.h>
 #include <baselib/jobj.h>
 #include <baselib/mtx.h>
 #include <baselib/particle.h>
 #include <MetroTRK/intrinsics.h>
 
-/* 006E58 */ static bool lbColl_80006E58(Vec3* arg0, Vec3* arg1, Vec3* arg2,
-                                         Vec3* arg3, Vec3* arg4, Vec3* arg5,
-                                         MtxPtr arg6, Vec3* arg7, float* arg8,
+/* 006E58 */ static bool lbColl_80006E58(Vec* arg0, Vec* arg1, Vec* arg2,
+                                         Vec* arg3, Vec* arg4, Vec* arg5,
+                                         MtxPtr arg6, Vec* arg7, float* arg8,
                                          float scl, float arg10, float arg11);
 
 // .sdata
@@ -88,7 +84,7 @@ int lbColl_80005BB0(HitCapsule* arg0, int arg1)
         -1);
 }
 
-int lbColl_80005C44(Vec3* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, float arg8,
+int lbColl_80005C44(Vec* arg0, Vec* arg1, Vec* arg2, Vec* arg3, float arg8,
                     float arg9)
 {
     float sp40;
@@ -209,7 +205,7 @@ block_27:
     return 1;
 }
 
-float lbColl_80005EBC(Vec3* arg0, Vec3* arg1, Vec3* arg2, float* arg3)
+float lbColl_80005EBC(Vec* arg0, Vec* arg1, Vec* arg2, float* arg3)
 {
     float sp58;
     float sp54;
@@ -252,10 +248,10 @@ float lbColl_80005EBC(Vec3* arg0, Vec3* arg1, Vec3* arg2, float* arg3)
     return (temp_f4 * temp_f4) + ((temp_f1 * temp_f1) + (temp_f7 * temp_f7));
 }
 
-float lbColl_80005FC0(Vec3* a, Vec3* b, Vec3* c, float* out)
+float lbColl_80005FC0(Vec* a, Vec* b, Vec* c, float* out)
 {
     {
-        Vec3 temp_a;
+        Vec temp_a;
         temp_a.x = a->x;
         temp_a.y = a->y;
         temp_a.z = a->z;
@@ -263,7 +259,7 @@ float lbColl_80005FC0(Vec3* a, Vec3* b, Vec3* c, float* out)
             float diff_ba_x = b->x - a->x;
             float diff_ba_y = b->y - a->y;
 
-            Vec3 temp_c;
+            Vec temp_c;
             temp_c.x = c->x;
             temp_c.y = c->y;
             temp_c.z = c->z;
@@ -293,7 +289,7 @@ float lbColl_80005FC0(Vec3* a, Vec3* b, Vec3* c, float* out)
     }
 }
 
-inline bool end(Vec3* a, Vec3* b, float unk_sum)
+inline bool end(Vec* a, Vec* b, float unk_sum)
 {
     float y = a->y - b->y;
     float x = a->x - b->x;
@@ -306,16 +302,16 @@ inline bool end(Vec3* a, Vec3* b, float unk_sum)
     return true;
 }
 
-int lbColl_80006094(Vec3* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, Vec3* arg4,
-                    Vec3* arg5, float arg6, float arg7)
+int lbColl_80006094(Vec* arg0, Vec* arg1, Vec* arg2, Vec* arg3, Vec* arg4,
+                    Vec* arg5, float arg6, float arg7)
 {
     {
-        Vec3 vec4;
+        Vec vec4;
         float sp30;
         float sp34;
         float sp38;
-        Vec3 arg4_offset;
-        Vec3 arg5_offset;
+        Vec arg4_offset;
+        Vec arg5_offset;
         float sp3C;
         float temp_f1;
         float unk_sum = arg6 + arg7;
@@ -502,7 +498,7 @@ int lbColl_80006094(Vec3* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, Vec3* arg4,
                              ((temp_f9_2 * temp_f9_2) +
                               (temp_f11_2 * temp_f11_2))))
                         {
-                            Vec3 vec2;
+                            Vec vec2;
                             float sp90;
                             float sp8C;
                             float sp88;
@@ -636,14 +632,14 @@ int lbColl_80006094(Vec3* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, Vec3* arg4,
     }
 }
 
-bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
-                     float p, float q, float r)
+bool lbColl_800067F8(Vec* a, Vec* b, Vec* c, Vec* d, Vec* e, Vec* f, float p,
+                     float q, float r)
 {
     float sum_pq = p + q;
 
     float a_z;
-    Vec3 a0;
-    Vec3 a1;
+    Vec a0;
+    Vec a1;
 
     a0.x = a->x;
     a0.y = a->y;
@@ -652,7 +648,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
     a1.y = a0.y;
     a1.z = a_z;
     {
-        Vec3 c0;
+        Vec c0;
         float temp_r0_2;
 
         c0.x = c->x;
@@ -660,7 +656,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
         c0.z = temp_r0_2 = c->z;
 
         {
-            Vec3 c1;
+            Vec c1;
 
             c1.x = c0.x;
             c1.y = c0.y;
@@ -790,7 +786,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
                                     {
                                         float diff_dc_x;
                                         float temp_f8_2;
-                                        Vec3 c3;
+                                        Vec c3;
                                         c3.x = c0.x;
                                         c3.y = c0.y;
                                         c3.z = c0.z;
@@ -798,7 +794,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
                                         temp_f8_2 = d_y - c->y;
                                         {
                                             {
-                                                Vec3 a2;
+                                                Vec a2;
                                                 float diff_dc_z;
                                                 a2.x = a0.x;
                                                 diff_dc_z = d->z - c->z;
@@ -827,7 +823,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
                                         }
                                         scl_f = temp_scl_f;
                                     } else {
-                                        Vec3 c2;
+                                        Vec c2;
 
                                         c2.x = c0.x;
                                         c2.y = c0.y;
@@ -842,7 +838,7 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
                                                 diff_dc_y1 = d_y - c->y;
                                                 diff_dc_z1 = d->z - c->z;
                                                 {
-                                                    Vec3 b0;
+                                                    Vec b0;
 
                                                     b0.x = b->x;
                                                     b0.y = b->y;
@@ -957,9 +953,9 @@ bool lbColl_800067F8(Vec3* a, Vec3* b, Vec3* c, Vec3* d, Vec3* e, Vec3* f,
     }
 }
 
-bool lbColl_80006E58(Vec3* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3,
-                     Vec3* arg4, Vec3* arg5, MtxPtr arg6, Vec3* arg7,
-                     float* arg8, float scl, float arg10, float arg11)
+bool lbColl_80006E58(Vec* arg0, Vec* arg1, Vec* arg2, Vec* arg3, Vec* arg4,
+                     Vec* arg5, MtxPtr arg6, Vec* arg7, float* arg8, float scl,
+                     float arg10, float arg11)
 {
     float sp124;
     float sp120;
@@ -1332,8 +1328,8 @@ block_39:
         return 1;
     }
     // HSD_MtxInverse(arg6, (float(*)[4]) & sp9C[0]);
-    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg4, (Vec3*) &sp11C);
-    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg5, (Vec3*) &sp104);
+    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg4, (Vec*) &sp11C);
+    // PSMTXMultVec((float(*)[4]) & sp9C[0], arg5, (Vec*) &sp104);
     temp_f1_9 = sp120 - sp108;
     temp_f4_10 = sp11C - sp104;
     temp_f2_7 = sp124 - sp10C;
@@ -1371,7 +1367,7 @@ block_39:
     return 1;
 }
 
-inline float sqrDistance(Vec3* a, Vec3* b)
+inline float sqrDistance(Vec* a, Vec* b)
 {
     {
         float y = a->y - b->y;
@@ -1381,18 +1377,18 @@ inline float sqrDistance(Vec3* a, Vec3* b)
     }
 }
 
-void lbColl_800077A0(Vec3* a, MtxPtr arg1, Vec3* b, Vec3* c, Vec3* d, Vec3* e,
+void lbColl_800077A0(Vec* a, MtxPtr arg1, Vec* b, Vec* c, Vec* d, Vec* e,
                      float* angle, float x, float dist_offset)
 {
-    Vec3 diff_cb;
+    Vec diff_cb;
 
     diff_cb.x = c->x - b->x;
     diff_cb.y = c->y - b->y;
     diff_cb.z = c->z - b->z;
 
     if (diff_cb.x != 0.0f || diff_cb.y != 0.0f || diff_cb.z != 0.0f) {
-        Vec3 normal_x;
-        Vec3 multi_mtx;
+        Vec normal_x;
+        Vec multi_mtx;
 
         normal_x.x = x;
         normal_x.y = 0.0f;
@@ -1451,7 +1447,7 @@ void lbColl_800077A0(Vec3* a, MtxPtr arg1, Vec3* b, Vec3* c, Vec3* d, Vec3* e,
                     }
 
                     {
-                        Vec3 normalize_e;
+                        Vec normalize_e;
                         normalize_e.x = scl * diff_cb.x + b->x - a->x;
                         normalize_e.y = scl * diff_cb.y + b->y - a->y;
                         normalize_e.z = scl * diff_cb.z + b->z - a->z;
@@ -1496,8 +1492,8 @@ bool lbColl_80007AFC(HitCapsule* a, HitCapsule* b, float x, float y)
 void lbColl_80007B78(Mtx a, Mtx b, float x, float y)
 {
     /// @todo Eliminate casts.
-    lbColl_800067F8((Vec3*) &b[1][1], (Vec3*) &b[0][2], (Vec3*) &a[1][1],
-                    (Vec3*) &a[0][2], (Vec3*) &b[1][4], (Vec3*) &a[1][4],
+    lbColl_800067F8((Vec*) &b[1][1], (Vec*) &b[0][2], (Vec*) &a[1][1],
+                    (Vec*) &a[0][2], (Vec*) &b[1][4], (Vec*) &a[1][4],
                     b[0][0] * y, a[0][0] * x, x);
 }
 
@@ -1516,8 +1512,8 @@ static inline MtxPtr HSD_JObjGetMtxPtr_fake(HSD_JObj* jobj)
 bool lbColl_80007BCC(HitCapsule* arg0, HitResult* shield_hit, void* arg2,
                      s32 arg3, float arg4, float arg5, float arg6)
 {
-    Vec3 sp74;
-    Vec3 sp68;
+    Vec sp74;
+    Vec sp68;
     MtxPtr var_r9;
     float var_f1;
     Mtx sp38;
@@ -1585,10 +1581,10 @@ void lbColl_JObjSetupMatrix(HSD_JObj* jobj)
 }
 
 void lbColl_80007DD8(HitCapsule* capsule, HitResult* hit, Mtx hit_transform,
-                     Vec3* /*out*/ arg3, float* angle, float scale)
+                     Vec* /*out*/ arg3, float* angle, float scale)
 {
     float dist_offset;
-    Vec3 unused_result;
+    Vec unused_result;
     Mtx transformed_hit;
 
     if (hit_transform != NULL) {
@@ -1610,8 +1606,8 @@ void lbColl_80007DD8(HitCapsule* capsule, HitResult* hit, Mtx hit_transform,
 bool lbColl_80007ECC(HitCapsule* arg0, HurtCapsule* arg1, Mtx arg2,
                      float hit_scl_y, float hurt_scl_y, float hurt_pos_z)
 {
-    Vec3 sp70;
-    Vec3 sp64;
+    Vec sp70;
+    Vec sp64;
     Mtx sp34;
     float var_f1;
     MtxPtr var_r9;
@@ -1650,8 +1646,8 @@ bool lbColl_80007ECC(HitCapsule* arg0, HurtCapsule* arg1, Mtx arg2,
 bool lbColl_8000805C(HitCapsule* arg0, HurtCapsule* arg1, Mtx arg2, s32 arg3,
                      float arg4, float arg5, float arg6)
 {
-    Vec3 sp74;
-    Vec3 sp68;
+    Vec sp74;
+    Vec sp68;
     Mtx sp38;
     MtxPtr var_r9;
     float var_f1;
@@ -1746,8 +1742,8 @@ bool lbColl_80008248(HitCapsule* hit, HurtCapsule* hurt, Mtx mtx, float arg3,
                      float arg4, float arg5)
 {
     NOT_IMPLEMENTED;
-    // Vec3* sp70 = NULL;
-    // Vec3* sp64 = NULL;
+    // Vec* sp70 = NULL;
+    // Vec* sp64 = NULL;
 
     // checkPos(hurt, mtx, arg5);
     // mtxConcat(hurt, mtx);
@@ -2039,11 +2035,11 @@ bool lbColl_8000A584(HurtCapsule* hurt, u32 arg1, u32 arg2, Mtx arg3, f32 arg8)
     PAD_STACK(4);
     {
         Mtx spA0;
-        Vec3 sp94;
-        Vec3 sp88;
+        Vec sp94;
+        Vec sp88;
         Mtx sp40;
-        Vec3 sp34;
-        Vec3 sp28;
+        Vec sp34;
+        Vec sp28;
         f32 temp_f31;
         void* temp_r31_2;
         MtxPtr var_r28;
@@ -2123,10 +2119,10 @@ bool lbColl_8000A460(Foo* hurt, u32 arg1)
 bool lbColl_8000A244(HurtCapsule* hurt, u32 arg1, Mtx arg2, float arg3)
 {
     Mtx sp9C;
-    Vec3 sp90;
-    Vec3 sp84;
-    Vec3 sp78;
-    Vec3 sp6C;
+    Vec sp90;
+    Vec sp84;
+    Vec sp78;
+    Vec sp6C;
     Mtx sp3C;
     float temp_f31;
     MtxPtr var_r28;
@@ -2175,11 +2171,11 @@ bool lbColl_8000A244(HurtCapsule* hurt, u32 arg1, Mtx arg2, float arg3)
 bool lbColl_8000A95C(HitResult* hit, u32 arg1, Mtx arg2, f32 pos_z)
 {
     Mtx sp9C;
-    Vec3 sp90;
-    Vec3 sp84;
+    Vec sp90;
+    Vec sp84;
     Mtx sp3C;
-    Vec3 sp30;
-    Vec3 sp24;
+    Vec sp30;
+    Vec sp24;
     f32 temp_f31;
     MtxPtr var_r31;
     u32 var_r0;

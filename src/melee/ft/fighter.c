@@ -1,6 +1,5 @@
 #include <platform.h>
 #include "ftCommon/forward.h"
-#include <dolphin/gx/forward.h>
 
 #include "ft/fighter.h"
 
@@ -73,9 +72,8 @@
 #include "un/un_2FC9.h"
 
 #include <common_structs.h>
-#include <dolphin/gx/types.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/vec.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/controller.h>
 #include <baselib/debug.h>
@@ -103,8 +101,8 @@ extern StageInfo stage_info; // from asm/melee/gm_1A36.s
 // ==== fighter.c variables ====
 // =============================
 
-const Vec3 Fighter_803B7488 = { 0.0f, 0.0f, 0.0f };
-const Vec3 vec3_803B7494 = { 0.0f, 0.0f, 0.0f };
+const Vec Fighter_803B7488 = { 0.0f, 0.0f, 0.0f };
+const Vec vec3_803B7494 = { 0.0f, 0.0f, 0.0f };
 
 HSD_ObjAllocData fighter_alloc_data;
 HSD_ObjAllocData Fighter_80458FFC;
@@ -215,7 +213,7 @@ void Fighter_UpdateModelScale(Fighter_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
-    Vec3 scale;
+    Vec scale;
     float modelScale = ftCommon_GetModelScale(fp);
 
     if (fp->x34_scale.z != 1.0f) {
@@ -232,7 +230,7 @@ void Fighter_UpdateModelScale(Fighter_GObj* gobj)
 
 void Fighter_UnkInitReset_80067C98(Fighter* fp)
 {
-    Vec3 player_coords;
+    Vec player_coords;
     float x, y, z;
 
     fp->x8_spawnNum = Fighter_NewSpawn_80068E40();
@@ -580,8 +578,8 @@ void Fighter_UnkUpdateCostumeJoint_800686E4(Fighter_GObj* gobj)
 
 void Fighter_UnkUpdateVecFromBones_8006876C(Fighter* fp)
 {
-    Vec3 vec;
-    Vec3 vec2;
+    Vec vec;
+    Vec vec2;
     HSD_JObj* jobj = fp->parts[ftParts_8007500C(fp, 2)].joint;
 
     HSD_JObjGetTranslation(jobj, &vec);
@@ -1227,7 +1225,7 @@ void Fighter_ChangeMotionState(Fighter_GObj* gobj, FtMotionId msid,
         }
 
         if (fp->anim_id != -1) {
-            Vec3 translation;
+            Vec translation;
             Quaternion quat;
 
             bone_index = fp->x596_bits.x7;
@@ -1551,7 +1549,7 @@ void Fighter_8006A360(Fighter_GObj* gobj)
             }
 
             if (fp->x2018 <= 0) {
-                Vec3 vec = Fighter_803B7488;
+                Vec vec = Fighter_803B7488;
 
                 ftCommon_8007F8E8(gobj);
                 Item_8026ABD8(fp->x1980, &vec, 0.0f);
@@ -2116,7 +2114,7 @@ void Fighter_Spaghetti_8006AD10(Fighter_GObj* gobj)
 //// https://decomp.me/scratch/oFu1o
 #define VEC_CLEAR(vec)                                                        \
     do {                                                                      \
-        Vec3* vecLocal = (void*) &vec;                                        \
+        Vec* vecLocal = (void*) &vec;                                         \
         float c = 0;                                                          \
         vecLocal->x = vecLocal->y = vecLocal->z = c;                          \
     } while (0)
@@ -2124,16 +2122,16 @@ void Fighter_Spaghetti_8006AD10(Fighter_GObj* gobj)
 void Fighter_procUpdate(Fighter_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 windOffset;
+    Vec windOffset;
 
     if (fp->x221F_b3) {
         return;
     }
 
     if (!fp->x2219_b5) {
-        Vec3* p_kb_vel;
-        Vec3* pAtkShieldKB;
-        Vec3 selfVel;
+        Vec* p_kb_vel;
+        Vec* pAtkShieldKB;
+        Vec selfVel;
         float kb_vel_x, kb_vel_y, atkShieldKB_X;
 
         if (fp->x2064_ledgeCooldown) {
@@ -2182,7 +2180,7 @@ void Fighter_procUpdate(Fighter_GObj* gobj)
 
                 fp->xF0_ground_kb_vel = 0;
             } else {
-                Vec3* pNormal = &fp->coll_data.floor.normal;
+                Vec* pNormal = &fp->coll_data.floor.normal;
                 struct ftCo_DatAttrs* pAttr;
 
                 if (fp->xF0_ground_kb_vel == 0) {
@@ -2234,7 +2232,7 @@ void Fighter_procUpdate(Fighter_GObj* gobj)
                 }
                 fp->xF4_ground_attacker_shield_kb_vel = 0;
             } else {
-                Vec3* pNormal =
+                Vec* pNormal =
                     &fp->coll_data.floor
                          .normal; // ground_normal offset inside fp is 0x844,
                                   // surface normal points out of the surface.
@@ -2328,7 +2326,7 @@ void Fighter_procUpdate(Fighter_GObj* gobj)
                 VEC_CLEAR(fp->xD4_unk_vel);
             }
             // fp->xB0_position += *pAtkShieldKB
-            PSVECAdd(&fp->cur_pos, (Vec3*) pAtkShieldKB, &fp->cur_pos);
+            PSVECAdd(&fp->cur_pos, (Vec*) pAtkShieldKB, &fp->cur_pos);
         } else {
             // fp@r31.position@0xB0.xyz += selfVel + pAtkShieldKB
             PSVECAdd(&fp->cur_pos, &selfVel, &fp->cur_pos);
@@ -2336,11 +2334,11 @@ void Fighter_procUpdate(Fighter_GObj* gobj)
             fp->cur_pos.y += p_kb_vel->y;
             fp->cur_pos.z += 0;
 
-            PSVECAdd(&fp->cur_pos, (Vec3*) pAtkShieldKB, &fp->cur_pos);
+            PSVECAdd(&fp->cur_pos, (Vec*) pAtkShieldKB, &fp->cur_pos);
         }
         // accumulate wind hazards into the windOffset vector
         ftColl_GetWindOffsetVec(gobj,
-                                /*result vec3*/ &windOffset);
+                                /*result Vec*/ &windOffset);
     } else {
         VEC_CLEAR(windOffset);
     }
@@ -2352,7 +2350,7 @@ void Fighter_procUpdate(Fighter_GObj* gobj)
     }
 
     if (fp->ground_or_air == GA_Ground) {
-        Vec3 difference;
+        Vec difference;
         // I think this function always returns r3=1, but it contains two
         // __assert functions. But I guess these just stop or reset the game.
         // result is written to where r5 points to, which is 'difference' in
@@ -2422,8 +2420,8 @@ void Fighter_UnkApplyTransformation_8006C0F0(Fighter_GObj* gobj)
         HSD_JObj* jobj = GET_JOBJ(gobj);
         Mtx mtx1;
         Mtx mtx2;
-        Vec3 scale;
-        Vec3 translation;
+        Vec scale;
+        Vec translation;
         Quaternion rotation;
 
         HSD_JObjSetupMatrix(jobj);
@@ -2435,7 +2433,7 @@ void Fighter_UnkApplyTransformation_8006C0F0(Fighter_GObj* gobj)
         HSD_JObjGetRotation(jobj, &rotation);
         HSD_JObjGetTranslation(jobj, &translation);
 
-        HSD_MtxSRT(mtx2, &scale, (Vec3*) &rotation, &translation, 0);
+        HSD_MtxSRT(mtx2, &scale, (Vec*) &rotation, &translation, 0);
         PSMTXConcat(mtx2, mtx1, fp->x44_mtx);
     }
 }
@@ -2552,7 +2550,7 @@ void Fighter_8006C80C(Fighter_GObj* gobj)
             fp->cur_pos.y < Stage_GetCamBoundsBottomOffset())
         {
             if (ifMagnify_802FB6E8(fp->player_id) == 3) {
-                Vec3 cam_offset;
+                Vec cam_offset;
                 Stage_UnkSetVec3TCam_Offset(&cam_offset);
 
                 if (fp->cur_pos.y + cam_offset.y < fp->x2140) {
@@ -2651,7 +2649,7 @@ void Fighter_8006CDA4(Fighter* fp, s32 arg1, s32 arg2)
     u8 _[4] = { 0 };
     bool temp_bool;
     bool hold_item_bool = 0;
-    Vec3 vec;
+    Vec vec;
 
     if (fp->item_gobj && !it_8026B2B4(fp->item_gobj)) {
         hold_item_bool = 1;

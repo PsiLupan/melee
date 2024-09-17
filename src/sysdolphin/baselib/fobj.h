@@ -6,7 +6,7 @@
 
 #include "baselib/objalloc.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 #define HSD_A_OP_NONE 0
 #define HSD_A_OP_CON 1
@@ -64,7 +64,7 @@ typedef struct _HSD_FObjDesc {
 union HSD_ObjData {
     f32 fv;
     s32 iv;
-    Vec3 p;
+    Vec p;
 };
 
 HSD_ObjAllocData* HSD_FObjGetAllocData(void);

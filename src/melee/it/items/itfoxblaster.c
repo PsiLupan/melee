@@ -136,9 +136,9 @@ void it_802ADEF0(HSD_GObj* item_gobj)
 /// @param item_gobj
 void it_802ADF10(HSD_GObj* item_gobj)
 {
-    Vec3 ft_cur_pos;
-    Vec3 ft_hold_joint_pos;
-    Vec3 it_hold_joint_pos;
+    Vec ft_cur_pos;
+    Vec ft_hold_joint_pos;
+    Vec it_hold_joint_pos;
     f32 angle;
     Item* item;
     // u8 i;
@@ -574,7 +574,7 @@ void it_802AE7B8(Item_GObj* item_gobj)
 /// @param ft_part
 /// @param it_kind
 /// @return item_gobj (HSD_GObj* for the newly spawned item)
-Item_GObj* it_802AE8A8(f32 facing_dir, Fighter_GObj* fighter_gobj, Vec3* arg2,
+Item_GObj* it_802AE8A8(f32 facing_dir, Fighter_GObj* fighter_gobj, Vec* arg2,
                        Fighter_Part ft_part, ItemKind it_kind)
 {
     SpawnItem spawn;
@@ -636,8 +636,8 @@ Item_GObj* it_802AE994(Fighter_GObj* owner_gobj, Fighter_Part ft_part,
                        ItemKind it_kind)
 {
     f32 sp5C;
-    Vec3 sp44;
-    Vec3 sp18;
+    Vec sp44;
+    Vec sp18;
     Item_GObj* item_gobj;
     Item* item;
     SpawnItem spawn;
@@ -1009,7 +1009,7 @@ int it_802AEFBC(HSD_GObj* item_gobj)
 /// @return 0
 int it_802AF064(HSD_GObj* item_gobj)
 {
-    Vec3 ft_scale;
+    Vec ft_scale;
     // Item* item;
 
     if (item_gobj != NULL) {

@@ -8,7 +8,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 typedef struct {
     bool x0;
@@ -158,7 +158,7 @@ typedef struct itHeiHoVars {
     f32 x30;
     f32 x34;
     f32 x38;
-    Vec3 x3C;
+    Vec x3C;
     f32 x48;
     f32 x4C;
     f32 x50;
@@ -280,7 +280,7 @@ typedef struct FFlowerVars {
 } FFlowerVars;
 
 typedef struct FFlowerFlameVars {
-    /* +0 */ Vec3 pos;
+    /* +0 */ Vec pos;
     /* +C */ f32 unk;
 } FFlowerFlameVars;
 
@@ -295,7 +295,7 @@ typedef struct HassamVars {
     s32 x1C;
     s32 x20;
     u8 padding[0x5C - 0x20];
-    Vec3 x5C;
+    Vec x5C;
     f32 x68;
 } HassamVars;
 

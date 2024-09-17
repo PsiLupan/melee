@@ -49,7 +49,7 @@ void ftCo_80096E68(ftCo_GObj* gobj)
     u8 _[4] = { 0 };
     ftCo_Fighter* fp = gobj->user_data;
     if (fp->item_gobj != NULL) {
-        Vec3 vec;
+        Vec vec;
         u8 _[4] = { 0 };
         vec.x = vec.y = vec.z = 0.0f;
         Item_8026ABD8(fp->item_gobj, &vec, 0.0f);
@@ -190,7 +190,7 @@ void ftCo_800974C4(HSD_GObj* gobj)
     u8 _[4] = { 0 };
     ftCo_Fighter* fp = gobj->user_data;
     if (fp->item_gobj != NULL) {
-        Vec3 vec;
+        Vec vec;
         u8 _[4] = { 0 };
         vec.x = vec.y = vec.z = 0;
         Item_8026ABD8(fp->item_gobj, &vec, 0);
@@ -202,7 +202,7 @@ void ftCo_8009750C(HSD_GObj* gobj)
     ftCo_Fighter* fp = gobj->user_data;
     Item_GObj* item_gobj = fp->item_gobj;
     if (item_gobj && it_8026B2B4(item_gobj) == 1) {
-        Vec3 vec;
+        Vec vec;
         u8 _[4] = { 0 };
         vec.x = vec.y = vec.z = 0;
         Item_8026ABD8(item_gobj, &vec, 0);

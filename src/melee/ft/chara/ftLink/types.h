@@ -82,16 +82,16 @@ union ftLk_MotionVars {
     } attackair;
     struct ftLk_SpecialNVars {
         /* fp+2340 */ Vec2 x0;
-        /* fp+2348 */ Vec3 x8;
+        /* fp+2348 */ Vec x8;
         /* fp+2354 */ float x14;
         /* fp+2358 */ int unk_timer;
     } specialn;
 };
 
 struct ftLk_SpecialN_Vec3Group {
-    /*  +0 */ Vec3 a;
-    /*  +C */ Vec3 b;
-    /* +18 */ Vec3 c;
+    /*  +0 */ Vec a;
+    /*  +C */ Vec b;
+    /* +18 */ Vec c;
 };
 
 #endif

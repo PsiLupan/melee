@@ -145,7 +145,7 @@ static inline bool unkCondition(ftLk_GObj* gobj)
     ftLk_DatAttrs* da = fp->dat_attrs;
     if (fp->fv.lk.x14 == NULL) {
         u8 _[36] = { 0 };
-        Vec3 pos;
+        Vec pos;
         lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_RThumbNb)].joint,
                     NULL, &pos);
         {
@@ -219,12 +219,12 @@ static inline bool foo(ftLk_GObj* gobj)
     if (fp->cmd_vars[cmd_unk0_bool] == 1 && fp->fv.lk.arrow_gobj == NULL) {
         fp->cmd_vars[cmd_unk0_bool] = 0;
         {
-            Vec3 vec3;
+            Vec Vec;
             lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_LThumbNb)].joint,
-                        NULL, &vec3);
+                        NULL, &Vec);
             {
                 Item_GObj* arrow_gobj =
-                    it_802A83E0(fp->facing_dir, gobj, &vec3,
+                    it_802A83E0(fp->facing_dir, gobj, &Vec,
                                 ftParts_8007500C(fp, FtPart_LThumbNb), da->xC);
                 fp->fv.lk.arrow_gobj = arrow_gobj;
                 if (arrow_gobj != NULL) {
@@ -541,7 +541,7 @@ static inline void doEndColl(ftLk_GObj* gobj)
     if (fp->cmd_vars[cmd_unk1_bool] == true && fp->fv.lk.arrow_gobj != NULL) {
         fp->cmd_vars[cmd_unk1_bool] = false;
         {
-            Vec3 rpos, lpos;
+            Vec rpos, lpos;
             lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_RThumbNb)].joint,
                         NULL, &rpos);
             lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_LThumbNb)].joint,

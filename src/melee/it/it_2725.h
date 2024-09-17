@@ -19,7 +19,7 @@
 /* 273408 */ void it_80273408(Item_GObj* gobj);
 /* 2734B4 */ void it_802734B4(HSD_GObj*);
 /* 273670 */ void it_80273670(HSD_GObj*, int, float);
-/* 274250 */ void it_80274250(Item_GObj*, Vec3*);
+/* 274250 */ void it_80274250(Item_GObj*, Vec*);
 /* 274C88 */ void it_80274C88(Item_GObj* gobj);
 /* 274ECC */ void it_80274ECC(Item_GObj* gobj, bool);
 /* 274ED8 */ void it_80274ED8(void);
@@ -50,7 +50,7 @@
 /* 27B070 */ void it_8027B070(Item_GObj* gobj, Fighter_GObj* owner_gobj);
 /* 27B730 */ void it_8027B730(void);
 /* 27B378 */ void it_8027B378(Fighter_GObj*, Item_GObj*, float);
-/* 27B798 */ s32 it_8027B798(Item_GObj*, Vec3*);
+/* 27B798 */ s32 it_8027B798(Item_GObj*, Vec*);
 /* 27C56C */ void it_8027C56C(Item_GObj*, f32);
 /* 27C8B0 */ void it_8027C8B0(Item_GObj*);
 /* 27CBFC */ f32 it_8027CBFC(Item_GObj*);

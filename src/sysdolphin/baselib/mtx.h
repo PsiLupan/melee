@@ -9,57 +9,17 @@
 #include <MSL/math.h>
 #include <MSL/math_ppc.h>
 
-struct Vec2 {
-    f32 x, y;
-};
-
-struct Vec3 {
-    f32 x, y, z;
-};
-
-struct Vec4 {
-    f32 x, y, z, w;
-};
-
-struct U8Vec4 {
-    u8 x, y, z, w;
-};
-
-struct S8Vec3 {
-    s8 x, y, z;
-};
-
-struct S16Vec3 {
-    s16 x, y, z;
-};
-
-struct S32Vec2 {
-    s32 x, y;
-};
-
-struct S32Vec3 {
-    s32 x, y, z;
-};
-
-struct IntVec2 {
-    int x, y;
-};
-
-struct IntVec3 {
-    int x, y, z;
-};
-
 void HSD_MtxInverse(Mtx src, Mtx dest);
 void HSD_MtxInverseConcat(Mtx inv, Mtx src, Mtx dest);
 void HSD_MtxInverseTranspose(Mtx src, Mtx dest);
-void HSD_MtxGetRotation(Mtx m, Vec3* vec);
-void HSD_MtxGetTranslate(Mtx mat, Vec3* vec);
-void HSD_MtxGetScale(Mtx arg0, Vec3* arg1);
-void HSD_MkRotationMtx(Mtx arg0, Vec3* arg1);
+void HSD_MtxGetRotation(Mtx m, Vec* vec);
+void HSD_MtxGetTranslate(Mtx mat, Vec* vec);
+void HSD_MtxGetScale(Mtx arg0, Vec* arg1);
+void HSD_MkRotationMtx(Mtx arg0, Vec* arg1);
 void HSD_Mtx_8037A230(Mtx arg0, Quaternion* arg1);
-void HSD_MtxSRT(Mtx m, Vec3* vec1, Vec3* vec2, Vec3* vec3, Vec3* vec4);
-void HSD_MtxSRTQuat(Mtx arg0, Vec3* arg1, Quaternion* arg2, Vec3* arg3,
-                    Vec3* arg4);
+void HSD_MtxSRT(Mtx m, Vec* vec1, Vec* vec2, Vec* Vec, Vec* vec4);
+void HSD_MtxSRTQuat(Mtx arg0, Vec* arg1, Quaternion* arg2, Vec* arg3,
+                    Vec* arg4);
 void HSD_MtxScaledAdd(Mtx arg0, Mtx arg1, Mtx arg2, f32 arg3);
 void* HSD_VecAlloc(void);
 void HSD_VecFree(void* arg0);
@@ -76,14 +36,14 @@ static inline f32 fabsf_bitwise(f32 v)
     return v;
 }
 
-static inline void HSD_MtxColVec(MtxPtr mtx, int col, Vec3* vec)
+static inline void HSD_MtxColVec(MtxPtr mtx, int col, Vec* vec)
 {
     vec->x = mtx[0][col];
     vec->y = mtx[1][col];
     vec->z = mtx[2][col];
 }
 
-static inline void HSD_MtxSetColVec(MtxPtr mtx, int col, Vec3* vec)
+static inline void HSD_MtxSetColVec(MtxPtr mtx, int col, Vec* vec)
 {
     mtx[0][col] = vec->x;
     mtx[1][col] = vec->y;

@@ -11,7 +11,7 @@
 
 #include <common_structs.h>
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/gobjproc.h>
 
 struct UNK_SAMUS_S2;
@@ -54,7 +54,7 @@ void ftColl_8007B6EC(Fighter_GObj*);
 void ftColl_8007B760(Fighter_GObj*, int);
 void ftColl_8007B8CC(Fighter*, Fighter_GObj*);
 void ftColl_8007B8E8(Fighter_GObj*);
-void ftColl_GetWindOffsetVec(Fighter_GObj*, Vec3* out_wind);
+void ftColl_GetWindOffsetVec(Fighter_GObj*, Vec* out_wind);
 void ftColl_8007BA0C(Fighter_GObj*);
 void ftColl_8007BAC0(Fighter_GObj*);
 float ftColl_8007BBCC(Fighter_GObj*);
@@ -62,7 +62,7 @@ void ftColl_8007BC90(Fighter_GObj*);
 void ftColl_8007BE3C(Fighter_GObj*);
 
 ///  Update hitbox positions
-void ftColl_8007B8A8(HitCapsule*, Vec3*);
+void ftColl_8007B8A8(HitCapsule*, Vec*);
 
 /// Enable Reflect Bubble Update
 void ftColl_8007AEF8(Fighter_GObj*);

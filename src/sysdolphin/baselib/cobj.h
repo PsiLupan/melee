@@ -8,7 +8,7 @@
 
 #include <placeholder.h>
 #include <dolphin/gx/GXEnum.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 #define PROJ_PERSPECTIVE 1
 #define PROJ_FRUSTUM 2
@@ -44,7 +44,7 @@ struct HSD_CObj {
     /* +28 */ HSD_WObj* interest;
     union {
         /* +2C */ f32 roll;
-        /* +2C */ Vec3 up;
+        /* +2C */ Vec up;
     } u;
     /* +38 */ f32 near;
     /* +3C */ f32 far;
@@ -83,7 +83,7 @@ struct HSD_CameraDescCommon {
     HSD_WObjDesc* eyepos;   // 0x18
     HSD_WObjDesc* interest; // 0x1C
     f32 roll;               // 0x20
-    Vec3* up_vector;        // 0x24
+    Vec* up_vector;         // 0x24
     f32 nnear;              // 0x28
     f32 ffar;               // 0x2C
 };
@@ -97,7 +97,7 @@ struct HSD_CameraDescFrustum {
     HSD_WObjDesc* eyepos;   // 0x18
     HSD_WObjDesc* interest; // 0x1C
     f32 roll;               // 0x20
-    Vec3* up_vector;        // 0x24
+    Vec* up_vector;         // 0x24
     f32 nnear;              // 0x28
     f32 ffar;               // 0x2C
     f32 top;
@@ -115,7 +115,7 @@ struct HSD_CameraDescPerspective {
     HSD_WObjDesc* eyepos;   // 0x18
     HSD_WObjDesc* interest; // 0x1C
     f32 roll;               // 0x20
-    Vec3* up_vector;        // 0x24
+    Vec* up_vector;         // 0x24
     f32 nnear;              // 0x28
     f32 ffar;               // 0x2C
     f32 fov;
@@ -154,15 +154,15 @@ HSD_WObj* HSD_CObjGetInterestWObj(HSD_CObj* cobj);
 void HSD_CObjSetInterestWObj(HSD_CObj* cobj, HSD_WObj* interest);
 HSD_WObj* HSD_CObjGetEyePositionWObj(HSD_CObj* cobj);
 void HSD_CObjSetEyePositionWObj(HSD_CObj* cobj, HSD_WObj* eyepos);
-void HSD_CObjSetInterest(HSD_CObj* cobj, Vec3*);
-void HSD_CObjSetEyePosition(HSD_CObj* cobj, Vec3*);
+void HSD_CObjSetInterest(HSD_CObj* cobj, Vec*);
+void HSD_CObjSetEyePosition(HSD_CObj* cobj, Vec*);
 bool HSD_CObjSetCurrent(HSD_CObj*);
 void HSD_CObjEndCurrent(void);
 void HSD_CObjSetViewportfx4(HSD_CObj*, f32, f32, f32, f32);
-void HSD_CObjGetEyePosition(HSD_CObj* cobj, Vec3* cam_pos);
-int HSD_CObjGetEyeVector(HSD_CObj* cobj, Vec3* eye);
-int HSD_CObjGetUpVector(HSD_CObj* cobj, Vec3* up);
-void HSD_CObjGetInterest(HSD_CObj* cobj, Vec3* interest);
+void HSD_CObjGetEyePosition(HSD_CObj* cobj, Vec* cam_pos);
+int HSD_CObjGetEyeVector(HSD_CObj* cobj, Vec* eye);
+int HSD_CObjGetUpVector(HSD_CObj* cobj, Vec* up);
+void HSD_CObjGetInterest(HSD_CObj* cobj, Vec* interest);
 HSD_CObj* HSD_CObjAlloc(void);
 
 void HSD_CObjRemoveAnimByFlags(HSD_CObj* cobj, u32 flags);
@@ -172,8 +172,8 @@ void HSD_CObjReqAnim(HSD_CObj* cobj, f32 startframe);
 GXProjectionType makeProjectionMtx(HSD_CObj* cobj, Mtx mtx);
 void HSD_CObjSetupViewingMtx(HSD_CObj* cobj);
 f32 HSD_CObjGetEyeDistance(HSD_CObj* cobj);
-void HSD_CObjSetUpVector(HSD_CObj* cobj, Vec3* up);
-int HSD_CObjGetLeftVector(HSD_CObj* cobj, Vec3* left);
+void HSD_CObjSetUpVector(HSD_CObj* cobj, Vec* up);
+int HSD_CObjGetLeftVector(HSD_CObj* cobj, Vec* left);
 void HSD_CObjSetMtxDirty(HSD_CObj* cobj);
 bool HSD_CObjMtxIsDirty(HSD_CObj*);
 void HSD_CObjGetViewingMtx(HSD_CObj* cobj, Mtx mtx);

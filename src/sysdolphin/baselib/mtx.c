@@ -4,7 +4,6 @@
 #include "math.h"
 
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/vec.h>
 #include <MSL/trigf.h>
 
 #define EPSILON 0.0000000001f
@@ -218,7 +217,7 @@ inline f32 calcVal(f32 x, f32 y)
     }
 }
 
-void HSD_MtxGetRotation(Mtx m, Vec3* vec)
+void HSD_MtxGetRotation(Mtx m, Vec* vec)
 {
     f32 length0;
     f32 length1;
@@ -269,23 +268,23 @@ void HSD_MtxGetRotation(Mtx m, Vec3* vec)
 }
 
 // These parameters may not be right
-void HSD_MtxGetTranslate(Mtx mat, Vec3* vec)
+void HSD_MtxGetTranslate(Mtx mat, Vec* vec)
 {
     vec->x = mat[0][3];
     vec->y = mat[1][3];
     vec->z = mat[2][3];
 }
 
-void HSD_MtxGetScale(Mtx arg0, Vec3* arg1)
+void HSD_MtxGetScale(Mtx arg0, Vec* arg1)
 {
     f64 scale;
 
     u8 _[8];
 
-    Vec3 vec1;
-    Vec3 vec2;
-    Vec3 vec3;
-    Vec3 vec4;
+    Vec vec1;
+    Vec vec2;
+    Vec vec3;
+    Vec vec4;
 
     vec1.x = arg0[0][0];
     vec1.y = arg0[1][0];
@@ -323,7 +322,7 @@ void HSD_MtxGetScale(Mtx arg0, Vec3* arg1)
     }
 }
 
-void HSD_MkRotationMtx(Mtx arg0, Vec3* arg1)
+void HSD_MkRotationMtx(Mtx arg0, Vec* arg1)
 {
     f32 sinX;
     f32 cosX;
@@ -362,7 +361,7 @@ void HSD_Mtx_8037A230(Mtx arg0, Quaternion* arg1)
     PSMTXQuat(arg0, arg1);
 }
 
-void HSD_MtxSRT(Mtx m, Vec3* vec1, Vec3* vec2, Vec3* vec3, Vec3* vec4)
+void HSD_MtxSRT(Mtx m, Vec* vec1, Vec* vec2, Vec* vec3, Vec* vec4)
 {
     f32 vec1x_2;
     f32 vec1y_2;
@@ -412,8 +411,8 @@ void HSD_MtxSRT(Mtx m, Vec3* vec1, Vec3* vec2, Vec3* vec3, Vec3* vec4)
     m[2][3] = vec3->z;
 }
 
-void HSD_MtxSRTQuat(Mtx arg0, Vec3* arg1, Quaternion* arg2, Vec3* arg3,
-                    Vec3* arg4)
+void HSD_MtxSRTQuat(Mtx arg0, Vec* arg1, Quaternion* arg2, Vec* arg3,
+                    Vec* arg4)
 {
     Mtx temp;
 

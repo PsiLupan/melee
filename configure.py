@@ -256,6 +256,7 @@ cflags_runtime = [
 includes_base = ["src"]
 
 dolphin_includes = [
+    "extern/dolphin/src/",
     "extern/dolphin/include",
     "extern/dolphin/include/libc",
 ]

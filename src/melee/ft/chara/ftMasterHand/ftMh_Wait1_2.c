@@ -46,7 +46,7 @@ void ftMh_MS_389_80150D28(HSD_GObj* gobj)
 }
 #pragma pop
 
-void ftMh_MS_389_80150DC4(HSD_GObj* gobj, HSD_GObjEvent cb, Vec3* pos)
+void ftMh_MS_389_80150DC4(HSD_GObj* gobj, HSD_GObjEvent cb, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     u8 _[16];
@@ -116,7 +116,7 @@ void ftMh_MS_389_80151018(HSD_GObj* gobj)
     ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
     fp->mv.mh.unk0.x20 = 0;
     {
-        Vec3 pos;
+        Vec pos;
         u8 _[8];
         pos.x = da->x30_pos2.x;
         pos.y = da->x30_pos2.y;

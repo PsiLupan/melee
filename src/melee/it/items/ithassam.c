@@ -30,7 +30,7 @@
 /* 2CDD24 */ static bool it_802CDD24(Item_GObj* gobj);
 /* 2CDD78 */ static void it_802CDD78(Item_GObj* gobj);
 /* 2CDDD0 */ static bool it_802CDDD0(Item_GObj* gobj);
-/* 2CDE1C */ static Item_GObj* it_802CDE1C(Vec3* vec, Item_GObj* gobj);
+/* 2CDE1C */ static Item_GObj* it_802CDE1C(Vec* vec, Item_GObj* gobj);
 /* 2CDF28 */ static void it_802CDF28(Item_GObj* gobj);
 /* 2CE008 */ static void it_802CE008(Item_GObj* gobj);
 /* 2CE0C4 */ static bool it_802CE0C4(Item_GObj* gobj);
@@ -130,9 +130,9 @@ bool it_802CDDD0(Item_GObj* gobj)
     return false;
 }
 
-Item_GObj* it_802CDE1C(Vec3* vec, Item_GObj* gobj)
+Item_GObj* it_802CDE1C(Vec* vec, Item_GObj* gobj)
 {
-    Vec3 sp20;
+    Vec sp20;
     Fighter* cur_fp;
     Fighter* fp;
     f32 temp_f0, x_dist, y_dist, min_dist;
@@ -177,8 +177,8 @@ Item_GObj* it_802CDE1C(Vec3* vec, Item_GObj* gobj)
 
 void it_802CDF28(Item_GObj* gobj)
 {
-    Vec3 sp1C;
-    Vec3 sp10;
+    Vec sp1C;
+    Vec sp10;
     Fighter_GObj* var_r3;
     f32 temp_f1;
 
@@ -296,8 +296,8 @@ bool it_802CE3A8(Item_GObj* gobj)
 
 void it_802CE400(Item_GObj* gobj)
 {
-    Vec3 sp1C;
-    Vec3 sp10;
+    Vec sp1C;
+    Vec sp10;
 
     Item* ip = GET_ITEM(gobj);
     HSD_JObj* jobj = (HSD_JObj*) gobj->hsd_obj;

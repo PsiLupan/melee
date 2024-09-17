@@ -7,7 +7,7 @@
 #include "it/item.h"
 #include "it/items/types.h"
 
-Item_GObj* it_80284854(Vec3*);
+Item_GObj* it_80284854(Vec*);
 void it_80284910(Item_GObj*);
 void it_80284974(Item_GObj*);
 bool it_802849B8(Item_GObj*);

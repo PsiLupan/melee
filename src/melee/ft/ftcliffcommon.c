@@ -53,7 +53,7 @@ bool ftCliffCommon_80081298(ftCo_GObj* gobj)
 void ftCliffCommon_80081370(ftCo_GObj* gobj)
 {
     Fighter* fp = gobj->user_data;
-    Vec3 vec;
+    Vec vec;
     u8 _[16] = { 0 };
     {
         float facing_dir;
@@ -113,7 +113,7 @@ void ftCo_CliffCatch_Phys(ftCo_GObj* gobj)
 {
     Fighter* fp = gobj->user_data;
     if (mpLib_80054ED8(fp->mv.co.cliff.ledge_id) != 0) {
-        Vec3 vec;
+        Vec vec;
         u8 _[4] = { 0 };
         if (fp->facing_dir > 0) {
             mpLib_80053ECC(fp->mv.co.cliff.ledge_id, &vec);

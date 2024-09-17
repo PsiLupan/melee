@@ -36,7 +36,7 @@
 /* 222B64 */ static void grTPeach_80222B64(Ground_GObj* gobj);
 /* 222B84 */ static void grTPeach_80222B84(Ground_GObj* gobj);
 /* 222B88 */ static DynamicsDesc* grTPeach_80222B88(int arg0);
-/* 222B90 */ static bool grTPeach_80222B90(Vec3* arg0, int arg1,
+/* 222B90 */ static bool grTPeach_80222B90(Vec* arg0, int arg1,
                                            HSD_JObj* arg2);
 
 StageCallbacks grTPe_803E90F0[4] = {
@@ -203,7 +203,7 @@ DynamicsDesc* grTPeach_80222B88(int arg0)
     return NULL;
 }
 
-bool grTPeach_80222B90(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTPeach_80222B90(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

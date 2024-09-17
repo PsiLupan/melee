@@ -55,10 +55,10 @@ StageData grFz_803E7A00 = {
 
 extern void fn_8021706C(HSD_GObj*);
 extern void fn_80217440(HSD_GObj*);
-extern void Camera_800311CC(f32);          /* extern */
-extern void Camera_800311DC(f32);          /* extern */
-extern void* it_802EEFA8(Vec3*, s32, f32); /* extern */
-extern void mpLib_80058560(void);          /* extern */
+extern void Camera_800311CC(f32);         /* extern */
+extern void Camera_800311DC(f32);         /* extern */
+extern void* it_802EEFA8(Vec*, s32, f32); /* extern */
+extern void mpLib_80058560(void);         /* extern */
 
 static struct {
     s32 unk0;
@@ -80,7 +80,7 @@ static struct {
 }* grFz_804D6AB0;
 // static s8 grFz_804D4920[8] = { 0x6A, 0x6F, 0x62, 0x6A, 0x2E, 0x68, 0, 0 };
 // static s8 grFz_804D4928[8] = { 0x6A, 0x6F, 0x62, 0x6A, 0, 0, 0, 0 };
-static Vec3 grFz_803B8430;
+static Vec grFz_803B8430;
 
 void grFlatzone_80216E74(int arg0)
 {
@@ -328,7 +328,7 @@ void grFlatzone_802176BC(Ground_GObj* gobj)
     s32 var_r29 = 0;
     Ground* gp = GET_GROUND(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
-    Vec3 pos = grFz_803B8430;
+    Vec pos = grFz_803B8430;
     if (gp->gv.flatzone.xC4 != 0) {
         if (gp->gv.flatzone.xD0 == 3) {
             HSD_JObjSetFlagsAll(jobj, JOBJ_HIDDEN);
@@ -403,7 +403,7 @@ void grFlatzone_802176BC(Ground_GObj* gobj)
         break;
     case 2:
         if (grAnime_801C83D0(gobj, 0, 1) != 0) {
-            Vec3 pos_2;
+            Vec pos_2;
             s32 ret;
             f32 other_x;
             f32 other_z;
@@ -629,7 +629,7 @@ int grFlatzone_80217EE8(HSD_GObj* gobj)
 
 void grFlatzone_80217EF0(Ground_GObj* gobj)
 {
-    Vec3 pos;
+    Vec pos;
     f32 var_f1;
     s32 temp_r30;
     s32 temp_r5;
@@ -780,7 +780,7 @@ DynamicsDesc* grFlatzone_802182B4(int arg0)
     return NULL;
 }
 
-int grFlatzone_802182BC(Vec3* arg0, int arg1, HSD_JObj* arg2)
+int grFlatzone_802182BC(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return 1;
 }

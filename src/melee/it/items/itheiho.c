@@ -44,7 +44,7 @@ ItemStateTable it_803F83F0[] = { { -1, it_802D88CC, it_802D88D4, it_802D8910 },
                                  { 2, it_802D9274, it_802D9384,
                                    it_802D95F4 } };
 
-void it_802D8618(s32 arg0, Vec3* arg1, s32 arg2, s32 arg3)
+void it_802D8618(s32 arg0, Vec* arg1, s32 arg2, s32 arg3)
 {
     Item_GObj* gobj = it_8027B5B0(0xD2, (s32) arg1, NULL, NULL, 1);
     Item* ip = GET_ITEM(gobj);
@@ -272,7 +272,7 @@ int it_802D8EC8(Item_GObj* gobj)
 void it_802D9168(Item_GObj* gobj)
 {
     f32 zero = 0.0F;
-    Vec3 sp14;
+    Vec sp14;
     Item* ip = GET_ITEM(gobj);
     HSD_JObj* jobj = HSD_GObjGetHSDObj(gobj);
     ip->xDD4_itemVar.heiho.x24 = 0;
@@ -363,7 +363,7 @@ int it_802D95F4(Item_GObj* gobj)
 void it_802D96B0(Item_GObj* gobj)
 {
     f32 pad[2];
-    Vec3 vec;
+    Vec vec;
     Item* ip = GET_ITEM(gobj);
     if (ip->xDD4_itemVar.heiho.x54 != NULL) {
         vec = ip->pos;
@@ -412,8 +412,8 @@ void it_802D98AC(Item_GObj* arg0)
 
 void it_802D98C4(HSD_JObj* jobj, Item* arg1)
 {
-    Vec3 vec;
-    Vec3 vec2;
+    Vec vec;
+    Vec vec2;
     if (jobj != NULL) {
         vec.x = vec.y = vec.z = 0.0F;
         HSD_JObjGetTranslation(jobj, &vec2);

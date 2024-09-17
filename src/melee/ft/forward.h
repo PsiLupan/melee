@@ -65,7 +65,7 @@ typedef void (*Fighter_UnkMtxEvent)(HSD_GObj* gobj, int arg1, Mtx vmtx);
 typedef void (*Fighter_UnkPtrEvent)(int arg0, int* arg1, int* arg2);
 typedef void (*FighterEvent)(Fighter* fp);
 typedef void (*FtCmd)(Fighter_GObj* gobj, FtCmdState* cmd);
-typedef bool (*ftDevice_Callback0)(UNK_T, HSD_GObj*, Vec3*);
+typedef bool (*ftDevice_Callback0)(UNK_T, HSD_GObj*, Vec*);
 
 typedef enum FighterKind {
     FTKIND_MARIO,

@@ -177,7 +177,7 @@ DynamicsDesc* grTPikachu_80223150(int unused)
     return NULL;
 }
 
-bool grTPikachu_80223158(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTPikachu_80223158(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

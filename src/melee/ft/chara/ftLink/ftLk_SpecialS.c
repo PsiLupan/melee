@@ -35,7 +35,7 @@ typedef enum cmd_var_idx {
 } cmd_var_idx;
 
 /* 0EBF2C */ static void on21EC(HSD_GObj* gobj);
-/* 0EC0C4 */ static float calcAnglePos(HSD_GObj* gobj, Vec3* pos, float dist);
+/* 0EC0C4 */ static float calcAnglePos(HSD_GObj* gobj, Vec* pos, float dist);
 /* 0EC210 */ static void onAccessory4(HSD_GObj* gobj);
 
 void on21EC(HSD_GObj* gobj)
@@ -120,7 +120,7 @@ void ftLk_SpecialS_RemoveBoomerang1(HSD_GObj* gobj)
  * @param[out] pos Some offset based on the returned angle,
  *                 #Fighter::facing_dir, and @p dist.
  */
-float calcAnglePos(HSD_GObj* gobj, Vec3* pos, float dist)
+float calcAnglePos(HSD_GObj* gobj, Vec* pos, float dist)
 {
     u8 _[8];
     Fighter* fp = GET_FIGHTER(gobj);
@@ -164,7 +164,7 @@ void onAccessory4(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
     ftLk_DatAttrs* da = fp->dat_attrs;
     if (ftCheckThrowB0(fp)) {
-        Vec3 pos;
+        Vec pos;
         u8 _[4];
         lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_LThumbNb)].joint,
                     NULL, &pos);
@@ -184,7 +184,7 @@ void onAccessory4(HSD_GObj* gobj)
     if (fp->cmd_vars[cmd_unk0_bool] && fp->fv.lk.boomerang_gobj != NULL &&
         it_8029FDBC(fp->fv.lk.boomerang_gobj))
     {
-        Vec3 pos;
+        Vec pos;
         u8 _[4];
         calcAnglePos(gobj, &pos, fp->fv.lk.x4 ? da->x20 : da->x24);
         it_802A0534(fp->fv.lk.boomerang_gobj, &pos);

@@ -1,19 +1,11 @@
 #include "lbgx.h"
 
 #include <placeholder.h>
-#include <dolphin/gx/GXAttr.h>
-#include <dolphin/gx/GXGeometry.h>
-#include <dolphin/gx/GXLight.h>
-#include <dolphin/gx/GXPixel.h>
-#include <dolphin/gx/GXTev.h>
-#include <dolphin/gx/GXTexture.h>
-#include <dolphin/gx/GXTransform.h>
-#include <dolphin/gx/GXVert.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
 #include <baselib/cobj.h>
 
-bool lbGx_8001E2F8(Vec4* arg0, Vec3* arg1, U8Vec4* arg2, uint arg3,
-                   float argf1)
+bool lbGx_8001E2F8(Vec4* arg0, Vec* arg1, U8Vec4* arg2, uint arg3, float argf1)
 {
     if (arg3 == 2) {
         GXSetColorUpdate(1);

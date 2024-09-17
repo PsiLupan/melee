@@ -15,13 +15,13 @@
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 // 0x8014BDB0
 // https://decomp.me/scratch/7BADg // Create Insecticide Spray Item
 void ftGw_Attack11_ItemGreenhouseSetup(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
 
     u8 _[4];
 

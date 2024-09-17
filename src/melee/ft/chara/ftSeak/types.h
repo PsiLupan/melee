@@ -6,15 +6,15 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftSeak_FighterVars {
     /* fp+222C */ int x0;
     /* fp+2230 */ Item_GObj* x4;
     /* fp+2234 */ HSD_GObj* x8;
-    /* fp+2238 */ Vec3 xC[4];
-    /* fp+2268 */ Vec3 x3C[4];
-    /* fp+2298 */ Vec3 lstick_delta;
+    /* fp+2238 */ Vec xC[4];
+    /* fp+2268 */ Vec x3C[4];
+    /* fp+2298 */ Vec lstick_delta;
 };
 
 /// @sz{74}

@@ -12,14 +12,14 @@
 /* 029020 */ CameraBox* Camera_80029020(void);
 /* 029044 */ CameraBox* Camera_80029044(int);
 /* 0290D4 */ void Camera_800290D4(CameraBox*);
-/* 029124 */ UNK_T Camera_80029124(Vec3*, int);
+/* 029124 */ UNK_T Camera_80029124(Vec*, int);
 /* 02928C */ s32 Camera_8002928C(CameraBox*);
 /* 02A278 */ void Camera_8002A278(float x, float y);
 /* 02A4AC */ void Camera_8002A4AC(HSD_GObj*);
 /* 02E6FC */ void Camera_8002E6FC(u8);
-/* 02E818 */ void Camera_8002E818(Vec3*);
-/* 02E948 */ void Camera_8002E948(bool (*)(Vec3*));
-/* 02EA64 */ void Camera_8002EA64(Vec3*);
+/* 02E818 */ void Camera_8002E818(Vec*);
+/* 02E948 */ void Camera_8002E948(bool (*)(Vec*));
+/* 02EA64 */ void Camera_8002EA64(Vec*);
 /* 02EB5C */ void Camera_8002EB5C(float);
 /* 02EC7C */ void Camera_8002EC7C(float);
 /* 02ED9C */ void Camera_8002ED9C(float);
@@ -31,19 +31,19 @@
 /* 02F474 */ void Camera_8002F474(void);
 /* 02F8F4 */ void Camera_8002F8F4(void);
 /* 030740 */ void Camera_80030740(u8 r, u8 g, u8 b);
-/* 030788 */ void Camera_80030788(Vec3*);
+/* 030788 */ void Camera_80030788(Vec*);
 /* 030A50 */ void* Camera_80030A50(void);
 /* 030A78 */ bool Camera_80030A78(void);
 /* 030B24 */ bool Camera_80030B24(void);
 /* 030CD8 */ bool Camera_80030CD8(CameraBox*, S32Vec2*);
 /* 030CFC */ bool Camera_80030CFC(CameraBox*, float);
-/* 030E44 */ void Camera_80030E44(enum_t, Vec3*);
+/* 030E44 */ void Camera_80030E44(enum_t, Vec*);
 /* 031060 */ enum_t Camera_80031060(void);
 /* 031074 */ void Camera_80031074(u8);
 /* 0310A0 */ void Camera_800310A0(u8);
 /* 0310B8 */ HSD_CObj* Camera_800310B8(void);
 /* 031144 */ float Camera_80031144(void);
-/* 031154 */ bool Camera_80031154(Vec3*);
-/* 03118C */ bool Camera_8003118C(Vec3*, float);
+/* 031154 */ bool Camera_80031154(Vec*);
+/* 03118C */ bool Camera_8003118C(Vec*, float);
 
 #endif

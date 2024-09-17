@@ -8,7 +8,7 @@
 #include "it/itCommonItems.h"
 #include "it/item.h"
 
-/* 2841B4 */ static Item_GObj* it_802841B4(Item_GObj* gobj, Vec3* arg1,
+/* 2841B4 */ static Item_GObj* it_802841B4(Item_GObj* gobj, Vec* arg1,
                                            s32 arg2);
 /* 28428C */ static void it_8028428C(Item_GObj* gobj);
 /* 284358 */ static void it_80284358(Item_GObj* gobj);
@@ -38,7 +38,7 @@ ItemStateTable it_803F5740[] = {
     { -1, it_802845E4, it_802845EC, it_802845F0 },
 };
 
-Item_GObj* it_802841B4(Item_GObj* gobj, Vec3* pos, s32 arg2)
+Item_GObj* it_802841B4(Item_GObj* gobj, Vec* pos, s32 arg2)
 {
     SpawnItem spawn;
     Item_GObj* item_gobj = NULL;

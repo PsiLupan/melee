@@ -38,9 +38,9 @@ unsigned char mnDeflicker_804D6C3C;
 HSD_GObj* mnDeflicker_804D6C38;
 StaticModelDesc mnDeflicker_804A08B8;
 
-Vec3 mnDeflicker_803EEFD8 = { 0.0F, 19.0F, -0.1F };
-Vec3 mnDeflicker_803EEFE4 = { 20.0F, 30.0F, -0.1F };
-Vec3 mnDeflicker_803EEFF0 = { 50.0F, 350.0F, 50.0F };
+Vec mnDeflicker_803EEFD8 = { 0.0F, 19.0F, -0.1F };
+Vec mnDeflicker_803EEFE4 = { 20.0F, 30.0F, -0.1F };
+Vec mnDeflicker_803EEFF0 = { 50.0F, 350.0F, 50.0F };
 
 void mnDeflicker_8024A168(HSD_GObj* gobj)
 {

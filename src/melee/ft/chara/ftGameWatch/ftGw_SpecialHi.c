@@ -20,7 +20,7 @@
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void ftGw_SpecialHi_ItemRescueEnterHitlag(HSD_GObj* gobj);
 static void ftGw_SpecialHi_ItemRescueExitHitlag(HSD_GObj* gobj);
@@ -29,7 +29,7 @@ static void ftGw_SpecialHi_ItemRescueExitHitlag(HSD_GObj* gobj);
 // https://decomp.me/scratch/6Vtu9 // Create Fire Rescue item
 void ftGw_SpecialHi_ItemRescueSetup(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp;
     HSD_GObj* rescueGObj;
 

@@ -308,7 +308,7 @@ Fighter_Part ftYs_Shield_8012CC6C(ftYs_GObj* gobj)
     return ftParts_8007500C(GET_FIGHTER(gobj), 52);
 }
 
-void ftYs_Shield_8012CC94(HSD_GObj* gobj, Vec3* out)
+void ftYs_Shield_8012CC94(HSD_GObj* gobj, Vec* out)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     ftYoshiAttributes* da = fp->dat_attrs;

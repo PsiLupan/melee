@@ -57,13 +57,13 @@ struct SpawnItem {
     /* +10 */ s32 x10;
 
     /// @at{14} @sz{C}
-    /* +14 */ Vec3 pos;
+    /* +14 */ Vec pos;
 
     /// @at{20} @sz{C}
-    /* +20 */ Vec3 prev_pos;
+    /* +20 */ Vec prev_pos;
 
     /// @at{2C} @sz{C}
-    /* +2C */ Vec3 vel;
+    /* +2C */ Vec vel;
     /* 38 */ f32 facing_dir;
 
     s16 x3C_damage;

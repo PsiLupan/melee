@@ -34,7 +34,7 @@ bool ftCo_800C23A0(ftCo_GObj* gobj)
 /// @todo Shared code with #ftCo_800C1E64.
 void ftCo_800C23FC(ftCo_GObj* gobj)
 {
-    Vec3 ef_offset;
+    Vec ef_offset;
     Fighter* fp = GET_FIGHTER(gobj);
     ftCommon_8007E2FC(gobj);
     fp->throw_flags = 0;
@@ -46,7 +46,7 @@ void ftCo_800C23FC(ftCo_GObj* gobj)
                               NULL);
     {
         float pos_y_offset = fp->cur_pos.y + ef_offset.y;
-        Vec3 ef_pos;
+        Vec ef_pos;
         u8 _[4] = { 0 };
         ef_pos.x = fp->cur_pos.x;
         ef_pos.y = pos_y_offset;

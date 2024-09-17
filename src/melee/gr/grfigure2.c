@@ -35,7 +35,7 @@
 /* 20E4EC */ static void grFigure2_8020E4EC(HSD_GObj* gobj);
 /* 20E4F0 */ static void grFigure2_8020E4F0(HSD_GObj*);
 /* 20E4F4 */ static DynamicsDesc* grFigure2_8020E4F4(enum_t arg0);
-/* 20E4FC */ static bool grFigure2_8020E4FC(Vec3* vector, int number,
+/* 20E4FC */ static bool grFigure2_8020E4FC(Vec* vector, int number,
                                             HSD_JObj* jobj);
 
 static StageCallbacks grEF2_803E6328[3] = {
@@ -174,7 +174,7 @@ static DynamicsDesc* grFigure2_8020E4F4(enum_t arg0)
     return NULL;
 }
 
-static bool grFigure2_8020E4FC(Vec3* vector, int number, HSD_JObj* jobj)
+static bool grFigure2_8020E4FC(Vec* vector, int number, HSD_JObj* jobj)
 {
     return true;
 }

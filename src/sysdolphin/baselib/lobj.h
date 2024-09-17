@@ -8,9 +8,8 @@
 #include "baselib/object.h"
 
 #include <dolphin/gx/GXEnum.h>
-#include <dolphin/gx/GXLight.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/gx/GXLighting.h>
+#include <dolphin/mtx.h>
 
 struct HSD_LightPoint {
     f32 cutoff;
@@ -66,7 +65,7 @@ struct HSD_LObj {
         HSD_LightAttn attn;
     } u;
     /* 0x38 */ f32 shininess;
-    /* 0x3C - 0x44 */ Vec3 lvec;
+    /* 0x3C - 0x44 */ Vec lvec;
     /* 0x48 */ HSD_AObj* aobj;
     /* 0x4C */ GXLightID id;
     /* 0x50 */ GXLightObj lightobj;
@@ -136,11 +135,11 @@ void HSD_LObjAnim(HSD_LObj* lobj);
 void HSD_LObjAnimAll(HSD_LObj* lobj);
 void HSD_LObjReqAnim(HSD_LObj* lobj, f32 startframe);
 void HSD_LObjReqAnimAll(HSD_LObj* lobj, f32 startframe);
-void HSD_LObjGetLightVector(HSD_LObj* lobj, Vec3* dir);
+void HSD_LObjGetLightVector(HSD_LObj* lobj, Vec* dir);
 void HSD_LObjSetup(HSD_LObj* lobj, GXColor color, f32 shininess);
 
-bool HSD_LObjGetPosition(HSD_LObj*, Vec3*);
-bool HSD_LObjGetInterest(HSD_LObj*, Vec3*);
+bool HSD_LObjGetPosition(HSD_LObj*, Vec*);
+bool HSD_LObjGetInterest(HSD_LObj*, Vec*);
 
 HSD_WObj* HSD_LObjGetPositionWObj(HSD_LObj* lobj);
 HSD_WObj* HSD_LObjGetInterestWObj(HSD_LObj* lobj);
@@ -151,8 +150,8 @@ u32 HSD_LightID2Index(GXLightID);
 void HSD_LObjDeleteCurrent(HSD_LObj* lobj);
 s32 HSD_Index2LightID(u32);
 void HSD_LObjRemoveAll(HSD_LObj* lobj);
-void HSD_LObjSetPosition(HSD_LObj* lobj, Vec3* position);
-void HSD_LObjSetInterest(HSD_LObj* lobj, Vec3* interest);
+void HSD_LObjSetPosition(HSD_LObj* lobj, Vec* position);
+void HSD_LObjSetInterest(HSD_LObj* lobj, Vec* interest);
 void HSD_LObj_803668EC(HSD_LObj* lobj);
 void HSD_LObjSetupInit(HSD_CObj* arg0);
 

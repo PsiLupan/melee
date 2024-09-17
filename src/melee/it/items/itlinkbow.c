@@ -28,7 +28,7 @@ ItemStateTable it_803F6E98[] = { { 0, it_802AF64C, it_802AF844, it_802AF848 },
 static s32 it_803F6F08[7] = { 0, 1, 2, 3, 4, 5, 6 };
 static s32 it_803F6F24[7] = { 3, 4, 5, 0, 1, 2, 6 };
 
-HSD_GObj* it_802AF1A4(f32 facing_dir, Fighter_GObj* owner_gobj, Vec3* vec,
+HSD_GObj* it_802AF1A4(f32 facing_dir, Fighter_GObj* owner_gobj, Vec* vec,
                       Fighter_Part arg3, int arg4)
 {
     Item_GObj* gobj;
@@ -131,7 +131,7 @@ void it_802AF434(Item_GObj* arg0)
 {
     HSD_JObj* jobj;
     Item* item;
-    Vec3 scale;
+    Vec scale;
     enum ftLk_SpecialNIndex idx;
 
     item = GET_ITEM((HSD_GObj*) arg0);
@@ -177,7 +177,7 @@ int it_802AF64C(HSD_GObj* arg0)
 {
     Item* item;
     HSD_JObj* jobj;
-    Vec3 scale;
+    Vec scale;
 
     item = GET_ITEM((HSD_GObj*) arg0);
     jobj = HSD_GObjGetHSDObj(arg0);
@@ -237,7 +237,7 @@ int it_802AF848(HSD_GObj* arg0)
 {
     Item* item;
     HSD_JObj* jobj;
-    Vec3 scale;
+    Vec scale;
 
     item = GET_ITEM(arg0);
     jobj = HSD_GObjGetHSDObj(arg0);

@@ -28,7 +28,7 @@
 
 bool ftCo_800C15F4(ftCo_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     Fighter* fp = GET_FIGHTER(gobj);
     CollData* coll = &fp->coll_data;
     float threshold = p_ftCommonData->x1B0;
@@ -42,7 +42,7 @@ bool ftCo_800C15F4(ftCo_GObj* gobj)
         vec.z = 0;
         ftKb_SpecialN_800F1F1C(gobj, &vec);
         {
-            Vec3* normal = &coll->left_wall.normal;
+            Vec* normal = &coll->left_wall.normal;
             ftCo_800C18A8(gobj, ftCo_MS_FlyReflectWall, normal, &vec);
         }
         fp->mv.co.damage.x19 = ftCo_Surface_LeftWall;
@@ -56,7 +56,7 @@ bool ftCo_800C15F4(ftCo_GObj* gobj)
         vec.z = 0;
         ftKb_SpecialN_800F1F1C(gobj, &vec);
         {
-            Vec3* normal = &coll->right_wall.normal;
+            Vec* normal = &coll->right_wall.normal;
             ftCo_800C18A8(gobj, ftCo_MS_FlyReflectWall, normal, &vec);
         }
         fp->mv.co.damage.x19 = ftCo_Surface_RightWall;
@@ -67,7 +67,7 @@ bool ftCo_800C15F4(ftCo_GObj* gobj)
 
 bool ftCo_800C1718(ftCo_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     u8 _[4] = { 0 };
     Fighter* fp = GET_FIGHTER(gobj);
     CollData* coll = &fp->coll_data;
@@ -80,7 +80,7 @@ bool ftCo_800C1718(ftCo_GObj* gobj)
         vec.z = 0;
         ftKb_SpecialN_800F1F1C(gobj, &vec);
         {
-            Vec3* normal = &coll->ceiling.normal;
+            Vec* normal = &coll->ceiling.normal;
             ftCo_800C18A8(gobj, ftCo_MS_FlyReflectCeil, normal, &vec);
         }
         fp->mv.co.damage.x19 = ftCo_Surface_Ceiling;
@@ -100,12 +100,12 @@ bool ftCo_800C17CC(ftCo_GObj* gobj)
     return false;
 }
 
-void ftCo_800C18A8(ftCo_GObj* gobj, ftCommon_MotionState msid, Vec3* normal,
-                   Vec3* offset)
+void ftCo_800C18A8(ftCo_GObj* gobj, ftCommon_MotionState msid, Vec* normal,
+                   Vec* offset)
 {
     u8 _[8] = { 0 };
-    Vec3 vec1;
-    Vec3 vec0;
+    Vec vec1;
+    Vec vec0;
     float param;
 
     Fighter* fp = GET_FIGHTER(gobj);

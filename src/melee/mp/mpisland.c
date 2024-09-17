@@ -263,7 +263,7 @@ mp_UnkStruct0* mpIsland_8005AB54(int surface_idx)
     return NULL;
 }
 
-mp_UnkStruct0* mpIsland_8005AC14(Vec3* arg0, float arg1)
+mp_UnkStruct0* mpIsland_8005AC14(Vec* arg0, float arg1)
 {
     int i;
     if (mpLib_8004F008(NULL, &i, 0, 0, -1, -1, -1, 0, arg0->x, arg0->y,
@@ -289,7 +289,7 @@ bool mpIsland_8005AC8C(mp_UnkStruct0* arg0)
     return false;
 }
 
-void mpIsland_8005ACE8(mp_UnkStruct5* arg0, Vec3* arg1, Vec3* arg2)
+void mpIsland_8005ACE8(mp_UnkStruct5* arg0, Vec* arg1, Vec* arg2)
 {
     /*  r0 */ int v14;
     /* r31 */ int v7;
@@ -327,9 +327,9 @@ void mpIsland_8005ACE8(mp_UnkStruct5* arg0, Vec3* arg1, Vec3* arg2)
     }
     for (i = 0; i < v9 && v11 && v12; ++i, v10 += 4, ++v7) {
         if (v11 && **(u16**) v10 == arg0->x4) {
-            mpLib_80054158(v7, (Vec3*) arg1);
+            mpLib_80054158(v7, (Vec*) arg1);
         } else if (v12 && *(u16*) (*(int*) v10 + 2) == arg0->x6) {
-            mpLib_80053FF4(v7, (Vec3*) arg2);
+            mpLib_80053FF4(v7, (Vec*) arg2);
         };
     }
 }

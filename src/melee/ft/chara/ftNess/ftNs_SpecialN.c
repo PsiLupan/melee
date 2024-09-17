@@ -198,7 +198,7 @@ void ftNs_SpecialNStart_Anim(HSD_GObj* gobj)
         Fighter* fp = GET_FIGHTER(gobj);
         if (fp->fv.ns.pkflash_gobj == NULL) {
             /// @todo Can't move below @c _.
-            Vec3 vec;
+            Vec vec;
 
             u8 _[20];
 
@@ -315,7 +315,7 @@ void ftNs_SpecialAirNStart_Anim(HSD_GObj* gobj)
             Fighter* fighter_data2 = GET_FIGHTER(gobj);
 
             if (fighter_data2->fv.ns.pkflash_gobj == NULL) {
-                Vec3 vec;
+                Vec vec;
 
                 u8 _[20];
 

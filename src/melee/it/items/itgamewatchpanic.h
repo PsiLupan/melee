@@ -8,7 +8,7 @@
 #include "it/items/types.h"
 #include "it/types.h"
 
-/* 2C7D60 */ HSD_GObj* it_802C7D60(Item_GObj*, Vec3*, Fighter_Part, f32);
+/* 2C7D60 */ HSD_GObj* it_802C7D60(Item_GObj*, Vec*, Fighter_Part, f32);
 /* 2C7E64 */ void it_802C7E64(Item_GObj*);
 /* 2C7E94 */ void it_802C7E94(Item_GObj*);
 /* 2C7EE0 */ void it_802C7EE0(Item_GObj*);

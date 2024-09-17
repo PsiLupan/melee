@@ -7,14 +7,13 @@
 
 #include <placeholder.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/types.h>
 
 /* 12CD10 */ float ftYs_SpecialN_8012CD10(ftYs_GObj* gobj);
 /* 12CD28 */ float ftYs_SpecialN_8012CD28(void);
 /* 12CD40 */ float ftYs_SpecialN_8012CD40(void);
 /* 12CD58 */ float ftYs_SpecialN_8012CD58(void);
 /* 12CD70 */ bool ftYs_SpecialN_8012CD70(void);
-/* 12CD88 */ void ftYs_SpecialN_8012CD88(Vec3*);
+/* 12CD88 */ void ftYs_SpecialN_8012CD88(Vec*);
 /* 12CDB4 */ float ftYs_SpecialN_8012CDB4(ftYs_GObj* gobj);
 /* 12CDD4 */ HSD_Joint* ftYs_SpecialN_8012CDD4(ftYs_GObj* gobj);
 /* 12CDE8 */ void ftYs_SpecialN_Enter(ftYs_GObj* gobj);
@@ -102,6 +101,6 @@
 /* 131F80 */ void ftYs_SpecialAirSLoop_2_Coll(ftYs_GObj* gobj);
 /* 13245C */ void ftYs_SpecialAirSLoop_3_Coll(ftYs_GObj* gobj);
 /* 1328F0 */ void ftYs_SpecialAirSLanding_Coll(ftYs_GObj* gobj);
-/* 3B75C0 */ extern Vec3 const ftYs_Unk1_803B75C0;
+/* 3B75C0 */ extern Vec const ftYs_Unk1_803B75C0;
 
 #endif

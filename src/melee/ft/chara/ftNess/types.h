@@ -12,7 +12,7 @@
 
 struct ftNess_FighterVars {
     /* 0x222C */ HSD_GObj* yoyo_gobj;
-    /* 0x2230 */ Vec3 yoyo_hitbox_pos;
+    /* 0x2230 */ Vec yoyo_hitbox_pos;
     /* 0x223C */ float x223C;
     /* 0x2240 */ HSD_GObj* pkflash_gobj;
     /* 0x2244 */ HSD_GObj* pkthunder_gobj;
@@ -31,7 +31,7 @@ union ftNess_MotionVars {
         /// 0x2348 - bool to indicate whether Ness can charge the Yo-Yo
         bool isChargeDisable;
         /// 0x234C - bool to indicate whether Yo-Yo hitbox position should
-        /// update based on raw Vec3 input (false) or modified calculations
+        /// update based on raw Vec input (false) or modified calculations
         /// (true)
         bool isPosUpdateMod;
     } attackhi4, attacklw4;
@@ -63,9 +63,9 @@ union ftNess_MotionVars {
         /// 0x234C - Number of frames to pass before gravity takes effect
         s32 gravityDelay;
         /// 0x2350 - ???
-        Vec3 collPos1;
+        Vec collPos1;
         /// 0x235C - ???
-        Vec3 collPos2;
+        Vec collPos2;
         /// 0x2368 - Aerial velocity of PK Thunder 2 (Self-Hit)
         float aerialVel;
         /// 0x236C - Set various times but never actually used?
@@ -73,7 +73,7 @@ union ftNess_MotionVars {
         /// 0x2370 - Facing direction change frorm PK Thunder collision
         float facingDir;
         /// 0x2374 through 0x237C - Unused vector
-        Vec3 unkVector1;
+        Vec unkVector1;
         /// 0x2380 - bool used in a weird way to switch to PK Thunder 2 GFX
         s32 jibakuGFX;
         /// 0x2384 - Fall acceleration of PK Thunder 2 (Self-Hit)

@@ -9,15 +9,8 @@
 #include "tev.h"
 
 #include <__mem.h>
-#include <dolphin/gx/GXAttr.h>
-#include <dolphin/gx/GXFrameBuf.h>
-#include <dolphin/gx/GXMisc.h>
-#include <dolphin/gx/GXTexture.h>
-#include <dolphin/gx/GXTransform.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/types.h>
-#include <dolphin/mtx/vec.h>
 #include <MetroTRK/intrinsics.h>
 
 #define FLT_EPSILON 1.00000001335e-10F
@@ -371,9 +364,9 @@ static u32 HSD_TexMapID2PTTexMtx(GXTexMapID id)
 
 static void MakeTextureMtx(HSD_TObj* tobj)
 {
-    Vec3 scale;
+    Vec scale;
     Mtx m;
-    Vec3 trans;
+    Vec trans;
     Quaternion rot;
 
     u8 _[8];
@@ -406,7 +399,7 @@ static void MakeTextureMtx(HSD_TObj* tobj)
     trans.z = tobj->translate.z;
 
     MTXTrans(tobj->mtx, trans.x, trans.y, trans.z);
-    HSD_MkRotationMtx(m, (Vec3*) &rot);
+    HSD_MkRotationMtx(m, (Vec*) &rot);
     MTXConcat(m, tobj->mtx, tobj->mtx);
     MTXScale(m, scale.x, scale.y, scale.z);
     MTXConcat(m, tobj->mtx, tobj->mtx);
@@ -444,7 +437,7 @@ static void TObjSetupMtx(HSD_TObj* tobj)
 
         if ((lobj = HSD_LObjGetCurrentByType(LOBJ_INFINITE)) != NULL) {
             HSD_CObj* cobj;
-            Vec3 ldir, half;
+            Vec ldir, half;
             Mtx mtx;
             MtxPtr vmtx;
 

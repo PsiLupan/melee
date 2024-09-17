@@ -2909,7 +2909,7 @@ bool ftKb_Init_803CB490[] = {
 
 struct ftKb_Init_803CB4EC {
     int ints[6];
-    Vec3 vec;
+    Vec vec;
 } ftKb_Init_803CB4EC = {
     { 0, 2, 3, 4, 5, 6 },
     { 0.0F, 1.0F, 0.0F },
@@ -2935,7 +2935,7 @@ Vec4 ftKb_Init_803CB720 = { 1.1F, 1.35F, 1.3F, 1.2F };
 
 char ftKb_Init_assert_msg_3[] = "!(jobj->flags & JOBJ_USE_QUATERNION)";
 
-Vec3 ftKb_Init_803CB758[] = {
+Vec ftKb_Init_803CB758[] = {
     { +8, +0, -4 },
     { +4, +4, +4 },
 };
@@ -2987,8 +2987,8 @@ jtbl_t ftKb_Init_803CB7DC = {
 uint ftKb_Init_803CB828[] = { 0x00030DB9, 0x00030DBC, 0x00030DBF, 0x00030DC2 };
 
 float const ftKb_Init_803B7548[10] = { 0 };
-Vec3 const ftKb_Init_803B7570 = { 0, 4, 0 };
-Vec3 const ftKb_Init_803B757C = { 0, 4, 0 };
+Vec const ftKb_Init_803B7570 = { 0, 4, 0 };
+Vec const ftKb_Init_803B757C = { 0, 4, 0 };
 
 void ftKb_Init_800EE528(void)
 {
@@ -3449,7 +3449,7 @@ void ftKb_NsSpecialNStart_Anim(HSD_GObj* gobj)
         Fighter_ChangeMotionState(gobj, 436, 0, 0, 1, 0, NULL);
         {
             Fighter* fp = GET_FIGHTER(gobj);
-            Vec3 flash_pos;
+            Vec flash_pos;
             PAD_STACK(4 * 5);
             if (fp->fv.kb.ns_flash_gobj == NULL) {
                 lb_8000B1CC(fp->parts[FtPart_WaistN].joint, NULL, &flash_pos);
@@ -3555,7 +3555,7 @@ void ftKb_SpecialNMs_8010B2FC(HSD_GObj* gobj)
 
     {
         Fighter* fp = GET_FIGHTER(gobj);
-        Vec3 scale;
+        Vec scale;
 
         if (fp->fv.kb.hat.kind == FTKIND_MARS) {
             ftCommon_SetAccessory(fp, ft_80459B88.x0->x0[FTKIND_MARS].next);
@@ -3589,7 +3589,7 @@ void fn_8010C288(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     if (!fp->cmd_vars[2]) {
-        Vec3 pos;
+        Vec pos;
         fp->cmd_vars[2] = true;
         lb_8000B1CC(fp->parts[FtPart_R3rdNa].joint, 0, &pos);
         fp->fv.kb.xD0 =
@@ -3609,7 +3609,7 @@ void fn_8010C344(HSD_GObj* arg0)
     PAD_STACK(4);
     {
         Fighter* fp = arg0->user_data;
-        Vec3 pos;
+        Vec pos;
         PAD_STACK(4 * 2);
         lb_8000B1CC(fp->parts[FtPart_R3rdNa].joint, 0, &pos);
         pos.y += 2.5f;

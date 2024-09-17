@@ -5,6 +5,6 @@
 
 #include <dolphin/mtx.h>
 
-bool lbGx_8001E2F8(Vec4*, Vec3*, U8Vec4*, uint, float);
+bool lbGx_8001E2F8(Vec4*, Vec*, U8Vec4*, uint, float);
 
 #endif

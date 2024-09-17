@@ -39,7 +39,7 @@ void ftCo_8009EE30(ftCo_GObj* gobj)
     ftCo_Fighter* fp = gobj->user_data;
     CollData* coll = &fp->coll_data;
     {
-        Vec3 vec;
+        Vec vec;
         u8 _[4] = { 0 };
         if (fp->coll_data.env_flags & MPCOLL_LEFTWALL) {
             vec.x = coll->xA4_ecbCurrCorrect.left.x;

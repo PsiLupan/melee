@@ -4,8 +4,7 @@
 
 #include <math.h>
 #include <placeholder.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/aobj.h>
 #include <baselib/dobj.h> // IWYU pragma: keep
 #include <baselib/jobj.h>
@@ -106,10 +105,10 @@ inline HSD_JObj* jobj_parent(HSD_JObj* jobj)
     return jobj->parent;
 }
 
-void lb_8000B1CC(HSD_JObj* arg0, Vec3* arg1, Vec3* arg2)
+void lb_8000B1CC(HSD_JObj* arg0, Vec* arg1, Vec* arg2)
 {
     Quaternion r;
-    Vec3 s;
+    Vec s;
 
     if (arg0 == NULL) {
         *arg2 = *arg1;
@@ -484,8 +483,8 @@ void lb_8000C490(HSD_JObj* jobj1, HSD_JObj* jobj2, HSD_JObj* arg2, float arg8,
     s32 is_quat_1;
     s32 is_quat_2;
 
-    Vec3 sp60;
-    Vec3 sp54;
+    Vec sp60;
+    Vec sp54;
     Quaternion quat1;
     Quaternion quat2;
 
@@ -596,8 +595,8 @@ void lb_8000C868(HSD_Joint* arg0, HSD_JObj* arg1, HSD_JObj* arg2, float arg8,
     float phi_f1_2;
     float phi_f1_3;
 
-    Vec3 spC0;
-    Vec3 spB4;
+    Vec spC0;
+    Vec spB4;
     Quaternion spA4;
     Quaternion sp94;
 

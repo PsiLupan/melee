@@ -18,7 +18,7 @@
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 // 8013B638 - 8013B6D8 (160 bytes)
 // https://decomp.me/scratch/QnXK1
@@ -85,7 +85,7 @@ void ftZd_SpecialAirS_Enter(HSD_GObj* gobj)
 // https://decomp.me/scratch/g2bK5
 void ftZd_SpecialSStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp24;
+    Vec sp24;
     float temp_f1;
     float temp_f2;
     HSD_GObj* temp_r3;
@@ -127,7 +127,7 @@ void ftZd_SpecialSStart_Anim(HSD_GObj* gobj)
 // https://decomp.me/scratch/uGOsz
 void ftZd_SpecialSLoop_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp20;
+    Vec sp20;
     ftZelda_DatAttrs* attributes;
     Fighter* fp; // r30
     float temp_f1;
@@ -214,7 +214,7 @@ void ftZd_SpecialSEnd_Anim(HSD_GObj* gobj)
 // https://decomp.me/scratch/9hYY3
 void ftZd_SpecialAirSStart_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp24;
+    Vec sp24;
     float temp_f1;
     float temp_f2;
     HSD_GObj* temp_r3;
@@ -255,7 +255,7 @@ void ftZd_SpecialAirSStart_Anim(HSD_GObj* gobj)
 // https://decomp.me/scratch/llKUS
 void ftZd_SpecialAirSLoop_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp20;
+    Vec sp20;
     float temp_f1;
     float temp_f2;
     HSD_GObj* temp_r3;

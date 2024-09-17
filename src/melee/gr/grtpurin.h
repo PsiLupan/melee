@@ -27,6 +27,6 @@ bool grTPurin_802234CC(HSD_GObj*);
 void grTPurin_802234D4(HSD_GObj*);
 void grTPurin_802234F4(HSD_GObj*);
 DynamicsDesc* grTPurin_802234F8(int);
-bool grTPurin_80223578(Vec3*, int, HSD_JObj*);
+bool grTPurin_80223578(Vec*, int, HSD_JObj*);
 
 #endif

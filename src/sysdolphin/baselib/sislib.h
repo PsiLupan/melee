@@ -8,7 +8,7 @@
 #include "baselib/cobj.h"
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 typedef struct sislib_UnkAllocData sislib_UnkAllocData;
 typedef struct HSD_Text HSD_Text;
@@ -121,7 +121,7 @@ extern sislib_UnkAlloc3* HSD_SisLib_804D797C;
 extern sislib_UnknownType001 HSD_SisLib_8040C4A4;
 extern sislib_UnknownType001 HSD_SisLib_8040C490;
 
-void HSD_SisLib_803A6048(size_t);
+void HSD_SisLib_803A6048(u32);
 UNK_T func_804A70A0(UNK_T, s32, u32, s32, s32, s32, s32, s32, f64, f64, f64,
                     f64, f64, f64, f64, f64);
 void HSD_SisLib_803A947C(HSD_Archive*);

@@ -23,7 +23,7 @@
 
 #include <math.h>
 #include <math_ppc.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 #include <baselib/random.h>
 
@@ -167,8 +167,8 @@ void ftPk_SpecialHi_ChangeMotion_Unk01(HSD_GObj* gobj)
 
 void ftPk_SpecialHiStart1_Anim(HSD_GObj* gobj)
 {
-    Vec3 vec;
-    Vec3 vec2;
+    Vec vec;
+    Vec vec2;
 
     Fighter* fp = GET_FIGHTER(gobj);
 
@@ -206,8 +206,8 @@ void ftPk_SpecialHiStart1_Anim(HSD_GObj* gobj)
 
 void ftPk_SpecialAirHiStart1_Anim(HSD_GObj* gobj)
 {
-    Vec3 vec;
-    Vec3 vec2;
+    Vec vec;
+    Vec vec2;
 
     Fighter* fp = GET_FIGHTER(gobj);
 
@@ -249,8 +249,8 @@ void ftPk_SpecialAirHiStart1_IASA(HSD_GObj* arg0) {}
 
 void ftPk_SpecialHi_8012642C(HSD_GObj* gobj)
 {
-    Vec3 scl;
-    Vec3 velocity_vec;
+    Vec scl;
+    Vec velocity_vec;
 
     HSD_JObj* jobj;
     Fighter* fp = GET_FIGHTER(gobj);
@@ -293,7 +293,7 @@ void ftPk_SpecialAirHiStart1_Phys(HSD_GObj* gobj)
 
 void ftPk_SpecialHiStart1_Coll(HSD_GObj* gobj)
 {
-    Vec3 scl;
+    Vec scl;
 
     Fighter* fighter2;
 
@@ -425,7 +425,7 @@ void ftPk_SpecialHi_ChangeMotion_Unk02(HSD_GObj* gobj)
 
 void ftPk_SpecialHi_ChangeMotion_Unk03(HSD_GObj* gobj)
 {
-    Vec3 scl;
+    Vec scl;
 
     CollData* collData;
     ftPikachuAttributes* pika_attr;
@@ -485,7 +485,7 @@ void ftPk_SpecialHi_80126C0C(HSD_GObj* gobj)
     }
 
     if (!(stick_mag < pika_attr->x8C)) {
-        Vec3 lstick_direction;
+        Vec lstick_direction;
 
         lstick_direction.x = fp->input.lstick.x;
         lstick_direction.y = fp->input.lstick.y;
@@ -643,7 +643,7 @@ bool ftPk_SpecialHi_80127064(HSD_GObj* gobj)
     }
 
     if (!fp->mv.pk.unk4.x8) {
-        Vec3 vec1, vec2;
+        Vec vec1, vec2;
         float tempf;
 
         u8 _[4];

@@ -341,7 +341,7 @@ static inline s32 random_adder_f(f32 temp_f0, f32 temp_f2)
 
 void grKongo_801D55D8(HSD_GObj* arg0)
 {
-    Vec3 sp14;
+    Vec sp14;
     Ground* temp_r31;
     void* temp_r28;
 
@@ -444,7 +444,7 @@ void grKongo_801D577C(HSD_GObj* arg0)
     f32 var_f1;
     f32 var_f0;
     HSD_GObj* temp_r3_9;
-    Vec3 vec;
+    Vec vec;
 
     switch (temp_r31->gv.kongo3.xC4) {
     default:
@@ -820,7 +820,7 @@ static const s32 grKg_803B7FD4[7] = { 7, 4, 8, 5, 9, 6, 0 };
 
 void grKongo_801D651C(HSD_GObj* gobj)
 {
-    Vec3 sp2C;
+    Vec sp2C;
     s32 list[6];
     int i;
 
@@ -848,7 +848,7 @@ s32 grKongo_801D6660(void)
     return 0;
 }
 
-static inline Vec3* lbVector_Diff_t(Vec3* a, Vec3* b, Vec3* result)
+static inline Vec* lbVector_Diff_t(Vec* a, Vec* b, Vec* result)
 {
     result->x = a->x - b->x;
     result->y = a->y - b->y;
@@ -856,19 +856,19 @@ static inline Vec3* lbVector_Diff_t(Vec3* a, Vec3* b, Vec3* result)
     return result;
 }
 
-static inline float lbVector_Len_t(Vec3* vec)
+static inline float lbVector_Len_t(Vec* vec)
 {
     return sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
 
 void grKongo_801D6668(HSD_GObj* arg0)
 {
-    Vec3 sp5C;
-    Vec3 sp50;
-    Vec3 sp44;
+    Vec sp5C;
+    Vec sp50;
+    Vec sp44;
     Quaternion sp34;
-    Vec3 sp28;
-    Vec3 sp1C;
+    Vec sp28;
+    Vec sp1C;
     f32 sp18;
     f32 temp_f1;
     f32 temp_f1_2;
@@ -889,7 +889,7 @@ void grKongo_801D6668(HSD_GObj* arg0)
     Ground* temp_r4;
     HSD_JObj* temp_r30;
     f32 len;
-    Vec3 vec;
+    Vec vec;
     PAD_STACK(8);
 
     temp_r4 = arg0->user_data;
@@ -1233,9 +1233,9 @@ void grKongo_801D69B0(HSD_GObj *arg0) {
 #if 0
 
 
-? ftCo_8009EC70(Vec3 *, s32 *);                     /* extern */
+? ftCo_8009EC70(Vec *, s32 *);                     /* extern */
 u32 it_802E18B4(HSD_GObj *);                        /* extern */
-? it_802E2330(Vec3 *, s32 *);                       /* extern */
+? it_802E2330(Vec *, s32 *);                       /* extern */
 ? mpLib_8005667C(?);                                /* extern */
 ? mpLib_800566D8(?, f32 *, ? *);                    /* extern */
 ? mpLib_80056758(s32, ?, f32, ?, f32);              /* extern */

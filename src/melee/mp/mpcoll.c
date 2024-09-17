@@ -301,7 +301,7 @@ inline void update_min_max(float* min, float* max, float val)
 
 void mpColl_800424DC(CollData* cd, u32 flags)
 {
-    Vec3 vec;
+    Vec vec;
     float left_x, bottom_y;
     float right_x, top_y;
     float dx, dy;
@@ -783,7 +783,7 @@ void mpColl_80043670(CollData* arg0)
     arg0->x130_flags |= 0x20;
 }
 
-void mpColl_80043680(CollData* arg0, Vec3* arg1)
+void mpColl_80043680(CollData* arg0, Vec* arg1)
 {
     arg0->cur_topn = *arg1;
     arg0->cur_topn_correct = arg0->cur_topn;
@@ -832,7 +832,7 @@ inline float max_inline(float a, float b)
 
 bool mpColl_80043754(mpColl_Callback arg0, CollData* arg1, u32 arg2)
 {
-    Vec3 vel;
+    Vec vel;
 
     u8 _[4];
 
@@ -908,7 +908,7 @@ bool mpColl_80043754(mpColl_Callback arg0, CollData* arg1, u32 arg2)
 // 800439FC https://decomp.me/scratch/T1yAJ
 void mpColl_800439FC(CollData* arg0)
 {
-    Vec3 sp10;
+    Vec sp10;
     float spC;
     float temp_f3;
     float temp_f4;
@@ -927,7 +927,7 @@ void mpColl_800439FC(CollData* arg0)
     {
         sp10.x = arg0->x140.x - var_f31;
         sp10.y = arg0->cur_topn.y + arg0->xA4_ecbCurrCorrect.top.y;
-        if (mpLib_8004E090(arg0->ceiling.index, (Vec3*) &sp10, &spC,
+        if (mpLib_8004E090(arg0->ceiling.index, (Vec*) &sp10, &spC,
                            (u32*) &arg0->ceiling.unk,
                            &arg0->ceiling.normal) != -1)
         {
@@ -939,7 +939,7 @@ void mpColl_800439FC(CollData* arg0)
 
 void mpColl_80043ADC(CollData* arg0)
 {
-    Vec3 sp10;
+    Vec sp10;
     float spC;
     float temp_f3;
     float temp_f4;

@@ -16,7 +16,7 @@
 #include "it/items/itgamewatchturtle.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void ftGw_AttackAirN_ExitItemHitlag(HSD_GObj*);
 
@@ -24,7 +24,7 @@ static void ftGw_AttackAirN_ExitItemHitlag(HSD_GObj*);
 // https://decomp.me/scratch/wJ5b7 // Create Parachute Item
 void ftGw_AttackAirN_ItemParachuteSetup(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp = GET_FIGHTER(gobj);
 
     if (fp->fv.gw.x2258_parachuteGObj != NULL) {
@@ -108,7 +108,7 @@ static void ftGw_AttackAirN_ItemTurtleOnLand(HSD_GObj*);
 // https://decomp.me/scratch/1sOUQ // Create Turtle Item
 void ftGw_AttackAirN_ItemTurtleSetup(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp = getFighter(gobj);
 
     u8 _[4];
@@ -193,7 +193,7 @@ bool ftGw_AttackAirN_ItemCheckTurtleRemove(HSD_GObj* gobj)
 /// Create Sparky Item
 void ftGw_AttackAirN_ItemSparkySetup(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp = getFighter(gobj);
 
     u8 _[4];

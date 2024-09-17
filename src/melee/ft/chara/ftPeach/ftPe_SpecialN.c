@@ -64,7 +64,7 @@ void onAccessory4(HSD_GObj* gobj)
     }
     fp->cmd_vars[cmd_accessory4] = accessory4_state_1;
     {
-        Vec3 pos;
+        Vec pos;
         lb_8000B1CC(fp->parts[FtPart_109].joint, NULL, &pos);
         fp->fv.pe.toad_gobj =
             it_802BDE18(gobj, &pos, FtPart_109, 104, fp->facing_dir);
@@ -82,7 +82,7 @@ void onAccessory4(HSD_GObj* gobj)
 static void doHitAccessory4(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     lb_8000B1CC(fp->parts[FtPart_109].joint, NULL, &pos);
     pos.y += 2.5f;
     pos.z = 0;

@@ -14,13 +14,13 @@
 #include "lb/lb_00B0.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 
 static void ftGw_SpecialN_CreateSausage(HSD_GObj* gobj)
 {
-    Vec3 vec0;
-    Vec3 vec1;
+    Vec vec0;
+    Vec vec1;
 
     u8 _[4] = { 0 };
 

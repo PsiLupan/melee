@@ -162,7 +162,7 @@ DynamicsDesc* grTLuigi_80221EE4(enum_t arg0)
     return NULL;
 }
 
-int grTLuigi_80221EEC(Vec3* arg0, int arg1, HSD_JObj* arg2)
+int grTLuigi_80221EEC(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

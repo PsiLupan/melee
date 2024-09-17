@@ -331,7 +331,7 @@ bool ftCo_800A0F00(ftCo_GObj* gobj)
     return 0;
 }
 
-bool ftCo_800A0FB0(Vec3* arg0, int* arg1, int arg2, int arg3, int arg4,
+bool ftCo_800A0FB0(Vec* arg0, int* arg1, int arg2, int arg3, int arg4,
                    int arg5, int arg6, float arg7, float arg8, float arg9,
                    float arg10, float arg11)
 {
@@ -429,7 +429,7 @@ bool ftCo_800A1BA8(ftCo_Fighter* fp)
         return false;
     }
     {
-        Vec3 coll_vec;
+        Vec coll_vec;
         PAD_STACK(2 * 4);
         {
             UNK_T sp14;
@@ -558,7 +558,7 @@ bool ftCo_800A2170(Fighter* fp0, Fighter* fp1)
 
 bool ftCo_800A21FC(ftCo_Fighter* fp)
 {
-    Vec3 vec;
+    Vec vec;
     mp_UnkStruct0* data0;
     struct Fighter_x1A88_t* data1 = &fp->x1A88;
     PAD_STACK(9 * 4);
@@ -1310,7 +1310,7 @@ void ftCo_800A80E4(Fighter* fp)
 {
     Fighter* other_fp = fp->x1A88.x44;
     if (other_fp != NULL && (fp->ground_or_air != GA_Air)) {
-        Vec3 vec;
+        Vec vec;
         if (!(ftCo_800A1AB4(fp, other_fp) > 50.0) &&
             ftCo_800A6700(fp, &other_fp->cur_pos, &vec))
         {
@@ -1620,7 +1620,7 @@ static inline void inlineH1(ftCo_Fighter* fp, struct Fighter_x1A88_t* data)
 void ftCo_800AC434(ftCo_Fighter* fp)
 {
     struct Fighter_x1A88_t* data = &fp->x1A88;
-    Vec3 vec;
+    Vec vec;
     float f;
     enum_t barrel_state = inlineH0(fp);
     PAD_STACK(5 * 4);

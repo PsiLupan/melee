@@ -10,18 +10,10 @@
 #include "state.h"
 #include "tev.h"
 
-#include "dolphin/gx/GXAttr.h"
-#include "dolphin/gx/GXGeometry.h"
-#include "dolphin/gx/GXLight.h"
-#include "dolphin/gx/GXPixel.h"
-#include "dolphin/gx/GXTev.h"
-#include "dolphin/gx/GXTexture.h"
-#include "dolphin/gx/GXTransform.h"
-#include "dolphin/gx/GXVert.h"
-#include "dolphin/mtx.h"
-
 #include <stdarg.h>
 #include <stdio.h>
+#include <dolphin/gx.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os.h>
 
 HSD_CObjDesc HSD_SisLib_8040C4B8;

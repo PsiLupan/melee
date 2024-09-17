@@ -151,7 +151,7 @@ void grTPurin_80223388(HSD_GObj* gobj)
     s16* pos;
     HSD_JObj* jobj;
     int res;
-    Vec3 vec;
+    Vec vec;
     s16 values[8] = { 0x0037, 0x0039, 0x003B, 0x003D,
                       0x003F, 0x0041, 0x0043, 0xFFFF };
     s32 value;
@@ -222,7 +222,7 @@ DynamicsDesc* grTPurin_802234F8(enum_t arg0)
     return 0;
 }
 
-bool grTPurin_80223578(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTPurin_80223578(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

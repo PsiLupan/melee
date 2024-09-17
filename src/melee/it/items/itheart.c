@@ -32,7 +32,7 @@ ItemStateTable it_803F56C8[] = {
     { 0xFFFFFFFF, it_80284154, it_8028415C, it_80284160 },
 };
 
-Item_GObj* it_80283AE4(Item_GObj* gobj, Vec3* pos, s32 arg2)
+Item_GObj* it_80283AE4(Item_GObj* gobj, Vec* pos, s32 arg2)
 {
     SpawnItem spawn;
     Item_GObj* item_gobj;

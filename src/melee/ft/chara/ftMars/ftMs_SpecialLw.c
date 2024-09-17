@@ -21,7 +21,7 @@
 #include "lb/lb_00F9.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftMs_SpecialLw_Enter(HSD_GObj* gobj)
 {
@@ -343,7 +343,7 @@ void ftMs_SpecialLw_80139140(HSD_GObj* gobj)
     s32 temp_r0;
 
     u8 unused0[4];
-    Vec3 sp18;
+    Vec sp18;
 
     u8 unused1[12];
 

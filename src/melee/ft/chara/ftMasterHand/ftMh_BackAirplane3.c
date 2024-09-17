@@ -10,7 +10,7 @@
 #include "ftMasterHand/types.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftMh_BackAirplane3_Anim(HSD_GObj* gobj)
 {
@@ -38,7 +38,7 @@ void ftMh_MS_369_80153B90(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
-    Vec3 pos;
+    Vec pos;
 
     Fighter_ChangeMotionState(gobj, ftMh_MS_BackPunch, 0, 0, 1, 0, 0);
     ftAnim_8006EBA4(gobj);

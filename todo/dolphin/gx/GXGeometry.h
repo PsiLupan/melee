@@ -3,8 +3,8 @@
 
 #include <platform.h>
 
+#include <dolphin/gx.h>
 #include <dolphin/gx/GXEnum.h>
-#include <dolphin/gx/types.h>
 
 void GXBegin(GXPrimitive type, GXVtxFmt vtxfmt, u16 nverts);
 void GXSetLineWidth(u8 width, GXTexOffset texOffsets);

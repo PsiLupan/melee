@@ -19,7 +19,7 @@
 #include "ftCommon/ftCo_FallSpecial.h"
 #include "it/items/it_27CF.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftPk_SpecialN_Enter(HSD_GObj* gobj)
 {
@@ -45,7 +45,7 @@ void ftPk_SpecialAirN_Enter(HSD_GObj* gobj)
 
 void ftPk_SpecialN_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp14;
+    Vec sp14;
     Fighter* fp = GET_FIGHTER(gobj);
     ftPikachuAttributes* pika_attr = fp->dat_attrs;
 
@@ -79,7 +79,7 @@ void ftPk_SpecialN_Anim(HSD_GObj* gobj)
 
 void ftPk_SpecialAirN_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp14;
+    Vec sp14;
     Fighter* fp = GET_FIGHTER(gobj);
     ftPikachuAttributes* pika_attr = fp->dat_attrs;
 

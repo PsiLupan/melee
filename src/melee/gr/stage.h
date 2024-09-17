@@ -25,7 +25,7 @@
 /* 224B80 */ float Stage_GetBlastZoneBottomOffset(void);
 /* 224B98 */ float Stage_CalcUnkCamY(void);
 /* 224BC4 */ float Stage_CalcUnkCamYBounds(void);
-/* 224BF8 */ void Stage_UnkSetVec3TCam_Offset(Vec3*);
+/* 224BF8 */ void Stage_UnkSetVec3TCam_Offset(Vec*);
 /* 224C1C */ float Stage_GetPauseCamZPosMin(void);
 /* 224C2C */ float Stage_GetPauseCamZPosInit(void);
 /* 224C3C */ float Stage_GetPauseCamZPosMax(void);
@@ -33,13 +33,13 @@
 /* 224C64 */ float Stage_GetCamAngleRadiansDown(void);
 /* 224C7C */ float Stage_GetCamAngleRadiansLeft(void);
 /* 224C94 */ float Stage_GetCamAngleRadiansRight(void);
-/* 224CAC */ void Stage_80224CAC(Vec3*);
-/* 224D94 */ void Stage_SetVecToFixedCamPos(Vec3*);
+/* 224CAC */ void Stage_80224CAC(Vec*);
+/* 224D94 */ void Stage_SetVecToFixedCamPos(Vec*);
 /* 224DB8 */ float Stage_GetCamFixedFov(void);
 /* 224DC8 */ bool Stage_80224DC8(s32);
-/* 224E38 */ void Stage_80224E38(Vec3*, s32);
-/* 224E64 */ void Stage_80224E64(enum_t, Vec3*);
-/* 224FDC */ s32 Stage_80224FDC(Vec3*);
+/* 224E38 */ void Stage_80224E38(Vec*, s32);
+/* 224E64 */ void Stage_80224E64(enum_t, Vec*);
+/* 224FDC */ s32 Stage_80224FDC(Vec*);
 /* 225074 */ s32 Stage_80225074(s32);
 /* 225194 */ enum_t Stage_80225194(void);
 /* 22519C */ s32 Stage_8022519C(InternalStageId idx);

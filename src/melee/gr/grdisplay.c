@@ -12,7 +12,7 @@
 void grDisplay_801C5B90(HSD_JObj* jobj, void* arg1, u32 arg2, int arg3)
 {
     Mtx sp3C;
-    Vec3 sp30;
+    Vec sp30;
     HSD_CObj* cobj;
     HSD_JObj* cur;
     u32 unused[6];

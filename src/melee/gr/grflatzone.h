@@ -53,4 +53,4 @@
 /* 2181B4 */ void grFlatzone_802181B4(void);
 /* 218260 */ void grFlatzone_80218260(void);
 /* 2182B4 */ DynamicsDesc* grFlatzone_802182B4(int);
-/* 2182BC */ int grFlatzone_802182BC(Vec3*, int, HSD_JObj*);
+/* 2182BC */ int grFlatzone_802182BC(Vec*, int, HSD_JObj*);

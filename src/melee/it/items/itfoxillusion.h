@@ -11,7 +11,7 @@
 
 /* 29CD18 */ void it_8029CD18(Item_GObj*, int arg1);
 /* 29CD78 */ HSD_JObj* it_8029CD78(Item_GObj*);
-/* 29CEB4 */ Item_GObj* it_8029CEB4(HSD_GObj* parent, Vec3* pos, ItemKind kind,
+/* 29CEB4 */ Item_GObj* it_8029CEB4(HSD_GObj* parent, Vec* pos, ItemKind kind,
                                     f32 dir);
 /* 29CF8C */ bool it_8029CF8C(Item_GObj*);
 /* 29CFA0 */ void it_8029CFA0(Item_GObj*);

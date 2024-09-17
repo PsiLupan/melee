@@ -24,7 +24,7 @@ ItemStateTable it_803F6C88[] = {
     },
 };
 
-void it_802ADA1C(Vec3* pos, Vec3* vel, float facing_dir)
+void it_802ADA1C(Vec* pos, Vec* vel, float facing_dir)
 {
     SpawnItem spawnitem;
     spawnitem.kind = It_Kind_Unk1;

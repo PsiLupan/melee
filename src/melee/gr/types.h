@@ -6,12 +6,11 @@
 #include "it/forward.h"
 #include "lb/forward.h"
 #include "sc/forward.h"
-#include <dolphin/gx/forward.h>
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/gx.h>
+#include <dolphin/mtx.h>
 
 typedef struct StageBlastZone {
     f32 left;   // 0x74
@@ -44,7 +43,7 @@ typedef struct StageCameraInfo {
     f32 cam_angle_down;        // 0x50
     f32 cam_angle_left;        // 0x54
     f32 cam_angle_right;       // 0x58
-    Vec3 fixed_cam_pos;        // 0x5C - 0x64
+    Vec fixed_cam_pos;         // 0x5C - 0x64
     f32 fixed_cam_fov;         // 0x68
     f32 fixed_cam_vert_angle;  // 0x6C
     f32 fixed_cam_horz_angle;  // 0x70
@@ -75,9 +74,9 @@ struct StageInfo {
     u8 xA0[4];
     u8 xA4_pad[0x12C - 0xA4];
     HSD_GObj* x12C;
-    Vec3 x130, x13C, x148, x154, x160, x16C;
+    Vec x130, x13C, x148, x154, x160, x16C;
     DynamicsDesc* (*x178)(int);
-    bool (*x17C)(Vec3*, int, HSD_JObj*);
+    bool (*x17C)(Vec*, int, HSD_JObj*);
     HSD_GObj* x180[4];
     u8 x190_pad[0x280 - 0x190];
     HSD_JObj* x280[261];
@@ -116,7 +115,7 @@ struct StageInfo {
     f32 x724;
     f32 x728;
     HSD_GObj* x72C;
-    Vec3 x730;
+    Vec x730;
     f32 x73C;
     s32 x740;
     u8 x744_pad[0x748 - 0x744];
@@ -152,7 +151,7 @@ typedef struct StageData {
     void (*callback3)(void);
     bool (*callback4)(void);
     DynamicsDesc* (*callback5)(enum_t);
-    bool (*callback6)(Vec3*, int, HSD_JObj*);
+    bool (*callback6)(Vec*, int, HSD_JObj*);
     u32 flags2;
     S16Vec3* x2C;
     size_t x30; // size of x2C array
@@ -225,7 +224,7 @@ struct GroundVars_flatzone {
 struct grDynamicAttr_UnkStruct {
     grDynamicAttr_UnkStruct* next;
     s32 unk4;
-    Vec3 unk8;
+    Vec unk8;
     s32 unk14;
     f32 unk18;
     s32 unk1C;

@@ -19,7 +19,7 @@
 #include <baselib/jobj.h>
 #include <MetroTRK/intrinsics.h>
 
-float ftCo_800BD19C(Fighter_GObj* gobj, Vec3* pos)
+float ftCo_800BD19C(Fighter_GObj* gobj, Vec* pos)
 {
     Fighter* fp = gobj->user_data;
     return SQ(fp->cur_pos.x - pos->x) + SQ(fp->cur_pos.y - pos->y) +
@@ -35,7 +35,7 @@ static inline void inlineA0(Fighter_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
-    Vec3 vec0;
+    Vec vec0;
     Vec2 vec1;
     {
         fp->mv.co.capturekirby.x8.x = ftKb_SpecialN_800F5B4C(fp->victim_gobj);
@@ -47,7 +47,7 @@ static inline void inlineA0(Fighter_GObj* gobj)
         }
         ftKb_SpecialN_800F5B20(fp->victim_gobj);
         {
-            Vec3* scale = &fp->mv.co.capturekirby.scale;
+            Vec* scale = &fp->mv.co.capturekirby.scale;
             fp->mv.co.capturekirby.x10.x = vec1.x;
             fp->mv.co.capturekirby.x10.y = vec1.y;
             HSD_JObjGetScale(jobj, scale);
@@ -88,7 +88,7 @@ void ftCo_CaptureKirby_Phys(HSD_GObj* gobj) {}
 
 void ftCo_CaptureKirby_Coll(HSD_GObj* gobj) {}
 
-static inline void inlineB0(Fighter_GObj* gobj, Vec3* pos)
+static inline void inlineB0(Fighter_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     float pos_x = pos->x;
@@ -98,7 +98,7 @@ static inline void inlineB0(Fighter_GObj* gobj, Vec3* pos)
     float mv_x8_x = fp->mv.co.capturekirby.x8.x;
     if (dist < mv_x8_x) {
         float mv_x8_y = fp->mv.co.capturekirby.x8.y;
-        Vec3 scale;
+        Vec scale;
         scale.x = scale.y = scale.z = 1 - mv_x8_y + dist / mv_x8_x * mv_x8_y;
         scale.x = scale.x * fp->mv.co.guard.x2C;
         scale.y *= fp->mv.co.capturekirby.scale.y;
@@ -107,7 +107,7 @@ static inline void inlineB0(Fighter_GObj* gobj, Vec3* pos)
     }
 }
 
-static inline void inlineB1(Fighter_GObj* gobj, Vec3* pos)
+static inline void inlineB1(Fighter_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     if (ABS(pos->x) > fp->mv.co.capturekirby.x10.x) {
@@ -127,7 +127,7 @@ static inline void inlineB1(Fighter_GObj* gobj, Vec3* pos)
 void ftCo_800BD39C(Fighter_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     pos.x = fp->mv.co.capturekirby.pos_offset.x;
     pos.y = fp->mv.co.capturekirby.pos_offset.y;
     pos.z = 0;

@@ -9,7 +9,7 @@
 #include "baselib/objalloc.h"
 #include "baselib/tobj.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct HSD_Shadow {
     HSD_SList* objects; // 0x0
@@ -25,11 +25,11 @@ struct HSD_Shadow {
 };
 
 struct HSD_ViewingRect {
-    Vec3 origin;
-    Vec3 up_v;
-    Vec3 right_v;
-    Vec3 eye_v;
-    Vec3 eye_vn;
+    Vec origin;
+    Vec up_v;
+    Vec right_v;
+    Vec eye_v;
+    Vec eye_vn;
     f32 distance;
     f32 top;
     f32 bottom;
@@ -55,10 +55,10 @@ void HSD_ShadowSetSize(HSD_Shadow* shadow, u16 width, u16 height);
 
 void HSD_ShadowSetViewingRect(HSD_Shadow* shadow, float top, float bottom,
                               float left, float right);
-void HSD_ViewingRectInit(HSD_ViewingRect* rect, Vec3* position, Vec3* interest,
-                         Vec3* upvector, int perspective);
+void HSD_ViewingRectInit(HSD_ViewingRect* rect, Vec* position, Vec* interest,
+                         Vec* upvector, int perspective);
 int HSD_ViewingRectCheck(HSD_ViewingRect* rect);
-void HSD_ViewingRectAddRect(HSD_ViewingRect* rect, Vec3* position, float top,
+void HSD_ViewingRectAddRect(HSD_ViewingRect* rect, Vec* position, float top,
                             float bottom, float left, float right);
 
 #endif

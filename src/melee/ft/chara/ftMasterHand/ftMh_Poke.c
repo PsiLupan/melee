@@ -14,7 +14,7 @@
 #include "lb/lbvector.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 #include <MetroTRK/intrinsics.h>
 
@@ -91,7 +91,7 @@ static inline float my_sqrtf(float x)
     return x;
 }
 
-static inline float my_lbVector_Len(Vec3* vec)
+static inline float my_lbVector_Len(Vec* vec)
 {
     return my_sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
@@ -106,14 +106,14 @@ void ftMh_Poke1_Phys(HSD_GObj* gobj)
         ftMasterHand_SpecialAttrs* da = ftData->ext_attr;
 
         {
-            Vec3 pos;
+            Vec pos;
             ftBossLib_8015C208(gobj, &pos);
             pos.x += da->x98;
             pos.y += da->x9C;
             pos.z = 0;
 
             {
-                Vec3 vel;
+                Vec vel;
                 lbVector_Diff(&pos, &fp->cur_pos, &vel);
                 {
                     float len = my_lbVector_Len(&vel);

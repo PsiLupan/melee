@@ -10,31 +10,31 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
 
-void grtDrMario_8022050C(int);                   /* static */
-void grtDrMario_80220510(void);                  /* static */
-void grtDrMario_80220580(void);                  /* static */
-void grtDrMario_80220584(void);                  /* static */
-bool grtDrMario_802205A8(void);                  /* static */
-HSD_GObj* grtDrMario_802205B0(s32);              /* static */
-void grtDrMario_80220698(HSD_GObj*);             /* static */
-bool grtDrMario_802206C4(HSD_GObj*);             /* static */
-void grtDrMario_802206CC(HSD_GObj*);             /* static */
-void grtDrMario_802206D0(HSD_GObj*);             /* static */
-void grtDrMario_802206D4(HSD_GObj*);             /* static */
-bool grtDrMario_80220724(HSD_GObj*);             /* static */
-void grtDrMario_8022072C(HSD_GObj*);             /* static */
-void grtDrMario_80220760(HSD_GObj*);             /* static */
-void grtDrMario_80220764(HSD_GObj*);             /* static */
-bool grtDrMario_802207B4(HSD_GObj*);             /* static */
-void grtDrMario_802207BC(HSD_GObj*);             /* static */
-void grtDrMario_802207DC(HSD_GObj*);             /* static */
-DynamicsDesc* grtDrMario_802207E0(enum_t);       /* static */
-bool grtDrMario_802207E8(Vec3*, int, HSD_JObj*); /* static */
+void grtDrMario_8022050C(int);                  /* static */
+void grtDrMario_80220510(void);                 /* static */
+void grtDrMario_80220580(void);                 /* static */
+void grtDrMario_80220584(void);                 /* static */
+bool grtDrMario_802205A8(void);                 /* static */
+HSD_GObj* grtDrMario_802205B0(s32);             /* static */
+void grtDrMario_80220698(HSD_GObj*);            /* static */
+bool grtDrMario_802206C4(HSD_GObj*);            /* static */
+void grtDrMario_802206CC(HSD_GObj*);            /* static */
+void grtDrMario_802206D0(HSD_GObj*);            /* static */
+void grtDrMario_802206D4(HSD_GObj*);            /* static */
+bool grtDrMario_80220724(HSD_GObj*);            /* static */
+void grtDrMario_8022072C(HSD_GObj*);            /* static */
+void grtDrMario_80220760(HSD_GObj*);            /* static */
+void grtDrMario_80220764(HSD_GObj*);            /* static */
+bool grtDrMario_802207B4(HSD_GObj*);            /* static */
+void grtDrMario_802207BC(HSD_GObj*);            /* static */
+void grtDrMario_802207DC(HSD_GObj*);            /* static */
+DynamicsDesc* grtDrMario_802207E0(enum_t);      /* static */
+bool grtDrMario_802207E8(Vec*, int, HSD_JObj*); /* static */
 
 static StageCallbacks grTDr_803E8850[4] = {
     { grtDrMario_80220698, grtDrMario_802206C4, grtDrMario_802206CC,
@@ -172,7 +172,7 @@ DynamicsDesc* grtDrMario_802207E0(enum_t arg0)
     return NULL;
 }
 
-bool grtDrMario_802207E8(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grtDrMario_802207E8(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

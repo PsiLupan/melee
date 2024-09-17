@@ -11,7 +11,7 @@
 #include "mp/mplib.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftMh_Damage_IASA(HSD_GObj* gobj)
 {
@@ -77,7 +77,7 @@ void ftMh_SweepLoop_Anim(HSD_GObj* gobj)
     if (!ftAnim_IsFramesRemaining(gobj)) {
         /// @todo #GET_FIGHTER
         Fighter* fp = gobj->user_data;
-        Vec3 pos;
+        Vec pos;
 
         u8 _[8];
         mpLib_80054158(0, &pos);

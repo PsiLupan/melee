@@ -114,9 +114,9 @@ HSD_GObj* ftLib_80086198(HSD_GObj* gobj)
 }
 
 // get closest opposing fp?
-HSD_GObj* ftLib_8008627C(Vec3* pos, HSD_GObj* gobj)
+HSD_GObj* ftLib_8008627C(Vec* pos, HSD_GObj* gobj)
 {
-    Vec3 cur_v;
+    Vec cur_v;
     float dist;
     float dx;
     float dy;
@@ -164,9 +164,9 @@ HSD_GObj* ftLib_8008627C(Vec3* pos, HSD_GObj* gobj)
 }
 
 // get closest opposing fp, on given side (left/right)
-HSD_GObj* ftLib_80086368(Vec3* v, HSD_GObj* gobj, float facing_dir)
+HSD_GObj* ftLib_80086368(Vec* v, HSD_GObj* gobj, float facing_dir)
 {
-    Vec3 sp24;
+    Vec sp24;
     float dx, dy, diff;
     Fighter* cur_fp;
     Fighter* fp;
@@ -224,9 +224,9 @@ inline s32 sgn(float x)
     }
 }
 
-float ftLib_800864A8(Vec3* v, HSD_GObj* gobj)
+float ftLib_800864A8(Vec* v, HSD_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     Fighter* fp;
     HSD_GObj* cur;
 
@@ -300,19 +300,19 @@ void* ftLib_80086630(HSD_GObj* gobj, Fighter_Part part)
     return fp->parts[part].joint;
 }
 
-void ftLib_80086644(HSD_GObj* gobj, Vec3* pos)
+void ftLib_80086644(HSD_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     *pos = fp->cur_pos;
 }
 
-void ftLib_80086664(HSD_GObj* gobj, Vec3* pos)
+void ftLib_80086664(HSD_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     fp->cur_pos = *pos;
 }
 
-void ftLib_80086684(HSD_GObj* gobj, Vec3* pos)
+void ftLib_80086684(HSD_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     *pos = fp->prev_pos;
@@ -326,7 +326,7 @@ void ftLib_SetScale(HSD_GObj* gobj, float val)
     ftCommon_80080174(fp);
 }
 
-void ftLib_800866DC(HSD_GObj* gobj, Vec3* v)
+void ftLib_800866DC(HSD_GObj* gobj, Vec* v)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     struct ftCo_DatAttrs* r4 = &fp->co_attrs;
@@ -442,14 +442,14 @@ CollData* ftLib_80086984(HSD_GObj* gobj)
     return Fighter_GetCollData(fp);
 }
 
-inline void vector_add(Vec3* dst, Vec3* src, float x, float y, float z)
+inline void vector_add(Vec* dst, Vec* src, float x, float y, float z)
 {
     dst->x = src->x + x;
     dst->y = src->y + y;
     dst->z = src->z + z;
 }
 
-void ftLib_80086990(HSD_GObj* gobj, Vec3* v)
+void ftLib_80086990(HSD_GObj* gobj, Vec* v)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     float tmp = 0.5f * (fp->coll_data.xA4_ecbCurrCorrect.top.y +
@@ -557,7 +557,7 @@ float ftLib_80086B80(HSD_GObj* gobj)
     return fp->x890_cameraBox->x48.z;
 }
 
-void ftLib_80086B90(HSD_GObj* gobj, Vec3* v)
+void ftLib_80086B90(HSD_GObj* gobj, Vec* v)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     CameraBox* cam = fp->x890_cameraBox;
@@ -577,7 +577,7 @@ u8 ftLib_80086BE0(HSD_GObj* gobj)
     return fp->player_id;
 }
 
-void ftLib_80086BEC(HSD_GObj* gobj, Vec3* v)
+void ftLib_80086BEC(HSD_GObj* gobj, Vec* v)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     *v = fp->pos_delta;
@@ -735,7 +735,7 @@ void ftLib_80087050(s32 arg0)
     ftData_80085560(arg0, -1);
 }
 
-bool ftLib_80087074(HSD_GObj* gobj, Vec3* v)
+bool ftLib_80087074(HSD_GObj* gobj, Vec* v)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     if (fp->dmg.x18B8 || fp->dmg.x18BC) {

@@ -348,7 +348,7 @@ static void doPostEnd(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
     ftPe_DatAttrs* da = fp->dat_attrs;
     if (fp->cmd_vars[2]) {
-        Vec3 vec;
+        Vec vec;
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, NULL, &vec);
         vec.z = 0;
         {
@@ -367,7 +367,7 @@ static void doPostEnd_SmallerStack(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
     ftPe_DatAttrs* da = fp->dat_attrs;
     if (fp->cmd_vars[2]) {
-        Vec3 vec;
+        Vec vec;
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, NULL, &vec);
         vec.z = 0;
         {

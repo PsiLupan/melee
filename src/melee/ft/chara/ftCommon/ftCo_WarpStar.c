@@ -66,7 +66,7 @@ void ftCo_800C4724(ftCo_GObj* gobj)
 static inline void inlineA0(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
+    Vec pos;
     ftColl_8007B6EC(gobj);
     fp->facing_dir = fp->mv.co.warpstar.facing_dir;
     pos.x = pos.y = pos.z = 0;
@@ -100,7 +100,7 @@ void ftCo_WarpStarJump_Phys(ftCo_GObj* gobj)
 {
     HSD_JObj* jobj = GET_JOBJ(gobj);
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 self_vel;
+    Vec self_vel;
     HSD_JObjGetTranslation(jobj, &self_vel);
     fp->self_vel.x = self_vel.x - fp->mv.co.warpstar.self_vel.x;
     fp->self_vel.y = self_vel.y - fp->mv.co.warpstar.self_vel.y;
@@ -193,7 +193,7 @@ void ftCo_800C4C60(ftCo_GObj* gobj)
     }
     it_802947CC(fp->item_gobj, &fp->cur_pos);
     {
-        Vec3 vec;
+        Vec vec;
         vec.x = 0;
         vec.y = fp->coll_data.xA4_ecbCurrCorrect.bottom.y;
         vec.z = 0;

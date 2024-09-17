@@ -1,6 +1,6 @@
 #include <__mem.h>
 
-void* memset(void* dst, int val, unsigned long /*size_t*/ n)
+void* memset(void* dst, int val, size_t n)
 {
     __fill_mem(dst, val, n);
 
@@ -19,7 +19,7 @@ void* memset(void* dst, int val, unsigned long /*size_t*/ n)
     } while (false);
 #endif
 
-void __fill_mem(void* dst, int val, unsigned long n)
+void __fill_mem(void* dst, int val, size_t n)
 {
     unsigned long v = (unsigned char) val;
     unsigned long i;
@@ -77,7 +77,7 @@ void __fill_mem(void* dst, int val, unsigned long n)
 
 #undef INCREMENT_ASSIGN
 
-void* memcpy(void* dst, const void* src, unsigned long /* size_t */ n)
+void* memcpy(void* dst, const void* src, size_t n)
 {
     const unsigned char* s;
     unsigned char* d;

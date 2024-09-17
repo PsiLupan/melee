@@ -34,7 +34,7 @@
 #include "lb/lbmthp.h"
 #include "mp/mplib.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 MotionState ftDk_Init_MotionStateTable[ftDk_MS_SelfCount] = {
     {
@@ -657,7 +657,7 @@ void ftDk_Init_8010DB3C(HSD_GObj* gobj)
     CollData* colldata = &fp->coll_data;
     u8 _[8];
     if (ftCheckThrowB3(fp) && (colldata->env_flags & 98304)) {
-        Vec3 vec_list[4];
+        Vec vec_list[4];
         int i;
         for (i = 0; i < 4; i++) {
             float temp_f5 = (donkey_attr->SpecialLw.x68 * i) -

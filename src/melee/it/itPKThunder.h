@@ -4,7 +4,7 @@
 #include <platform.h>
 #include <baselib/forward.h>
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 typedef struct itPKThunderAttributes {
     float x0_PKTHUNDER_LIFETIME;
@@ -16,22 +16,22 @@ typedef struct itPKThunderAttributes {
 
 typedef struct PKThunderVars {
     HSD_GObj* xDD4[6];
-    Vec3 xDEC;
-    Vec3 xDFC;
-    Vec3 xE08;
-    Vec3 xE14;
-    Vec3 xE20;
-    Vec3 xE2C;
-    Vec3 xE38;
-    Vec3 xE44;
-    Vec3 xE50;
-    Vec3 xE5C;
-    Vec3 xE68;
-    Vec3 xE74;
-    Vec3 xE80;
-    Vec3 xE8C;
-    Vec3 xE98;
-    Vec3 xEA0;
+    Vec xDEC;
+    Vec xDFC;
+    Vec xE08;
+    Vec xE14;
+    Vec xE20;
+    Vec xE2C;
+    Vec xE38;
+    Vec xE44;
+    Vec xE50;
+    Vec xE5C;
+    Vec xE68;
+    Vec xE74;
+    Vec xE80;
+    Vec xE8C;
+    Vec xE98;
+    Vec xEA0;
     float xEAC; // PK Thunder release angles?
     float xEB0;
     float xEB4;

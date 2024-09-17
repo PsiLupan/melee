@@ -4,7 +4,7 @@
 #include <platform.h>
 #include "ft/forward.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftPikachu_FighterVars {
     char filler0[FIGHTERVARS_SIZE];
@@ -38,9 +38,9 @@ typedef struct _ftPikachuAttributes {
     s32 x60; // up b zip duration
     float x64;
     float x68; // up b angle offset 1
-    Vec3 x6C_scale;
+    Vec x6C_scale;
     float x78; // up b angle offset 2
-    Vec3 x7C_scale;
+    Vec x7C_scale;
     float x88;
     float x8C; // up b minimum stick magnitude
 

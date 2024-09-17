@@ -106,7 +106,7 @@
 /* 0F1CD8 */ UNK_RET ftKb_SpecialN_800F1CD8(UNK_PARAMS);
 /* 0F1D24 */ void ftKb_SpecialN_800F1D24(ftKb_GObj* gobj);
 /* 0F1DAC */ UNK_RET ftKb_SpecialN_800F1DAC(UNK_PARAMS);
-/* 0F1F1C */ void ftKb_SpecialN_800F1F1C(ftCo_GObj* gobj, Vec3*);
+/* 0F1F1C */ void ftKb_SpecialN_800F1F1C(ftCo_GObj* gobj, Vec*);
 /* 0F1F68 */ void ftKb_SpecialN_800F1F68(ftKb_GObj* gobj);
 /* 0F203C */ void ftKb_AttackDash_Anim(ftKb_GObj* gobj);
 /* 0F205C */ void ftKb_AttackDash_IASA(ftKb_GObj* gobj);
@@ -202,10 +202,10 @@
 /* 0F5874 */ void ftKb_SpecialN_800F5874(Vec2* arg0);
 /* 0F5898 */ HSD_Joint* ftKb_SpecialN_800F5898(ftKb_GObj* gobj, int);
 /* 0F58AC */ float ftKb_SpecialN_800F58AC(ftKb_GObj* gobj,
-                                          Vec3* victim_self_vel,
+                                          Vec* victim_self_vel,
                                           float victim_facing_dir);
 /* 0F58D8 */ float ftKb_SpecialN_800F58D8(ftKb_GObj* gobj,
-                                          Vec3* victim_self_vel,
+                                          Vec* victim_self_vel,
                                           float victim_facing_dir);
 /* 0F5954 */ void ftKb_SpecialN_800F5954(ftKb_GObj* gobj);
 /* 0F597C */ bool ftKb_SpecialN_800F597C(ftKb_GObj* gobj);
@@ -468,8 +468,8 @@
 /* 0FDA68 */ void ftKb_SsSpecialN_Coll(ftKb_GObj* gobj);
 /* 0FDAF0 */ void ftKb_SsSpecialAirNStart_Coll(ftKb_GObj* gobj);
 /* 0FDB78 */ void ftKb_SsSpecialAirN_Coll(ftKb_GObj* gobj);
-/* 0FDC00 */ void ftKb_SpecialNFx_800FDC00(ftKb_GObj* gobj, Vec3* vec);
-/* 0FDC70 */ void ftKb_SpecialNFx_800FDC70(ftKb_GObj* gobj, Vec3* vec);
+/* 0FDC00 */ void ftKb_SpecialNFx_800FDC00(ftKb_GObj* gobj, Vec* vec);
+/* 0FDC70 */ void ftKb_SpecialNFx_800FDC70(ftKb_GObj* gobj, Vec* vec);
 /* 0FDD14 */ bool ftKb_SpecialNFx_800FDD14(ftKb_GObj* gobj);
 /* 0FDD4C */ ftFx_SpecialNIndex ftKb_SpecialNFx_800FDD4C(ftKb_GObj* gobj);
 /* 0FDDF4 */ bool ftKb_SpecialNFx_800FDDF4(ftKb_GObj* gobj);

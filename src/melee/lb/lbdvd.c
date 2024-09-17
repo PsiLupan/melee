@@ -9,7 +9,7 @@
 #include "gr/grdatfiles.h"
 
 #include <placeholder.h>
-#include <dolphin/dvd/dvd.h>
+#include <dolphin/dvd.h>
 #include <dolphin/os/OSInterrupt.h>
 #include <baselib/debug.h>
 

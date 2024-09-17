@@ -232,7 +232,7 @@ void it_8026CA4C(u16* arg0, s32* arg1, u64 arg2, s32 arg4, f32 arg8)
     arg0[4] = var_r27;
 }
 
-s32 it_8026CB3C(Vec3* arg0)
+s32 it_8026CB3C(Vec* arg0)
 {
     if (Stage_80224FDC(arg0) == 0) {
         return 0;
@@ -448,7 +448,7 @@ s32 it_8026D258(void *arg0, s32 arg1) {
         sp24 = temp_r4;
         sp28 = temp_r0;
         sp2C = sp38;
-        sp48 = it_8026B684((Vec3 *) &sp30);
+        sp48 = it_8026B684((Vec *) &sp30);
         sp4C = 0;
         sp44 = 0.0f;
         sp40 = 0.0f;
@@ -761,7 +761,7 @@ s32 it_8026DD5C(Item_GObj* gobj)
     return 1;
 }
 
-void it_8026EB18(HSD_GObj* arg0, s32 arg1, Vec3* arg2)
+void it_8026EB18(HSD_GObj* arg0, s32 arg1, Vec* arg2)
 {
     Mtx m2;
     MtxPtr var_r30;
@@ -943,9 +943,9 @@ void it_8026E248(Item_GObj* gobj, ItCallback arg1)
     }
 }
 
-s32 it_8026E9A4(Item_GObj* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3)
+s32 it_8026E9A4(Item_GObj* arg0, Vec* arg1, Vec* arg2, Vec* arg3)
 {
-    Vec3 p;
+    Vec p;
     if (mpLib_800524DC(&p, 0, NULL, arg3, -1, -1, arg1->x, arg1->y, arg2->x,
                        arg2->y) == 1)
     {
@@ -955,10 +955,10 @@ s32 it_8026E9A4(Item_GObj* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3)
     return 0;
 }
 
-s32 it_8026EA20(Item_GObj* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, s32* arg4,
-                Vec3* arg5)
+s32 it_8026EA20(Item_GObj* arg0, Vec* arg1, Vec* arg2, Vec* arg3, s32* arg4,
+                Vec* arg5)
 {
-    Vec3 p;
+    Vec p;
     if (mpLib_800524DC(&p, *arg4, arg5, arg3, -1, -1, arg1->x, arg1->y,
                        arg2->x, arg2->y) == 1)
     {
@@ -968,10 +968,10 @@ s32 it_8026EA20(Item_GObj* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, s32* arg4,
     return 0;
 }
 
-s32 it_8026EA9C(Item_GObj* arg0, Vec3* arg1, Vec3* arg2, Vec3* arg3, s32 arg4,
-                Vec3* arg5, s32 arg6)
+s32 it_8026EA9C(Item_GObj* arg0, Vec* arg1, Vec* arg2, Vec* arg3, s32 arg4,
+                Vec* arg5, s32 arg6)
 {
-    Vec3 p;
+    Vec p;
     if (mpLib_800524DC(&p, arg4, arg5, arg3, -1, arg6, arg1->x, arg1->y,
                        arg2->x, arg2->y) == 1)
     {
@@ -1085,10 +1085,10 @@ static inline void it_8026EBC8_inline(HSD_GObj* gobj, Item* ip)
     it_8026EBC8(gobj, ip->xDD4_itemVar.unk.x8, ip->xDD4_itemVar.unk.xC);
 }
 
-static inline void it_8026EECC_inline_1(HSD_GObj* gobj, s32 arg1, Vec3* pos)
+static inline void it_8026EECC_inline_1(HSD_GObj* gobj, s32 arg1, Vec* pos)
 {
     Item* ip = gobj->user_data;
-    Vec3* new_pos = NULL;
+    Vec* new_pos = NULL;
     ip->xDCF_flag.bits.b2 = 1;
     ip->xDCF_flag.bits.b3 = 0;
     it_8026EC54_inline(gobj, ip);
@@ -1101,10 +1101,10 @@ static inline void it_8026EECC_inline_1(HSD_GObj* gobj, s32 arg1, Vec3* pos)
     it_8026EC54_inline(gobj, ip);
 }
 
-static inline void it_8026EECC_inline_2(HSD_GObj* gobj, s32 arg1, Vec3* pos)
+static inline void it_8026EECC_inline_2(HSD_GObj* gobj, s32 arg1, Vec* pos)
 {
     Item* ip = gobj->user_data;
-    Vec3* new_pos = NULL;
+    Vec* new_pos = NULL;
     ip->xDCF_flag.bits.b2 = 0;
     ip->xDCF_flag.bits.b3 = 0;
     if (ip->xDCF_flag.bits.b0) {
@@ -1113,10 +1113,10 @@ static inline void it_8026EECC_inline_2(HSD_GObj* gobj, s32 arg1, Vec3* pos)
     it_8026EB18(gobj, arg1, new_pos);
 }
 
-static inline void it_8026EECC_inline_3(HSD_GObj* gobj, s32 arg1, Vec3* pos)
+static inline void it_8026EECC_inline_3(HSD_GObj* gobj, s32 arg1, Vec* pos)
 {
     Item* ip = gobj->user_data;
-    Vec3* new_pos = NULL;
+    Vec* new_pos = NULL;
     ip->xDCF_flag.bits.b2 = 1;
     ip->xDCF_flag.bits.b3 = 1;
     it_8026EC54_inline(gobj, ip);
@@ -1134,7 +1134,7 @@ static inline void it_8026EECC_inline_3(HSD_GObj* gobj, s32 arg1, Vec3* pos)
 void it_8026EECC(HSD_GObj* gobj, int arg1)
 {
     Item* ip = gobj->user_data;
-    Vec3 pos;
+    Vec pos;
     if (ip->xDAA_flag.bits.b0) {
         pos.x = pos.y = pos.z = 0.0F;
         if (ip->xDCC_flag.b0) {

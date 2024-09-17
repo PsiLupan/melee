@@ -26,7 +26,7 @@ ItemStateTable it_803F75C0[] = {
     { 0, it_802C02E4, it_802C031C, it_802C0368 },
 };
 
-void it_802C01AC(Item_GObj* gobj, Vec3* pos, ItemKind kind, float facing_dir)
+void it_802C01AC(Item_GObj* gobj, Vec* pos, ItemKind kind, float facing_dir)
 {
     SpawnItem spawn_item;
     spawn_item.kind = kind;
@@ -75,7 +75,7 @@ void it_802C031C(Item_GObj* gobj)
     it_80274658(gobj, it_804D6D28->x68_float);
 }
 
-static double calc_dist_2d_accurate(Vec3* v)
+static double calc_dist_2d_accurate(Vec* v)
 {
     return sqrtf_accurate(VEC2_SQ_LEN(*v));
 }

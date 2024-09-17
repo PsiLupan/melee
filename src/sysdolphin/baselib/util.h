@@ -2,11 +2,10 @@
 #define _UTIL_H_
 
 #include <platform.h>
-#include <dolphin/gx/forward.h>
 
 #include "mtx.h"
 
-#include <dolphin/mtx/vec.h>
+#include <dolphin/mtx.h>
 #include <MSL/trigf.h>
 
 // functions
@@ -19,7 +18,7 @@ extern float HSD_identityMtx[];
 
 #define FLT_MIN 1.17549435e-38f
 
-static inline int vec_normalize_check(Vec3* src, Vec3* dst)
+static inline int vec_normalize_check(Vec* src, Vec* dst)
 {
     if (!src || !dst) {
         return -1;

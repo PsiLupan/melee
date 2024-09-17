@@ -9,7 +9,7 @@
 
 #include <dolphin/mtx.h>
 
-/* 2C01AC */ void it_802C01AC(Item_GObj* gobj, Vec3* pos, ItemKind kind,
+/* 2C01AC */ void it_802C01AC(Item_GObj* gobj, Vec* pos, ItemKind kind,
                               float facing_dir);
 /* 2C0490 */ bool it_802C0490(Item_GObj*);
 /* 2C0498 */ bool it_802C0498(Item_GObj*);

@@ -44,7 +44,7 @@ struct _m2c_stack_ftCo_8009F834 {
 }; /* size = 0xD0 */
 
 void ftCo_8009F834(Fighter_GObj* gobj, int arg1, enum Fighter_Part arg2,
-                   int arg3, int arg4, Vec3* arg5, Vec3* arg6, f32 arg7)
+                   int arg3, int arg4, Vec* arg5, Vec* arg6, f32 arg7)
 {
     f32 spB0;
     f32 spAC;

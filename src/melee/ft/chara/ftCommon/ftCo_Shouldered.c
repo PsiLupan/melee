@@ -58,7 +58,7 @@ void ftCo_8009C744(ftCo_GObj* gobj)
     ftCo_Fighter* fp = gobj->user_data;
     ftCo_GObj* vic_gobj = fp->victim_gobj;
     ftCo_Fighter* vic_fp = vic_gobj->user_data;
-    Vec3 pos;
+    Vec pos;
     u8 _[12] = { 0 };
     HitCapsule* hit = &vic_fp->xDF4[1];
     ftCo_800DC920(vic_gobj, gobj);
@@ -96,7 +96,7 @@ void ftCo_Shouldered_Anim(ftCo_GObj* gobj)
         {
             ftCo_Fighter* fp1 = gobj1->user_data;
             ftCo_Fighter* fp2 = gobj2->user_data;
-            Vec3 pos;
+            Vec pos;
             hit = &fp2->xDF4[1];
             lb_8000B1CC(
                 fp1->parts[(ftParts_8007500C(fp1, FtPart_TransN2))].joint,

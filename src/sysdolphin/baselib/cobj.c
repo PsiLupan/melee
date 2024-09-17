@@ -1,5 +1,3 @@
-#include <dolphin/gx/forward.h>
-
 #include "cobj.h"
 
 #include "aobj.h"
@@ -14,12 +12,10 @@
 
 #include <math.h>
 #include <placeholder.h>
+#include <dolphin/gx.h>
 #include <dolphin/gx/GXTransform.h>
-#include <dolphin/gx/types.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/vec.h>
-#include <dolphin/vi/vi.h>
+#include <dolphin/vi.h>
 #include <MetroTRK/intrinsics.h>
 #include <MSL/trigf.h>
 
@@ -124,7 +120,7 @@ void HSD_CObjAddAnim(HSD_CObj* cobj, HSD_CameraAnim* canim)
 static void CObjUpdateFunc(void* obj, int type, HSD_ObjData* val)
 {
     HSD_CObj* cobj = obj;
-    Vec3 vec;
+    Vec vec;
 
     if (cobj == NULL) {
         return;
@@ -468,9 +464,9 @@ static bool setupBottomHalfCamera(HSD_CObj* cobj)
 
 void HSD_CObjSetupViewingMtx(HSD_CObj* cobj)
 {
-    Vec3 eyepos;
-    Vec3 up_vec;
-    Vec3 interest;
+    Vec eyepos;
+    Vec up_vec;
+    Vec interest;
 
     if (!(cobj->flags & 2) && HSD_CObjMtxIsDirty(cobj)) {
         HSD_CObjGetEyePosition(cobj, &eyepos);
@@ -555,34 +551,34 @@ void HSD_CObjSetEyePositionWObj(HSD_CObj* cobj, HSD_WObj* eyepos)
     cobj->eyepos = eyepos;
 }
 
-void HSD_CObjGetInterest(HSD_CObj* cobj, Vec3* interest)
+void HSD_CObjGetInterest(HSD_CObj* cobj, Vec* interest)
 {
     HSD_ASSERT(709, cobj);
     HSD_WObjGetPosition(HSD_CObjGetInterestWObj(cobj), interest);
 }
 
-void HSD_CObjSetInterest(HSD_CObj* cobj, Vec3* interest)
+void HSD_CObjSetInterest(HSD_CObj* cobj, Vec* interest)
 {
     HSD_ASSERT(721, cobj);
     HSD_WObjSetPosition(HSD_CObjGetInterestWObj(cobj), interest);
 }
 
-void HSD_CObjGetEyePosition(HSD_CObj* cobj, Vec3* position)
+void HSD_CObjGetEyePosition(HSD_CObj* cobj, Vec* position)
 {
     HSD_ASSERT(733, cobj);
     HSD_WObjGetPosition(HSD_CObjGetEyePositionWObj(cobj), position);
 }
 
-void HSD_CObjSetEyePosition(HSD_CObj* cobj, Vec3* position)
+void HSD_CObjSetEyePosition(HSD_CObj* cobj, Vec* position)
 {
     HSD_ASSERT(745, cobj);
     HSD_WObjSetPosition(HSD_CObjGetEyePositionWObj(cobj), position);
 }
 
-int HSD_CObjGetEyeVector(HSD_CObj* cobj, Vec3* eye)
+int HSD_CObjGetEyeVector(HSD_CObj* cobj, Vec* eye)
 {
-    Vec3 eyepos;
-    Vec3 interest;
+    Vec eyepos;
+    Vec interest;
 
     if (cobj && cobj->eyepos && cobj->interest && eye) {
         HSD_CObjGetEyePosition(cobj, &eyepos);
@@ -602,9 +598,9 @@ int HSD_CObjGetEyeVector(HSD_CObj* cobj, Vec3* eye)
 
 float HSD_CObjGetEyeDistance(HSD_CObj* cobj)
 {
-    Vec3 position;
-    Vec3 interest;
-    Vec3 look_vector;
+    Vec position;
+    Vec interest;
+    Vec look_vector;
 
     if (cobj == NULL) {
         return 0.0f;
@@ -617,14 +613,14 @@ float HSD_CObjGetEyeDistance(HSD_CObj* cobj)
     return VECMag(&look_vector);
 }
 
-static Vec3 orig = { 0.0F, 0.0F, 0.0F };
-static Vec3 uy = { 0.0F, 1.0F, 0.0F };
-static Vec3 uy2 = { 0.0F, 1.0F, 0.0F };
+static Vec orig = { 0.0F, 0.0F, 0.0F };
+static Vec uy = { 0.0F, 1.0F, 0.0F };
+static Vec uy2 = { 0.0F, 1.0F, 0.0F };
 
-static float upvec2roll(HSD_CObj* cobj, Vec3* up)
+static float upvec2roll(HSD_CObj* cobj, Vec* up)
 {
-    Vec3 v;
-    Vec3 eye;
+    Vec v;
+    Vec eye;
     Mtx vmtx;
     f32 dot;
 
@@ -653,11 +649,11 @@ static inline f64 fabsf_p(f32* v)
     return __fabsf(*v);
 }
 
-static int roll2upvec(HSD_CObj* cobj, Vec3* up, float roll)
+static int roll2upvec(HSD_CObj* cobj, Vec* up, float roll)
 {
-    Vec3 eye;
-    Vec3 v0;
-    Vec3 v1;
+    Vec eye;
+    Vec v0;
+    Vec v1;
     Mtx m;
 
     int res = HSD_CObjGetEyeVector(cobj, &eye);
@@ -679,7 +675,7 @@ static int roll2upvec(HSD_CObj* cobj, Vec3* up, float roll)
     return 0;
 }
 
-int HSD_CObjGetUpVector(HSD_CObj* cobj, Vec3* up)
+int HSD_CObjGetUpVector(HSD_CObj* cobj, Vec* up)
 {
     if (cobj && up) {
         if ((cobj->flags & 1) != 0) {
@@ -698,9 +694,9 @@ int HSD_CObjGetUpVector(HSD_CObj* cobj, Vec3* up)
     return -1;
 }
 
-void HSD_CObjSetUpVector(HSD_CObj* cobj, Vec3* up)
+void HSD_CObjSetUpVector(HSD_CObj* cobj, Vec* up)
 {
-    Vec3 v;
+    Vec v;
 
     if (!cobj || !up) {
         return;
@@ -723,10 +719,10 @@ void HSD_CObjSetUpVector(HSD_CObj* cobj, Vec3* up)
     }
 }
 
-int HSD_CObjGetLeftVector(HSD_CObj* cobj, Vec3* left)
+int HSD_CObjGetLeftVector(HSD_CObj* cobj, Vec* left)
 {
-    Vec3 eye;
-    Vec3 up;
+    Vec eye;
+    Vec up;
     int res;
 
     if (cobj != NULL && left != NULL) {
@@ -806,7 +802,7 @@ MtxPtr HSD_CObjGetInvViewingMtxPtr(HSD_CObj* cobj)
 
 void HSD_CObjSetRoll(HSD_CObj* cobj, float roll)
 {
-    Vec3 up;
+    Vec up;
 
     if (!cobj) {
         return;
@@ -1243,7 +1239,7 @@ inline static void CObjResetFlags(HSD_CObj* cobj, u32 flags)
 
 static int CObjLoad(HSD_CObj* cobj, HSD_CObjDesc* desc)
 {
-    static Vec3 up = { 0.0f, 1.0f, 0.0f };
+    static Vec up = { 0.0f, 1.0f, 0.0f };
     cobj->flags = desc->common.flags;
     CObjResetFlags(cobj, desc->common.flags);
     HSD_CObjSetViewport(cobj, &desc->common.viewport);

@@ -25,11 +25,11 @@ void ftFx_AppealS_Coll(HSD_GObj* gobj);
 // Neutral Special - Blaster (SpecialN)
 
 /// Get Fox/Falco's Item Hold Bone Position for Blaster GFX
-void ftFx_SpecialN_FtGetHoldJoint(HSD_GObj* gobj, Vec3* pos);
+void ftFx_SpecialN_FtGetHoldJoint(HSD_GObj* gobj, Vec* pos);
 
 /// Get Fox/Falco's Item Hold Bone Position for Blaster GFX again?
 /// @remarks Used in Blaster's item code.
-void ftFx_SpecialN_ItGetHoldJoint(HSD_GObj* gobj, Vec3* pos);
+void ftFx_SpecialN_ItGetHoldJoint(HSD_GObj* gobj, Vec* pos);
 
 void ftFx_SpecialN_OnChangeAction(HSD_GObj* gobj);
 bool ftFx_SpecialN_CheckRemoveBlaster(HSD_GObj* gobj);
@@ -279,7 +279,7 @@ void ftFx_SpecialS_CreateGFX(HSD_GObj* gobj);
 bool ftFx_SpecialS_CheckGhostRemove(HSD_GObj* gobj);
 u32 ftFx_SpecialS_GetCmdVar2(HSD_GObj* gobj);
 void ftFx_SpecialS_CopyGhostPosIndexed(HSD_GObj* gobj, s32 index,
-                                       Vec3* ghostPos);
+                                       Vec* ghostPos);
 f32 ftFx_SpecialS_ReturnFloatVarIndexed(HSD_GObj* gobj, s32 index);
 void ftFx_SpecialSStart_Enter(HSD_GObj* gobj);
 void ftFx_SpecialAirSStart_Enter(HSD_GObj* gobj);

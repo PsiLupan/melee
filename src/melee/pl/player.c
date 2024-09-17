@@ -19,7 +19,7 @@
 #include "pl/plstale.h"
 #include "pl/types.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os.h>
 #include <baselib/debug.h>
 #include <baselib/gobjplink.h>
@@ -498,10 +498,10 @@ s8 Player_80032610(s32 slot, bool arg1)
     return error_value;
 }
 
-void Player_LoadPlayerCoords(s32 slot, Vec3* arg_vec)
+void Player_LoadPlayerCoords(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
-    Vec3* player_vecs;
+    Vec* player_vecs;
 
     Player_CheckSlot(slot);
 
@@ -510,13 +510,13 @@ void Player_LoadPlayerCoords(s32 slot, Vec3* arg_vec)
     *arg_vec = player_vecs[player->transformed[0]];
 }
 
-void Player_80032768(s32 slot, Vec3* arg_vec)
+void Player_80032768(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
-    Vec3* player_vecs;
+    Vec* player_vecs;
 
-    Vec3* dst_vec;
-    Vec3* dst_vec2;
+    Vec* dst_vec;
+    Vec* dst_vec2;
 
     Player_CheckSlot(slot);
 
@@ -531,10 +531,10 @@ void Player_80032768(s32 slot, Vec3* arg_vec)
     *dst_vec2 = *arg_vec;
 }
 
-void Player_80032828(s32 slot, s32 index, Vec3* arg_vec)
+void Player_80032828(s32 slot, s32 index, Vec* arg_vec)
 {
     StaticPlayer* player;
-    Vec3* player_vecs;
+    Vec* player_vecs;
 
     Player_CheckSlot(slot);
 
@@ -544,15 +544,15 @@ void Player_80032828(s32 slot, s32 index, Vec3* arg_vec)
     player_vecs[player->transformed[index]] = *arg_vec;
 }
 
-void Player_800328D4(int slot, Vec3* arg_vec)
+void Player_800328D4(int slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     int i;
-    Vec3* player_vecs;
-    Vec3* player_vecs2;
+    Vec* player_vecs;
+    Vec* player_vecs2;
 
-    Vec3* dst_vec;
-    Vec3* dst_vec2;
+    Vec* dst_vec;
+    Vec* dst_vec2;
 
     u8 _[4];
 
@@ -575,7 +575,7 @@ void Player_800328D4(int slot, Vec3* arg_vec)
     }
 }
 
-void Player_80032A04(int slot, Vec3* arg_vec)
+void Player_80032A04(int slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     int i;
@@ -637,7 +637,7 @@ void Player_SetScale(s32 slot, f32 scale)
     }
 }
 
-void Player_GetSpawnPlatformPos(s32 slot, Vec3* arg_vec)
+void Player_GetSpawnPlatformPos(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     Player_CheckSlot(slot);
@@ -645,7 +645,7 @@ void Player_GetSpawnPlatformPos(s32 slot, Vec3* arg_vec)
     *arg_vec = player->player_poses.byVecName.spawn_platform_final_pos;
 }
 
-void Player_SetSpawnPlatformPos(s32 slot, Vec3* arg_vec)
+void Player_SetSpawnPlatformPos(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     Player_CheckSlot(slot);
@@ -653,7 +653,7 @@ void Player_SetSpawnPlatformPos(s32 slot, Vec3* arg_vec)
     player->player_poses.byVecName.spawn_platform_final_pos = *arg_vec;
 }
 
-void Player_GetSomePos(s32 slot, Vec3* arg_vec)
+void Player_GetSomePos(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     Player_CheckSlot(slot);
@@ -661,7 +661,7 @@ void Player_GetSomePos(s32 slot, Vec3* arg_vec)
     *arg_vec = player->player_poses.byVecName.some_other_player_pos;
 }
 
-void Player_SetSomePos(s32 slot, Vec3* arg_vec)
+void Player_SetSomePos(s32 slot, Vec* arg_vec)
 {
     StaticPlayer* player;
     Player_CheckSlot(slot);
@@ -1892,8 +1892,7 @@ void Player_80036978(s32 slot, s32 arg1)
     player = &player_slots[slot];
 
     /// @todo Eliminate cast.
-    ftLib_80086B90(player->player_entity[player->transformed[0]],
-                   (Vec3*) arg1);
+    ftLib_80086B90(player->player_entity[player->transformed[0]], (Vec*) arg1);
 }
 
 void Player_InitOrResetPlayer(s32 slot)

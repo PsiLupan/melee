@@ -12,7 +12,7 @@ struct HSD_Spline {
 };
 
 f32 splGetHelmite(f32, f32, f32, f32, f32, f32);
-void splArcLengthPoint(Vec3*, HSD_Spline*, f32);
+void splArcLengthPoint(Vec*, HSD_Spline*, f32);
 void splGetSplinePoint(s32, s32);
 
 #endif

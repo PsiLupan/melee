@@ -7,9 +7,9 @@
 #include "baselib/class.h"
 #include "baselib/object.h"
 
+#include <dolphin/gx.h>
 #include <dolphin/gx/GXEnum.h>
-#include <dolphin/gx/types.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct HSD_TObj;
 
@@ -136,8 +136,8 @@ struct HSD_TObj {
     GXTexGenSrc src;
     u32 mtxid;
     Quaternion rotate;
-    Vec3 scale;
-    Vec3 translate;
+    Vec scale;
+    Vec translate;
     GXTexWrapMode wrap_s;
     GXTexWrapMode wrap_t;
     u8 repeat_s;
@@ -162,9 +162,9 @@ typedef struct _HSD_TObjDesc {
     struct _HSD_TObjDesc* next;
     GXTexMapID id;
     GXTexGenSrc src;
-    Vec3 rotate;
-    Vec3 scale;
-    Vec3 translate;
+    Vec rotate;
+    Vec scale;
+    Vec translate;
     GXTexWrapMode wrap_s;
     GXTexWrapMode wrap_t;
     u8 repeat_s;

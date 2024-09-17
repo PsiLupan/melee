@@ -5,11 +5,11 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct ftPurin_FighterVars {
     /* 0x222C */ u32 x222C;
-    /* 0x2230 */ Vec3 x2230;
+    /* 0x2230 */ Vec x2230;
     /* 0x223C */ HSD_JObj* x223C;
     /* 0x2240 */ u32 x2240;
     /* 0x2244 */ void* x2244;
@@ -29,7 +29,7 @@ typedef union ftPurin_MotionVars {
         /* fp+235C */ float x1C;
         /* fp+2360 */ float facing_dir;
         /* fp+2364 */ u8 _24[0x34 - 0x24];
-        /* fp+2374 */ Vec3 x34;
+        /* fp+2374 */ Vec x34;
     } specialn;
 } ftPurin_MotionVars;
 

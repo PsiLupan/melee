@@ -25,7 +25,7 @@
 #include <baselib/gobj.h>
 #include <baselib/jobj.h>
 
-typedef float (*KirbyVelocityFunc)(ftKb_GObj* gobj, Vec3* victim_self_vel,
+typedef float (*KirbyVelocityFunc)(ftKb_GObj* gobj, Vec* victim_self_vel,
                                    float victim_facing_dir);
 typedef float (*GetFloatFunc)(ftKb_GObj* gobj);
 
@@ -68,7 +68,7 @@ void ftCo_800BDA50(ftKb_GObj* gobj)
     }
 }
 
-void ftCo_800BDA74(ftCo_GObj* gobj, Vec3* normal)
+void ftCo_800BDA74(ftCo_GObj* gobj, Vec* normal)
 {
     ftCo_Fighter* fp = GET_FIGHTER(gobj);
     CollData* coll = &fp->coll_data;
@@ -96,7 +96,7 @@ static inline float inlineB1(ftCo_GObj* gobj)
 }
 
 static inline void inlineB2(ftCo_GObj* gobj, ftKb_GObj* thrower_gobj,
-                            Vec3* scale, ftCommon_MotionState msid,
+                            Vec* scale, ftCommon_MotionState msid,
                             KirbyVelocityFunc vel_func, GetFloatFunc get_float)
 {
     ftCo_Fighter* fp = GET_FIGHTER(gobj);
@@ -131,7 +131,7 @@ static inline void inlineB2(ftCo_GObj* gobj, ftKb_GObj* thrower_gobj,
 void ftCo_800BDB58(ftCo_GObj* gobj, ftKb_GObj* thrower_gobj)
 {
     ftCo_Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 scale;
+    Vec scale;
     inlineB2(gobj, thrower_gobj, &scale, ftCo_MS_ThrownKirbyStar,
              ftKb_SpecialN_800F58AC, ftKb_SpecialN_800F5A88);
 
@@ -182,8 +182,8 @@ void ftCo_ThrownKirbyStar_Phys(ftCo_GObj* gobj)
 void ftCo_ThrownKirbyStar_Coll(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 self_vel;
-    Vec3 normal;
+    Vec self_vel;
+    Vec normal;
     ftCo_800BDA74(gobj, &normal);
     if (normal.x || normal.y || normal.z) {
         self_vel = fp->self_vel;
@@ -197,7 +197,7 @@ void ftCo_ThrownKirbyStar_Coll(ftCo_GObj* gobj)
 
 void ftCo_800BE000(ftCo_GObj* gobj, ftKb_GObj* thrower_gobj)
 {
-    Vec3 scale;
+    Vec scale;
     ftCo_Fighter* fp = GET_FIGHTER(gobj);
     inlineB2(gobj, thrower_gobj, &scale, ftCo_MS_ThrownCopyStar,
              ftKb_SpecialN_800F58D8, ftKb_SpecialN_800F5AB0);
@@ -244,8 +244,8 @@ void ftCo_ThrownCopyStar_Phys(ftCo_GObj* gobj)
 void ftCo_ThrownCopyStar_Coll(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 self_vel;
-    Vec3 normal;
+    Vec self_vel;
+    Vec normal;
     ftCo_800BDA74(gobj, &normal);
     if (normal.x || normal.y || normal.z) {
         self_vel = fp->self_vel;
@@ -322,7 +322,7 @@ void ftCo_800BE6AC(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
-    Vec3 scale;
+    Vec scale;
     scale.x = scale.y = scale.z = (1 - fp->mv.co.thrownkirby.xC) +
                                   (((fp->mv.co.thrownkirby.x10 - fp->x1A4C) /
                                     fp->mv.co.thrownkirby.x10) *

@@ -22,7 +22,7 @@
 #include "it/it_26B1.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/aobj.h>
 #include <baselib/jobj.h>
 #include <baselib/object.h>
@@ -353,7 +353,7 @@ void ftSs_Init_CreateThrowGrappleBeam(HSD_GObj* gobj, s32 motion_state,
                                       float anim_speed)
 {
     Fighter* fighter_copy;
-    Vec3 scale;
+    Vec scale;
 
     Fighter* fp = getFighter(gobj);
     void** item_list = fp->ft_data->x48_items;

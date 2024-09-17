@@ -1,4 +1,3 @@
-#include <dolphin/dvd/forward.h>
 
 #include "lb/lbfile.h"
 
@@ -8,7 +7,7 @@
 #include "lb/lblanguage.h"
 
 #include <string.h>
-#include <dolphin/dvd/dvd.h>
+#include <dolphin/dvd.h>
 #include <dolphin/os/OSError.h>
 #include <dolphin/os/OSInterrupt.h>
 #include <baselib/debug.h>

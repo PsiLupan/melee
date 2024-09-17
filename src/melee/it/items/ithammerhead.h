@@ -9,7 +9,7 @@
 
 #include <dolphin/mtx.h>
 
-/* 299C48 */ void it_80299C48(HSD_GObj*, Vec3*, Vec3*, f32);
+/* 299C48 */ void it_80299C48(HSD_GObj*, Vec*, Vec*, f32);
 /* 299D4C */ void it_80299D4C(Item_GObj*);
 /* 299DD0 */ void it_80299DD0(Item_GObj*);
 /* 299E28 */ void it_80299E28(Item_GObj*);

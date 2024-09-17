@@ -39,9 +39,9 @@
 /* literal */ double const ftCo_804D8D20 = S32_TO_F32;
 /* literal */ float const ftCo_804D8D28 = 20;
 /* literal */ double const ftCo_804D8D30 = 0.2;
-/* literal */ Vec3 const lbl_803B74C8 = { 0 };
-/* literal */ Vec3 const lbl_803B74D4 = { 1.8, 0, 0 };
-/* literal */ Vec3 const lbl_803B74E0 = { 1.8, 0, 0 };
+/* literal */ Vec const lbl_803B74C8 = { 0 };
+/* literal */ Vec const lbl_803B74D4 = { 1.8, 0, 0 };
+/* literal */ Vec const lbl_803B74E0 = { 1.8, 0, 0 };
 /* literal */ SDATA char ftCo_804D3C48[] = "jobj.h";
 /* literal */ SDATA char ftCo_804D3C50[] = "jobj";
 
@@ -100,7 +100,7 @@ bool ftCo_800C3B10(ftCo_GObj* gobj)
 void ftCo_800C3BE8(ftCo_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 anim_vel = { 0 };
+    Vec anim_vel = { 0 };
     if (fp->ground_or_air == GA_Air) {
         fp->mv.co.aircatch.x0 = 0;
         fp->x74_anim_vel = anim_vel;
@@ -145,7 +145,7 @@ void ftCo_AirCatch_Anim(ftCo_GObj* gobj)
         ftLk_DatAttrs* da = fp->dat_attrs;
         fp->mv.co.aircatch.x0 += 1.0;
         if (fp->mv.co.aircatch.x0 == da->xA4) {
-            Vec3 pos;
+            Vec pos;
             u8 _[4] = { 0 };
             lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_RThumbNb)].joint,
                         NULL, &pos);
@@ -164,7 +164,7 @@ void ftCo_AirCatch_Anim(ftCo_GObj* gobj)
                 void* tether_data =
                     M2C_FIELD(tether_ip->xC4_article_data, void**, 4);
                 if (fp->mv.co.aircatch.x0 == da->xA8) {
-                    Vec3 pos = { 1.8, 0, 0 };
+                    Vec pos = { 1.8, 0, 0 };
                     HSD_JObj* jobj =
                         fp->parts[ftParts_8007500C(fp, FtPart_RThumbNb)].joint;
 
@@ -217,7 +217,7 @@ void ftCo_AirCatch_Anim(ftCo_GObj* gobj)
         ftSs_DatAttrs* da = fp->dat_attrs;
         fp->mv.co.aircatch.x0 += 1.0;
         if (fp->mv.co.aircatch.x0 == da->xBC) {
-            Vec3 pos;
+            Vec pos;
             u8 _[4] = { 0 };
             lb_8000B1CC(fp->parts[FtPart_ThrowN].joint, NULL, &pos);
             fp->fv.ss.x223C = it_802B7C18(gobj, &pos, fp->facing_dir);
@@ -235,7 +235,7 @@ void ftCo_AirCatch_Anim(ftCo_GObj* gobj)
                 void* tether_data =
                     M2C_FIELD(tether_ip->xC4_article_data, void**, 4);
                 if (fp->mv.co.aircatch.x0 == da->xC0) {
-                    Vec3 pos = { 1.8, 0, 0 };
+                    Vec pos = { 1.8, 0, 0 };
                     HSD_JObj* jobj = fp->parts[FtPart_ThrowN].joint;
                     HSD_JObjSetupMatrix(jobj);
                     if (mpLib_800524DC(

@@ -9,7 +9,7 @@ void ft_8008521C(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
-    Vec3 pos;
+    Vec pos;
 
     HSD_JObjGetTranslation(jobj, &pos);
     fp->self_vel.x = pos.x - fp->cur_pos.x;

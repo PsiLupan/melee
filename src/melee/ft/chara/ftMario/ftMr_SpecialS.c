@@ -20,7 +20,7 @@
 #include "lb/lb_00B0.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void setCallbacks(Fighter* fp)
 {
@@ -40,7 +40,7 @@ void ftMr_SpecialS_CreateCape(HSD_GObj* gobj)
 
     if (!fp->cmd_vars[2]) {
         /// @todo Can't move below @c _.
-        Vec3 coords;
+        Vec coords;
 
         u8 _[4];
 
@@ -184,7 +184,7 @@ void ftMr_SpecialS_Phys(HSD_GObj* gobj)
 
     {
         /// @todo Cannot be moved above @c unused0 or below @c unused1.
-        Vec3 coords;
+        Vec coords;
 
         u8 unused1[16];
 
@@ -213,7 +213,7 @@ void ftMr_SpecialAirS_Phys(HSD_GObj* gobj)
 
     u8 unused0[4];
 
-    Vec3 coords;
+    Vec coords;
 
     u8 unused1[24];
 

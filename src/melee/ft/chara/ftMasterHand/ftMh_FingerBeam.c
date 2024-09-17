@@ -13,7 +13,7 @@
 #include "lb/lbaudio_ax.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftMh_Poke1_Coll(HSD_GObj* gobj) {}
 
@@ -100,7 +100,7 @@ void ftMh_MS_362_80152E28(HSD_GObj* gobj)
     }
 
     {
-        Vec3 vec;
+        Vec vec;
         lb_8000B1CC(fp->parts[FtPart_RLegJA].joint, 0, &vec);
         fp->mv.mh.unk0.x34 =
             it_802F0340(gobj, &vec, &vec, FtPart_RLegJA, 125, fp->facing_dir);

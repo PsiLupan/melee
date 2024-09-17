@@ -48,7 +48,7 @@ ItemStateTable it_803F5800[] = {
     { 0, it_80285F2C, it_80285F74, it_80285F78 },
 };
 
-Item_GObj* itSword_Spawn(Vec3* pos)
+Item_GObj* itSword_Spawn(Vec* pos)
 {
     SpawnItem spawn;
     spawn.kind = It_Kind_Sword;
@@ -84,7 +84,7 @@ void it_80284E30(Item_GObj* gobj)
                 (ip->xDD4_itemVar.sword.x4C * ip->xDD4_itemVar.sword.x10));
     HSD_JObjSetScaleY(ip->xBBC_dynamicBoneTable->bones[6], scale_y);
     {
-        Vec3 scale;
+        Vec scale;
         if (ip->msid == 2) {
             float temp_scale = 1.5f * ip->xDD4_itemVar.sword.x40 + scale_y;
             scale.x = temp_scale;

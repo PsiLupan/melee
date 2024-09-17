@@ -26,6 +26,6 @@ bool grTGameWatch_802243B8(HSD_GObj*);
 void grTGameWatch_802243C0(HSD_GObj*);
 void grTGameWatch_802243E0(HSD_GObj*);
 DynamicsDesc* grTGameWatch_802243E4(int);
-bool grTGameWatch_802243EC(Vec3*, int, HSD_JObj*);
+bool grTGameWatch_802243EC(Vec*, int, HSD_JObj*);
 
 #endif

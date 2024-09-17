@@ -11,7 +11,7 @@
 #include "ft/types.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void doAnim(HSD_GObj* gobj);
 
@@ -46,7 +46,7 @@ static void doAnim(HSD_GObj* gobj)
     ftAnim_8006EBA4(gobj);
 
     {
-        Vec3 pos;
+        Vec pos;
         ftBossLib_8015C208(gobj, &pos);
         fp->cur_pos.x = pos.x;
     }

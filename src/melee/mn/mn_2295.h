@@ -3,12 +3,12 @@
 
 #include <platform.h>
 
-#include "dolphin/mtx/types.h"
+#include "dolphin/mtx.h"
 
 #include <baselib/object.h>
 
 void mn_8022F3D8(void*, u8, HSD_TypeMask);
-void mn_8022ED6C(HSD_JObj*, Vec3*);
+void mn_8022ED6C(HSD_JObj*, Vec*);
 u32 mn_80229624(u32);            // returns a bitfield of controller inputs
 void mn_80229894(s32, s32, s32); // go to a specific part of the menu?
 float mn_8022EC18(HSD_JObj*, float*, int);

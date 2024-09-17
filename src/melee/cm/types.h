@@ -5,27 +5,27 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 struct CameraBox {
     u32 data_filler[2];
     bool x8;
     /* +C:0 */ u8 xC_b0 : 1;
     u8 xD_fill[0x10 - 0xD];
-    Vec3 x10; // might be Vec2?
-    Vec3 x1C;
+    Vec x10; // might be Vec2?
+    Vec x1C;
     float x28;
     Vec2 x2C;
-    Vec3 x34;
+    Vec x34;
     Vec2 x40;
-    Vec3 x48;
+    Vec x48;
 };
 
 struct CameraMovement {
-    Vec3 interest;
-    Vec3 target_interest;
-    Vec3 position;
-    Vec3 target_position;
+    Vec interest;
+    Vec target_interest;
+    Vec position;
+    Vec target_position;
     float fov;
     float target_fov;
 };

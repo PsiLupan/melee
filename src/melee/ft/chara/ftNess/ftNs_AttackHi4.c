@@ -26,7 +26,7 @@
 #include "mp/mpcoll.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftNs_AttackHi4_YoyoUpdateHitPos(HSD_GObj* gobj)
 {
@@ -88,14 +88,14 @@ static void ftNs_AttackHi4_YoyoApplyDamage(float unk_float, HSD_GObj* gobj)
 };
 #pragma pop
 
-static inline void push_ecb(CollData* a, Vec3* b)
+static inline void push_ecb(CollData* a, Vec* b)
 {
     a->prev_topn = a->cur_topn; // old = curr
     a->cur_topn = *b;           // curr = new
 }
 
-s32 ftNs_AttackHi4_YoyoCheckEnvColl(HSD_GObj* gobj, Vec3* ECBUnk,
-                                    Vec3* ECBUnk2, float float_unk)
+s32 ftNs_AttackHi4_YoyoCheckEnvColl(HSD_GObj* gobj, Vec* ECBUnk, Vec* ECBUnk2,
+                                    float float_unk)
 {
     u8 pad[4];
     CollData coll;
@@ -158,10 +158,10 @@ s32 ftNs_AttackHi4_YoyoCheckEnvColl(HSD_GObj* gobj, Vec3* ECBUnk,
 ///       This is probably a result of incorrectly splitting out the function.
 #pragma push
 #pragma dont_inline on
-void ftNs_AttackHi4_YoyoSetUnkPos(HSD_GObj* gobj, Vec3* pos)
+void ftNs_AttackHi4_YoyoSetUnkPos(HSD_GObj* gobj, Vec* pos)
 {
-    Vec3 sp20;
-    Vec3 sp14;
+    Vec sp20;
+    Vec sp14;
 
     /// @todo #GET_FIGHTER is prevented by @c dont_inline.
     Fighter* fp = gobj->user_data;
@@ -187,9 +187,9 @@ void ftNs_AttackHi4_YoyoSetUnkPos(HSD_GObj* gobj, Vec3* pos)
 
 void ftNs_AttackHi4_YoyoSetHitPos(HSD_GObj* gobj)
 {
-    Vec3 sp2C;
-    Vec3 sp20;
-    Vec3 sp14;
+    Vec sp2C;
+    Vec sp20;
+    Vec sp14;
 
     u8 _[4];
 
@@ -217,10 +217,10 @@ void ftNs_AttackHi4_YoyoSetHitPos(HSD_GObj* gobj)
 
 void ftNs_AttackHi4_YoyoSetHitPosUnk(HSD_GObj* gobj, float pos_unk)
 {
-    Vec3 sp3C;
-    Vec3 sp30;
-    Vec3 sp24;
-    Vec3 sp18;
+    Vec sp3C;
+    Vec sp30;
+    Vec sp24;
+    Vec sp18;
     float pos_update;
 
     /// @todo Can't move below @c fp.
@@ -257,8 +257,8 @@ void ftNs_AttackHi4_YoyoSetHitPosUnk(HSD_GObj* gobj, float pos_unk)
 
 bool ftNs_AttackHi4_YoyoCheckNoObstruct(HSD_GObj* gobj)
 {
-    Vec3 sp20;
-    Vec3 sp14;
+    Vec sp20;
+    Vec sp14;
     float ECB_MUL_Y;
     float ECB_X;
     Fighter* fp;
@@ -309,7 +309,7 @@ struct Unknown {
     s32 x4;
 };
 
-static Vec3 const AttackHi4Pos = { 0 };
+static Vec const AttackHi4Pos = { 0 };
 
 void ftNs_AttackHi4_YoyoApplySmash(HSD_GObj* gobj)
 {
@@ -317,7 +317,7 @@ void ftNs_AttackHi4_YoyoApplySmash(HSD_GObj* gobj)
 
     u8 _[4];
 
-    Vec3 sp18;
+    Vec sp18;
 
     /// @todo Stack is too messed up for #GET_FIGHTER.
     Fighter* fp = gobj->user_data;
@@ -366,7 +366,7 @@ void ftNs_AttackHi4_YoyoApplySmash(HSD_GObj* gobj)
     ft_80088510(fp, 210087, 127, 64);
 }
 
-static Vec3 const YoyoChargePos = { 0 };
+static Vec const YoyoChargePos = { 0 };
 
 /// @remarks The extremely specific float here is also likely 1/256.
 void ftNs_AttackHi4_YoyoSetChargeDamage(HSD_GObj* gobj)
@@ -375,7 +375,7 @@ void ftNs_AttackHi4_YoyoSetChargeDamage(HSD_GObj* gobj)
     Article* article;
     Fighter* fp;
     Fighter* fighter_data2;
-    Vec3 sp30;
+    Vec sp30;
     float smashChargeFrames;
     HSD_GObj* yoyo_GObj;
     itYoyoAttributes* yoyo_attr;
@@ -419,7 +419,7 @@ void ftNs_AttackHi4_YoyoSetChargeDamage(HSD_GObj* gobj)
     }
 }
 
-static Vec3 const YoyoThinkPos = { 0 };
+static Vec const YoyoThinkPos = { 0 };
 
 bool ftNs_AttackHi4_YoyoThink_IsRemove(HSD_GObj* gobj)
 {
@@ -438,7 +438,7 @@ bool ftNs_AttackHi4_YoyoThink_IsRemove(HSD_GObj* gobj)
     Item* yoyo_itemdata;
     s32 yoyoRotFrame;
     s32 yoyoNudgeFrame;
-    Vec3 sp14;
+    Vec sp14;
 
     u8 _[8];
 
@@ -542,7 +542,7 @@ void ftNs_AttackHi4_YoyoSetUnkRate(HSD_GObj* gobj)
 
 void ftNs_AttackHi4_YoyoCreateItem(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp = GET_FIGHTER(gobj);
 
     lb_8000B1CC(fp->parts[FtPart_R2ndNa].joint, NULL, &sp10);
@@ -653,8 +653,8 @@ static Fighter* GetFighterData(HSD_GObj* gobj)
 
 void ftNs_AttackHi4_Anim(HSD_GObj* gobj)
 {
-    Vec3 sp24;
-    Vec3 sp18;
+    Vec sp24;
+    Vec sp18;
     Fighter* fighter_data2;
     Fighter* fp;
     s32 yoyoRehitTimer;
@@ -736,7 +736,7 @@ void ftNs_AttackHi4_IASA(HSD_GObj* gobj) // Ness's Up Smash IASA callback
 // https://decomp.me/scratch/e4x3x
 void ftNs_AttackHi4_Phys(HSD_GObj* gobj) // Ness's Up Smash Physics callback
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp;
 
     ft_80084F3C(gobj);
@@ -936,9 +936,9 @@ void ftNs_AttackHi4Release_IASA(
 void ftNs_AttackHi4Release_Phys(
     HSD_GObj* gobj) // Ness's Up Smash Post-Charge Physics callback
 {
-    Vec3 sp30;
-    Vec3 sp24;
-    Vec3 sp18;
+    Vec sp30;
+    Vec sp24;
+    Vec sp18;
     float temp_f2;
     s32 yoyoSmashFrameCurr;
     Fighter* fp;
@@ -1008,7 +1008,7 @@ static itYoyoAttributes* GetYoyoAttr(HSD_GObj* gobj)
 
 void ftNs_AttackHi4Release_Enter(HSD_GObj* gobj)
 {
-    Vec3 sp34;
+    Vec sp34;
     Fighter* fighter_data2;
     Fighter* fp;
     itYoyoAttributes* yoyo_attr;

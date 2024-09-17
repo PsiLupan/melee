@@ -9,7 +9,7 @@
 #include "it/it_26B1.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/archive.h>
 #include <baselib/controller.h>
 #include <baselib/dobj.h>

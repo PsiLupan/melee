@@ -11,14 +11,14 @@
 #include <dolphin/mtx.h>
 
 /* 26B1D4 */ float it_8026B1D4(Item_GObj* gobj, HitCapsule* itemHitboxUnk);
-/* 26B294 */ void it_8026B294(Item_GObj* gobj, Vec3* pos);
+/* 26B294 */ void it_8026B294(Item_GObj* gobj, Vec* pos);
 /* 26B2B4 */ enum_t it_8026B2B4(Item_GObj* gobj);
 /* 26B2D8 */ bool it_8026B2D8(Item_GObj* gobj);
 /* 26B300 */ s32 itGetKind(Item_GObj* gobj);
 /* 26B30C */ enum_t it_8026B30C(Item_GObj* gobj);
 /* 26B320 */ enum_t it_8026B320(Item_GObj* gobj);
 /* 26B334 */ float it_8026B334(Item_GObj* gobj);
-/* 26B344 */ void it_8026B344(Item_GObj* gobj, Vec3* pos);
+/* 26B344 */ void it_8026B344(Item_GObj* gobj, Vec* pos);
 /* 26B378 */ float it_8026B378(Item_GObj* gobj);
 /* 26B384 */ float it_8026B384(Item_GObj* gobj);
 /* 26B390 */ void it_8026B390(Item_GObj* gobj);
@@ -34,12 +34,10 @@
 /* 26B574 */ float it_8026B574(Item_GObj* gobj);
 /* 26B588 */ s32 it_8026B588(void);
 /* 26B594 */ bool it_8026B594(Item_GObj* gobj);
-/* 26B5E4 */ HSD_GObj* it_8026B5E4(Vec3* vector, Vec3* vector2,
-                                   Item_GObj* gobj);
-/* 26B634 */ HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2,
-                                   Item_GObj* gobj);
-/* 26B684 */ float it_8026B684(Vec3* pos);
-/* 26B6A8 */ float it_8026B6A8(Vec3* pos, HSD_GObj* arg);
+/* 26B5E4 */ HSD_GObj* it_8026B5E4(Vec* vector, Vec* vector2, Item_GObj* gobj);
+/* 26B634 */ HSD_GObj* it_8026B634(Vec* vector, Vec* vector2, Item_GObj* gobj);
+/* 26B684 */ float it_8026B684(Vec* pos);
+/* 26B6A8 */ float it_8026B6A8(Vec* pos, HSD_GObj* arg);
 /* 26B6C8 */ bool it_8026B6C8(Item_GObj* gobj);
 /* 26B718 */ void it_8026B718(Item_GObj* gobj, float hitlagFrames);
 /* 26B724 */ void it_8026B724(Item_GObj* gobj);
@@ -61,14 +59,14 @@
 /* 26BAE8 */ void it_8026BAE8(Item_GObj* gobj, float scale_mul);
 /* 26BB20 */ void it_8026BB20(Item_GObj* gobj);
 /* 26BB44 */ void it_8026BB44(Item_GObj* gobj);
-/* 26BB68 */ void it_8026BB68(Item_GObj* gobj, Vec3* pos);
-/* 26BB88 */ void it_8026BB88(Item_GObj* gobj, Vec3* pos);
-/* 26BBCC */ void it_8026BBCC(Item_GObj* gobj, Vec3* pos);
+/* 26BB68 */ void it_8026BB68(Item_GObj* gobj, Vec* pos);
+/* 26BB88 */ void it_8026BB88(Item_GObj* gobj, Vec* pos);
+/* 26BBCC */ void it_8026BBCC(Item_GObj* gobj, Vec* pos);
 /* 26BC14 */ void it_8026BC14(Item_GObj* gobj);
 /* 26BC68 */ bool it_8026BC68(Item_GObj* gobj);
 /* 26BC78 */ HSD_GObj* it_8026BC78(Item_GObj* gobj);
 /* 26BC84 */ bool it_8026BC84(Item_GObj* gobj);
-/* 26BC90 */ void it_8026BC90(Item_GObj* gobj, Vec3* pos);
+/* 26BC90 */ void it_8026BC90(Item_GObj* gobj, Vec* pos);
 /* 26BCF4 */ void it_8026BCF4(Item_GObj* gobj);
 /* 26BD0C */ void it_8026BD0C(Item_GObj* gobj);
 /* 26BD24 */ void it_8026BD24(Item_GObj* gobj);
@@ -87,8 +85,8 @@
 /* 26C1D4 */ u32 it_8026C1D4(void);
 /* 26C1E8 */ bool it_8026C1E8(Item_GObj* gobj);
 /* 26C220 */ void it_8026C220(Item_GObj* gobj, HSD_GObj* arg1);
-/* 26C258 */ HSD_GObj* it_8026C258(Vec3* vector, float facingDir);
-/* 26C334 */ void it_8026C334(Item_GObj* gobj, Vec3* pos);
+/* 26C258 */ HSD_GObj* it_8026C258(Vec* vector, float facingDir);
+/* 26C334 */ void it_8026C334(Item_GObj* gobj, Vec* pos);
 /* 26C368 */ void it_8026C368(Item_GObj* gobj);
 /* 26C3FC */ void it_8026C3FC(void);
 /* 26C42C */ void it_8026C42C(void);

@@ -5,7 +5,7 @@
 
 #include <dolphin/mtx.h>
 
-void EulerToQuat(Vec3*, Quaternion*);
+void EulerToQuat(Vec*, Quaternion*);
 void HSD_QuatLib_8037EF28(Quaternion*, Quaternion*, Quaternion*, f32);
 
 #endif

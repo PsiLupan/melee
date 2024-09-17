@@ -48,7 +48,7 @@ typedef struct grTMewtwo_UnkStruct {
 /* 222490 */ static void grTMewtwo_80222490(Ground_GObj* gobj);
 /* 2224B0 */ static void grTMewtwo_802224B0(Ground_GObj* gobj);
 /* 2224B4 */ static DynamicsDesc* grTMewtwo_802224B4(int arg0);
-/* 2225C8 */ static bool grTMewtwo_802225C8(Vec3* arg0, int arg1,
+/* 2225C8 */ static bool grTMewtwo_802225C8(Vec* arg0, int arg1,
                                             HSD_JObj* arg2);
 /* 3E8FC0 */ static void grTMewtwo_803E8FC0(Ground_GObj* gobj);
 /* 4D6B08 */ static grTMewtwo_UnkStruct* grTMewtwo_804D6B08;
@@ -259,7 +259,7 @@ DynamicsDesc* grTMewtwo_802224B4(int arg0)
     return NULL;
 }
 
-bool grTMewtwo_802225C8(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTMewtwo_802225C8(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

@@ -10,7 +10,7 @@ void ft_80081938(HSD_GObj* gobj)
     f32 lx, rx;
     ftECB* new_var;
     u8 unused1[36];
-    Vec3 sp44;
+    Vec sp44;
     u8 unused2[56];
     Fighter* fp = gobj->user_data;
     sp44 = fp->coll_data.cur_topn;

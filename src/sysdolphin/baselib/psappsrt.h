@@ -5,7 +5,7 @@
 #include "baselib/forward.h"
 
 #include <placeholder.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 #define PSAPPSRT_UNK_B09 (1 << 9)
 #define PSAPPSRT_UNK_B10 (1 << 10)

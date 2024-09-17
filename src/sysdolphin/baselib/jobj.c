@@ -17,8 +17,7 @@
 #include <__mem.h>
 #include <math.h>
 #include <trigf.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/vec.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os.h>
 
 void JObjInfoInit(void);
@@ -141,7 +140,7 @@ inline bool has_scl(HSD_JObj* jobj)
 
 void HSD_JObjMakeMatrix(HSD_JObj* jobj)
 {
-    Vec3* scl;
+    Vec* scl;
 
     HSD_JObjSetupMatrix(jobj->parent);
     if (jobj->flags & 8) {
@@ -182,14 +181,14 @@ void HSD_JObjMakeMatrix(HSD_JObj* jobj)
         } else {
             scl = NULL;
         }
-        HSD_MtxSRT(jobj->mtx, &jobj->scale, (Vec3*) &jobj->rotate,
+        HSD_MtxSRT(jobj->mtx, &jobj->scale, (Vec*) &jobj->rotate,
                    &jobj->translate, scl);
     }
     if (jobj->parent != NULL) {
         PSMTXConcat(jobj->parent->mtx, jobj->mtx, jobj->mtx);
     }
     if (jobj->aobj != NULL && jobj->aobj->hsd_obj != NULL) {
-        Vec3 vec;
+        Vec vec;
         HSD_JObj* aobj_jobj = (HSD_JObj*) jobj->aobj->hsd_obj;
         HSD_JObjSetupMatrix((HSD_JObj*) jobj->aobj->hsd_obj);
         PSMTXMultVec(aobj_jobj->mtx, &jobj->translate, &vec);
@@ -356,7 +355,7 @@ void JObjUpdateFunc(void* obj, enum_t type, HSD_ObjData* val)
 {
     HSD_JObj* jobj = obj;
     ufc_callback cb;
-    Vec3 p;
+    Vec p;
     HSD_JObj* jp;
     HSD_RObj* robj;
     Mtx mtx;
@@ -522,7 +521,7 @@ void JObjUpdateFunc(void* obj, enum_t type, HSD_ObjData* val)
                 HSD_MtxGetTranslate(mtx, &jobj->translate);
             }
             if (type == 0x36 || type == 0x37) {
-                HSD_MtxGetRotation(mtx, (Vec3*) &jobj->rotate);
+                HSD_MtxGetRotation(mtx, (Vec*) &jobj->rotate);
             }
             if (type == 0x36U || type == 0x39U) {
                 HSD_MtxGetScale(mtx, &jobj->scale);
@@ -1110,7 +1109,7 @@ HSD_JObj* jobj_get_effector_checked(HSD_JObj* eff)
     }
 }
 
-extern const Vec3 HSD_JObj_803B94C4;
+extern const Vec HSD_JObj_803B94C4;
 
 /// @todo Variables @c var_f27 and @c var_f28 are used uninitialized
 ///       whenever 'if' condition is false.
@@ -1121,14 +1120,14 @@ void resolveIKJoint1(HSD_JObj* jobj)
     HSD_JObj* robj_4;
     HSD_JObj* var_r28;
     HSD_JObj* var_r31;
-    Vec3* temp_r4;
+    Vec* temp_r4;
     f32 temp_f1_7;
     f32 temp_f1_8;
     f32 temp_f31;
     f32 temp_f30;
     f32 temp_f5;
     f32 temp_f5_2;
-    Vec3 spBC = { 1.0F, 1.0F, 1.0F };
+    Vec spBC = { 1.0F, 1.0F, 1.0F };
     f32 var_f1;
     f32 var_f29;
     f32 var_f29_2;
@@ -1137,7 +1136,7 @@ void resolveIKJoint1(HSD_JObj* jobj)
     f32 temp_f26;
     f32 var_f4;
     f32 var_f4_2;
-    Vec3 spB0;
+    Vec spB0;
 
     u8 _[4];
 
@@ -1146,14 +1145,14 @@ void resolveIKJoint1(HSD_JObj* jobj)
     f32 var_f5;
     s32 var_r30;
     HSD_RObj* robj;
-    Vec3 sp98;
-    Vec3 sp8C;
-    Vec3 sp80;
+    Vec sp98;
+    Vec sp8C;
+    Vec sp80;
     HSD_IKHint* new_var;
-    Vec3 sp74;
-    Vec3 sp68;
-    Vec3 sp5C;
-    Vec3 sp50;
+    Vec sp74;
+    Vec sp68;
+    Vec sp5C;
+    Vec sp50;
     Mtx sp20;
 
     var_r30 = 0;
@@ -1267,20 +1266,20 @@ void resolveIKJoint1(HSD_JObj* jobj)
 }
 #pragma clang diagnostic pop
 
-const Vec3 HSD_JObj_803B94C4 = { 0.0F, 0.0F, 0.0F };
-const Vec3 HSD_JObj_803B94D0 = { 1.0F, 1.0F, 1.0F };
+const Vec HSD_JObj_803B94C4 = { 0.0F, 0.0F, 0.0F };
+const Vec HSD_JObj_803B94D0 = { 1.0F, 1.0F, 1.0F };
 
 void resolveIKJoint2(HSD_JObj* jobj)
 {
-    Vec3 spA0;
-    Vec3 sp94;
-    Vec3 sp88;
-    Vec3 sp7C;
-    Vec3 sp70;
-    Vec3 sp64;
+    Vec spA0;
+    Vec sp94;
+    Vec sp88;
+    Vec sp7C;
+    Vec sp70;
+    Vec sp64;
     Mtx sp34;
-    Vec3 sp28;
-    Vec3 sp1C;
+    Vec sp28;
+    Vec sp1C;
 
     u8 _[4];
 
@@ -1400,9 +1399,9 @@ void resolveIKJoint2(HSD_JObj* jobj)
 
 void HSD_JObjSetupMatrixSub(HSD_JObj* jobj)
 {
-    Vec3 sp28;
-    Vec3 sp1C;
-    Vec3 sp10;
+    Vec sp28;
+    Vec sp1C;
+    Vec sp10;
     HSD_JObj* parent;
     HSD_RObj* robj;
     f32 x_scale;

@@ -157,7 +157,7 @@ void ftPp_SpecialN_8011F500(Fighter_GObj* gobj)
     }
     if (cmd_var0 == 1) {
         ftIceClimberAttributes* da = fp->dat_attrs;
-        Vec3 pos;
+        Vec pos;
         PAD_STACK(4 * 2);
         lb_8000B1CC(fp->parts[0].joint, NULL, &pos);
         pos.x = da->xC * fp->facing_dir + pos.x;

@@ -92,7 +92,7 @@ static ItemKind getVeg(HSD_GObj* gobj)
     return kind;
 }
 
-static void setupVeg(ItemKind kind, HSD_GObj* gobj, Fighter* fp, Vec3* pos)
+static void setupVeg(ItemKind kind, HSD_GObj* gobj, Fighter* fp, Vec* pos)
 {
     HSD_GObj* veg_gobj =
         it_802BD4AC(gobj, pos, fp->ft_data->x8->x10, kind, fp->facing_dir);
@@ -109,9 +109,9 @@ static void setupVeg(ItemKind kind, HSD_GObj* gobj, Fighter* fp, Vec3* pos)
 static void spawnVeg(HSD_GObj* gobj)
 {
     Fighter* fp = GET_FIGHTER(gobj);
-    Vec3 pos;
-    Vec3 p1;
-    Vec3 p2;
+    Vec pos;
+    Vec p1;
+    Vec p2;
 
     if (ftCheckThrowB0(fp)) {
         ItemKind kind;

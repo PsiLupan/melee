@@ -3,12 +3,12 @@
 
 #include <platform.h>
 #include "lb/forward.h"
-#include <dolphin/gx/forward.h>
 #include <baselib/forward.h>
 
 #include "gr/types.h"
 
 #include <placeholder.h>
+#include <dolphin/gx.h>
 #include <dolphin/mtx.h>
 
 /* 1BFFB0 */ void Ground_801BFFB0(void);
@@ -71,7 +71,7 @@
 /* 1C2C8C */ bool Ground_801C2C8C(void*);
 /* 1C2CF4 */ HSD_JObj* Ground_801C2CF4(s32);
 /* 1C2D0C */ void Ground_801C2D0C(s32 i, HSD_JObj* jobj);
-/* 1C2D24 */ bool Ground_801C2D24(enum_t, Vec3*);
+/* 1C2D24 */ bool Ground_801C2D24(enum_t, Vec*);
 /* 1C2ED0 */ bool Ground_801C2ED0(HSD_JObj*, s32);
 /* 1C2FE0 */ void Ground_801C2FE0(HSD_GObj*);
 /* 1C3128 */ bool Ground_801C3128(s32, void (*)(s32));
@@ -118,9 +118,9 @@
 /* 1C49B4 */ UNK_T Ground_801C49B4(void);
 /* 1C49F8 */ void* Ground_801C49F8(void);
 /* 1C4A08 */ void Ground_801C4A08(HSD_GObj* gobj);
-/* 1C4B50 */ void Ground_801C4B50(s32, s32, Vec3* result, f32);
-/* 1C4D70 */ bool Ground_801C4D70(HSD_GObj*, Vec3*, f32);
-/* 1C4DA0 */ bool Ground_801C4DA0(Vec3*, f32*);
+/* 1C4B50 */ void Ground_801C4B50(s32, s32, Vec* result, f32);
+/* 1C4D70 */ bool Ground_801C4D70(HSD_GObj*, Vec*, f32);
+/* 1C4DA0 */ bool Ground_801C4DA0(Vec*, f32*);
 /* 1C4DD0 */ bool Ground_801C4DD0(void);
 /* 1C4E20 */ bool Ground_801C4E20(void);
 /* 1C4E70 */ void Ground_801C4E70(HSD_JObj*, HSD_JObj*, HSD_JObj*, HSD_JObj*,
@@ -154,7 +154,7 @@
 /* 1C5AA4 */ void Ground_801C5AA4(bool);
 /* 1C5ABC */ bool Ground_801C5ABC(void);
 /* 1C5AD0 */ u32 Ground_801C5AD0(s32 i);
-/* 1C5AEC */ void Ground_801C5AEC(Vec3* v, Vec3*, Vec3*, Vec3*);
+/* 1C5AEC */ void Ground_801C5AEC(Vec* v, Vec*, Vec*, Vec*);
 /* 49E6C8 */ extern StageInfo stage_info;
 
 #endif

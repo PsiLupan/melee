@@ -9,7 +9,7 @@
 
 #include <dolphin/mtx.h>
 
-/* 2B2FC8 */ Item_GObj* it_802B2FC8(HSD_GObj* parent, Vec3* pos, f32 dir);
+/* 2B2FC8 */ Item_GObj* it_802B2FC8(HSD_GObj* parent, Vec* pos, f32 dir);
 /* 2B309C */ bool it_802B309C(Item_GObj*);
 /* 2B30C0 */ bool it_802B30C0(Item_GObj*);
 /* 2B30E4 */ bool it_802B30E4(Item_GObj*);

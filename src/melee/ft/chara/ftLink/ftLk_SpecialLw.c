@@ -63,7 +63,7 @@ static void spawnBomb(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
     ftLk_DatAttrs* da = fp->dat_attrs;
     if (ftCheckThrowB0(fp)) {
-        Vec3 pos;
+        Vec pos;
         u8 _[4];
         lb_8000B1CC(fp->parts[ftParts_8007500C(fp, FtPart_LThumbNb)].joint,
                     NULL, &pos);

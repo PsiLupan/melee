@@ -76,9 +76,9 @@ int it_80293DCC(Item_GObj* gobj)
 
 void it_80293E34(Item_GObj* gobj)
 {
-    Vec3 sp30;
-    Vec3 sp24;
-    Vec3 result;
+    Vec sp30;
+    Vec sp24;
+    Vec result;
     Item* temp_r31;
     s32 temp_r3;
     float asd;

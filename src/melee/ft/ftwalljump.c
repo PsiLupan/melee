@@ -10,7 +10,7 @@
 #include "mp/mplib.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static int const max_input_frames = 254;
 
@@ -39,7 +39,7 @@ bool ftWallJump_8008169C(HSD_GObj* gobj)
             {
                 fp0->wall_jump_input_timer++;
             } else {
-                Vec3 wall_pos, ecb;
+                Vec wall_pos, ecb;
 
                 u8 _[8];
 

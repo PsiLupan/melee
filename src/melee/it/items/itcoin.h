@@ -18,7 +18,7 @@
 /* 2F2014 */ void it_802F2014(Item_GObj*, int);
 /* 2F2020 */ int it_802F2020(Item_GObj*);
 /* 2F202C */ void it_802F202C(Item_GObj*);
-/* 2F2094 */ Item_GObj* it_802F2094(int, Vec3*, int, int);
+/* 2F2094 */ Item_GObj* it_802F2094(int, Vec*, int, int);
 /* 3F93C8 */ extern ItemStateTable it_803F93C8[];
 
 #endif

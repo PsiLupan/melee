@@ -16,7 +16,7 @@
 #include "mp/mplib.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <MetroTRK/intrinsics.h>
 
 void ftMh_WalkShoot_Anim(HSD_GObj* gobj)
@@ -97,15 +97,15 @@ static inline float my_sqrtf(float x)
     return x;
 }
 
-static inline float my_lbVector_Len(Vec3* vec)
+static inline float my_lbVector_Len(Vec* vec)
 {
     return my_sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
 
 void ftMh_WalkLoop_Anim(HSD_GObj* gobj)
 {
-    Vec3 pos;
-    Vec3 vel;
+    Vec pos;
+    Vec vel;
 
     /// @todo #GET_FIGHTER uses slightly too much stack; inline issue.
     Fighter* fp = gobj->user_data;

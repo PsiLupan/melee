@@ -24,7 +24,7 @@
 #include <common_structs.h>
 #include <math.h>
 #include <trigf.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <MetroTRK/intrinsics.h>
 
 void ftZd_SpecialHi_801396AC(HSD_GObj* gobj)
@@ -39,7 +39,7 @@ void ftZd_SpecialHi_801396E0(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
 
     if (!fp->x2219_b0) {
-        Vec3 vec;
+        Vec vec;
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, NULL, &vec);
 
         if (fp->ground_or_air == GA_Ground) {
@@ -60,7 +60,7 @@ void ftZd_SpecialHi_8013979C(HSD_GObj* gobj)
     Fighter* fp = GET_FIGHTER(gobj);
 
     {
-        Vec3 vec;
+        Vec vec;
         lb_8000B1CC(fp->parts[FtPart_HipN].joint, NULL, &vec);
 
         if (!fp->x2219_b0) {
@@ -84,7 +84,7 @@ static void ftZelda_SpecialHi_StartAction_Helper(Fighter* fp)
         HSD_JObj* jObj = fp->parts[boneIndex].joint;
 
         {
-            Vec3 vec;
+            Vec vec;
             lb_8000B1CC(jObj, NULL, &vec);
 
             lb_800119DC(&vec, 120, 1.5f, 0.02, 60 * (float) M_PI / 180);
@@ -131,7 +131,7 @@ void ftZd_SpecialAirHi_Enter(HSD_GObj* gobj)
         fp->mv.zd.specialhi.xC = 0;
 
         {
-            Vec3 vec;
+            Vec vec;
 
             u8 _[20];
 
@@ -400,8 +400,8 @@ void ftZd_SpecialHi_80139FE8(HSD_GObj* gobj)
 
 void ftZd_SpecialHi_8013A058(HSD_GObj* gobj)
 {
-    Vec3 inputVector;
-    Vec3* groundVector;
+    Vec inputVector;
+    Vec* groundVector;
     volatile float y;
     f64 _three;
     f64 _half;
@@ -453,7 +453,7 @@ void ftZd_SpecialHi_8013A058(HSD_GObj* gobj)
         inputVector.y = fp->input.lstick.y;
         inputVector.z = 0;
 
-        if (!(lbVector_AngleXY(groundVector, (Vec3*) &inputVector.x) <
+        if (!(lbVector_AngleXY(groundVector, (Vec*) &inputVector.x) <
               (float) M_PI_2))
         {
             if (ftCo_8009A134(gobj) == 0) {

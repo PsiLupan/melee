@@ -60,7 +60,7 @@ static inline void msid_check(Item_GObj* gobj, Item* ip)
     }
 }
 
-Item_GObj* it_80292D48(Vec3* vec)
+Item_GObj* it_80292D48(Vec* vec)
 {
     Item_GObj* gobj;
     SpawnItem spawn;
@@ -128,7 +128,7 @@ void it_80292EAC(Item_GObj* gobj)
     }
 }
 
-void it_80292EF8(Item_GObj* unused, Vec3* vec)
+void it_80292EF8(Item_GObj* unused, Vec* vec)
 {
     vec->x = 0.0F;
     vec->y = 5.5F;

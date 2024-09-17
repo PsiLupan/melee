@@ -16,11 +16,11 @@
 #include "it/items/it_27CF.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 void ftSs_SpecialLw_8012ADF0(HSD_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     bool bool1;
     Fighter* fp = getFighter(gobj);
     ftSs_DatAttrs* samus_attr = fp->dat_attrs;

@@ -21,7 +21,7 @@
 #include "lb/lbvector.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 #define FTFOX_SPECIALHI_COLL_FLAG                                             \
     Ft_MF_KeepGfx | Ft_MF_SkipMatAnim | Ft_MF_UpdateCmd | Ft_MF_SkipColAnim | \
@@ -430,7 +430,7 @@ void ftFx_SpecialHi_GroundToAir(HSD_GObj* gobj)
 
 void ftFx_SpecialAirHi_AirToGround(HSD_GObj* gobj)
 {
-    Vec3 sp20;
+    Vec sp20;
     ftFox_DatAttrs* da;
     Fighter* fp;
     CollData* collData;
@@ -766,7 +766,7 @@ void ftFx_SpecialHiBound_Coll(HSD_GObj* gobj)
 
 inline void ftFox_SpecialHiBound_SetVars(HSD_GObj* gobj)
 {
-    vf32 f; // I have a feeling this is a Vec3 struct however
+    vf32 f; // I have a feeling this is a Vec struct however
     Fighter* fp = fp = gobj->user_data;
     CollData* collData = collData = getFtColl(fp);
 

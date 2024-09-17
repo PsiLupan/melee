@@ -17,7 +17,7 @@
 #include "ftPikachu/types.h"
 #include "it/items/it_27CF.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 bool ftPk_SpecialLw_CheckProperty(HSD_GObj* gobj)
 {
@@ -69,7 +69,7 @@ static inline float nested_sum_fabs(float fighter_pos_y, float pika_attr_xBC,
 
 bool ftPk_SpecialLw_8012765C(HSD_GObj* gobj)
 {
-    Vec3 vec;
+    Vec vec;
     Fighter* fp = gobj->user_data;
     ftPikachuAttributes* pika_attr = fp->dat_attrs;
     u32 state_var = fp->mv.pk.unk4.x0;
@@ -109,9 +109,9 @@ void ftPk_SpecialLw_SpawnEffect(HSD_GObj* gobj)
 {
     u8 _[4];
 
-    Vec3 pos;
-    Vec3 ef_pos;
-    Vec3 vec;
+    Vec pos;
+    Vec ef_pos;
+    Vec vec;
 
     Fighter* fp = GET_FIGHTER(gobj);
     ftPikachuAttributes* pika_attr = fp->dat_attrs;

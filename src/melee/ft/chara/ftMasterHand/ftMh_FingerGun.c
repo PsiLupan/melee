@@ -16,7 +16,7 @@
 #include "lb/lbvector.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 #include <MetroTRK/intrinsics.h>
 
@@ -117,7 +117,7 @@ static inline float my_sqrtf(float x)
     return x;
 }
 
-static inline float my_lbVector_Len(Vec3* vec)
+static inline float my_lbVector_Len(Vec* vec)
 {
     return my_sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
@@ -130,8 +130,8 @@ void ftMh_FingerGun1_Phys(HSD_GObj* gobj)
     ftMasterHand_SpecialAttrs* da;
     float len;
     float speed;
-    Vec3 pos;
-    Vec3 vel;
+    Vec pos;
+    Vec vel;
 
     u8 _[4];
 
@@ -247,11 +247,11 @@ void ftMh_MS_365_8015364C(HSD_GObj* gobj, HSD_JObj* arg1, float arg2,
     bool b = false;
 
     {
-        Vec3 vec0;
+        Vec vec0;
         lb_8000B1CC(arg1, 0, &vec0);
 
         {
-            Vec3 vec1 = vec0;
+            Vec vec1 = vec0;
             vec0.x += arg2;
             vec0.y += arg3;
 

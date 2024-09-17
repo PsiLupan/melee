@@ -25,7 +25,7 @@
 #include "lb/lb_00B0.h"
 
 #include <common_structs.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 static void ftSamus_801293BC_inner(HSD_GObj* gobj)
 {
@@ -64,8 +64,8 @@ void ftSs_SpecialN_80129258(HSD_GObj* gobj)
 
 static bool ftSs_SpecialN_801292E4(HSD_GObj* gobj)
 {
-    Vec3 vec1;
-    Vec3 vec2;
+    Vec vec1;
+    Vec vec2;
 
     HSD_GObj* result;
 
@@ -104,7 +104,7 @@ static void ftSs_SpecialN_801293BC(HSD_GObj* gobj)
     samus_attr = fp->dat_attrs;
 
     if ((fp->cmd_vars[1] == 1) && (fp->fv.ss.x222C)) {
-        Vec3 vec1;
+        Vec vec1;
         u32 x2230;
 
         fp->cmd_vars[1] = 2;
@@ -132,7 +132,7 @@ static void ftSs_SpecialN_801293BC(HSD_GObj* gobj)
 
 void ftSs_SpecialN_Enter(HSD_GObj* gobj)
 {
-    Vec3* self_vel;
+    Vec* self_vel;
     Fighter* fp = GET_FIGHTER(gobj);
 
     u8 _[8];
@@ -419,7 +419,7 @@ int ftSs_SpecialS_8012A068(HSD_GObj* gobj)
     return fp->fv.ss.x2238;
 }
 
-static void ftSs_SpecialS_8012A168(HSD_GObj* gobj, Vec3* spawnlocation);
+static void ftSs_SpecialS_8012A168(HSD_GObj* gobj, Vec* spawnlocation);
 
 void ftSs_SpecialS_8012A074(HSD_GObj* gobj)
 {
@@ -434,7 +434,7 @@ void ftSs_SpecialS_8012A074(HSD_GObj* gobj)
         bool1 = 0;
     }
     if (bool1) {
-        Vec3 position;
+        Vec position;
         fp->fv.ss.x2238++;
         lb_8000B1CC(fp->parts[56].joint, NULL, &position);
         position.x += (samus_attr->x34 * fp->facing_dir);
@@ -452,7 +452,7 @@ void ftSs_SpecialS_8012A074(HSD_GObj* gobj)
     }
 }
 
-static void ftSs_SpecialS_8012A168(HSD_GObj* gobj, Vec3* spawnlocation)
+static void ftSs_SpecialS_8012A168(HSD_GObj* gobj, Vec* spawnlocation)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     if (!fp->x2219_b0) {

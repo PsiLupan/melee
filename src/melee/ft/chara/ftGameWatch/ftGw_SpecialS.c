@@ -17,7 +17,7 @@
 #include "it/items/itfoods.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/random.h>
 
 static void ftGw_SpecialS_ItemJudgementExitHitlag(HSD_GObj* gobj);
@@ -27,8 +27,8 @@ static void ftGw_SpecialS_ItemJudgementEnterHitlag(HSD_GObj* gobj);
 // https://decomp.me/scratch/ohXu0 // Create Judgement item
 void ftGw_SpecialS_ItemJudgementSetup(HSD_GObj* gobj)
 {
-    Vec3 sp20;
-    Vec3 sp14;
+    Vec sp20;
+    Vec sp14;
     Fighter* fp = GET_FIGHTER(gobj);
 
     if (GET_FIGHTER(gobj)->cmd_vars[1] != 0U) {

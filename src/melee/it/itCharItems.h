@@ -7,7 +7,7 @@
 
 #include "lb/types.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/jobj.h>
 
 typedef struct {
@@ -42,14 +42,14 @@ typedef struct {
     /* x34 */ s32 xE08; // group 2
     /* x38 */ s32 xE0C; // group 2
     /* x3C */ s32 xE10; // group 2
-    /* x40 */ Vec3 xE14; // group 3; gets set as the vector from fighter's
-                         // current position to the joint holding the blaster
-                         // on the frame blaster its shot
-    /* x4C */ Vec3 xE20; // group 3
-    /* x58 */ Vec3 xE2C; // group 3
-    /* x64 */ Vec3 xE38; // group 3
-    /* x70 */ Vec3 xE44; // group 3
-    /* x7C */ Vec3 xE50; // group 3
+    /* x40 */ Vec xE14; // group 3; gets set as the vector from fighter's
+                        // current position to the joint holding the blaster
+                        // on the frame blaster its shot
+    /* x4C */ Vec xE20; // group 3
+    /* x58 */ Vec xE2C; // group 3
+    /* x64 */ Vec xE38; // group 3
+    /* x70 */ Vec xE44; // group 3
+    /* x7C */ Vec xE50; // group 3
     /* x88 */ f32 angle; // xE5C group 4; gets set to an angle value in func
                          // (it_802ADF10) that sets item joint locations from
                          // corresponding fighter joint locations
@@ -100,7 +100,7 @@ typedef struct {
     float xDD4;
     float xDD8;
     float xDDC;
-    Vec3 xDE0;
+    Vec xDE0;
 } FoxLaserVars;
 
 typedef struct {
@@ -117,9 +117,9 @@ typedef struct ItemLink // user_data struct of GObj class 7
 {
     struct ItemLink* prev;
     struct ItemLink* next;
-    Vec3 x8_vel;
-    Vec3 pos;
-    Vec3 x20_vec; // Previous position?
+    Vec x8_vel;
+    Vec pos;
+    Vec x20_vec; // Previous position?
     u8 flag0 : 1;
     u8 flag1 : 1;
     u8 flag2 : 1;
@@ -225,11 +225,11 @@ typedef struct {
     f32 xC;
     f32 x10;
     f32 x14;
-    Vec3 x18;
-    Vec3 x24;
-    Vec3 x30;
-    Vec3 x3C;
-    Vec3 x48;
+    Vec x18;
+    Vec x24;
+    Vec x30;
+    Vec x3C;
+    Vec x48;
     Quaternion x54;
     Quaternion x64;
     Quaternion x74;

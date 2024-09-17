@@ -8,7 +8,6 @@
 #include "it/it_26B1.h"
 
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/types.h>
 #include <baselib/debug.h>
 #include <baselib/gobj.h>
 

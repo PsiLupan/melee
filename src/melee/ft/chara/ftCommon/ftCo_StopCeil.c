@@ -30,7 +30,7 @@ void ftCo_8009EFA4(ftCo_GObj* gobj)
     Fighter* fp = gobj->user_data;
     fp->throw_flags = 0;
     {
-        Vec3 vec;
+        Vec vec;
         vec.x = 0;
         vec.y = fp->coll_data.xA4_ecbCurrCorrect.top.y;
         vec.z = 0;

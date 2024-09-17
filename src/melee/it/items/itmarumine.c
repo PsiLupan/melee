@@ -13,7 +13,7 @@
 #include <dolphin/mtx.h>
 #include <baselib/gobj.h>
 
-static Vec3 const it_803B86C8 = { 0 };
+static Vec const it_803B86C8 = { 0 };
 
 /* 2D0AAC */ static void it_802D0AAC(Item_GObj* gobj);
 /* 2D0B04 */ static void it_802D0B04(Item_GObj* gobj);
@@ -337,7 +337,7 @@ void it_802D1204(Item_GObj* gobj)
 
     Item_8026AE84(ip, 0x2720, 0x7F, 0x40);
     if (ip->xDC8_word.flags.x13 != false) {
-        Vec3 vec = it_803B86C8;
+        Vec vec = it_803B86C8;
         it_80274250(gobj, &vec);
     }
     it_8026B3A8(gobj);

@@ -59,7 +59,7 @@ static inline f32 fabs_inline(f32 x)
     }
 }
 
-const Vec3 ftCo_803B74A0 = { 0 };
+const Vec ftCo_803B74A0 = { 0 };
 
 void ftCommon_8007C930(Fighter* fp, float result)
 {
@@ -161,7 +161,7 @@ void ftCommon_8007CADC(Fighter* fp, float arg8, float arg9, float argA)
 void ftCommon_8007CB74(HSD_GObj* gobj)
 {
     float temp_f1;
-    Vec3* ground_normal;
+    Vec* ground_normal;
     Fighter* fp = gobj->user_data;
 
     u8 _[8];
@@ -182,7 +182,7 @@ void ftCommon_8007CB74(HSD_GObj* gobj)
 HSD_GObj* ftCommon_8007CC1C(HSD_GObj* gobj)
 {
     Fighter* fp = gobj->user_data;
-    Vec3* ground_normal = &fp->coll_data.floor.normal;
+    Vec* ground_normal = &fp->coll_data.floor.normal;
     fp->x74_anim_vel.x = +ground_normal->y * fp->xE4_ground_accel_1;
     fp->x74_anim_vel.y = -ground_normal->x * fp->xE4_ground_accel_1;
     fp->x74_anim_vel.z = 0;
@@ -218,7 +218,7 @@ void ftCommon_8007CCA0(Fighter* fp, float arg1)
 
 void ftCommon_8007CCE8(Fighter* fp)
 {
-    Vec3* ground_normal;
+    Vec* ground_normal;
     if (fp->ground_or_air == GA_Ground && fp->xF0_ground_kb_vel == 0) {
         ground_normal = &fp->coll_data.floor.normal;
         fp->xF0_ground_kb_vel = fp->x8c_kb_vel.x;
@@ -833,12 +833,12 @@ bool ftCommon_8007DC08(Fighter* fp, float arg1)
     return result;
 }
 
-void ftCommon_8007DD7C(HSD_GObj* gobj, Vec3* v)
+void ftCommon_8007DD7C(HSD_GObj* gobj, Vec* v)
 {
     u8 unused0[4];
 
     Vec2* temp_r31;
-    Vec3 sp24;
+    Vec sp24;
     Fighter* arg_ft;
     Fighter* cur_ft;
     float temp_f0;
@@ -901,11 +901,11 @@ void ftCommon_8007DD7C(HSD_GObj* gobj, Vec3* v)
     }
 }
 
-void ftCommon_8007DFD0(HSD_GObj* gobj, Vec3* arg1)
+void ftCommon_8007DFD0(HSD_GObj* gobj, Vec* arg1)
 {
     u8 unused0[4];
 
-    Vec3 sp1C;
+    Vec sp1C;
     Vec2* temp_r31;
     HSD_GObj* new_var;
     s32 new_var2;
@@ -940,7 +940,7 @@ void ftCommon_8007DFD0(HSD_GObj* gobj, Vec3* arg1)
 
 void ftCommon_8007E0E4(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp;
 
     u8 _[4];
@@ -1064,7 +1064,7 @@ void ftCommon_8007E3EC(HSD_GObj* gobj)
 {
     Fighter* fp = gobj->user_data;
     HSD_JObj* jobj = fp->parts[ftParts_8007500C(fp, 4)].joint;
-    Vec3 sp10;
+    Vec sp10;
 
     u8 _[4];
 
@@ -1085,7 +1085,7 @@ void ftCommon_8007E3EC(HSD_GObj* gobj)
 
 void ftCommon_8007E5AC(Fighter* fp)
 {
-    Vec3* ground_normal = &fp->coll_data.floor.normal;
+    Vec* ground_normal = &fp->coll_data.floor.normal;
     float tmp = -atan2f(ground_normal->x, ground_normal->y);
     HSD_ASSERT(1146, fp->ground_or_air == GA_Ground);
     ftParts_80075CB4(fp, 0, tmp);
@@ -1243,7 +1243,7 @@ void ftCommon_8007EA90(Fighter* fp, s32 arg1)
     s32 temp_r31;
     float phi_f31;
     float phi_f30;
-    Vec3 sp10;
+    Vec sp10;
 
     if (gm_8016B0B4() == 0) {
         return;
@@ -1527,7 +1527,7 @@ float ftCommon_GetModelScale(Fighter* fp)
 
 void ftCommon_8007F6A4(Fighter* fp, HSD_JObj* jobj)
 {
-    Vec3 scale;
+    Vec scale;
     float val = 1.0f / fp->ft_data->x0->x8C;
     scale.z = val;
     scale.y = val;
@@ -1573,7 +1573,7 @@ void ftCommon_8007F86C(HSD_GObj* gobj)
     }
 }
 
-void ftCommon_8007F8B4(Fighter* fp, Vec3* v)
+void ftCommon_8007F8B4(Fighter* fp, Vec* v)
 {
     v->x = fp->cur_pos.x + fp->xD4_unk_vel.x;
     v->y = fp->cur_pos.y + fp->xD4_unk_vel.y;
@@ -1623,7 +1623,7 @@ void ftCommon_8007F9B4(HSD_GObj* gobj)
 void ftCommon_8007FA00(HSD_GObj* gobj)
 {
     Fighter* fp = gobj->user_data;
-    Vec3* vec = &fp->co_attrs.x114;
+    Vec* vec = &fp->co_attrs.x114;
 
     u8 _[8];
 
@@ -1634,7 +1634,7 @@ void ftCommon_8007FA00(HSD_GObj* gobj)
 void ftCommon_8007FA58(HSD_GObj* gobj, HSD_GObj* arg1)
 {
     Fighter* fp = gobj->user_data;
-    Vec3 vec;
+    Vec vec;
 
     /// @todo This is an inline.
     {
@@ -1704,10 +1704,10 @@ inline float fminf(float a, float b)
 
 void ftCommon_8007FDA0(HSD_GObj* gobj)
 {
-    Vec3 sp20;
+    Vec sp20;
     Fighter* fp;
     float temp_f1;
-    Vec3* temp_r30;
+    Vec* temp_r30;
     float phi_f31;
 
     u8 _[16];
@@ -1796,7 +1796,7 @@ void ftCommon_80080174(Fighter* fp)
 {
     float phi_f2;
     float phi_f3;
-    Vec3* v;
+    Vec* v;
 
     u8 _[16];
 

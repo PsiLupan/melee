@@ -16,7 +16,7 @@
 struct _m2c_stack_ftCo_800A3554 {
     /* 0x00 */ char pad_0[0x10];
     /* 0x10 */ f32 f;
-    /* 0x14 */ Vec3 vec;
+    /* 0x14 */ Vec vec;
     /* 0x20 */ char pad_20[0x18];
 }; /* size = 0x38 */
 
@@ -24,7 +24,7 @@ struct _m2c_stack_ftCo_800A3554 {
 /* 09D694 */ void ftCo_800A0798(ftCo_Fighter* fp);
 /* 09DB88 */ void ftCo_800A0C8C(ftCo_Fighter* fp);
 /* 09DCA0 */ void ftCo_800A0DA4(Fighter* fp);
-/* 09DEAC */ bool ftCo_800A0FB0(Vec3* arg0, int* arg1, int arg2, int arg3,
+/* 09DEAC */ bool ftCo_800A0FB0(Vec* arg0, int* arg1, int arg2, int arg3,
                                 int arg4, int arg5, int arg6, float arg7,
                                 float arg8, float arg9, float arg10,
                                 float arg11);
@@ -137,7 +137,7 @@ struct _m2c_stack_ftCo_800A3554 {
                                                           int);
 /* 0A61D8 */ static UNK_RET ftCo_800A61D8(UNK_PARAMS);
 /* 0A648C */ static int ftCo_800A648C(ftCo_Fighter* fp);
-/* 0A6700 */ static bool ftCo_800A6700(ftCo_Fighter* fp, Vec3*, Vec3*);
+/* 0A6700 */ static bool ftCo_800A6700(ftCo_Fighter* fp, Vec*, Vec*);
 /* 0A6A98 */ static UNK_RET ftCo_800A6A98(UNK_PARAMS);
 /* 0A6D2C */ static UNK_RET ftCo_800A6D2C(UNK_PARAMS);
 /* 0A6FC4 */ static UNK_RET ftCo_800A6FC4(UNK_PARAMS);

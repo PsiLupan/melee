@@ -219,7 +219,7 @@ typedef struct {
 // Shy guy spawn timer tick callback
 void grStory_801E3418(HSD_GObj* gobj)
 {
-    Vec3 pos;
+    Vec pos;
     s32 spawn_pattern;
     s32 i;
     s32 tmp;
@@ -304,9 +304,9 @@ static DynamicsDesc* grStory_801E36D0(enum_t arg0)
     return NULL;
 }
 
-bool grStory_801E36D8(Vec3* a, int _, HSD_JObj* joint)
+bool grStory_801E36D8(Vec* a, int _, HSD_JObj* joint)
 {
-    Vec3 b;
+    Vec b;
     lb_8000B1CC(joint, NULL, &b);
 
     if (a->y + 1.0f > b.y) {

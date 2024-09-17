@@ -150,7 +150,7 @@ void ftLk_SpecialHi_ProcessPartLThumbNb(HSD_GObj* gobj)
     ftParts_8007500C(GET_FIGHTER(gobj), FtPart_LThumbNb);
 }
 
-void ftLk_SpecialHi_GetPosWithAdjustedY(HSD_GObj* gobj, Vec3* pos)
+void ftLk_SpecialHi_GetPosWithAdjustedY(HSD_GObj* gobj, Vec* pos)
 {
     Fighter* fp = GET_FIGHTER(gobj);
     ftLk_DatAttrs* da = fp->dat_attrs;

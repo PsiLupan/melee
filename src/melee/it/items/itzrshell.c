@@ -92,7 +92,7 @@ void it_802E0468(Item_GObj* gobj, HSD_GObj* ref_gobj)
 
 Item_GObj* it_802E0488(s32 arg0, s32 arg1, s32 arg2)
 {
-    Vec3 pos = { 0, 0, 0 };
+    Vec pos = { 0, 0, 0 };
     Item_GObj* it_gp;
 
     it_gp = it_8027B5B0(It_Kind_ZRShell, arg1, NULL, &pos, 1);

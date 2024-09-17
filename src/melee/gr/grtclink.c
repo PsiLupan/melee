@@ -198,7 +198,7 @@ DynamicsDesc* grTCLink_80220218(int unused)
     return NULL;
 }
 
-bool grTCLink_80220220(Vec3* vec, int arg1, HSD_JObj* jobj)
+bool grTCLink_80220220(Vec* vec, int arg1, HSD_JObj* jobj)
 {
     return true;
 }

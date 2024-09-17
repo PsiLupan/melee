@@ -33,7 +33,7 @@ static inline void fake_HSD_JObjSetRotation(HSD_JObj* jobj, Quaternion* rotate)
     }
 }
 
-static inline void fake_HSD_JObjSetScale(HSD_JObj* jobj, Vec3* scale)
+static inline void fake_HSD_JObjSetScale(HSD_JObj* jobj, Vec* scale)
 {
     HSD_ASSERT(760, jobj);
     HSD_ASSERT(761, scale);
@@ -43,7 +43,7 @@ static inline void fake_HSD_JObjSetScale(HSD_JObj* jobj, Vec3* scale)
     }
 }
 
-static inline void fake_HSD_JObjSetTranslate(HSD_JObj* jobj, Vec3* translate)
+static inline void fake_HSD_JObjSetTranslate(HSD_JObj* jobj, Vec* translate)
 {
     HSD_ASSERT(916, jobj);
     HSD_ASSERT(917, translate);
@@ -89,7 +89,7 @@ void it_802A7E40(Item_GObj* gobj)
     HSD_JObj* jobj;
     Item* item;
     Quaternion quat;
-    Vec3 scale;
+    Vec scale;
 
     item = gobj->user_data;
     jobj = gobj->hsd_obj;
@@ -127,7 +127,7 @@ void it_802A7E40(Item_GObj* gobj)
     }
 }
 
-HSD_GObj* it_802A83E0(f32 facing_dir, Fighter_GObj* arg1, Vec3* arg2,
+HSD_GObj* it_802A83E0(f32 facing_dir, Fighter_GObj* arg1, Vec* arg2,
                       Fighter_Part arg3, s32 arg4)
 {
     SpawnItem spawn;
@@ -246,7 +246,7 @@ void it_802A8330(HSD_GObj* gobj)
     }
 }
 
-void it_802A8398(Item_GObj* gobj, Vec3* pos, Vec3* pos2)
+void it_802A8398(Item_GObj* gobj, Vec* pos, Vec* pos2)
 {
     Item* item;
     if (gobj != NULL) {
@@ -288,7 +288,7 @@ inline void it_802A850C_inline_2(Item_GObj* gobj, Quaternion* quat)
     }
 }
 
-void it_802A850C(Item_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3, f32 arg4,
+void it_802A850C(Item_GObj* gobj, Vec* arg1, Vec* arg2, f32 arg3, f32 arg4,
                  f32 arg5)
 {
     Item* item;
@@ -297,12 +297,12 @@ void it_802A850C(Item_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3, f32 arg4,
     Mtx* matrix;
     u8* data;
     f32 pad[1];
-    Vec3 rot;
+    Vec rot;
     f32 pad_3[1];
-    Vec3 pos;
-    Vec3 sp68;
+    Vec pos;
+    Vec sp68;
     f32 pad_8[1];
-    Vec3* sp60;
+    Vec* sp60;
     f32 pad_10[1];
     Quaternion quat;
     f32 pad_9[3];
@@ -325,7 +325,7 @@ void it_802A850C(Item_GObj* gobj, Vec3* arg1, Vec3* arg2, f32 arg3, f32 arg4,
         pos.z = 0.0f;
         pos.y = 0.0f;
         pos.x = 0.0f;
-        it_8027429C((HSD_GObj*) gobj, (Vec3*) &pos);
+        it_8027429C((HSD_GObj*) gobj, (Vec*) &pos);
         item->xDC8_word.flags.x14 = 0;
         it_8026B3A8(gobj);
         item->xDD4_itemVar.linkarrow.xA8 =
@@ -410,7 +410,7 @@ void it_802A8AF8(Item_GObj* gobj)
 static void inline it_802A8CC8_inline_s_2(HSD_GObj* gobj, Item* item)
 {
     HSD_JObj* jobj = gobj->hsd_obj;
-    Vec3 scale;
+    Vec scale;
     scale.x = scale.y = scale.z = item->xDD4_itemVar.linkarrow.xC0;
     HSD_JObjSetScale(jobj, &scale);
 }
@@ -482,7 +482,7 @@ static void inline it_802A8CC8_inline(HSD_GObj* gobj, int i)
 {
     Item* item;
     HSD_JObj* jobj;
-    Vec3 scale;
+    Vec scale;
     item = GET_ITEM(gobj);
     jobj = HSD_GObjGetHSDObj(gobj);
     if (item->xDD4_itemVar.linkarrow.xB4[i] != NULL) {
@@ -501,7 +501,7 @@ int it_802A8CC8(HSD_GObj* gobj)
     Item* item = GET_ITEM(gobj);
     {
         HSD_JObj* jobj = HSD_GObjGetHSDObj(gobj);
-        Vec3 scale;
+        Vec scale;
         scale.x = scale.y = scale.z = item->xDD4_itemVar.linkarrow.xC0;
         HSD_JObjSetScale(jobj, &scale);
     }
@@ -546,7 +546,7 @@ void it_802A90F0(HSD_GObj* gobj)
 
 static inline bool it_802A9138_inline(Item_GObj* gobj)
 {
-    Vec3 sp1C;
+    Vec sp1C;
     Item* item_2;
     CollData* pp;
     item_2 = GET_ITEM(gobj);
@@ -656,7 +656,7 @@ void it_802A9458(HSD_GObj* gobj)
     Item* item;
     HSD_JObj* jobj;
     f32 temp_scale;
-    Vec3 scale;
+    Vec scale;
 
     item = GET_ITEM(gobj);
     jobj = HSD_GObjGetHSDObj(gobj);
@@ -771,7 +771,7 @@ int it_802A98E8(HSD_GObj* gobj)
     s32 temp_r4;
     s32 var_r3;
 
-    Vec3 sp18;
+    Vec sp18;
     HSD_JObj* jobj;
     Item* item;
 
@@ -847,7 +847,7 @@ int it_802A9B08(Item_GObj* gobj)
     HSD_GObj* temp_r3;
     HSD_JObj* jobj;
     itLinkArrowAttributes* attr;
-    Vec3 scale;
+    Vec scale;
 
     item = GET_ITEM(gobj);
     attr = item->xC4_article_data->x4_specialAttributes;

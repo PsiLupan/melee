@@ -704,8 +704,8 @@ bool ftCo_8009E714(Fighter_GObj* gobj, Fighter_Part bone_id, int arg2, float x,
     ftCo_Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = fp->parts[bone_id].joint;
     int var_r31 = arg2;
-    Vec3 out_vec;
-    Vec3 in_vec;
+    Vec out_vec;
+    Vec in_vec;
     in_vec.x = x;
     in_vec.y = y;
     in_vec.z = 0.0f;

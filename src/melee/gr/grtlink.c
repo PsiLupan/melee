@@ -12,31 +12,31 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobjgxlink.h>
 #include <baselib/gobjproc.h>
 
-void grTLink_8022192C(int);                   /* static */
-void grTLink_80221930(void);                  /* static */
-void grTLink_802219A0(void);                  /* static */
-void grTLink_802219A4(void);                  /* static */
-bool grTLink_802219C8(void);                  /* static */
-HSD_GObj* grTLink_802219D0(s32 arg0);         /* static */
-void grTLink_80221AB8(HSD_GObj*);             /* static */
-bool grTLink_80221AE4(HSD_GObj*);             /* static */
-void grTLink_80221AEC(HSD_GObj*);             /* static */
-void grTLink_80221AF0(HSD_GObj*);             /* static */
-void grTLink_80221AF4(HSD_GObj*);             /* static */
-bool grTLink_80221B44(HSD_GObj*);             /* static */
-void grTLink_80221B4C(HSD_GObj*);             /* static */
-void grTLink_80221B80(HSD_GObj*);             /* static */
-void grTLink_80221B84(HSD_GObj*);             /* static */
-bool grTLink_80221BD4(HSD_GObj*);             /* static */
-void grTLink_80221BDC(HSD_GObj*);             /* static */
-void grTLink_80221BFC(HSD_GObj*);             /* static */
-DynamicsDesc* grTLink_80221C00(enum_t);       /* static */
-bool grTLink_80221C08(Vec3*, int, HSD_JObj*); /* static */
+void grTLink_8022192C(int);                  /* static */
+void grTLink_80221930(void);                 /* static */
+void grTLink_802219A0(void);                 /* static */
+void grTLink_802219A4(void);                 /* static */
+bool grTLink_802219C8(void);                 /* static */
+HSD_GObj* grTLink_802219D0(s32 arg0);        /* static */
+void grTLink_80221AB8(HSD_GObj*);            /* static */
+bool grTLink_80221AE4(HSD_GObj*);            /* static */
+void grTLink_80221AEC(HSD_GObj*);            /* static */
+void grTLink_80221AF0(HSD_GObj*);            /* static */
+void grTLink_80221AF4(HSD_GObj*);            /* static */
+bool grTLink_80221B44(HSD_GObj*);            /* static */
+void grTLink_80221B4C(HSD_GObj*);            /* static */
+void grTLink_80221B80(HSD_GObj*);            /* static */
+void grTLink_80221B84(HSD_GObj*);            /* static */
+bool grTLink_80221BD4(HSD_GObj*);            /* static */
+void grTLink_80221BDC(HSD_GObj*);            /* static */
+void grTLink_80221BFC(HSD_GObj*);            /* static */
+DynamicsDesc* grTLink_80221C00(enum_t);      /* static */
+bool grTLink_80221C08(Vec*, int, HSD_JObj*); /* static */
 
 static StageCallbacks grTLk_803E8D30[4] = {
     { grTLink_80221AB8, grTLink_80221AE4, grTLink_80221AEC, grTLink_80221AF0,
@@ -173,7 +173,7 @@ DynamicsDesc* grTLink_80221C00(enum_t arg0)
     return NULL;
 }
 
-bool grTLink_80221C08(Vec3* arg0, int arg1, HSD_JObj* arg2)
+bool grTLink_80221C08(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

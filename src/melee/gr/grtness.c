@@ -8,7 +8,7 @@
 #include "gr/types.h"
 #include "lb/lb_00F9.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <dolphin/os/OSError.h>
 #include <baselib/gobj.h>
 #include <baselib/gobjgxlink.h>
@@ -33,7 +33,7 @@
 /* 222880 */ static void grTNess_80222880(HSD_GObj* gobj);
 /* 2228A0 */ static void grTNess_802228A0(HSD_GObj*);
 /* 2228A4 */ static DynamicsDesc* grTNess_802228A4(enum_t);
-/* 2228AC */ static bool grTNess_802228AC(Vec3*, int, HSD_JObj*);
+/* 2228AC */ static bool grTNess_802228AC(Vec*, int, HSD_JObj*);
 
 static StageCallbacks grTNs_803E9030[] = {
     {
@@ -198,7 +198,7 @@ static DynamicsDesc* grTNess_802228A4(enum_t arg0)
     return NULL;
 }
 
-static bool grTNess_802228AC(Vec3* arg0, int arg1, HSD_JObj* arg2)
+static bool grTNess_802228AC(Vec* arg0, int arg1, HSD_JObj* arg2)
 {
     return true;
 }

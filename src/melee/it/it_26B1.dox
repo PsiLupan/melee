@@ -28,7 +28,7 @@ enum_t it_8026B320(Item_GObj* gobj);
 f32 it_8026B1D4(Item_GObj* gobj, HitCapsule* itemHitboxUnk);
 
 /// Copy Item position vector
-void it_8026B294(Item_GObj* gobj, Vec3* pos);
+void it_8026B294(Item_GObj* gobj, Vec* pos);
 
 /// Check if item is heavy
 enum_t it_8026B2B4(Item_GObj* gobj);
@@ -43,7 +43,7 @@ s32 itGetKind(Item_GObj* gobj);
 f32 it_8026B334(Item_GObj* gobj);
 
 /// Unknown item position math, related to velocity?
-void it_8026B344(Item_GObj* gobj, Vec3* pos);
+void it_8026B344(Item_GObj* gobj, Vec* pos);
 
 /// Return item's X-Axis grab range?
 f32 it_8026B378(Item_GObj* gobj);
@@ -91,16 +91,16 @@ s32 it_8026B588(void);
 bool it_8026B594(Item_GObj* gobj);
 
 /// Unknown item camera check?
-HSD_GObj* it_8026B5E4(Vec3* vector, Vec3* vector2, Item_GObj* gobj);
+HSD_GObj* it_8026B5E4(Vec* vector, Vec* vector2, Item_GObj* gobj);
 
 /// Unknown item camera check 2?
-HSD_GObj* it_8026B634(Vec3* vector, Vec3* vector2, Item_GObj* gobj);
+HSD_GObj* it_8026B634(Vec* vector, Vec* vector2, Item_GObj* gobj);
 
 /// Get facing direction of fp (?) with argument 0
-f32 it_8026B684(Vec3* pos);
+f32 it_8026B684(Vec* pos);
 
 /// Get facing direction of fp (?) with variable argument
-f32 it_8026B6A8(Vec3* pos, HSD_GObj* arg);
+f32 it_8026B6A8(Vec* pos, HSD_GObj* arg);
 
 /// Check if item is a stage item?
 bool it_8026B6C8(Item_GObj* gobj);
@@ -160,13 +160,13 @@ void it_8026BB20(Item_GObj* gobj);
 void it_8026BB44(Item_GObj* gobj);
 
 /// Adjust item's position to fp bone
-void it_8026BB68(Item_GObj* gobj, Vec3* pos);
+void it_8026BB68(Item_GObj* gobj, Vec* pos);
 
 /// Adjust item's position based on ECB?
-void it_8026BB88(Item_GObj* gobj, Vec3* pos);
+void it_8026BB88(Item_GObj* gobj, Vec* pos);
 
 /// Adjust item's ECB position?
-void it_8026BBCC(Item_GObj* gobj, Vec3* pos);
+void it_8026BBCC(Item_GObj* gobj, Vec* pos);
 
 /// Check if item owner is a fp + decrement hitlag
 void it_8026BC14(Item_GObj* gobj);
@@ -181,7 +181,7 @@ HSD_GObj* it_8026BC78(Item_GObj* gobj);
 bool it_8026BC84(Item_GObj* gobj);
 
 /// Unknown item ECB / position update
-void it_8026BC90(Item_GObj* gobj, Vec3* pos);
+void it_8026BC90(Item_GObj* gobj, Vec* pos);
 
 /// Toggle bit 2 of 0xDCD OFF
 void it_8026BCF4(Item_GObj* gobj);
@@ -238,10 +238,10 @@ bool it_8026C1E8(Item_GObj* gobj);
 void it_8026C220(Item_GObj* gobj, HSD_GObj* arg1);
 
 /// Find the closest item to the given position?
-HSD_GObj* it_8026C258(Vec3* vector, f32 facingDir);
+HSD_GObj* it_8026C258(Vec* vector, f32 facingDir);
 
 /// Unknown item position / ECB update
-void it_8026C334(Item_GObj* gobj, Vec3* pos);
+void it_8026C334(Item_GObj* gobj, Vec* pos);
 
 /// Run bomb item explosion callbacks
 void it_8026C368(Item_GObj* gobj);

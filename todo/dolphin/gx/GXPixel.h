@@ -4,7 +4,7 @@
 #include <platform.h>
 #include <dolphin/gx/forward.h>
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 typedef struct _GXFogAdjTbl {
     u16 r[10];

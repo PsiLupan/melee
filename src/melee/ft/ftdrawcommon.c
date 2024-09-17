@@ -17,8 +17,6 @@
 
 #include <placeholder.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/mtxvec.h>
-#include <dolphin/mtx/types.h>
 #include <baselib/cobj.h>
 #include <baselib/gobj.h>
 #include <baselib/state.h>
@@ -33,7 +31,7 @@ static char ftDrawCommon_804D3A9C[] = "jobj";
 extern s32 ftDrawCommon_804D836C[1];
 extern s32 ftDrawCommon_804D8370[2];
 
-static inline void mtx_thing(MtxPtr mtx, Vec3* ptr, float val, float val2)
+static inline void mtx_thing(MtxPtr mtx, Vec* ptr, float val, float val2)
 {
     mtx[0][3] = ptr->x + val;
     mtx[1][3] = ptr->y + val;
@@ -44,7 +42,7 @@ MtxPtr ftDrawCommon_8008051C(HSD_GObj* arg1, MtxPtr arg2)
 {
     u8 unused0[0x4];
 
-    Vec3 sp54;
+    Vec sp54;
 
     u8 unused1[0xC];
 
@@ -83,7 +81,7 @@ void ftDrawCommon_800805C8(HSD_GObj* gobj, s32 arg1, s32 arg2)
 
     u8 padding1[0xC];
 
-    Vec3 sp30;
+    Vec sp30;
 
     u8 padding0[0x14];
 
@@ -91,7 +89,7 @@ void ftDrawCommon_800805C8(HSD_GObj* gobj, s32 arg1, s32 arg2)
     float spAC;
     float temp_f0;
     float temp_f31;
-    Vec3* temp_r4;
+    Vec* temp_r4;
     MtxPtr temp_r29;
     s32 fighter_2;
     u32 temp_r25;
@@ -337,7 +335,7 @@ void ftDrawCommon_80080C28(HSD_GObj* gobj, int arg1)
 
     u8 pad0[0xC];
 
-    Vec3 sp30;
+    Vec sp30;
 
     Fighter* fighter;
 
@@ -411,7 +409,7 @@ void ftDrawCommon_80080E18(HSD_GObj* gobj, int arg1)
     Unk2 sp54;
     s32 ret;
     s32 flags;
-    Vec3* pos;
+    Vec* pos;
     HSD_JObj* jobj;
     MtxPtr arg2;
     MtxPtr matrix;
@@ -430,7 +428,7 @@ void ftDrawCommon_80080E18(HSD_GObj* gobj, int arg1)
 
                 matrix = HSD_CObjGetInvViewingMtxPtr(Camera_800310B8());
                 PSMTXMultVec(matrix,
-                             (Vec3*) &fighter->mv.co.walk.fast_anim_frame,
+                             (Vec*) &fighter->mv.co.walk.fast_anim_frame,
                              &fighter2->cur_pos);
                 pos = &fighter2->cur_pos;
 

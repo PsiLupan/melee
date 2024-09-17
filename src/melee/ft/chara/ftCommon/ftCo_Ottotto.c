@@ -91,7 +91,7 @@ void ftCo_Ottotto_Coll(ftCo_GObj* gobj)
             ftCo_800CC730(gobj);
         } else {
             u8 _[4] = { 0 };
-            Vec3 pos;
+            Vec pos;
             {
                 u8 _[4] = { 0 };
                 if (fp->facing_dir > 0) {
@@ -139,7 +139,7 @@ void ftCo_OttottoWait_Coll(ftCo_GObj* gobj)
             ftCo_800CC730(gobj);
         } else {
             u8 _[4] = { 0 };
-            Vec3 pos;
+            Vec pos;
             {
                 u8 _[20] = { 0 };
                 if (fp->facing_dir > 0) {

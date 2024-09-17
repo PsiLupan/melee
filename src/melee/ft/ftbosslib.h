@@ -11,14 +11,14 @@
 /* 15BD20 */ void ftBossLib_8015BD20(HSD_GObj*);
 /* 15BD24 */ void ftBossLib_8015BD24(s32, float*, float, s32, s32, s32);
 /* 15BDB4 */ void ftBossLib_8015BDB4(HSD_GObj*);
-/* 15BE40 */ void ftBossLib_8015BE40(HSD_GObj* gobj, Vec3*, float*, float,
+/* 15BE40 */ void ftBossLib_8015BE40(HSD_GObj* gobj, Vec*, float*, float,
                                      float);
 /* 15BF74 */ void ftBossLib_8015BF74(HSD_GObj* gobj, float x_diff_max);
 /* 15C010 */ void ftBossLib_8015C010(HSD_GObj*, float);
 /* 15C09C */ void ftBossLib_8015C09C(HSD_GObj* gobj, float facing_dir);
 /* 15C190 */ void ftBossLib_8015C190(HSD_GObj*);
-/* 15C208 */ void ftBossLib_8015C208(HSD_GObj*, Vec3*);
-/* 15C244 */ HSD_GObj* ftBossLib_8015C244(HSD_GObj*, Vec3*);
+/* 15C208 */ void ftBossLib_8015C208(HSD_GObj*, Vec*);
+/* 15C244 */ HSD_GObj* ftBossLib_8015C244(HSD_GObj*, Vec*);
 /* 15C270 */ bool ftBossLib_8015C270(void);
 /* 15C2A8 */ bool ftBossLib_8015C2A8(void);
 /* 15C2E0 */ bool ftBossLib_8015C2E0(void);

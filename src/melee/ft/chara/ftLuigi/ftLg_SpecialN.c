@@ -17,7 +17,7 @@
 #include "it/items/itluigifireball.h"
 #include "lb/lb_00B0.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 
 // SpecialN/SpecialAirN (Fireball)
 #define FTLUIGI_SPECIALN_COLL_FLAG Ft_MF_UpdateCmd | Ft_MF_SkipColAnim
@@ -133,7 +133,7 @@ void ftLg_SpecialAirN_Coll(HSD_GObj* gobj)
 // https://decomp.me/scratch/6miNL // Luigi's Fireball Spawn callback
 void ftLg_SpecialN_FireSpawn(HSD_GObj* gobj)
 {
-    Vec3 sp10;
+    Vec sp10;
     Fighter* fp = GET_FIGHTER(gobj);
     bool flag;
 

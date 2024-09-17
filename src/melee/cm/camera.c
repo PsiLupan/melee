@@ -10,11 +10,11 @@
 #include <math.h>
 #include <math_ppc.h>
 #include <trigf.h>
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/cobj.h>
 
-/* 3B73B8 */ extern Vec3 cm_803B73B8;
-/* 3B73C4 */ extern Vec3 cm_803B73C4;
+/* 3B73B8 */ extern Vec cm_803B73B8;
+/* 3B73C4 */ extern Vec cm_803B73C4;
 /* 3BCB64 */ extern HSD_CObjDesc cm_803BCB64;
 /* 452C68 */ extern Camera cm_80452C68;
 /* 4D7E04 */ extern float cm_804D7E04;
@@ -50,15 +50,15 @@ void Camera_80029BC4(CameraBounds* bounds, CameraMovement* movement)
 
 void Camera_8002A768(CameraMovement* movement, int arg1)
 {
-    Vec3 sp58;
+    Vec sp58;
     float zero;
     float zero2;
     float neg_one;
-    Vec3 top_left;
-    Vec3 top_right;
-    Vec3 bottom_right;
-    Vec3 bottom_left;
-    Vec3 cam_correction;
+    Vec top_left;
+    Vec top_right;
+    Vec bottom_right;
+    Vec bottom_left;
+    Vec cam_correction;
     float temp_f0;
     float temp_f0_10;
     float temp_f0_11;
@@ -116,64 +116,64 @@ void Camera_8002A768(CameraMovement* movement, int arg1)
     top_left.x = zero;
     top_left.y = zero2;
     top_left.z = neg_one;
-    lbVector_Rotate((Vec3*) &top_left.x, 1, temp_f30);
-    lbVector_Rotate((Vec3*) &top_left.x, 2, temp_f30);
+    lbVector_Rotate((Vec*) &top_left.x, 1, temp_f30);
+    lbVector_Rotate((Vec*) &top_left.x, 2, temp_f30);
     temp_r27 = &cm_803BCB64.perspective.aspect;
     top_left.x *= cm_803BCB64.perspective.aspect;
-    lbVector_Normalize((Vec3*) &top_left.x);
-    lbVector_Rotate((Vec3*) &top_left.x, 1, temp_f28);
-    lbVector_Rotate((Vec3*) &top_left.x, 2, temp_f0);
+    lbVector_Normalize((Vec*) &top_left.x);
+    lbVector_Rotate((Vec*) &top_left.x, 1, temp_f28);
+    lbVector_Rotate((Vec*) &top_left.x, 2, temp_f0);
     if (top_left.z < cm_804D7E6C) {
         temp_f1 = -movement->target_position.x / top_left.z;
         top_left.x *= temp_f1;
         top_left.y *= temp_f1;
         top_left.z *= temp_f1;
-        lbVector_Add((Vec3*) &top_left.x, &movement->target_position);
+        lbVector_Add((Vec*) &top_left.x, &movement->target_position);
     } else {
         var_r30 = 1;
     }
-    lbVector_Rotate((Vec3*) &top_right.x, 1, temp_f30);
+    lbVector_Rotate((Vec*) &top_right.x, 1, temp_f30);
     temp_f31 = -temp_f30;
-    lbVector_Rotate((Vec3*) &top_right.x, 2, temp_f31);
+    lbVector_Rotate((Vec*) &top_right.x, 2, temp_f31);
     top_right.x *= *temp_r27;
-    lbVector_Normalize((Vec3*) &top_right.x);
-    lbVector_Rotate((Vec3*) &top_right.x, 1, temp_f28);
-    lbVector_Rotate((Vec3*) &top_right.x, 2, temp_f0);
+    lbVector_Normalize((Vec*) &top_right.x);
+    lbVector_Rotate((Vec*) &top_right.x, 1, temp_f28);
+    lbVector_Rotate((Vec*) &top_right.x, 2, temp_f0);
     if (top_right.z < cm_804D7E6C) {
         temp_f1_2 = -movement->target_position.x / top_right.z;
         top_right.x *= temp_f1_2;
         top_right.y *= temp_f1_2;
         top_right.z *= temp_f1_2;
-        lbVector_Add((Vec3*) &top_right.x, &movement->target_position);
+        lbVector_Add((Vec*) &top_right.x, &movement->target_position);
     } else {
         var_r30 |= 2;
     }
-    lbVector_Rotate((Vec3*) &bottom_right.x, 1, temp_f31);
-    lbVector_Rotate((Vec3*) &bottom_right.x, 2, temp_f30);
+    lbVector_Rotate((Vec*) &bottom_right.x, 1, temp_f31);
+    lbVector_Rotate((Vec*) &bottom_right.x, 2, temp_f30);
     lbVector_Rotate(M2C_ERROR(/* Read from unset register $r3 */), 1,
                     M2C_ERROR(/* Read from unset register $f1 */));
-    lbVector_Rotate((Vec3*) &bottom_right.x, 2, temp_f0);
+    lbVector_Rotate((Vec*) &bottom_right.x, 2, temp_f0);
     if (bottom_right.z < cm_804D7E6C) {
         temp_f1_3 = -movement->target_position.x / bottom_right.z;
         bottom_right.x *= temp_f1_3;
         bottom_right.y *= temp_f1_3;
         bottom_right.z *= temp_f1_3;
-        lbVector_Add((Vec3*) &bottom_right.x, &movement->target_position);
+        lbVector_Add((Vec*) &bottom_right.x, &movement->target_position);
     } else {
         var_r30 |= 4;
     }
-    lbVector_Rotate((Vec3*) &bottom_left, 1, temp_f31);
-    lbVector_Rotate((Vec3*) &bottom_left, 2, temp_f31);
+    lbVector_Rotate((Vec*) &bottom_left, 1, temp_f31);
+    lbVector_Rotate((Vec*) &bottom_left, 2, temp_f31);
     bottom_left.x *= *temp_r27;
-    lbVector_Normalize((Vec3*) &bottom_left);
-    lbVector_Rotate((Vec3*) &bottom_left, 1, temp_f28);
-    lbVector_Rotate((Vec3*) &bottom_left, 2, temp_f0);
+    lbVector_Normalize((Vec*) &bottom_left);
+    lbVector_Rotate((Vec*) &bottom_left, 1, temp_f28);
+    lbVector_Rotate((Vec*) &bottom_left, 2, temp_f0);
     if (bottom_left.z < cm_804D7E6C) {
         temp_f1_4 = -movement->target_position.x / bottom_left.z;
         bottom_left.x *= temp_f1_4;
         bottom_left.y *= temp_f1_4;
         bottom_left.z *= temp_f1_4;
-        lbVector_Add((Vec3*) &bottom_left, &movement->target_position);
+        lbVector_Add((Vec*) &bottom_left, &movement->target_position);
     } else {
         var_r30 |= 8;
     }
@@ -335,14 +335,14 @@ void Camera_8002A768(CameraMovement* movement, int arg1)
         cam_correction.x *= cm_804D7E04;
         cam_correction.y *= cm_804D7E04;
         cam_correction.z *= cm_804D7E04;
-        lbVector_Add(&movement->target_position, (Vec3*) &cam_correction.x);
-        lbVector_Add(&movement->target_interest, (Vec3*) &cam_correction.x);
+        lbVector_Add(&movement->target_position, (Vec*) &cam_correction.x);
+        lbVector_Add(&movement->target_interest, (Vec*) &cam_correction.x);
     }
 }
 
 void Camera_8002B1F8(CameraMovement* movement)
 {
-    Vec3 vec;
+    Vec vec;
     HSD_GObj* temp_r3;
     HSD_GObj* temp_r3_2;
     CameraBox* var_r29;
@@ -391,7 +391,7 @@ void Camera_80030DF8(void)
     cm_80452C68.translation.x = cm_80452C68.translation.y = 0;
 }
 
-bool Camera_80031154(Vec3* arg0)
+bool Camera_80031154(Vec* arg0)
 {
     if (Camera_80029124(arg0, 0) == NULL) {
         return true;
@@ -399,7 +399,7 @@ bool Camera_80031154(Vec3* arg0)
     return false;
 }
 
-bool Camera_8003118C(Vec3* arg0, float arg1)
+bool Camera_8003118C(Vec* arg0, float arg1)
 {
     if (Camera_80029124(arg0, arg1) == NULL) {
         return true;

@@ -6,7 +6,7 @@
 #include "ft/types.h"
 #include "gr/stage.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <baselib/debug.h>
 
 void ftCamera_80076018(UnkFloat6_Camera* in, UnkFloat6_Camera* out, float mul)
@@ -94,7 +94,7 @@ void ftCamera_800762F4(HSD_GObj* gobj)
 
 void ftCamera_80076320(HSD_GObj* gobj)
 {
-    Vec3 center_pos;
+    Vec center_pos;
     Fighter* fp = gobj->user_data;
     CameraBox* camera_box;
     float temp_f1;

@@ -1,7 +1,8 @@
-#include <platform.h>
 #include "forward.h"
 
-#include "objalloc.h"
+#include "sobjlib.h"
+
+#include "baselib/objalloc.h"
 
 #include <dolphin/mtx.h>
 
@@ -14,8 +15,8 @@
 /* 004CDCC0 */ extern HSD_ObjAllocData HSD_SObjLib_804D10E0;
 /* 00408F90 */ extern s8 HSD_SObjLib_8040C3B0[10];
 /* 00408F80 */ extern UNK_T HSD_SObjLib_8040C3A0;
-/* 003B6244 */ extern Vec3 HSD_SObjLib_803B9664;
-/* 003B6238 */ extern Vec3 HSD_SObjLib_803B9658;
+/* 003B6244 */ extern Vec HSD_SObjLib_803B9664;
+/* 003B6238 */ extern Vec HSD_SObjLib_803B9658;
 /* 003A21BC */ extern void HSD_SObjLib_803A55DC(HSD_GObj*, u16, s16, u32);
 /* 003A20CC */ extern void HSD_SObjLib_803A54EC(HSD_GObj*, s32);
 /* 003A1648 */ extern void HSD_SObjLib_803A4A68(UNK_T);

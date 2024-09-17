@@ -14,7 +14,6 @@
 #include <math.h>
 #include <placeholder.h>
 #include <dolphin/mtx.h>
-#include <dolphin/mtx/vec.h>
 #include <dolphin/os.h>
 
 HSD_ObjAllocData robj_alloc_data;   // robj_alloc_data
@@ -209,9 +208,9 @@ static u32 HSD_RObjGetConstraintType(HSD_RObj* robj)
     return robj->flags & 0x0FFFFFFF;
 }
 
-int HSD_RObjGetGlobalPosition(HSD_RObj* robj, int type, Vec3* p)
+int HSD_RObjGetGlobalPosition(HSD_RObj* robj, int type, Vec* p)
 {
-    Vec3 v = { 0, 0, 0 };
+    Vec v = { 0, 0, 0 };
     HSD_RObj* rp;
     int n = 0;
 
@@ -241,11 +240,11 @@ int HSD_RObjGetGlobalPosition(HSD_RObj* robj, int type, Vec3* p)
     return n;
 }
 
-static void set_dirup_matrix(Vec3* dir_ptr, Vec3* uv_ptr, Vec3* scale_ptr,
+static void set_dirup_matrix(Vec* dir_ptr, Vec* uv_ptr, Vec* scale_ptr,
                              void* obj, HSD_ObjUpdateFunc update_func)
 {
-    Vec3 z_vec;
-    Vec3 v;
+    Vec z_vec;
+    Vec v;
     f32 kz;
     f32 kdir;
 
@@ -274,10 +273,10 @@ static void set_dirup_matrix(Vec3* dir_ptr, Vec3* uv_ptr, Vec3* scale_ptr,
 static void resolveCnsDirUp(HSD_RObj* robj, void* obj,
                             HSD_ObjUpdateFunc update_func)
 {
-    Vec3 this_scale = { 1.0f, 1.0f, 1.0f };
-    Vec3 up = { 0.0f, 1.0f, 0.0f };
-    Vec3 this_pos;
-    Vec3 dir;
+    Vec this_scale = { 1.0f, 1.0f, 1.0f };
+    Vec up = { 0.0f, 1.0f, 0.0f };
+    Vec this_pos;
+    Vec dir;
     f32 k;
 
     if (HSD_RObjGetGlobalPosition(robj, 2, &this_pos) != 0) {
@@ -419,7 +418,7 @@ void HSD_RObjUpdateAll(HSD_RObj* robj, void* obj,
                        HSD_ObjUpdateFunc update_func)
 {
     HSD_RObj* rp;
-    Vec3 vec;
+    Vec vec;
 
     if (robj != NULL) {
         if (HSD_RObjGetGlobalPosition(robj, 1, &vec) != 0) {

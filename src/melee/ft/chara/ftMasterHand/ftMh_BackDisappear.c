@@ -17,7 +17,7 @@
 #include "lb/lbvector.h"
 #include "pl/player.h"
 
-#include <dolphin/mtx/types.h>
+#include <dolphin/mtx.h>
 #include <MetroTRK/intrinsics.h>
 
 void ftMh_BackDisappear_Anim(HSD_GObj* gobj)
@@ -98,7 +98,7 @@ static inline float my_sqrtf(float x)
     return x;
 }
 
-static inline float my_lbVector_Len(Vec3* vec)
+static inline float my_lbVector_Len(Vec* vec)
 {
     return my_sqrtf(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z);
 }
@@ -110,8 +110,8 @@ void ftMh_Wait1_1_Phys(HSD_GObj* gobj)
     ftMasterHand_SpecialAttrs* da = fp->ft_data->ext_attr;
     float len;
     float speed;
-    Vec3 sp28_pos;
-    Vec3 vel;
+    Vec sp28_pos;
+    Vec vel;
 
     u8 _[4];
 

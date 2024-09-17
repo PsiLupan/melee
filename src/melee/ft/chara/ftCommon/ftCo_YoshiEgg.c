@@ -57,7 +57,7 @@ void ftCo_800BBCC0(ftCo_GObj* gobj)
     }
     fp->mv.co.yoshiegg.x14 -= 1;
     {
-        Vec3 vec1, vec0;
+        Vec vec1, vec0;
         float temp0 = (fp->mv.co.yoshiegg.x10 - fp->mv.co.yoshiegg.x14) /
                       fp->mv.co.yoshiegg.x10;
         temp0 *= fp->mv.co.yoshiegg.xC;
@@ -79,7 +79,7 @@ void ftCo_800BBCC0(ftCo_GObj* gobj)
 
 void ftCo_800BBED4(Fighter_GObj* gobj, Fighter_GObj* arg1)
 {
-    Vec3 scale;
+    Vec scale;
     Fighter* fp = GET_FIGHTER(gobj);
     HSD_JObj* jobj = GET_JOBJ(gobj);
 

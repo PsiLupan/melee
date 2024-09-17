@@ -68,8 +68,8 @@ void ftCo_800976A4(ftCo_GObj* gobj)
     float dist = sqrtf(SQ(vel_x) + SQ(vel_y)) * fp->co_attrs.weight;
     enum_t ef_id = 1031;
     IntVec3 ivec;
-    Vec3 vec1;
-    Vec3 vec0;
+    Vec vec1;
+    Vec vec0;
     ivec.y = 1;
     if (ft_80084C74(gobj, &ivec.z, &ivec.y, &ivec.x)) {
         if (ivec.z != -1) {

@@ -73,7 +73,7 @@ void it_8027CF00(Item_GObj* item_gobj)
 
 void it_8027CF30(Item_GObj* gobj)
 {
-    Vec3 sp18;
+    Vec sp18;
     u8 _[8] = { 0 };
 
     Item* it = GET_ITEM(gobj);
@@ -98,7 +98,7 @@ void it_8027CFE8(Item_GObj* item_gobj)
     u8 _[4] = { 0 };
     HSD_JObj* jobj = GET_JOBJ(item_gobj);
     Item* it = GET_ITEM(item_gobj);
-    Vec3 sp14;
+    Vec sp14;
 
     it_8026B3A8(item_gobj);
     HSD_JObjSetFlagsAll(jobj, 0x10);
