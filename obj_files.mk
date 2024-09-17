@@ -940,7 +940,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/ax/AXSPB.s.o\
     $(BUILD_DIR)/asm/dolphin/ax/AXVPB.s.o\
     $(EXTERN_DOL_DIR)/src/dolphin/ax/AXProf.c.o\
-    $(BUILD_DIR)/asm/dolphin/ax/DSPCode.s.o\
+    $(EXTERN_DOL_DIR)/src/dolphin/ax/DSPCode.c.o\
 
 TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/dolphin/axfx/reverb_hi.s.o\
